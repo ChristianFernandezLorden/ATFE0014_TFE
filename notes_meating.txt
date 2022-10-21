@@ -1,0 +1,17 @@
+feedforward
+feedback
+reflexes
+
+4 rob
+
+
+
+Modele matlab avec simulation physique integree
+
+ANTONIO bicchi controle senseur homme -> robot
+
+Effet Balance feedforward / feedback
+
+Theorie de bifurcation des CPGs
+
+
