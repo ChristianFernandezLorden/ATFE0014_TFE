@@ -1,0 +1,28 @@
+(uslow -> parametre a varier (voir valeur de fct)
+
+sim du sys pour chaque v_uslow
+regarde convergence
+plusieurs set de cond_I
+
+si spike -> min et max
+slow et fast ->
+
+(sim temps inverse instable peut devenir stable) 
+
+Utiliser cond precedent pour suivante
+
+
+Plot V - Vus pour vrai systeme sur diagrame de biff)
+
+Ajouter Bruit en entrée pour voir stabilité
+
+!! Periodicity and freq of oscillation (close to natural freq)
+
+=> Voir stabilité of hyperbolic bursting for controlling leg
+
+
+on veut que ca marche sans que rflx_g et max_torque soit grand => comp eliptique
+
+
+Trouvre oscillation eliptique un peu plus stable
+(comparable freq and D between both biffurcation types)

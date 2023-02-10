@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MF0 version="1.1" packageUris="http://schema.mathworks.com/mf0/SlsaMaskTree/R2020a">
+  <slsa.mm.maskTree.MaskTree type="slsa.mm.maskTree.MaskTree" uuid="4f3ee7a7-d9ed-4c4b-8b8f-a8a4b89b2d9f">
+    <maskedBlocks type="slsa.mm.maskTree.MaskedBlock" uuid="e6da3744-4a6d-493c-bd7b-05e15f16d896">
+      <childrenIds>test_behaviour_auto:20</childrenIds>
+      <id>root</id>
+    </maskedBlocks>
+    <maskedBlocks type="slsa.mm.maskTree.MaskedBlock" uuid="dc7ae1d7-f4ff-462b-8a6a-9d56e728ea9a">
+      <blockPath>test_behaviour_auto/Subsystem6/Band-Limited White Noise</blockPath>
+      <id>test_behaviour_auto:20</id>
+      <masks type="slsa.mm.maskTree.Mask" uuid="0ba78bdc-000d-4014-b351-346a59c37b50">
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="0db0a668-c89e-4694-b677-46f2290e59b9">
+          <evaluate>true</evaluate>
+          <expression>[0.00000]</expression>
+          <isTunable>true</isTunable>
+          <name>Cov</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="9f5bfae9-e450-4eef-ab46-efb088add2c7">
+          <evaluate>true</evaluate>
+          <expression>0.001</expression>
+          <name>Ts</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="bf555d16-c1dc-49a7-b871-953304e0cbe0">
+          <evaluate>true</evaluate>
+          <expression>[23341]</expression>
+          <name>seed</name>
+        </dialogParameters>
+        <dialogParameters type="slsa.mm.maskTree.DialogParameterInfo" uuid="b9a6141c-b02f-4151-ba39-86504038d71d">
+          <expression>on</expression>
+          <name>VectorParams1D</name>
+        </dialogParameters>
+        <initializationCode>if any(Cov &lt; 0),
+	error(&apos;The &apos;&apos;Noise power&apos;&apos; must be positive. &apos;),
+end;
+
+r = [-0.4326
+   -1.6656
+    0.1253
+    0.2877
+   -1.1465
+    1.1909
+    1.1892
+   -0.0376
+    0.3273
+    0.1746
+   -0.1867
+    0.7258]&apos;;
+
+r2 = [r(1),r;r,r(12)]; 
+t =[1:13;1:13]; 
+
+if any(Ts==-1), 
+	error(&apos;Sample time (-1) is set to be back-inherited from the block(s) it drives. You should explicitly specify the sample time of the source block. &apos;), 
+end;
+set_param([gcb &apos;/White Noise&apos;],&apos;VectorParams1D&apos;,VectorParams1D);</initializationCode>
+      </masks>
+      <parentId>root</parentId>
+    </maskedBlocks>
+    <flags type="slsa.mm.maskTree.MaskTreeFlags" uuid="01a82a8f-b377-493b-8cab-618cfc77dcac"/>
+  </slsa.mm.maskTree.MaskTree>
+</MF0>

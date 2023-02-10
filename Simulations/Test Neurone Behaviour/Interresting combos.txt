@@ -1,0 +1,24 @@
+Sort of Oscillations: (eliptique spiking)
+  - gup = 3
+  - gsm = -0.1
+  - Iapp = 0.2
+
+Apparition of Plateau
+ - gup = 3
+ - gsm = -4.3 then -4.7
+ - Iapp = 1
+
+"Perfect" Spiking
+ - gup = 1.4
+ - gsm = -3.3
+ - Iapp = 1
+
+Transition between bursting and spiking
+ - gup = 2
+ - gsm = -2 then -4 then -6
+ - Iapp = -0.2
+
+Above spiking -> positive resting state
+ - gup = 1
+ - gsm = -7
+ - Iapp = -0.2

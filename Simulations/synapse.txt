@@ -1,0 +1,9 @@
+Voir propriete math des interconnection avce link au propriete d'un circuit
+
+
+Le plus important -> neurone robuste -> interconnection just dictates rythm
+
+Quand chaque noeuds sont egaux c'est "facile"
+Couplage mechanique beaucoup plus compliqué
+
+Etudier feedback sensoriel
