@@ -1,0 +1,94 @@
+\documentclass[12pt, twoside]{report}
+
+\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm,bindingoffset=6mm,headheight=10mm]{geometry}
+
+\usepackage{fancyhdr}
+
+\usepackage{biblatex}
+\addbibresource{references.bib}
+
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+
+%%% Tikz 
+\usepackage{tikz}
+\usepackage{pgfplots}\pgfplotsset{compat=1.13}
+\usepackage{pgfmath}
+\usetikzlibrary{calc}
+
+\usepackage{amsmath} % for the equation* environment
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+
+\usepackage{hyperref}
+
+\newcommand{\mytitle}{Neuromorphic CPG for Motor Control}
+\newcommand{\mysubtitle}{A neuromorphological approach to quadriped motion}
+\newcommand{\myname}{Christian Fernandez Lorden}
+\newcommand{\mychaptername}{Undefined}
+\newcommand{\mychapterdesignation}{Chapter}
+\newcommand{\mychapter}[1]{\chapter{#1}\renewcommand{\mychaptername}{\mychapterdesignation~\thechapter : #1}}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[RO,LE]{\mytitle}
+\fancyfoot{}
+\fancyfoot[LE,RO]{\thepage}
+\fancyfoot[LO,RE]{\mychaptername}
+%\fancyfoot[CO,CE]{\myname}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\fancypagestyle{plain}{%
+    \fancyhead{}
+    \fancyfoot{}
+    \fancyfoot[LE,RO]{\thepage}
+    \fancyfoot[LO,RE]{\mychaptername}
+    %\fancyfoot[CO,CE]{\myname}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0.4pt}
+}
+
+\begin{document}
+    \input{titlepage.tex}
+    
+    \input{abstract.tex}
+    \renewcommand{\mychaptername}{Abstract}
+
+    %\chapter*{Dedication}
+    %To mum and dad
+
+    %\chapter*{Declaration}
+    %I declare that..
+
+    %\chapter*{Acknowledgements}
+    %I want to thank...
+    
+    
+    \tableofcontents
+    \renewcommand{\mychaptername}{Contents}
+    
+    \mychapter{Introduction}
+    \input{chapters/introduction.tex}
+
+    \mychapter{Chapter Two Title}
+    %\input{chapters/chapter02.tex}
+
+    \mychapter{Chapter Three Title}
+    %\input{chapters/chapter03.tex}
+
+    \mychapter{Chapter Four Title}
+    %\input{chapters/chapter04.tex}
+
+    \mychapter{Conclusion}
+    %\input{chapters/conclusion.tex}
+    \newpage
+    \appendix
+    \renewcommand{\mychapterdesignation}{Appendix}
+    \mychapter{Appendix Title}
+    %\input{chapters/appendix.tex}
+\end{document}
+
+
