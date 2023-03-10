@@ -1,0 +1,8 @@
+etudier normal + eliptique with rflx gain and torque gain variation
+
+suite: utiliser neurone sensoriel
+
+utiliser vitesse
+
+
+Faire slider simulation

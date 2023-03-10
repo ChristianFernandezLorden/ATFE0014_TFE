@@ -16,5 +16,15 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{test_bib}{article}{}
+      \field{sortinit}{0}
+      \field{sortinithash}{c5602f03f17cc894ea7a6362c3cb0e13}
+      \field{year}{0}
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 
