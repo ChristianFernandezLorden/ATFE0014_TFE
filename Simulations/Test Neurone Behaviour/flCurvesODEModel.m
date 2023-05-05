@@ -53,14 +53,15 @@ for i =1:length(Iapp_vec)
         interSpikesT = interSpikesTime(spikesT);
         meanSpikesT = mean(interSpikesT);
         if spikesT(end) > tmax - 4*meanSpikesT
-            %if min(interSpikesT) > max(interSpikesT)/4
+            if min(interSpikesT) > max(interSpikesT)/4
                 freqCurve(i) = 1/meanSpikesT;
                 ampCurve(i) = mean(spikesV);
-            %else
-            %    freqCurve(i) = 0;
-            %    ampCurve(i) = NaN;
-            %end
+            else
+                freqCurve(i) = 0;
+                ampCurve(i) = NaN;
+            end
         else
+            disp("wtf")
             freqCurve(i) = 0;
             ampCurve(i) = NaN;
         end

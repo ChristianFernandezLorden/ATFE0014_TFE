@@ -1,5 +1,5 @@
 SampleTime = 0.0001;
-endTime = 8;
+endTime = 20;
 starAnalyseTime = 4;
 
 NoisePwr = 0.0;
@@ -22,15 +22,15 @@ time = time';
 
 analyse_elem = find(time > starAnalyseTime);
 
-Iapp_vec = -2:0.025:2;
+Iapp_vec = -0.5:0.05:1;
 
 model = "test_behaviour_auto_cst_current";
 load_system(model)
 
 Gfm = -2;
-Gsp = 3;
-Gsm = -1.5;%-5;
-Gup = 0;%2;
+Gsp = 4;
+Gsm = -1;%-5;
+Gup = 1;%2;
 Dfm = dfm_ref;
 Dsp = dsp_ref;
 Dsm = dsm_ref;
