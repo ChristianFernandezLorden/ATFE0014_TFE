@@ -1,0 +1,61 @@
+\begin{tikzpicture}
+    \tikzstyle{box}=[
+        rectangle,
+        draw=black, 
+        align=center,
+        text width=2.2cm,
+        minimum width=2.2cm,
+        minimum height=1.5cm, 
+    ]
+    \tikzstyle{neuron}=[
+        circle,
+        draw=black, 
+        inner sep=0pt, 
+        outer sep=0pt,
+        minimum size=1.5cm,
+    ]
+    \tikzstyle{system}=[
+        rectangle,
+        draw=black, 
+        minimum size=2cm,
+    ]
+    \node[neuron] (bn) at (0,0) {};
+    \begin{axis}[
+            at=(bn),
+            anchor=center,
+            width=2.5cm,
+            height=2.5cm,
+            hide axis,
+            ymin=-4, ymax=4.5,
+            xmin=10.95, xmax=11.5,
+        ]
+        \addplot[color=black] table [col sep=comma, x=time, y=1]{data/Neuron/voltage_burst_stable.csv};
+    \end{axis}
+    
+    \node[rectangle, draw=black, minimum width=1.8cm, minimum height=1.5cm] (sat) at ([xshift=4cm]bn) {};
+    \coordinate (low_flat) at ([shift={(-0.7,-0.5)}]sat);
+    \coordinate (low_slope) at ([shift={(-0.4,-0.5)}]sat);
+    \coordinate (high_slope) at ([shift={(0.4,0.5)}]sat);
+    \coordinate (high_flat) at ([shift={(0.7,0.5)}]sat);
+    \draw (low_flat)--(low_slope)--(high_slope)--(high_flat);
+    
+    \node[system] (sys) at ([shift={(5,-1.2)}]sat) {};
+    \node[cylinder, shape border rotate=90, draw,minimum height=1.5cm,minimum width=0.4cm, rotate=30] at (sys) {};
+    
+    \coordinate (middle) at ($(bn)!0.5!(sat)$);
+    \node[box] (cont) at ([yshift=-2.4cm]middle) {Feedback};
+    
+    \coordinate (break_pt) at ([xshift=2.5cm]sat);
+    \coordinate (left_margin) at ([xshift=-1.5cm]bn);
+    
+    \coordinate (up_in) at ($(sys.north west)!0.3!(sys.south west)$);
+    \coordinate (down_out) at ($(sys.north west)!0.7!(sys.south west)$);
+    
+    \node[right,scale=0.8,green] at (up_in) {$\tau$};
+    \node[right,scale=0.8,align=left,red] at (down_out) {$\theta$\\$\dot{\theta}$};
+    
+    \draw[-stealth] (bn)--(sat);
+    \draw[-stealth] (sat)--(sat-|break_pt)--(up_in-|break_pt)--(up_in);
+    \draw[-stealth] (down_out)--(down_out-|break_pt)--(cont-|break_pt)--(cont);
+    \draw[-stealth] (cont)--(cont-|left_margin)--(bn-|left_margin)--(bn);
+\end{tikzpicture}  

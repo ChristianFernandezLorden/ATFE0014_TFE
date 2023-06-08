@@ -1,0 +1,2 @@
+figures/plots/fi_curve.tikz.pdf: data/Neuron/type1_freq.csv
+figures/plots/fi_curve.tikz.pdf: data/Neuron/type1_freq.csv

@@ -1,0 +1,80 @@
+\begin{tikzpicture}
+    \begin{groupplot}[
+        group style={
+            % set how the plots should be organized
+            group size=2 by 4,
+            % only show ticklabels and axis labels on the bottom
+            x descriptions at=edge bottom,
+            %y descriptions at=edge left,
+            % set the `vertical sep' to zero
+            vertical sep=0.01\textwidth,
+            horizontal sep=0.05\textwidth,
+        },
+        width=0.4\textwidth,
+        height=0.23\textwidth,
+        %point meta min = 0.3,
+        %point meta max = 1.75,
+        % Remove NaN value from plot
+        xlabel=Time, x unit=\unit{\second},
+        %ylabel=$g_{s-}$,
+        %ymin = -7, ymax=0,
+        xmin=10, xmax=11,
+        %ylabel style={rotate=-90},
+        every axis y label/.style={at={(0,0.5)}, xshift=-3.2em},
+        ]
+        \nextgroupplot[
+            title=Voltages,
+            ylabel=$V$ 
+        ]
+        \addplot[color=black] table [col sep=comma, x=time, y=1]{data/Neuron/voltage_inside_burst.csv};
+
+        \nextgroupplot[
+            title=Currents,
+            ylabel near ticks, yticklabel pos=right,
+            ylabel=$i_{f-}$,
+            every axis y label/.style={at={(1,0.5)}, xshift=3.2em},
+        ]
+        \addplot[color=red] table [col sep=comma, x=time, y=1]{data/Neuron/current_inside_burst.csv};
+        
+        
+        \nextgroupplot[
+            ylabel=$v_f$
+        ]
+        \addplot[color=red] table [col sep=comma, x=time, y=2]{data/Neuron/voltage_inside_burst.csv};
+        
+        \nextgroupplot[
+            ylabel near ticks, yticklabel pos=right,
+            ylabel=$i_{s+}$,
+            every axis y label/.style={at={(1,0.5)}, xshift=3.2em},
+        ]
+        \addplot[color=green] table [col sep=comma, x=time, y=2]{data/Neuron/current_inside_burst.csv};
+        
+        
+        \nextgroupplot[
+            ylabel=$v_s$
+        ]
+        \addplot[color=green] table [col sep=comma, x=time, y=3]{data/Neuron/voltage_inside_burst.csv};
+        
+        \nextgroupplot[
+            ylabel near ticks, yticklabel pos=right,
+            ylabel=$i_{s-}$,
+            every axis y label/.style={at={(1,0.5)}, xshift=3.2em},
+        ]
+        \addplot[color=green] table [col sep=comma, x=time, y=3]{data/Neuron/current_inside_burst.csv};
+        
+        
+        \nextgroupplot[
+            ylabel=$v_u$
+        ]
+        \addplot[color=blue] table [col sep=comma, x=time, y=4]{data/Neuron/voltage_inside_burst.csv};
+        
+        \nextgroupplot[
+            ylabel near ticks, yticklabel pos=right,
+            ylabel=$i_{u+}$,
+            every axis y label/.style={at={(1,0.5)}, xshift=3.2em},
+        ]
+        \addplot[color=blue] table [col sep=comma, x=time, y=4]{data/Neuron/current_inside_burst.csv};
+    \end{groupplot}
+\end{tikzpicture}
+
+ 

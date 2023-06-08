@@ -1,0 +1,12 @@
+figures/plots/double_freq_t1_high.tikz.pdf: data/Control/Map/double_nofeed/double_nofeed_freq_t1_im2.csv
+figures/plots/double_freq_t1_high.tikz.pdf: data/Control/Map/double_sin/double_sin_freq_t1_r5_im2.csv
+figures/plots/double_freq_t1_high.tikz.pdf: data/Control/Map/double_speed/double_speed_freq_t1_r5_im2.csv
+figures/plots/double_freq_t1_high.tikz.pdf: data/Control/Map/double_neuron/double_neuron_freq_t1_s3_im2.csv
+figures/plots/double_freq_t1_high.tikz.pdf: data/Control/Map/double_nofeed/double_nofeed_freq_t1_im1.csv
+figures/plots/double_freq_t1_high.tikz.pdf: data/Control/Map/double_sin/double_sin_freq_t1_r5_im1.csv
+figures/plots/double_freq_t1_high.tikz.pdf: data/Control/Map/double_speed/double_speed_freq_t1_r5_im1.csv
+figures/plots/double_freq_t1_high.tikz.pdf: data/Control/Map/double_neuron/double_neuron_freq_t1_s3_im1.csv
+figures/plots/double_freq_t1_high.tikz.pdf: data/Control/Map/double_nofeed/double_nofeed_freq_t1_i0.csv
+figures/plots/double_freq_t1_high.tikz.pdf: data/Control/Map/double_sin/double_sin_freq_t1_r5_i0.csv
+figures/plots/double_freq_t1_high.tikz.pdf: data/Control/Map/double_speed/double_speed_freq_t1_r5_i0.csv
+figures/plots/double_freq_t1_high.tikz.pdf: data/Control/Map/double_neuron/double_neuron_freq_t1_s3_i0.csv

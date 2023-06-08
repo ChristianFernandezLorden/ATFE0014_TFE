@@ -1,101 +1,19 @@
-\tikzstyle{box}=[
-    rectangle,
-    draw=black, 
-    align=center,
-    text width=1.8cm,
-    minimum width=1.8cm,
-    minimum height=1.3cm, 
-]
+The control of robotic locomotion poses important challenges. In particular, we are still very far from achieving in robotic locomotion control with the same degree of robustness and adaptability to unexpected environmental perturbations exhibited by moving biological systems.
 
+Also, the mobile nature of robots forces them to use a batteries to power themselves. But, this create an enormous problem, the battery limits the power that can be allocated to on-board computing. Yet, the state of the art in artificial intelligence nowadays is Deep Learning and it requires a lot of computing power to work well. This leads to two unsatisfactory solutions. Either get state of the art control, but dissociate the computing from the robot or drastically limit the robot autonomy. Or uses simpler methods that give poorer results but can be computed on-board.
 
-\section{Neuronal Model}
+To solve this energy problem, new approaches are emerging. One of them is neuromorphic engineering which aims to extract the useful properties of biological neuronal system to create highly efficient artificial neuronal controller or computing unit.
 
-\begin{figure}
-    \centering
-    \begin{tikzpicture}[-stealth,thick]
-        \node[box] (fast_lp) at (0, 0) {\large$\frac{1}{1+\tau_f s}$};
-        
-        \node[box] (slow_lp) at (0, -3) {\large$\frac{1}{1+\tau_s s}$};
-        
-        \node[box] (ultraslow_lp) at (0, -6) {\large$\frac{1}{1+\tau_u s}$};
-        
-        \node (v_f) at ([xshift=2cm]fast_lp.east) {\Large$v_f$};
-        
-        \node (v_s) at ([xshift=2cm]slow_lp.east) {\Large$v_s$};
-        
-        \node (v_u) at ([xshift=2cm]ultraslow_lp.east) {\Large$v_u$};
-        
-        \draw (fast_lp) -- (v_f);
-        \draw (slow_lp) -- (v_s);
-        \draw (ultraslow_lp) -- (v_u);
-        
-        \node[box] (v_to_i_fm) at ([xshift=3cm]v_f.east) {$f_{v_f\rightarrow i_{f-}}$};
-        
-        \node[box] (v_to_i_sp) at ([shift={(3, 1)}]v_s.east) {$f_{v_s\rightarrow i_{s+}}$};
-        \node[box] (v_to_i_sm) at ([shift={(3, -1)}]v_s.east) {$f_{v_s\rightarrow i_{s-}}$};
-        \coordinate (v_to_i_s_mid) at ([xshift=1cm]v_s.east);
-        
-        \node[box] (v_to_i_up) at ([xshift=3cm]v_u.east) {$f_{v_u\rightarrow i_{u+}}$};
-        
-        \node (Iapp) at ([yshift=-2cm]v_to_i_up) {$I_a$};
-        \node (V0) at ([yshift=-2cm]Iapp) {$V_{0}$};
-        
-        \draw (v_f) -- (v_to_i_fm);
-        
-        \draw (v_s) -- (v_to_i_s_mid) -- (v_to_i_s_mid|-v_to_i_sp) -- (v_to_i_sp);
-        \draw (v_s) -- (v_to_i_s_mid) -- (v_to_i_s_mid|-v_to_i_sm) -- (v_to_i_sm);
-        
-        \draw (v_u) -- (v_to_i_up);
-        
-        \draw[draw=black] (10,-1) rectangle (11,-5);
-        \coordinate (rect_top) at (10,-1);
-        \coordinate (rect_bottom) at (10,-5);
-        \coordinate (rect_out) at (11,-3);
-        \node[anchor=west] (m1) at ($(rect_top)!0.14!(rect_bottom)$) {$-$};
-        \node[anchor=west] (m2) at ($(rect_top)!0.29!(rect_bottom)$) {$-$};
-        \node[anchor=west] (m3) at ($(rect_top)!0.43!(rect_bottom)$) {$-$};
-        \node[anchor=west] (m4) at ($(rect_top)!0.57!(rect_bottom)$) {$-$};
-        \node[anchor=west] (p1) at ($(rect_top)!0.71!(rect_bottom)$) {$+$};
-        \node[anchor=west] (p2) at ($(rect_top)!0.86!(rect_bottom)$) {$+$};
-        
-        \coordinate (i_fm_add_mid) at ([xshift=3cm]v_to_i_fm);
-        \coordinate (i_sp_add_mid) at ([xshift=2.5cm]v_to_i_sp);
-        \coordinate (i_sm_add_mid) at ([xshift=1.5cm]v_to_i_sm);
-        \coordinate (i_up_add_mid) at ([xshift=2cm]v_to_i_up);
-        \coordinate (Iapp_add_mid) at ([xshift=2.5cm]Iapp);
-        \coordinate (V0_add_mid) at ([xshift=3cm]V0);
-        \draw (v_to_i_fm) -- (i_fm_add_mid) -- (i_fm_add_mid|-m1) -- (m1);
-        \draw (v_to_i_sp) -- (i_sp_add_mid) -- (i_sp_add_mid|-m2) -- (m2);
-        \draw (v_to_i_sm) -- (i_sm_add_mid) -- (i_sm_add_mid|-m3) -- (m3);
-        \draw (v_to_i_up) -- (i_up_add_mid) -- (i_up_add_mid|-m4) -- (m4);
-        \draw (Iapp) -- (Iapp_add_mid) -- (Iapp_add_mid|-p1) -- (p1);
-        \draw (V0) -- (V0_add_mid) -- (V0_add_mid|-p2) -- (p2);
-        
-        \node[box] (out_lp) at (6, 3) {\large$\frac{1}{1+\tau_o s}$};
-        \node (V) at ([xshift=-3cm]out_lp) {$V$};
-        \coordinate (feedback_start) at ([xshift=-1cm]fast_lp.west);
-        \draw (rect_out) -- ++(1,0) coordinate (tmp) -- (tmp|-out_lp) -- (out_lp);
-        \draw (out_lp) -- (V);
-        \draw (V) -- (V-|feedback_start) coordinate (tmp) -- (tmp|-fast_lp) -- (fast_lp);
-        \draw (V) -- (V-|feedback_start) coordinate (tmp) -- (tmp|-slow_lp) -- (slow_lp);
-        \draw (V) -- (V-|feedback_start) coordinate (tmp) -- (tmp|-ultraslow_lp) -- (ultraslow_lp);
-    \end{tikzpicture}
-    \caption{Diagram of the Neuron Model}
-    \label{fig:neuron_mod}
-\end{figure}
+Indeed, the human brain is an incredibly energy-efficient processor. It is capable of simultaneously processing audio, visual and other sensory feedback while making decision on the future based on incomplete knowledge. To reuse an somewhat old but striking example, in 2016 AlphaGO bested one of the best human go player. Yet, AlphaGO consumed around \qty{1}{\mega\watt} to accomplish this feat while the brain of Lee Sedol, the human player, only consumed around \qty{20}{\watt}. And, in addition to playing the game, Lee's brain also processed all its sensory inputs, controlled its arm to make the moves on the board and continued regulating the equilibrium of its body. Better yet, after the game, he was able to go home and perform activities that are fundamentally different from playing go.
 
-\begin{align}
-    \tau_o\frac{\partial V}{\partial t} &= V_0 + I_a - i_{f-} - i_{s+} - i_{s-} - i_{u+} - V\\
-    i_{f-} &= g_{f-}\left(\tanh\left(v_f-d_{f-}\right) - \tanh\left(V_0-d_{f-}\right)\right)\\ 
-    i_{s+} &= g_{s+}\left(\tanh\left(v_s-d_{s+}\right) - \tanh\left(V_0-d_{s+}\right)\right)\\ 
-    i_{s-} &= g_{s-}\left(\tanh\left(v_s-d_{s-}\right) - \tanh\left(V_0-d_{s-}\right)\right)\\ 
-    i_{u+} &= g_{u+}\left(\tanh\left(v_u-d_{u+}\right) - \tanh\left(V_0-d_{u+}\right)\right)\\ 
-    \tau_f\frac{\partial v_f}{\partial t} &= V - v_f\\
-    \tau_s\frac{\partial v_s}{\partial t} &= V - v_s\\
-    \tau_u\frac{\partial v_u}{\partial t} &= V - v_u   
-\end{align}
+This energy gap between machine and human is explained by the fundamental difference in their computational architecture. The traditional architecture uses synchronized computing steps with memory separated from the computing. Conversely, in a neuronal net, the computing is done completely asynchronously and the memory of the systems is integrated in the computing since it is represented by the dynamical nature of the neurons.
 
-with $g_{f-},\, g_{s-} < 0$, $g_{s+},\, g_{u+} > 0$ and $d_{f-},\, d_{s+},\, d_{s-},\, d_{u+} \in \mathbb{R}$.
+In accordance with the limitations laid earlier, the goal of this thesis is to create and analyses a artificial neuronal controller capable of regulating the oscillation of a simple pendulum. The generated oscillation needs to be regular and the amplitude of this motion should be dynamically controllable using an external parameter.
 
-We could write $i_{s+}$ and $i_{s-}$ as a single current, but, since they play a different role in the neuron behaviour we choose to write them separately.
+Furthermore, the control architecture should be able to  be interconnected to create a network of pendulums oscillation with different gaits.
 
+Traditionally, control of such a system would be achieved through a PID using trajectory tracking or other simple continuous controllers. Those controllers often work in very restrained pendulum size spaces and need additional controllers to achieve gaits between multiple pendulums.
+
+In this thesis, I will first define and explain some key neuromorphic concepts that will permeate my entire work. Then, I will define and analyse the specific neuronal model I used. After that, I will analyse simple controller that need to be able to sustain a regular oscillation. To this model I will add neuromodulation to be able to control the amplitude of the oscillation. Finally I will study the interconnection of multiple controllers to acheive gaits patterns.
+
+Note that multiple parameter will be assigned units, these are for distinguishing the role of the parameters but they do not represent physical values. 

@@ -1,0 +1,4 @@
+figures/plots/cpg_only_activation.tikz.pdf: data/CPG/cpg_only_activation_gsyn0.2.csv
+figures/plots/cpg_only_activation.tikz.pdf: data/CPG/cpg_only_activation_gsyn0.5.csv
+figures/plots/cpg_only_activation.tikz.pdf: data/CPG/cpg_only_activation_gsyn1.0.csv
+figures/plots/cpg_only_activation.tikz.pdf: data/CPG/cpg_only_activation_gsyn2.0.csv

@@ -1,0 +1,18 @@
+\begin{tikzpicture}[-stealth,thick]
+    \tikzstyle{box}=[
+        rectangle,
+        draw=black, 
+        align=center,
+        text width=1.8cm,
+        minimum width=1.8cm,
+        minimum height=1.3cm, 
+    ]
+    \node (theta) at (0, 0) {\Large$\theta$};
+
+    \node[box] (sin) at ([xshift=3cm]theta.east) {\Large$\sin$};
+    
+    \node (out) at ([xshift=3cm]sin.east) {\Large$I_\text{feed}$};
+    
+    \draw (theta) -- (sin);
+    \draw (sin) -- (out);
+\end{tikzpicture}  

@@ -1,0 +1,450 @@
+\label{sec:pendulum}
+This section will focus on the control of a cylindrical pendulum with a neuromorphic controller.
+The primary goal of this section is to find and extract control schemes that are intrinsically linked with the mechanical.
+To reach this goal the different useful behaviors of the neuron model discussed in \cref{sec:model} will be paired with multiple feedback models. The models will be evaluated for their performances and their robustness.
+
+\section{The mechanical system}
+
+Before diving into controller design, understanding the mechanical system is important. \Cref{fig:pendulum} shows a graphical representation of the system. This shows that their is only a single control input to this system, the applied torque $\tau$. The system also gives two meaningful state output, the angle $\theta$ with the vertical and the angular velocity $\dot{\theta}$. Finally the dynamics of the pendulum are influenced by 5 parameters, the radius $r$ of the cylinder, the height $h$ of the cylinder, the density $\rho$ of the cylinder, the damping coefficient $B_f$ which generates the friction torque $\tau_f$ at the rotation point and the gravity $\mathbf{g}$. 
+\begin{figure}[!htb]
+    \centering
+    \inserttikzfig{diagrams/pendulum_system.tikz}
+    \caption{Diagram of the pendulum system. The parameters of the pendulum are in blue, the output that are fed to the controller are in red and the actuation of the controller is in green.}
+    \label{fig:pendulum}
+\end{figure}
+
+On the figure, the gray gray arrow shows and defines the down direction. It can be used to separate the rotation plane in two halves. The half with negative $\sin\left(\theta\right)$ and the half with positive $\sin\left(\theta\right)$.
+
+For this controller the parameters of the pendulum will be kept mostly constant. Keeping the parameters in a certain close range is obviously necessary. A controller capable of stabilizing the oscillation of a \qty{1}{\milli\meter} pendulum will struggle and fail when applied on a \qty{1}{\meter} long pendulum. Keeping the values in same order of magnitude is necessary.
+
+{
+
+\large\centering
+\begin{tabular}{lr|lr}
+    $r$     & \qty{0.05}{\meter}                  & $B_f$    & \qty{0.01}{\newton\meter\second\per\degree} = \qty{0.57}{\newton\meter\second\per\radian}\\
+    $h$     & \qty{0.5}{\meter}                   & $\mathbf{g}$    & \qty{9.81}{\meter\per\second\squared}\\
+    $\rho$  & \qty{1000}{\kg\per\cubic\meter}     &               & \\
+\end{tabular}
+
+}
+
+The value of the friction $\tau_f$ is given by 
+\begin{align}
+    \tau_f = \dot{\theta}B_f
+\end{align}
+
+\section{Sensory feedback types}
+
+The feedback sent to the bursting neuron is the heart of the stability of the neuronal system. Bad only leads to bad performances. Thus three different feedback types are proposed here. From the most simplistic feedback only relying on the angle of the pendulum to the complex spike based feedback. The goal of proposing multiple feedback is to find a middle ground between a controller complexity and its performances. 
+
+\subsection{Angle based feedback}
+
+The direct angle feedback sends to the bursting neuron the sinus of the angle. When in the lower half of the rotational range, this value is more and more negative as the pendulum angle $\theta$ decreases and vice-versa when increasing. 
+
+% ??? not sure
+Thus if the parameter of the controller are tuned to react to a value at least smaller than 1, they will act in the controller range 
+
+\begin{figure}[!htb]
+    \centering
+    \inserttikzfig{diagrams/direct_angle_feed.tikz}
+    \caption{Diagram of the direct angle feedback.}
+    \label{fig:direct_angle}
+\end{figure}
+
+\begin{align}
+    I_\text{feed} = K_\text{feed}\sin\left(\theta\right)
+\end{align}
+with $K_\text{feed} > 0$ the output gain on the feedback.
+
+
+\subsection{Angle and angular velocity based feedback}\label{sec:speed_feed}
+
+This more complicated feedback aims to send a positive value to the controller only when close to the optimal control timing, which close to an angular velocity $\dot{\theta}$ close to $0$. Also the feedback should only send the pulse when in the right half of the rotation plane.
+
+\begin{figure}[!htb]
+    \centering
+    \inserttikzfig{diagrams/speed_angle_feed.tikz}
+    \caption{Diagram of the mixed angle and speed feedback.}
+    \label{fig:speed_angle}
+\end{figure}
+
+\begin{align}
+    I_\theta &= \frac{\alpha_\text{dir}\tanh\left(g_\theta\left(\sin\left(\theta\right)-d_\text{off}\right)\right) + 1}{2} - 1\label{eq:speed_theta}\\
+    I_{\dot{\theta}} &= \frac{\tanh\left(g_{\dot{\theta}}\left(\dot{\theta}+d_\text{bump}\right)\right) -\tanh\left(g_{\dot{\theta}}\left(\dot{\theta}-d_\text{bump}\right)\right)}{2}\label{eq:speed_bump}\\
+    I_\text{feed} &= K_\text{feed}\text{min}\left(\text{max}\left(0,\, I_\theta + I_{\dot{\theta}}\right),\, 1\right)
+\end{align}
+with $\alpha_\text{dir} \in \left[-1;\;1\right]$, $g_\theta, g_{\dot{\theta}}, d_\text{bump}, K_\text{feed} > 0$ and $d_\text{off} \in \mathrm{r}$.
+
+$\alpha_\text{dir}$ is a parameter relative to the part of the half plane where the feedback should be active, $1$ signifies an activation in the half where $\sin\left(\theta\right)>0$ and $-1$ the other half. 
+$g_\theta$ and $g_{\dot{\theta}}$ are parameter that define the sharpness of the transition of their respective $\tanh$.
+$d_\text{off}$ is a term that offsets $I_\theta$ to create an activation when $\theta = 0$. Since $\theta = 0$ is the resting state of the system, adding the offset avoid the system being blocked in that position.
+$d_\text{bump}$ defines the width of the bump around $\dot{\theta} = 0$. 
+$K_\text{feed}$ is the output gain of the feedback.
+
+\subsection{Spike based feedback}
+
+This last feedback reuses principles from the previous feedback but seek to reach complete neuronal control by using a spiking neuron coupled with a synapse to activate the controller. This approach has the advantage that the with of the pulse sent to the controller remains nearly constant and not influenced by the max rotational speed.
+
+\begin{figure}[!htb]
+    \centering
+    \inserttikzfig{diagrams/spike_feed.tikz}
+    \caption{Diagram of the spike feedback.}
+    \label{fig:spike_feed}
+\end{figure}
+
+\begin{align}
+    I_\theta &= \frac{\alpha_\text{dir}\tanh\left(g_\theta\left(\sin\left(\theta\right)-d_\text{off}\right)\right) + 1}{2} - 1\\
+    I_{\dot{\theta}} &= \frac{\tanh\left(g_{\dot{\theta}}\left(\dot{\theta}+d_\text{bump}\right)\right) -\tanh\left(g_{\dot{\theta}}\left(\dot{\theta}-d_\text{bump}\right)\right)}{2}-1\\
+    V_\text{neur} &= \text{spiking\_neuron}\left(I_\theta + I_{\dot{\theta}}\right)\\
+    I_\text{feed} &= \text{synapse}\left(V_\text{neur}\right)
+\end{align}
+with $\alpha_\text{dir} \in \left[-1;\;1\right]$, $g_\theta, g_{\dot{\theta}}, d_\text{bump}, K_\text{feed} > 0$, $d_\text{off} \in \mathrm{r}$, spiking\_neuron is an instance of the neuron defined in \cref{fig:neuron_mod} and synapse is an instance of the synapse defined in \cref{fig:synapse_mod}.
+
+$\alpha_\text{dir}$ is a parameter relative to the part of the half plane where the feedback should be active, $1$ signifies an activation in the half where $\sin\left(\theta\right)>0$ and $-1$ the other half. 
+$g_\theta$ and $g_{\dot{\theta}}$ are parameter that define the sharpness of the transition of their respective $\tanh$.
+$d_\text{off}$ is a term that offsets $I_\theta$ to create an activation when $\theta = 0$. Since $\theta = 0$ is the resting state of the system, adding the offset avoid the system being blocked in that position.
+$d_\text{bump}$ defines the width of the bump around $\dot{\theta} = 0$. 
+
+The parameter $g_{\text{syn}}$ will be used as the output gain of the feedback instead of a $K_\text{feed}$ parameter. Apart from that the parameters of the spiking neuron and the synapse are
+
+{
+
+\large\centering
+\begin{tabular}{lr|lr}
+    $g_{f-}$    & \qty{-2}{\volt}   & $g_{u+}$          & \qty{1}{\volt}\\
+    $g_{s+}$    & \qty{4}{\volt}    & $I_\text{app}$    & \qty{0.1}{\ampere}\\
+    $g_{s-}$    & \qty{-1}{\volt}   & $d_\text{syn}$    & \qty{-0.5}{\volt}\\
+\end{tabular}
+
+}
+
+while this controller should generate output similar to the simple mixed feedback, the advantage of using a neuron spike is the stability of the with of the pulse. Indeed the width of the mixed feedback is determined in part by the acceleration of the pendulum which is linked to the angle at which the speed crosses $0$. The spike of a neuron does not suffer this problem. Also, a spiking neuron has a refractory period which prevents the neuron from recreating a pulse too quickly. But, due to the inertia of the pendulum, this problem should not be encountered by the mixed feedback either. 
+
+\section{Controller with single motor neuron}
+
+The first use of the feedbacks defined previously is to simply connect the feedback to a bursting neuron that will only be able to apply torque in a single direction. \Cref{fig:one_motor} represents the proposed controller architecture. The output of the bursting neuron is passed through a saturation function that limits the output of the neuron between 0 and 1. This leads to the neuron generating torque only while bursting. The gain a the output of the saturation defines the strength of actuation. 
+
+This controller architecture is naturally imbalanced since the actuation is not symmetric and thus the damping will always lead to a lower amplitude on the side of actuation. 
+
+\begin{figure}[!htb]
+    \centering
+    \inserttikzfig{diagrams/one_motor.tikz}
+    \caption{Diagram of the sensorimotor loop for the single neuron controller. The saturation block limits are \qty{0}{\volt} to \qty{1}{\volt}. The saturation block also contains an internal output gain $\tau_\text{max}$.}
+    \label{fig:one_motor}
+\end{figure}
+
+% plot of one trace (probably speed controller)
+
+\subsection{Performance of the sensorimotor loop}
+
+The performance of a controller can be accessed by its capabilities of generating oscillations with a large and stable amplitude. To study the oscillation resulting from the proposed controller a study of the influence the parameters of the bursting neuron $g_{s-}$, $g_{u+}$ and $I_\text{app}$ and the parameters of the strength of the feedback $K_\text{feed}$ or $g_\text{syn}$ on the oscillation is done. Also, two different output gain $\tau_\text{max} = \qty{1}{\newton\meter\per\volt}$ and $\tau_\text{max} = \qty{10}{\newton\meter\per\volt}$ were used to determine the appropriate force to effectively control the system. 
+
+\Cref{fig:single_t1_low,fig:single_t1_high}  the responses with a low output gain on the torque while \cref{fig:single_t10_low,fig:single_t10_high} show a high output gain. The first thing that is clear when looking at those figures is that $\tau_\text{max} = \qty{1}{\newton\meter\per\volt}$ is not high enough for this system to sustain large oscillation and, by extension, exercise a good control over the oscillation. Indeed the maximum range of oscillation is lower than \qty{0.3}{\radian} while for $\tau_\text{max} = \qty{10}{\newton\meter\per\volt}$ the oscillations reach nearly \qty{3.14}{\radian}. Thus maps using $\tau_\text{max} = \qty{10}{\newton\meter\per\volt}$ are more useful since they display what will be used later. But, the other maps can still be useful to extract behaviors in certain specific situations.
+
+%So, while the maps using $\tau_\text{max} = \qty{1}{\newton\meter\per\volt}$ are still used, most conclusion are drawn from the maps using $\tau_\text{max} = \qty{10}{\newton\meter\per\volt}$.
+
+\Cref{fig:single_t1_low_freq,fig:single_t1_high_freq,fig:single_t10_low_freq,fig:single_t10_high_freq} shows that most of the time the mixed and spiking feedback are able to generate oscillation with lower $I_\text{app}$ compared to the sinusoidal feedback. Now looking at \Cref{fig:single_t10_low_range,fig:single_t10_high_range} shows that the mixed and spiking feedback are able to reach the oscillations with the greatest amplitudes. 
+
+Now looking at $I_\text{app} = \qty{-1}{\ampere}$ and especially $I_\text{app} = \qty{0}{\ampere}$, the maps of the controller with feedback become closer to the map of the controller using no feedback. This indicates that those higher $I_\text{app}$ are not as relevant since they lead to a behavior close to no feedback and this can only lead to poor control. The range of oscillation maps confirm this since they show that higher $I_\text{app}$ lead to far lower oscillation amplitude. This shows the poorness of the control, since a efficient control should be able to generate high amplitude oscillations.
+
+In \cref{fig:single_t10_high_range} the  map of the mixed or the spiking feedback when $I_\text{app}=\qty{-2}{\ampere}$ seems to validate \cref{fig:neuron_burst_spikes,fig:neuron_burst_power} as lowering $g_{s-}$ is well correlated with the amplitude of the oscillations. This shows the link between the value of $g_{s-}$ and the power contained in a burst.
+
+Now comparing the different feedback it seems that the sinusoidal feedback has a behavior different from the mixed and spiked feedback. Meanwhile, the mixed and the spiked feedback have very similar behaviors. This can be explained since the mixed feedback is a spike-like behavior near $\dot{\theta}=0$ and the spike feedback neuron is excited when near to $\dot{\theta}=0$. Thus both feedback generate a spike when the angular velocity is low. But, it must be noted that in \cref{fig:single_t1_high} the spiking feedback generates relatively more oscillation than the mixed feedback model.
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{subfigure}[t][.46\textheight][b]{\textwidth}
+        \centering
+        \caption{Maps of the frequency of the pendulum oscillation.}
+        \inserttikzfig{plots/single_freq_t1.tikz}
+        \label{fig:single_t1_low_freq}
+    \end{subfigure}
+    
+    \begin{subfigure}[b][.46\textheight][t]{\textwidth}
+        \centering
+        \caption{Maps of the range of the pendulum oscillation.}
+        \inserttikzfig{plots/single_range_t1.tikz}
+        \label{fig:single_t1_low_range}
+    \end{subfigure}
+    \caption{Diagram of system behavior with $\tau_\text{max} = \qty{1}{\newton\meter\per\volt}$ and $K_\text{feed} = 1$ or $g_{\text{syn}} = \qty{1}{\siemens}$.}
+    \label{fig:single_t1_low}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{subfigure}[t][.46\textheight][b]{\textwidth}
+        \centering
+        \caption{Maps of the frequency of the pendulum oscillation.}
+        \inserttikzfig{plots/single_freq_t1_high.tikz}
+        \label{fig:single_t1_high_freq}  
+    \end{subfigure}
+    
+    \begin{subfigure}[b][.46\textheight][t]{\textwidth}
+        \centering
+        \caption{Maps of the range of the pendulum oscillation.}
+        \inserttikzfig{plots/single_range_t1_high.tikz}
+        \label{fig:single_t1_high_range}  
+    \end{subfigure}
+    \caption{Diagram of system behavior with $\tau_\text{max}=\qty{1}{\newton\meter\per\volt}$ and $K_\text{feed} = 5$ or $g_{\text{syn}} = \qty{3}{\siemens}$.}
+    \label{fig:single_t1_high}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{subfigure}[t][.46\textheight][b]{\textwidth}
+        \centering
+        \caption{Maps of the frequency of the pendulum oscillation.}
+        \inserttikzfig{plots/single_freq_t10.tikz}
+        \label{fig:single_t10_low_freq}
+    \end{subfigure}
+    
+    \begin{subfigure}[b][.46\textheight][t]{\textwidth}
+        \centering
+        \caption{Maps of the range of the pendulum oscillation.}
+        \inserttikzfig{plots/single_range_t10.tikz}
+        \label{fig:single_t10_low_range}
+    \end{subfigure}
+    \caption{Diagram of system behavior with $\tau_\text{max}=\qty{10}{\newton\meter\per\volt}$ and $K_\text{feed} = 1$ or $g_{\text{syn}} = \qty{1}{\siemens}$.}
+    \label{fig:single_t10_low}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{subfigure}[t][.46\textheight][b]{\textwidth}
+        \centering
+        \caption{Maps of the frequency of the pendulum oscillation.}
+        \inserttikzfig{plots/single_freq_t10_high.tikz}
+        \label{fig:single_t10_high_freq}
+    \end{subfigure}
+    
+    \begin{subfigure}[b][.46\textheight][t]{\textwidth}
+        \centering
+        \caption{Maps of the range of the pendulum oscillation.}
+        \inserttikzfig{plots/single_range_t10_high.tikz}
+        \label{fig:single_t10_high_range}
+    \end{subfigure}
+    \caption{Diagram of system behavior with $\tau_\text{max}=\qty{10}{\newton\meter\per\volt}$ and $K_\text{feed} = 5$ or $g_{\text{syn}} = \qty{3}{\siemens}$.}
+    \label{fig:single_t10_high}
+\end{figure}
+% Compare with bursting frequency
+
+The analysis of the maps seems to point toward low $I_\text{app}$, high $\tau_\text{max}$, high strength of feedback and mixed or spiking feedback as the best controller.
+
+But, the analysis gave rise to the highlight of some zones of interest. \Cref{fig:single_control_traces} shows the oscillation generated in three different interesting zone. 
+
+The first four rows of traces show the behavior of all feedback types at the specific point seen in \cref{fig:single_t10_high} where the uncoupled bursting neuron is able to generate large oscillation. The idea is to investigate why the system have receiving no information about the state of the pendulum is able to generate "good" oscillation and what adding feedback can do in the same situation. Looking at the traces of the angle $\theta$ for the no feedback case, it seems that the frequency of bursting aligns by change with the frequency of pendulum. The match is not perfect since the amplitude of oscillation varies a bit but still remains in a small range. Now looking at the effect of the feedbacks when using the same parameter for bursting and choosing the highest sensory feedback strength, the oscillation pattern does not change. Some phase is introduced between feedback types since the bursting patterns are not in sync but the shape of a burst and the inter-burst frequency is nearly the same in all cases. This highlights a very important behavior, if the neuron has a high base excitatory current, which is the case here since \cref{fig:neuron_activation} indicates that bursting with these parameters starts a bit above $I_\text{app} = \qty{-2}{\ampere}$, then the feedback becomes less effective and thus the connection between the neuron and the mechanical system is diminished. This is the opposite of the desired behavior.
+
+Next, the fifth and sixth rows in \cref{fig:single_control_traces} show a more desirable behavior. There, the mixed and neuron feedback are shown with a better set of parameter seen in \cref{fig:single_t10_high}. Here, the lower base current allows the feedback to dominate the activation of the neuron. This result in a strong connection  between the neuron and the mechanical system. The traces of the oscillation confirm that since they have greater amplitude than for parameter discussed before and are extremely regular. The regularity of those oscillation really demonstrate the link between the neuron and the pendulum since a perfect match between the inter-burst frequency and the oscillation frequency is only possible if the bursting is mostly started by the feedback.
+
+Lastly, for most of the analysis the mixed and the neuronal feedback were grouped together and shown to have identical performances. But they are not the same and in specific cases they display different behaviors. The seventh and eighth rows in in \cref{fig:single_control_traces} display this difference. The parameter are taken from \cref{fig:single_t1_low} where the low current behavior seemed quite different. And indeed the traces confirm they are. The mixed feedback seems to be stuck in a behavior similar to the first row but with far smaller oscillation due to the lower gain on the torque. This appears clearly with the variation of the amplitude of each oscillation and the seemingly constant bursting of the neuron. On the other hand the neuron feedback is able to generate far larger and more regular oscillations despite being subject to the same parameters. This difference can be explained easily when thinking about the nature of the feedback. This boils down to the fact that the mixed feedback is continuous while the neuron feedback is by nature event based. This may seems a  bit strange since the mixed feedback when declared in \cref{sec:speed_feed} was described as generating pulses. But, looking back at the equations governing the feedback reveals that it only holds true if the angular velocity is high and then \cref{eq:speed_bump} is zero except at the peak of the oscillation where the speed is close to zero. In the case where the torque is low the system may become stuck in a pattern of very small oscillation that, due the limited torque and range, do not have the velocity to get out the bump. Thus the mixed feedback can be abstracted as \cref{eq:speed_bump} plus one, which is a feedback only based on the position. In the neuronal cases things are different. Even if the input to the spiking neuron is similar to the mixed feedback, passing this into a neuron transform this continuous feedback into event. If the neuronal feedback was put in the exact same position as the mixed feedback it would spike at a relatively low frequency leading to a more stable activation allowing it to exit the position and generate larger oscillations.
+
+\begin{figure}[!htbp]
+    \centering
+    \inserttikzfig{plots/single_traces.tikz}
+    \caption{Temporal behavior of the single bursting neuron system under different parameters and with different feedback.}
+    \label{fig:single_control_traces}
+\end{figure}
+
+\subsection{Robustness of the sensorimotor loop}
+
+In a real controller it is nearly impossible to achieve the exact theoretical parameters. 
+It is therefore important to analyze the behavior of the controller when the parameters deviate from the ideal values. 
+In the previous section good parameters were found to be around $I_\text{app} = \qty{-2}{\ampere}$, $g_{s-} = \qty{-5}{\siemens}$ and $g_{u+} = \qty{5}{\siemens}$. 
+
+The classical way of doing such an analysis is simply to use Monte-Carlo by sampling the parameters from a certain distribution centered around the ideal values and plot the distributions of relevant output value to visualize the influence of these changing parameters on the control. 
+Before doing this, the robustness can already be assessed in \cref{fig:single_t1_low,fig:single_t1_high,fig:single_t10_low,fig:single_t10_high} by looking at the change in values around the chosen parameters. 
+Since $\tau_\text{max}=\qty{10}{\newton\meter\per\volt}$ and $K_\text{feed} = 5$ or $g_{\text{syn}} = \qty{3}{\siemens}$ gave the best controller results those parameters will be used and thus only \cref{fig:single_t10_high} is relevant. 
+The maps of frequency and oscillation in that figure show us that there is a relative stability around the good parameters at least in the $g_{s-}$ and $g_{u+}$ dimensions. 
+Here, relative stability means that the gradient of in the frequency map and the amplitude map is relatively low in amplitude and there are no big discontinuities.
+
+To have a point of comparison and further prove the point of the previous chapter, the fragile bursting displayed in \cref{fig:neuron_burts_fragile,fig:neuron_burts_comp} is chosen to compare the good parameters with a poor control. 
+To represent this behavior the fragile bursting has the parameters $I_\text{app} = \qty{0}{\ampere}$, $g_{s-} = \qty{-0.1}{\siemens}$ and $g_{u+} = \qty{4}{\siemens}$. $I_\text{app} = \qty{0}{\ampere}$ was chosen to put the fragile neuron in a similar point to the robust neuron meaning being before the natural bursting.
+
+With all that, \cref{fig:single_monte} displays the histograms resulting from the Monte-Carlo simulations on the robust and fragile neuron coupled with all feedbacks previously defined. 
+
+The first observation that can be made by looking at the distribution of in \cref{fig:single_monte_freq} is that the robust neuron is very precise and is able to keep the oscillation at the same frequency except the mixed feedback which displays two very close frequencies. 
+On the other hand the fragile neuron is much worse with the dominant frequency being spread over a large range of frequencies. 
+Especially in the case with no feedback and with sinusoidal feedback. 
+Yet, the mixed feedback is again different from the others with a behavior very similar to the robust neuron except at a slightly higher frequency.
+
+Looking at the the amplitude of oscillation in \cref{fig:single_monte_range} gives a clearer picture of what is happening. 
+The amplitudes of oscillations of the robust neuron are far larger than the oscillations of the fragile neuron. 
+In fact, apart in the case of the mixed feedback, the range of oscillation of the fragile neuron is nearly zero, proving that it is inn effective at generating oscillation. 
+It is also interesting to note that the range of the robust neuron with no feedback is perfectly zero, which is normal since the bursting neuron is inactivated. 
+But, it is not the case for the fragile neuron which shows again that, as presented in \cref{fig:neuron_burts_comp}, the fragile neuron is very sensible to noise.
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{subfigure}[t][.43\textheight][b]{\textwidth}
+        \centering
+        \caption{Histograms of the distribution of the dominant frequency of oscillation.}
+        \inserttikzfig{plots/control_monte.tikz}
+        \label{fig:single_monte_freq}
+    \end{subfigure}
+    
+    \begin{subfigure}[b][.43\textheight][t]{\textwidth}
+        \centering
+        \caption{Histogram of the distribution of the amplitude of oscillation.}
+        \inserttikzfig{plots/control_monte_range.tikz}
+        \label{fig:single_monte_range}
+    \end{subfigure}
+    \caption{Comparison of the robustness of all feedbacks on the single neuron controller using Monte Carlo analysis. The parameters of the robust bursting were sampled from $I_\text{app} \sim \mathcal{N}\left(-2,\, 0.05^2\right) \unit{\ampere}$, $g_{s-} \sim \mathcal{N}\left(-4,\, 0.03^2\right) \unit{\siemens}$ and $g_{u+} \sim \mathcal{N}\left(5,\, 0.05^2\right) \unit{\siemens}$. The parameters of the fragile bursting were sampled from $I_\text{app} \sim \mathcal{N}\left(0,\, 0.05^2\right) \unit{\ampere}$, $g_{s-} \sim \mathcal{N}\left(-0.1,\, 0.03^2\right) \unit{\siemens}$ and $g_{u+} \sim \mathcal{N}\left(4,\, 0.05^2\right) \unit{\siemens}$. Both bursting used $g_{f-} = \qty{-2}{\siemens}$, $g_{s+} = \qty{6}{\siemens}$, $\tau_\text{max} = \qty{10}{\newton\meter\per\volt}$ and $K_\text{feed} = 5$ or $g_{\text{syn}} = \qty{3}{\siemens}$.}
+    \label{fig:single_monte}
+\end{figure}
+
+\Cref{fig:single_monte_robust} is a zoom on the behavior of the robust neuron. 
+This figure highlights what was already supposed previously. The principal frequencies of oscillation are shown to be very stable. 
+The sinusoidal and spiking neuron feedback lead to a single frequency while the mixed feedback lead to two separate frequencies, there is no distribution on the frequency range.
+Now looking at the range of oscillation, while all feedbacks span a similar range of around \qty{0.1}{\radian} the sinusoidal feedback seems to spread more than the other two feedback.
+Those other feedbacks seemed to have a large narrow peak and then a small wider peak with a space of no oscillation between. 
+This shows a more precise control of the mixed and spiking feedback. 
+Yet, this second smaller is strange given the single frequency found.
+This behavior could explained in the case of the mixed feedback with the two separate frequencies but the amount of simulation in the second peak of higher amplitude is higher than the number of simulation in the smallest frequency so this cannot explain the entire peak.
+This is due to the dominant frequency being the frequency with the highest power thus it can be quite stable even if the oscillation changes a bit.
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{subfigure}[t]{\textwidth}
+        \centering
+        \caption{Histograms of the distribution of the dominant frequency of oscillation.}
+        \inserttikzfig{plots/control_monte_robust.tikz}
+        \label{fig:single_monte_freq_robust}
+    \end{subfigure}
+    
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \caption{Histogram of the distribution of the amplitude of oscillation.}
+        \inserttikzfig{plots/control_monte_range_robust.tikz}
+        \label{fig:single_monte_range_robust}
+    \end{subfigure}
+    \caption{Comparison of the robustness of all feedbacks on the single neuron controller using Monte Carlo analysis. The parameters of the bursting were sampled from $I_\text{app} \sim \mathcal{N}\left(-2,\, 0.05^2\right) \unit{\ampere}$, $g_{s-} \sim \mathcal{N}\left(-4,\, 0.03^2\right) \unit{\siemens}$ and $g_{u+} \sim \mathcal{N}\left(5,\, 0.05^2\right) \unit{\siemens}$. The bursting also used $g_{f-} = \qty{-2}{\siemens}$, $g_{s+} = \qty{6}{\siemens}$, $\tau_\text{max} = \qty{10}{\newton\meter\per\volt}$ and $K_\text{feed} = 5$ or $g_{\text{syn}} = \qty{3}{\siemens}$. Zoom on only the behavior of  the robust neuron.}
+    \label{fig:single_monte_robust}
+\end{figure}
+
+\FloatBarrier
+\section{Two neuron "push-pull" controller}
+
+The next step in the controller design is to make it symmetrical by adding a new bursting neuron and another feedback block for it. Also to enforce the alternating activation of the bursting neurons they are mutually connected by inhibitory synapses. This turns the two neurons into an half-center oscillator. This is done two avoid a simultaneous activation of the neurons since it would be suboptimal two push in both rotational directions at the same time. 
+
+Obviously, the feedback to the new bursting neuron will be tailored to mirror the feedback to the first in order to activate in the other half of the rotation plane. 
+
+\begin{figure}[!htb]
+    \centering
+    \inserttikzfig{diagrams/two_motor.tikz}
+    \caption{Diagram of the sensorimotor loop for the two neurons push-pull controller. The saturation block limits are \qty{0}{\volt} to \qty{1}{\volt}. The adding block also contains an internal output gain $\tau_\text{max}$. The bursting neurons are connected by inhibitory synapses.}
+    \label{fig:two_motor}
+\end{figure}
+
+The synapses have the same parameters since the system should be symmetrical. The parameters are $d_\text{syn} = \qty{0.0}{\volt}$ and $g_\text{syn} = \qty{-1}{\siemens}$.
+
+\subsection{Performance of the sensorimotor loop}
+
+Like the test for the single neuron controller, the performances of this new controller can be accessed by its capabilities of generating a stable and large amplitude oscillation. In the same manner, to study this of the proposed controller the parameters of the bursting neuron $g_{s-}$, $g_{u+}$ and $I_\text{app}$ and the parameters of the strength of the feedback $K_\text{feed}$ or $g_\text{syn}$ are varied. Also, two different output gain $\tau_\text{max} = 1$ and $\tau_\text{max} = 10$ are studied to determine the appropriate force to effectively control the system.  % Vary strength of synapse
+
+\Cref{fig:double_t1_low,fig:double_t1_high,fig:double_t10_low,fig:double_t10_high} display the behavior of the double neuron system in the same manner as \cref{fig:single_t1_low,fig:single_t1_high,fig:single_t10_low,fig:single_t10_high} that were used for the single neuron controller.
+
+The first thing that is flagrant in this situation is that the sinusoidal feedback always leads to far lower amplitude of oscillation compared to the mixed of spiking neuron feedback. Except for $\tau_\text{max}=1$ and $K_\text{feed} = 5$ where \cref{fig:double_t1_high} shows that the mixed feedback seems to fail. Those lower oscillations are  mostly due to the feedback being directly linked to angle leading to an activation that is too early and does not manage to reach large amplitudes. Indeed in \cref{fig:double_t1_low,fig:double_t1_high} while still visible, the amplitude displayed is far better since the lower maximum torque restricts the possible oscillation range.
+
+Now, analyzing the amplitude part of the results clearly shows the gain of adding another control neuron allows far greater amplitude to be reached. \Cref{fig:single_t10_high} showed a maximum amplitude around $\pi$ while \cref{fig:double_t1_high} reaches $2\pi$ which is a full circle, that is impressive. 
+
+What is also interesting is that the CPG connection  allows the no feedback system to still generate sizable oscillation. This is linked to the natural oscillatory nature of the connection (see \cref{fig:cpg_time}). Those oscillation lacking sensory feedback are naturally not attuned to the frequency of the pendulum and should generate very chaotic movement. Yet, this displays quite well the usefulness of the CPG, it intrinsically capture the necessary order of actuation of this system.
+ 
+\begin{figure}[!htb]
+    \centering
+    \begin{subfigure}[t][.46\textheight][b]{\textwidth}
+        \centering
+        \caption{Maps of the frequency of the pendulum oscillation.}
+        \inserttikzfig{plots/double_freq_t1.tikz}
+        \label{fig:double_t1_low_freq}
+    \end{subfigure}
+    
+    \begin{subfigure}[b][.46\textheight][t]{\textwidth}
+        \centering
+        \caption{Maps of the range of the pendulum oscillation.}
+        \inserttikzfig{plots/double_range_t1.tikz}
+        \label{fig:double_t1_low_range}
+    \end{subfigure}
+    \caption{Diagram of system behavior with $\tau_\text{max}=1$ and $K_\text{feed} = 1$ or $g_{\text{syn}} = 1$.}
+    \label{fig:double_t1_low}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \begin{subfigure}[t][.46\textheight][b]{\textwidth}
+        \centering
+        \caption{Maps of the frequency of the pendulum oscillation.}
+        \inserttikzfig{plots/double_freq_t1_high.tikz}
+        \label{fig:double_t1_high_freq}  
+    \end{subfigure}
+    
+    \begin{subfigure}[b][.46\textheight][t]{\textwidth}
+        \centering
+        \caption{Maps of the range of the pendulum oscillation.}
+        \inserttikzfig{plots/double_range_t1_high.tikz}
+        \label{fig:double_t1_high_range}  
+    \end{subfigure}
+    \caption{Diagram of system behavior with $\tau_\text{max}=1$ and $K_\text{feed} = 5$ or $g_{\text{syn}} = 3$.}
+    \label{fig:double_t1_high}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \begin{subfigure}[t][.46\textheight][b]{\textwidth}
+        \centering
+        \caption{Maps of the frequency of the pendulum oscillation.}
+        \inserttikzfig{plots/double_freq_t10.tikz}
+        \label{fig:double_t10_low_freq}
+    \end{subfigure}
+    
+    \begin{subfigure}[b][.46\textheight][t]{\textwidth}
+        \centering
+        \caption{Maps of the range of the pendulum oscillation.}
+        \inserttikzfig{plots/double_range_t10.tikz}
+        \label{fig:double_t10_low_range}
+    \end{subfigure}
+    \caption{Diagram of system behavior with $\tau_\text{max}=10$ and $K_\text{feed} = 1$ or $g_{\text{syn}} = 1$.}
+    \label{fig:double_t10_low}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \begin{subfigure}[t][.46\textheight][b]{\textwidth}
+        \centering
+        \caption{Maps of the frequency of the pendulum oscillation.}
+        \inserttikzfig{plots/double_freq_t10_high.tikz}
+        \label{fig:double_t10_high_freq}
+    \end{subfigure}
+    
+    \begin{subfigure}[b][.46\textheight][t]{\textwidth}
+        \centering
+        \caption{Maps of the range of the pendulum oscillation.}
+        \inserttikzfig{plots/double_range_t10_high.tikz}
+        \label{fig:double_t10_high_range}
+    \end{subfigure}
+    \caption{Diagram of system behavior with $\tau_\text{max}=10$ and $K_\text{feed} = 5$ or $g_{\text{syn}} = 3$.}
+    \label{fig:double_t10_high}
+\end{figure}
+
+
+% Compare with CPG frequency
+
+\subsection{Robustness of the sensorimotor loop}
+
+\begin{figure}[!htb]
+    \centering
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \caption{Histogram of the distribution of the dominant frequency.}
+        \inserttikzfig{plots/double_control_monte.tikz}
+        \label{fig:double_monte_freq}
+    \end{subfigure}
+    
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \caption{Histogram of the distribution of the amplitude of oscillation.}
+        \inserttikzfig{plots/double_control_monte_range.tikz}
+        \label{fig:double_monte_range}
+    \end{subfigure}
+    \caption{Comparison of all controllers using Monte Carlo analysis on the controller parameters.}
+    \label{fig:double_monte}
+\end{figure}

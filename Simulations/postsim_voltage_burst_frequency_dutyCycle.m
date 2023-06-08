@@ -1,7 +1,7 @@
 function newout = postsim_voltage_burst_frequency_dutyCycle(o, startAnalyseTime)
-    useful = find(o.V.time >= startAnalyseTime);
-    T = o.V.time(useful);
-    V = o.V.signals.values(useful, 1);
+    useful = find(o.voltage.time >= startAnalyseTime);
+    T = o.voltage.time(useful);
+    V = o.voltage.signals.values(useful, 1);
 
     prev = V(1);
     crossings = zeros(length(T), 1);

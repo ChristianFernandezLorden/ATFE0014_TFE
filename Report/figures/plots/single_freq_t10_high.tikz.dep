@@ -1,0 +1,12 @@
+figures/plots/single_freq_t10_high.tikz.pdf: data/Control/Map/single_nofeed/single_nofeed_freq_t10_im2.csv
+figures/plots/single_freq_t10_high.tikz.pdf: data/Control/Map/single_sin/single_sin_freq_t10_r5_im2.csv
+figures/plots/single_freq_t10_high.tikz.pdf: data/Control/Map/single_speed/single_speed_freq_t10_r5_im2.csv
+figures/plots/single_freq_t10_high.tikz.pdf: data/Control/Map/single_neuron/single_neuron_freq_t10_s3_im2.csv
+figures/plots/single_freq_t10_high.tikz.pdf: data/Control/Map/single_nofeed/single_nofeed_freq_t10_im1.csv
+figures/plots/single_freq_t10_high.tikz.pdf: data/Control/Map/single_sin/single_sin_freq_t10_r5_im1.csv
+figures/plots/single_freq_t10_high.tikz.pdf: data/Control/Map/single_speed/single_speed_freq_t10_r5_im1.csv
+figures/plots/single_freq_t10_high.tikz.pdf: data/Control/Map/single_neuron/single_neuron_freq_t10_s3_im1.csv
+figures/plots/single_freq_t10_high.tikz.pdf: data/Control/Map/single_nofeed/single_nofeed_freq_t10_i0.csv
+figures/plots/single_freq_t10_high.tikz.pdf: data/Control/Map/single_sin/single_sin_freq_t10_r5_i0.csv
+figures/plots/single_freq_t10_high.tikz.pdf: data/Control/Map/single_speed/single_speed_freq_t10_r5_i0.csv
+figures/plots/single_freq_t10_high.tikz.pdf: data/Control/Map/single_neuron/single_neuron_freq_t10_s3_i0.csv

@@ -1,0 +1,48 @@
+\begin{tikzpicture}
+    \begin{groupplot}[
+        group style={
+            % set how the plots should be organized
+            group size=2 by 2,
+            % only show ticklabels and axis labels on the bottom
+            x descriptions at=edge bottom,
+            %y descriptions at=edge left,
+            % set the `vertical sep' to zero
+            vertical sep=0.1\textwidth,
+            horizontal sep=0.13\textwidth,
+        },
+        width=0.45\textwidth,
+        height=0.3\textwidth,
+        %point meta min = 0.3,
+        %point meta max = 1.75,
+        % Remove NaN value from plot
+        %unbounded coords=jump,
+        ylabel=Neuron Voltage, xlabel=Time,
+        y unit=\unit{\volt}, x unit=\unit{\second},
+        %ymin = -7, ymax=0, 
+        xmin=10, xmax=15,
+        ]
+    % start the first plot
+        \nextgroupplot[
+            title={Stable no Noise}
+        ]
+        \addplot[color=blue] table [col sep=comma, x=time, y=1]{data/Neuron/voltage_burst_stable.csv};
+
+    % start the second plot
+        \nextgroupplot[
+            title={Fragile no Noise}
+        ]
+        \addplot[color=blue] table [col sep=comma, x=time, y=1]{data/Neuron/voltage_burst_fragile.csv};
+        
+        \nextgroupplot[
+            title={Stable Noise}
+        ]
+        \addplot[color=blue] table [col sep=comma, x=time, y=1]{data/Neuron/voltage_burst_stable_noise.csv};
+
+        \nextgroupplot[
+            title={Fragile Noise}
+        ]
+        \addplot[color=blue] table [col sep=comma, x=time, y=1]{data/Neuron/voltage_burst_fragile_noise.csv};
+    \end{groupplot}
+\end{tikzpicture}
+
+ 

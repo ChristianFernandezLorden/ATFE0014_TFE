@@ -1,0 +1,12 @@
+figures/plots/double_range_t10.tikz.pdf: data/Control/Map/double_nofeed/double_nofeed_amp_t10_im2.csv
+figures/plots/double_range_t10.tikz.pdf: data/Control/Map/double_sin/double_sin_amp_t10_r1_im2.csv
+figures/plots/double_range_t10.tikz.pdf: data/Control/Map/double_speed/double_speed_amp_t10_r1_im2.csv
+figures/plots/double_range_t10.tikz.pdf: data/Control/Map/double_neuron/double_neuron_amp_t10_s1_im2.csv
+figures/plots/double_range_t10.tikz.pdf: data/Control/Map/double_nofeed/double_nofeed_amp_t10_im1.csv
+figures/plots/double_range_t10.tikz.pdf: data/Control/Map/double_sin/double_sin_amp_t10_r1_im1.csv
+figures/plots/double_range_t10.tikz.pdf: data/Control/Map/double_speed/double_speed_amp_t10_r1_im1.csv
+figures/plots/double_range_t10.tikz.pdf: data/Control/Map/double_neuron/double_neuron_amp_t10_s1_im1.csv
+figures/plots/double_range_t10.tikz.pdf: data/Control/Map/double_nofeed/double_nofeed_amp_t10_i0.csv
+figures/plots/double_range_t10.tikz.pdf: data/Control/Map/double_sin/double_sin_amp_t10_r1_i0.csv
+figures/plots/double_range_t10.tikz.pdf: data/Control/Map/double_speed/double_speed_amp_t10_r1_i0.csv
+figures/plots/double_range_t10.tikz.pdf: data/Control/Map/double_neuron/double_neuron_amp_t10_s1_i0.csv

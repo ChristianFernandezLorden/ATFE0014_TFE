@@ -1,0 +1,4 @@
+figures/plots/cpg_activation.tikz.pdf: data/CPG/cpg_activation_gsyn0.2.csv
+figures/plots/cpg_activation.tikz.pdf: data/CPG/cpg_activation_gsyn0.5.csv
+figures/plots/cpg_activation.tikz.pdf: data/CPG/cpg_activation_gsyn1.0.csv
+figures/plots/cpg_activation.tikz.pdf: data/CPG/cpg_activation_gsyn2.0.csv

@@ -1,31 +1,63 @@
 \documentclass[12pt, twoside]{report}
 
-\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm,bindingoffset=6mm,headheight=10mm]{geometry}
+\usepackage{shellesc}
+
+\usepackage[a4paper,width=150mm,top=30mm,bottom=40mm,bindingoffset=6mm,headheight=10mm]{geometry}
 
 \usepackage{fancyhdr}
 
-\usepackage{biblatex}
-\addbibresource{references.bib}
+%\usepackage{biblatex}
+\usepackage[square,numbers]{natbib}
+%\addbibresource{references.bib}
+\bibliographystyle{abbrvnat}
 
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
 
+\usepackage{siunitx}
+
+\usepackage{placeins}
+
+\usepackage{csquotes}
+
+\usepackage{enumitem}
 
 %%% Tikz 
 \usepackage{tikz}
-\usepackage{pgfplots}\pgfplotsset{compat=1.13}
+\usepackage{pgfplots}\pgfplotsset{compat=1.18}
+%\usepackage{pgfplotstable}
 \usepackage{pgfmath}
-\usetikzlibrary{calc}
+\usetikzlibrary{arrows.meta,positioning,calc,intersections,external,shapes,angles,patterns,quotes}
+\usepgfplotslibrary{units, groupplots, statistics, colormaps}
+
+\usepgfplotslibrary{external}
+\tikzexternalize
+\tikzsetexternalprefix{figures/}
+%\tikzset{external/force remake}
+%\tikzset{external/remake next}
+
+\newcommand{\inserttikzfig}[1]{
+\tikzsetnextfilename{#1}%image name
+\input{#1}}
 
 \usepackage{amsmath} % for the equation* environment
 \usepackage{amsfonts}
 \usepackage{amssymb}
 
+\usepackage{caption}
+\usepackage{subcaption}
 
 \usepackage{hyperref}
 
-\newcommand{\mytitle}{Neuromorphic CPG for Motor Control}
-\newcommand{\mysubtitle}{A neuromorphological approach to quadriped motion}
+\usepackage{cleveref}
+
+\crefname{figure}{figure}{figures}
+\Crefname{figure}{Figure}{Figures}
+\crefname{equation}{equation}{equations}
+\Crefname{equation}{Equation}{Equations}
+
+\newcommand{\mytitle}{Neuromorphic control of embodied central pattern generators}
+\newcommand{\mysubtitle}{A neuromorphological approach to motion}
 \newcommand{\myname}{Christian Fernandez Lorden}
 \newcommand{\mychaptername}{Undefined}
 \newcommand{\mychapterdesignation}{Chapter}
@@ -70,27 +102,40 @@
     \tableofcontents
     \renewcommand{\mychaptername}{Contents}
     
+
     \mychapter{Introduction}
     \input{chapters/introduction.tex}
+    
+    \mychapter{Neurons and CPGs}
+    % Principle of models 
+    % CPG and feedback => embodied
+    % Rhytms , excitablility
+    % Connection of CPG and motor rythms
+    \input{chapters/neuronandcpg.tex}
+    
+    \mychapter{Modeling and analysis of neuronal circuits.}
+    \input{chapters/neuroncircuits.tex}
 
-    \mychapter{Chapter Two Title}
-    %\input{chapters/chapter02.tex}
+    \mychapter{A neuromorphic sensorimotor loop for pendulum swing}
+    \input{chapters/pendulum.tex}
 
-    \mychapter{Chapter Three Title}
-    %\input{chapters/chapter03.tex}
+    \mychapter{Neuromodulation for adaptive amplitude control}
+    \input{chapters/neuromod.tex}
 
-    \mychapter{Chapter Four Title}
-    %\input{chapters/chapter04.tex}
+    %\mychapter{Network of pendulums and gait patterns}
+    %\input{chapters/network.tex}
 
     \mychapter{Conclusion}
-    %\input{chapters/conclusion.tex}
+    \input{chapters/conclusion.tex}
     \newpage
     \renewcommand{\mychaptername}{Bibliography}
-    \printbibliography
+    
+    \bibliography{references}
+    
     \newpage
     \appendix
     \renewcommand{\mychapterdesignation}{Appendix}
-    \mychapter{Appendix Title}
+    \mychapter{Signal Analysis Algorithms}
     %\input{chapters/appendix.tex}
 \end{document}
 

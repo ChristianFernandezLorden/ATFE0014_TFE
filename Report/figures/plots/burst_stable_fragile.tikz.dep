@@ -1,0 +1,4 @@
+figures/plots/burst_stable_fragile.tikz.pdf: data/Neuron/voltage_burst_stable.csv
+figures/plots/burst_stable_fragile.tikz.pdf: data/Neuron/voltage_burst_fragile.csv
+figures/plots/burst_stable_fragile.tikz.pdf: data/Neuron/voltage_burst_stable_noise.csv
+figures/plots/burst_stable_fragile.tikz.pdf: data/Neuron/voltage_burst_fragile_noise.csv

@@ -1,0 +1,9 @@
+figures/plots/gain_modulation.tikz.pdf: data/Neuromod/map/mod_gain_time_amppi6.csv
+figures/plots/gain_modulation.tikz.pdf: data/Neuromod/map/mod_gain_time_amppi3.csv
+figures/plots/gain_modulation.tikz.pdf: data/Neuromod/map/mod_gain_time_amppi2.csv
+figures/plots/gain_modulation.tikz.pdf: data/Neuromod/map/mod_gain_amplitude_amppi6.csv
+figures/plots/gain_modulation.tikz.pdf: data/Neuromod/map/mod_gain_amplitude_amppi3.csv
+figures/plots/gain_modulation.tikz.pdf: data/Neuromod/map/mod_gain_amplitude_amppi2.csv
+figures/plots/gain_modulation.tikz.pdf: data/Neuromod/map/mod_gain_range_amppi6.csv
+figures/plots/gain_modulation.tikz.pdf: data/Neuromod/map/mod_gain_range_amppi3.csv
+figures/plots/gain_modulation.tikz.pdf: data/Neuromod/map/mod_gain_range_amppi2.csv

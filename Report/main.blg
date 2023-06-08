@@ -1,15 +1,48 @@
-[0] Config.pm:306> INFO - This is Biber 2.18
-[0] Config.pm:309> INFO - Logfile is 'main.blg'
-[146] biber-MSWIN64:340> INFO - === 
-[179] Biber.pm:418> INFO - Reading 'main.bcf'
-[261] Biber.pm:978> INFO - Found 1 citekeys in bib section 0
-[271] Biber.pm:4401> INFO - Processing section 0
-[281] Biber.pm:4592> INFO - Looking for bibtex file 'references.bib' for section 0
-[338] bibtex.pm:1713> INFO - LaTeX decoding ...
-[344] bibtex.pm:1518> INFO - Found BibTeX data source 'references.bib'
-[374] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[374] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[374] Biber.pm:4221> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[374] Biber.pm:4227> INFO - No sort tailoring available for locale 'en-US'
-[375] bbl.pm:654> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[375] bbl.pm:757> INFO - Output to main.bbl
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: abbrvnat.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Database file #1: references.bib
+You've used 11 entries,
+            2773 wiz_defined-function locations,
+            683 strings with 6727 characters,
+and the built_in function-call counts, 5963 in all, are:
+= -- 525
+> -- 356
+< -- 7
++ -- 118
+- -- 107
+* -- 506
+:= -- 910
+add.period$ -- 36
+call.type$ -- 11
+change.case$ -- 66
+chr.to.int$ -- 11
+cite$ -- 22
+duplicate$ -- 266
+empty$ -- 482
+format.name$ -- 122
+if$ -- 1271
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 12
+newline$ -- 63
+num.names$ -- 50
+pop$ -- 128
+preamble$ -- 1
+purify$ -- 55
+quote$ -- 0
+skip$ -- 203
+stack$ -- 0
+substring$ -- 268
+swap$ -- 38
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 116
+warning$ -- 0
+while$ -- 52
+width$ -- 0
+write$ -- 156

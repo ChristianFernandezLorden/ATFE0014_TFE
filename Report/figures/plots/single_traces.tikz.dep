@@ -1,0 +1,16 @@
+figures/plots/single_traces.tikz.pdf: data/Control/time/voltage_single_nofeed_i0.csv
+figures/plots/single_traces.tikz.pdf: data/Control/time/angle_single_nofeed_i0.csv
+figures/plots/single_traces.tikz.pdf: data/Control/time/voltage_single_sin_i0.csv
+figures/plots/single_traces.tikz.pdf: data/Control/time/angle_single_sin_i0.csv
+figures/plots/single_traces.tikz.pdf: data/Control/time/voltage_single_speed_i0.csv
+figures/plots/single_traces.tikz.pdf: data/Control/time/angle_single_speed_i0.csv
+figures/plots/single_traces.tikz.pdf: data/Control/time/voltage_single_neuron_i0.csv
+figures/plots/single_traces.tikz.pdf: data/Control/time/angle_single_neuron_i0.csv
+figures/plots/single_traces.tikz.pdf: data/Control/time/voltage_single_speed_im2.csv
+figures/plots/single_traces.tikz.pdf: data/Control/time/angle_single_speed_im2.csv
+figures/plots/single_traces.tikz.pdf: data/Control/time/voltage_single_neuron_im2.csv
+figures/plots/single_traces.tikz.pdf: data/Control/time/angle_single_neuron_im2.csv
+figures/plots/single_traces.tikz.pdf: data/Control/time/voltage_single_speed_im2_low.csv
+figures/plots/single_traces.tikz.pdf: data/Control/time/angle_single_speed_im2_low.csv
+figures/plots/single_traces.tikz.pdf: data/Control/time/voltage_single_neuron_im2_low.csv
+figures/plots/single_traces.tikz.pdf: data/Control/time/angle_single_neuron_im2_low.csv

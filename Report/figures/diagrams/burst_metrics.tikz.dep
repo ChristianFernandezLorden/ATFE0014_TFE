@@ -1,0 +1,1 @@
+figures/diagrams/burst_metrics.tikz.pdf: data/Neuron/voltage_burst_stable.csv

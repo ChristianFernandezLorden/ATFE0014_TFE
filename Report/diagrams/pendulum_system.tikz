@@ -1,0 +1,40 @@
+\begin{tikzpicture}
+    \node (A) [cylinder, shape border rotate=90, draw,minimum height=6cm,minimum width=2cm, rotate=30] {};
+    \coordinate (top_middle) at ($(A.before top)!0.5!(A.after top)$);
+    \coordinate (bottom_middle) at ($(A.before bottom)!0.5!(A.after bottom)$);
+    
+    \fill (top_middle) circle (1pt);
+    
+    \coordinate (radius_center) at ($(bottom_middle)!1.0!(top_middle)$);
+    \coordinate (radius_edge) at ($(A.before bottom)!1.0!(A.after top)$);
+    \draw[blue,Latex-Latex] (radius_center) -- (radius_edge) node [midway, above] {$r$};
+    \draw[dashed] (top_middle) -- (radius_center); 
+    \draw[dashed] (A.after top) -- (radius_edge); 
+    
+    \coordinate (height_top) at ($(A.before top)!1.2!(A.after top)$);
+    \coordinate (height_bottom) at ($(A.after bottom)!1.2!(A.before bottom)$);
+    \draw[blue,Latex-Latex] (height_top) -- (height_bottom) node [midway, above right] {$h$};
+    \draw[dashed] (A.after top) -- (height_top);
+    \draw[dashed] (A.before bottom) -- (height_bottom);
+    
+    \coordinate (top_middle_below) at ([yshift=-5.5cm]top_middle);
+    \draw[gray, dashed, -Latex] (top_middle) -- (top_middle_below);
+    \draw[dashed] (top_middle) -- ($(top_middle)!1.09!(bottom_middle)$);
+    
+    \node[blue, above right] at ($(top_middle)!0.5!(bottom_middle)$) {$\rho$};
+    
+    \pic[draw, red, text=red, -Latex, "$\theta$", angle eccentricity=1.1,angle radius=4cm] {angle = top_middle_below--top_middle--bottom_middle};
+    
+    \draw[red, -Latex] (bottom_middle) -- ($(bottom_middle)!0.5!(A.before bottom)$) node [midway, above] {$\dot{\theta}$};
+    
+    \draw[blue, -Latex] ([xshift=3.7cm]top_middle) -- ++(0,-2) node [midway, right] {$\boldsymbol{g}$};
+    
+    \coordinate (left_torque) at ([shift={(-2, -2)}]top_middle);
+    \coordinate (right_torque) at ([shift={(2, -2)}]top_middle);
+    
+    \coordinate (left_friction) at ([shift={(-2, -4)}]top_middle);
+    \coordinate (right_friction) at ([shift={(2, -4)}]top_middle);
+    
+    \pic[draw, green, text=green, -Latex, "$\tau$", angle eccentricity=0.8,angle radius=0.5cm] {angle = left_torque--top_middle--right_torque};
+    \pic[draw, blue, text=blue, Latex-, "$\tau_f$", angle eccentricity=1.3,angle radius=0.8cm] {angle = left_friction--top_middle--right_friction};
+\end{tikzpicture}  

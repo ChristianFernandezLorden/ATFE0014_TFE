@@ -1,0 +1,131 @@
+\begin{tikzpicture}
+    \begin{groupplot}[
+        group style={
+            % set how the plots should be organized
+            group size=4 by 2,
+            % only show ticklabels and axis labels on the bottom
+            x descriptions at=edge bottom,
+            y descriptions at=edge right,
+            % set the `vertical sep' to zero
+            vertical sep=0.02\textwidth,
+            horizontal sep=0.03\textwidth,
+        },
+        width=0.28\textwidth,
+        height=0.33\textwidth,
+        %point meta min = 0.3,
+        %point meta max = 1.75,
+        %mesh/ordering=x varies, 
+        % Remove NaN value from plot
+        %unbounded coords=jump,
+        %xlabel=$g_{u+}$, 
+        ylabel=\# Simulations,
+        %ytick=\empty,
+        %yticklabels={,,},
+        xlabel=Frequency,
+        x unit=\unit{\hertz},
+        ymin=0, ymax=2000,
+        xmin=0, xmax=1.5,
+        %ymin = -7, ymax=0, xmin=1, xmax=9,
+        ]
+    % start the first plot
+        \nextgroupplot[
+            title={No Control}
+        ]
+        \addplot [
+            hist={bins=20},%, data min=-2.5, data max=2.5},
+            fill=blue, draw=none,
+        ] table [y=value] {data/Control/monte/double_nofeed_monte_normal.csv};
+        
+        \nextgroupplot[
+            title={Sin Control}
+        ]
+        \addplot [
+            hist={bins=20},%, data min=-2.5, data max=2.5},
+            fill=blue, draw=none,
+        ] table [y=value] {data/Control/monte/double_sin_monte_normal.csv};
+
+        \nextgroupplot[
+            title={Speed Control}
+        ]
+        \addplot [
+            hist={bins=20},%, data min=-2.5, data max=2.5},
+            fill=blue, draw=none,
+        ] table [y=value] {data/Control/monte/double_speed_monte_normal.csv};
+        
+        \nextgroupplot[
+            title={Neuron Control}
+        ]
+        \addplot [
+            hist={bins=20},%, data min=-2.5, data max=2.5},
+            fill=blue, draw=none,
+        ] table [y=value] {data/Control/monte/double_neuron_monte_normal.csv};
+        
+        
+        \nextgroupplot[]
+        \addplot [
+            hist={bins=20},%, data min=-2.5, data max=2.5},
+            fill=blue, draw=none,
+        ] table [y=value] {data/Control/monte/double_nofeed_monte_fragile.csv};
+        
+        \nextgroupplot[]
+        \addplot [
+            hist={bins=20},%, data min=-2.5, data max=2.5},
+            fill=blue, draw=none,
+        ] table [y=value] {data/Control/monte/double_sin_monte_fragile.csv};
+        
+        \nextgroupplot[]
+        \addplot [
+            hist={bins=20},%, data min=-2.5, data max=2.5},
+            fill=blue, draw=none,
+        ] table [y=value] {data/Control/monte/double_speed_monte_fragile.csv};
+        
+        \nextgroupplot[]
+        \addplot [
+            hist={bins=20},%, data min=-2.5, data max=2.5},
+            fill=blue, draw=none,
+        ] table [y=value] {data/Control/monte/double_neuron_monte_fragile.csv};
+    \end{groupplot}
+    
+    \begin{groupplot}[
+        group style={
+            % set how the plots should be organized
+            group size=4 by 2,
+            % only show ticklabels and axis labels on the bottom
+            %x descriptions at=edge bottom,
+            y descriptions at=edge left,
+            % set the `vertical sep' to zero
+            vertical sep=0.02\textwidth,
+            horizontal sep=0.02\textwidth,
+        },
+        width=0.28\textwidth,
+        height=0.33\textwidth,
+        %point meta min = 0.3,
+        %point meta max = 1.75,
+        %mesh/ordering=x varies, 
+        % Remove NaN value from plot
+        %unbounded coords=jump,
+        %xlabel=$g_{u+}$, 
+        %ylabel=Number of Simulation,
+        %ymin = -7, ymax=0, xmin=1, xmax=9,
+        xmin=0, xmax=0, ymin=0, ymax=0,
+        xtick=\empty, ytick=\empty,
+        axis line style=transparent,
+        ]
+
+    \nextgroupplot[ylabel=Robust Bursting,]
+    
+    \nextgroupplot[]
+    
+    \nextgroupplot[]
+    
+    \nextgroupplot[]
+    
+    \nextgroupplot[ylabel=Fragile Bursting,]
+    
+    \nextgroupplot[]
+    
+    \nextgroupplot[]
+    
+    \nextgroupplot[]
+  \end{groupplot}
+\end{tikzpicture}

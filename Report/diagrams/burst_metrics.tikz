@@ -1,0 +1,108 @@
+\begin{tikzpicture}
+    \begin{axis}[
+            width=.95\textwidth,
+            height=0.55\textwidth,
+            hide axis,
+            %grid=both,
+            %grid style={line width=.2pt, draw=gray!30},
+            %ylabel=Neuron Output,
+            %y unit=\unit{\volt},
+            ymin=-6, ymax=7.5,
+            xmin=11, xmax=12.1,
+        ]
+        \addplot[color=blue, name path global=burst] table [col sep=comma, x=time, y=1]{data/Neuron/voltage_burst_stable.csv};
+        \path[name path=hor] (11,0) -- (12.1,0);
+        
+        \coordinate (up_height) at (11, 6);
+        \coordinate (mid_height) at (11, 3.5);
+        \coordinate (down_height) at (11, -5);
+        
+        % compute intersection of the burst with the zero line
+        \path[name intersections={of=burst and hor}];
+        
+        % Fill draw all computed intersections
+        \filldraw[black] (intersection-1) circle[radius=.8pt];
+        \filldraw[black] (intersection-9) circle[radius=.8pt];
+        \filldraw[black] (intersection-11) circle[radius=.8pt];
+        \filldraw[black] (intersection-20) circle[radius=.8pt];
+        \filldraw[black] (intersection-21) circle[radius=.8pt];
+        
+        \draw [black, dashed] (intersection-1) -- (intersection-1|-up_height);
+        \draw [black, dashed] (intersection-20) -- (intersection-20|-up_height);
+        \draw [red,stealth-stealth] (intersection-1|-up_height)  -- (intersection-20|-up_height);
+        \coordinate (b_length) at ($(intersection-1)!0.5!(intersection-20)$);
+        \node [above] at (b_length|-up_height) {Burst length};
+        
+        
+        \draw [black, dashed] (intersection-1) -- (intersection-1|-down_height);
+        \draw [black, dashed] (intersection-21) -- (intersection-21|-down_height);
+        \draw [red,stealth-stealth](intersection-1|-down_height)  -- (intersection-21|-down_height);
+        \coordinate (b_period) at ($(intersection-1)!0.5!(intersection-21)$);
+        \node [above] at (b_period|-down_height) {Burst period};
+        
+        \draw [black, dashed] (intersection-20) -- (intersection-20|-up_height);
+        \draw [black, dashed] (intersection-21) -- (intersection-21|-up_height);
+        \draw [red,stealth-stealth](intersection-20|-up_height)  -- (intersection-21|-up_height);
+        \coordinate (rest_period) at ($(intersection-20)!0.5!(intersection-21)$);
+        \node [above] at (rest_period|-up_height) {Rest length};
+        
+        
+        \draw [black, dashed] (intersection-9) -- (intersection-9|-mid_height);
+        \draw [black, dashed] (intersection-11) -- (intersection-11|-mid_height);
+        \draw [red,{stealth[scale=0.7]}-{stealth[scale=0.7]}](intersection-9|-mid_height)  -- (intersection-11|-mid_height);
+        \coordinate (s_period) at ($(intersection-9)!0.5!(intersection-11)$);
+        \node [above] at (s_period|-mid_height) {Spike period};
+        
+        \coordinate (tmp) at ($(intersection-21)!0.5!(intersection-22)$);
+        \coordinate (tmp_h) at (11, 4.35);
+        \node[above,scale=0.6] (spike-1) at ([xshift=-0.04cm]tmp|-tmp_h) {$1$};
+        
+        \coordinate (tmp) at ($(intersection-23)!0.5!(intersection-24)$);
+        \coordinate (tmp_h) at (11, 2.5);
+        \node[above,scale=0.6] (spike-2) at ([xshift=-0.04cm]tmp|-tmp_h) {$2$};
+        
+        \coordinate (tmp) at ($(intersection-25)!0.5!(intersection-26)$);
+        \coordinate (tmp_h) at (11, 2.49);
+        \node[above,scale=0.6] (spike-3) at ([xshift=-0.04cm]tmp|-tmp_h) {$3$};
+        
+        \coordinate (tmp) at ($(intersection-27)!0.5!(intersection-28)$);
+        \coordinate (tmp_h) at (11, 2.48);
+        \node[above,scale=0.6] (spike-4) at ([xshift=-0.04cm]tmp|-tmp_h) {$4$};
+        
+        \coordinate (tmp) at ($(intersection-29)!0.5!(intersection-30)$);
+        \coordinate (tmp_h) at (11, 2.46);
+        \node[above,scale=0.6] (spike-5) at ([xshift=-0.04cm]tmp|-tmp_h) {$5$};
+        
+        \coordinate (tmp) at ($(intersection-31)!0.5!(intersection-32)$);
+        \coordinate (tmp_h) at (11, 2.45);
+        \node[above,scale=0.6] (spike-6) at ([xshift=-0.04cm]tmp|-tmp_h) {$6$};
+        
+        \coordinate (tmp) at ($(intersection-33)!0.5!(intersection-34)$);
+        \coordinate (tmp_h) at (11, 2.435);
+        \node[above,scale=0.6] (spike-7) at ([xshift=-0.04cm]tmp|-tmp_h) {$7$};
+        
+        \coordinate (tmp) at ($(intersection-35)!0.5!(intersection-36)$);
+        \coordinate (tmp_h) at (11, 2.42);
+        \node[above,scale=0.6] (spike-8) at ([xshift=-0.04cm]tmp|-tmp_h) {$8$};
+        
+        \coordinate (tmp) at ($(intersection-37)!0.5!(intersection-38)$);
+        \coordinate (tmp_h) at (11, 2.41);
+        \node[above,scale=0.6] (spike-9) at ([xshift=-0.04cm]tmp|-tmp_h) {$9$};
+        
+        \coordinate (tmp) at ($(intersection-39)!0.5!(intersection-40)$);
+        \coordinate (tmp_h) at (11, 2.4);
+        \node[above,scale=0.6] (spike-10) at ([xshift=-0.04cm]tmp|-tmp_h) {$10$};
+        
+        \node [above] (nb_spike) at (spike-7|-up_height) {Number of spikes};
+        \draw[red] (spike-1) -- (nb_spike);
+        \draw[red] (spike-2) -- (nb_spike);
+        \draw[red] (spike-3) -- (nb_spike);
+        \draw[red] (spike-4) -- (nb_spike);
+        \draw[red] (spike-5) -- (nb_spike);
+        \draw[red] (spike-6) -- (nb_spike);
+        \draw[red] (spike-7) -- (nb_spike);
+        \draw[red] (spike-8) -- (nb_spike);
+        \draw[red] (spike-9) -- (nb_spike);
+        \draw[red] (spike-10) -- (nb_spike);
+    \end{axis}
+\end{tikzpicture}  

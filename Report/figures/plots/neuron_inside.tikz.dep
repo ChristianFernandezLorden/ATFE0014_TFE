@@ -1,0 +1,8 @@
+figures/plots/neuron_inside.tikz.pdf: data/Neuron/voltage_inside_burst.csv
+figures/plots/neuron_inside.tikz.pdf: data/Neuron/current_inside_burst.csv
+figures/plots/neuron_inside.tikz.pdf: data/Neuron/voltage_inside_burst.csv
+figures/plots/neuron_inside.tikz.pdf: data/Neuron/current_inside_burst.csv
+figures/plots/neuron_inside.tikz.pdf: data/Neuron/voltage_inside_burst.csv
+figures/plots/neuron_inside.tikz.pdf: data/Neuron/current_inside_burst.csv
+figures/plots/neuron_inside.tikz.pdf: data/Neuron/voltage_inside_burst.csv
+figures/plots/neuron_inside.tikz.pdf: data/Neuron/current_inside_burst.csv

@@ -1,0 +1,1 @@
+figures/plots/freq_burst_map.tikz.pdf: data/Neuron/single_neuron_activation.csv

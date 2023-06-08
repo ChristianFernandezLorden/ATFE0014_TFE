@@ -1,30 +1,82 @@
-% $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.2 $
-% Do not modify the above lines!
-%
-% This is an auxiliary file used by the 'biblatex' package.
-% This file may safely be deleted. It will be recreated by
-% biber as required.
-%
-\begingroup
-\makeatletter
-\@ifundefined{ver@biblatex.sty}
-  {\@latex@error
-     {Missing 'biblatex' package}
-     {The bibliography requires the 'biblatex' package.}
-      \aftergroup\endinput}
-  {}
-\endgroup
+\begin{thebibliography}{11}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
+\bibitem[Cangelosi et~al.(2015)Cangelosi, Bongard, Fischer, and
+  Nolfi]{embodiedDef}
+A.~Cangelosi, J.~Bongard, M.~H. Fischer, and S.~Nolfi.
+\newblock Embodied intelligence.
+\newblock In J.~Kacprzyk and W.~Pedrycz, editors, \emph{Springer Handbook of
+  Computational Intelligence}, pages 697--714. Springer Berlin Heidelberg,
+  Berlin, Heidelberg, 2015.
 
-\refsection{0}
-  \datalist[entry]{nty/global//global/global}
-    \entry{test_bib}{article}{}
-      \field{sortinit}{0}
-      \field{sortinithash}{c5602f03f17cc894ea7a6362c3cb0e13}
-      \field{year}{0}
-    \endentry
-  \enddatalist
-\endrefsection
-\endinput
+\bibitem[Franci et~al.(2018)Franci, Drion, and Sepulchre]{burstingSlowFeedback}
+A.~Franci, G.~Drion, and R.~Sepulchre.
+\newblock Robust and tunable bursting requires slow positive feedback.
+\newblock \emph{Journal of Neurophysiology}, 119\penalty0 (3):\penalty0
+  1222--1234, 2018.
 
+\bibitem[Grillner(2006)]{cpgMotion2}
+S.~Grillner.
+\newblock Biological pattern generation: The cellular and computational logic
+  of networks in motion.
+\newblock \emph{Neuron}, 52\penalty0 (5):\penalty0 751--766, 2006.
+
+\bibitem[Hodgkin et~al.(1949)Hodgkin, Huxley, and Katz]{neuronIons}
+A.~Hodgkin, A.~Huxley, and B.~Katz.
+\newblock Ionic currents underlying activity in the giant axon of the squid.
+\newblock \emph{Arch. Sci. Physiol.}, 3:\penalty0 129--150, 1949.
+
+\bibitem[Hodgkin and Huxley(1952)]{conductanceModel}
+A.~L. Hodgkin and A.~F. Huxley.
+\newblock A quantitative description of membrane current and its application to
+  conduction and excitation in nerve.
+\newblock \emph{The Journal of physiology}, 117\penalty0 (4):\penalty0 500,
+  1952.
+
+\bibitem[Lodish et~al.(1999)Lodish, Berk, Matsudaira, Kaiser, Krieger, Scott,
+  Zipursky, and Darnell]{channelDiagram}
+H.~Lodish, A.~Berk, P.~Matsudaira, C.~A. Kaiser, M.~Krieger, M.~P. Scott,
+  L.~Zipursky, and J.~Darnell.
+\newblock \emph{Molecular Cell Biology}.
+\newblock WH Freeman and Company and Sumanas, Media Connected, 4th edition,
+  1999.
+
+\bibitem[Marder and Bucher(2001)]{cpgMotion}
+E.~Marder and D.~Bucher.
+\newblock Central pattern generators and the control of rhythmic movements.
+\newblock \emph{Current Biology}, 11\penalty0 (23):\penalty0 R986--R996, 2001.
+
+\bibitem[Sepulchre et~al.(2018)Sepulchre, Drion, and Franci]{excDef}
+R.~Sepulchre, G.~Drion, and A.~Franci.
+\newblock Excitable behaviors.
+\newblock In R.~Tempo, S.~Yurkovich, and P.~Misra, editors, \emph{Emerging
+  Applications of Control and Systems Theory: A Festschrift in Honor of
+  Mathukumalli Vidyasagar}, pages 269--280. Springer International Publishing,
+  Cham, 2018.
+
+\bibitem[Sharp et~al.(1996)Sharp, Skinner, and Marder]{halfcenter}
+A.~A. Sharp, F.~K. Skinner, and E.~Marder.
+\newblock Mechanisms of oscillation in dynamic clamp constructed two-cell
+  half-center circuits.
+\newblock \emph{Journal of Neurophysiology}, 76\penalty0 (2):\penalty0
+  867--883, 1996.
+
+\bibitem[Straub(2009)]{cpgDef}
+V.~A. Straub.
+\newblock Central pattern generator.
+\newblock In M.~D. Binder, N.~Hirokawa, and U.~Windhorst, editors,
+  \emph{Encyclopedia of Neuroscience}, pages 650--654. Springer Berlin
+  Heidelberg, Berlin, Heidelberg, 2009.
+
+\bibitem[Vazifehkhah~Ghaffari et~al.(2017)Vazifehkhah~Ghaffari, Kouhnavard, and
+  Elbasiouny]{electricDiagram}
+B.~Vazifehkhah~Ghaffari, M.~Kouhnavard, and S.~Elbasiouny.
+\newblock Mixed-mode oscillations in pyramidal neurons under antiepileptic drug
+  conditions.
+\newblock \emph{PLoS One}, 12\penalty0 (6):\penalty0 e0178244, 2017.
+
+\end{thebibliography}

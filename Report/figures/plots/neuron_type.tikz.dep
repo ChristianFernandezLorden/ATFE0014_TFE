@@ -1,0 +1,15 @@
+figures/plots/neuron_type.tikz.pdf: data/Neuron/Map/neuron_Iappm2_spiking.csv
+figures/plots/neuron_type.tikz.pdf: data/Neuron/Map/neuron_Iappm2_bursting.csv
+figures/plots/neuron_type.tikz.pdf: data/Neuron/Map/neuron_Iappm2_plateau.csv
+figures/plots/neuron_type.tikz.pdf: data/Neuron/Map/neuron_Iappm1_spiking.csv
+figures/plots/neuron_type.tikz.pdf: data/Neuron/Map/neuron_Iappm1_bursting.csv
+figures/plots/neuron_type.tikz.pdf: data/Neuron/Map/neuron_Iappm1_plateau.csv
+figures/plots/neuron_type.tikz.pdf: data/Neuron/Map/neuron_Iapp0_spiking.csv
+figures/plots/neuron_type.tikz.pdf: data/Neuron/Map/neuron_Iapp0_bursting.csv
+figures/plots/neuron_type.tikz.pdf: data/Neuron/Map/neuron_Iapp0_plateau.csv
+figures/plots/neuron_type.tikz.pdf: data/Neuron/Map/neuron_Iappp1_spiking.csv
+figures/plots/neuron_type.tikz.pdf: data/Neuron/Map/neuron_Iappp1_bursting.csv
+figures/plots/neuron_type.tikz.pdf: data/Neuron/Map/neuron_Iappp1_plateau.csv
+figures/plots/neuron_type.tikz.pdf: data/Neuron/Map/neuron_Iappp2_spiking.csv
+figures/plots/neuron_type.tikz.pdf: data/Neuron/Map/neuron_Iappp2_bursting.csv
+figures/plots/neuron_type.tikz.pdf: data/Neuron/Map/neuron_Iappp2_plateau.csv

@@ -1,0 +1,79 @@
+\begin{tikzpicture} 
+    \begin{groupplot}[
+        group style={
+            group name=g,
+            % set how the plots should be organized
+            group size=1 by 3,
+            % only show ticklabels and axis labels on the bottom
+            x descriptions at=edge bottom,
+            y descriptions at=edge left,
+            % set the `vertical sep' to zero
+            vertical sep=0.01\textwidth,
+            horizontal sep=0.01\textwidth,
+        },
+        xlabel=$d_{g_{s-}}$, 
+        grid=both,
+        grid style={line width=.2pt, draw=gray!30},
+        width = .95\textwidth,
+        height = 0.5\textwidth,
+        x unit=\unit{\siemens\per\volt},
+        xmin=0.2,xmax=2,
+        ]
+        \nextgroupplot[
+            legend pos=north west,
+            legend cell align={left},
+            ymin=0,ymax=120,
+            ylabel=Time Delay,
+            y unit=\unit{\second},
+        ]
+        \addlegendimage{only marks,blue};
+        \addlegendimage{only marks,cyan};
+        \addlegendimage{only marks,purple};
+        \addplot[only marks,blue,mark size=0.3pt] table [col sep=comma, x=dgsm, y=value]{data/Neuromod/map/mod_gain_time_amppi6.csv};
+            
+        \addplot[only marks,cyan,mark size=0.3pt] table [col sep=comma, x=dgsm, y=value]{data/Neuromod/map/mod_gain_time_amppi3.csv};
+        
+        \addplot[only marks,purple,mark size=0.3pt] table [col sep=comma, x=dgsm, y=value]{data/Neuromod/map/mod_gain_time_amppi2.csv};
+        
+        \legend{$angle = \frac{pi}{6}\unit{\radian}$, $angle = \frac{pi}{3}\unit{\radian}$, $angle = \frac{pi}{2}\unit{\radian}$};
+        
+        
+        \nextgroupplot[
+            legend pos=north west,
+            legend cell align={left},
+            ymin=0.2,ymax=2.4,
+            ylabel=Mean Amplitude,
+            y unit=\unit{\radian},
+        ]
+        \addlegendimage{only marks,blue};
+        \addlegendimage{only marks,cyan};
+        \addlegendimage{only marks,purple};
+        \addplot[only marks,blue,mark size=0.3pt] table [col sep=comma, x=dgsm, y=value]{data/Neuromod/map/mod_gain_amplitude_amppi6.csv};
+            
+        \addplot[only marks,cyan,mark size=0.3pt] table [col sep=comma, x=dgsm, y=value]{data/Neuromod/map/mod_gain_amplitude_amppi3.csv};
+        
+        \addplot[only marks,purple,mark size=0.3pt] table [col sep=comma, x=dgsm, y=value]{data/Neuromod/map/mod_gain_amplitude_amppi2.csv};
+        
+        \legend{$angle = \frac{pi}{6}\unit{\radian}$, $angle = \frac{pi}{3}\unit{\radian}$, $angle = \frac{pi}{2}\unit{\radian}$};
+        
+        \nextgroupplot[
+            legend pos=north west,
+            legend cell align={left},
+            %ymin=0.2,ymax=2.4,
+            ylabel=Standard deviation,
+            change y base,
+            y SI prefix=milli,
+            y unit=\unit{\radian},
+        ]
+        \addlegendimage{only marks,blue};
+        \addlegendimage{only marks,cyan};
+        \addlegendimage{only marks,purple};
+        \addplot[only marks,blue,mark size=0.3pt] table [col sep=comma, x=dgsm, y=value]{data/Neuromod/map/mod_gain_range_amppi6.csv};
+            
+        \addplot[only marks,cyan,mark size=0.3pt] table [col sep=comma, x=dgsm, y=value]{data/Neuromod/map/mod_gain_range_amppi3.csv};
+        
+        \addplot[only marks,purple,mark size=0.3pt] table [col sep=comma, x=dgsm, y=value]{data/Neuromod/map/mod_gain_range_amppi2.csv};
+        
+        \legend{$angle = \frac{pi}{6}\unit{\radian}$, $angle = \frac{pi}{3}\unit{\radian}$, $angle = \frac{pi}{2}\unit{\radian}$};
+    \end{groupplot}
+\end{tikzpicture}  

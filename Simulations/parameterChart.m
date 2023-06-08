@@ -12,39 +12,40 @@ function out_val = parameterChart(params, var_params, model, eval_params, nb_par
     
     out_dim = [eval_params.nbOut, dim];
     out_val = zeros(out_dim);
-    off = cumprod([1, dim(1:end-1)])';
     
+    cur_params = struct();
     ind = 0;
-    pos = ones(size(dim));
+    pos = ones(length(dim), 1);
     pos_vec = zeros(nb_par, 1);
-    for i = 1:prod(dim, 'all')
-        pos_ind = (pos-1)*off + 1;
-
+    nb_points = prod(dim, 'all');
+    for i = 1:nb_points
         for j = 1:eval_params.nbEval
             sim_tmp = Simulink.SimulationInput(model);
             for k = 1:length(fixed_param_fields)
                 name = fixed_param_fields{k};
                 sim_tmp = setVariable(sim_tmp, name, params.(name));
+                cur_params.(name) = params.(name);
             end
     
             for k = 1:length(updatable_params_fields)
                 name = updatable_params_fields{k};
                 vec_param = var_params.(name);
                 sim_tmp = setVariable(sim_tmp, name, vec_param(pos(k)));
+                cur_params.(name) = vec_param(pos(k));
             end
             
             sim_tmp = setModelParameter(sim_tmp, "StopTime", num2str(eval_params.StopTime));
     
-            sim_tmp = setPostSimFcn(sim_tmp, @(o) (eval_params.func(o, eval_params.StartAnalyseTime)));
+            sim_tmp = setPostSimFcn(sim_tmp, @(o) (eval_params.func(o, eval_params, cur_params)));
 
             ind = ind+1;
             sim_in(ind) = sim_tmp;
-            pos_vec(ind) = pos_ind;
+            pos_vec(ind) = i;
     
             if (ind == nb_par)
                 ind = 0;
                 out = parsim(sim_in);
-                disp(i)
+                disp(string(i)+"/"+string(nb_points))
                 for k = 1:nb_par
                     out_val(:, pos_vec(k)) = reshape(out_val(:, pos_vec(k)), 1, []) + reshape(out(k).val, 1, []);
                 end

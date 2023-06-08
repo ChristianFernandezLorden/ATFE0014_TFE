@@ -1,4 +1,6 @@
-function newout = postsim_angle_frequency_descrepency(o, startAnalyseTime)
+function newout = postsim_angle_frequency_descrepency(o, eval_params, params)
+    startAnalyseTime = eval_params.StartAnalyseTime;
+    
     useful = find(o.angle.time >= startAnalyseTime);
     T = o.angle.time(useful);
     theta = squeeze(o.angle.signals.values(useful, 1));
@@ -19,28 +21,22 @@ function newout = postsim_angle_frequency_descrepency(o, startAnalyseTime)
 
     f = Fs*(0:half_L)/L;
     [val, index] = max(P1);
-
-    freq_average = f(index);
-
-    period_average = 1/freq_average;
-
-    N_back = ceil(period_average/Diff);
     
-    % Compute if the system is oscillating or not by using the maximum
-    % deviation from the mean on the last "major" cycle
-    one_cycle = theta(end-N_back:end);
-    if max(abs(one_cycle - mean(one_cycle, 'all')), 'all') < 0.03
-        freq_average = NaN;
+    if val < 0.01
+        freq_average = 0;
         freq_variance = NaN;
-    else
+    else 
+        freq_average = f(index);
         P1(index) = 0; % Remove Principal component of the spectrum
         P1 = P1/val; % Normalize vector
-        
+
         % penalize having big frequency far away from the dominant
         % frequency
-        mul = 1 - exp(-100*( ( (f/freq_average) - 1 ).^2) );
-        freq_variance = sum(mul.*P1, 'all');
+        mul = 1 - exp(-10*( ((f/freq_average) - 1 ).^2 ));
+        freq_variance = sum(mul'.*P1, 'all');
     end
 
-    newout = struct("val", [freq_average, freq_variance]);
+    range = max(theta) - min(theta);
+
+    newout = struct("val", [freq_average, freq_variance, range]);
 end

@@ -1,0 +1,47 @@
+\begin{tikzpicture}
+    \begin{groupplot}[
+            group style={
+                % set how the plots should be organized
+                group size=1 by 2,
+                % only show ticklabels and axis labels on the bottom
+                %x label at=edge bottom,
+                %y descriptions at=edge left,
+                % set the `vertical sep' to zero
+                vertical sep=0.05\textwidth,,
+            },
+            width=.95\textwidth,
+            height=0.4\textwidth,
+            grid=both,
+            grid style={line width=.2pt, draw=gray!30},
+            ylabel=Spiking Frequency,
+            y unit=\unit{\hertz},
+        ]
+    % start the first plot
+        \nextgroupplot[
+            xmin=-0.3, xmax=3.9, ymin=-1, 
+            ]
+            \addplot[color=blue] table [col sep=comma, x=Iapp, y=value]{data/Neuron/type1_freq.csv};
+            \coordinate (tl) at (-0.1,23);
+            \coordinate (tr) at (1.0,23);
+            \coordinate (bl) at (-0.1,0);
+            \coordinate (br) at (1.0,0);
+            \draw[thick] (bl) rectangle (tr);
+        
+        \nextgroupplot[
+            name=ax2,
+            xlabel=$I_\text{app}$, 
+            x unit=\unit{\ampere},
+            xmin=-0.1, xmax=1, ymin=0, ymax=23, 
+            ]
+            \addplot[color=blue] table [col sep=comma, x=Iapp, y=value]{data/Neuron/type1_freq.csv};
+    \end{groupplot}
+    \draw[thick] [dashed] (tl) -- (ax2.north west);
+    \draw[thick] [dashed] (tr) -- (ax2.north east);
+    \path[name path=hor] (ax2.north west) -- (ax2.north east);
+    \path[name path=sw] (bl) -- (ax2.south west);
+    \draw[thick] [dashed, name intersections={of=hor and sw, by={swp}}] (bl) -- (swp);
+    \path[name path=se] (br) -- (ax2.south east);
+    \draw[thick] [dashed, name intersections={of=hor and se, by={swe}}] (br) -- (swe);
+\end{tikzpicture} 
+
+

@@ -1,0 +1,60 @@
+\begin{tikzpicture}
+    \begin{groupplot}[
+        group style={
+            % set how the plots should be organized
+            group size=3 by 2,
+            % only show ticklabels and axis labels on the bottom
+            x descriptions at=edge bottom,
+            y descriptions at=edge left,
+            % set the `vertical sep' to zero
+            vertical sep=0.1\textwidth,
+            horizontal sep=0.02\textwidth,
+        },
+        width=0.37\textwidth,
+        height=0.37\textwidth,
+        point meta min = 0.3,
+        point meta max = 5,
+        mesh/ordering=x varies, 
+        % Remove NaN value from plot
+        unbounded coords=jump,
+        xlabel=$g_{u+}$, ylabel=$g_{s-}$,
+        ymin = -7, ymax=0, xmin=1, xmax=9,
+        %colorbar,
+        ]
+    % start the first plot
+        \nextgroupplot[
+            title={$I_\text{app} = -2.0$}
+        ]
+        \addplot[matrix plot, point meta=explicit, mesh/rows=81, mesh/cols=71]  
+        table [col sep=comma, y=gsm, x=gup, meta=value] {data/Neuron/Map/neuron_Iappm2_b_freq.csv};
+
+    % start the second plot
+        \nextgroupplot[
+            title={$I_\text{app} = -1.0$}
+        ]
+        \addplot[matrix plot, point meta=explicit, mesh/rows=81, mesh/cols=71]  
+        table [col sep=comma, y=gsm, x=gup, meta=value] {data/Neuron/Map/neuron_Iappm1_b_freq.csv};
+        
+        \nextgroupplot[
+            colorbar right,
+            colorbar style = {x unit=\unit{\hertz}, xticklabel pos=upper},
+            every colorbar/.append style={height=2*\pgfkeysvalueof{/pgfplots/parent axis height} + \pgfkeysvalueof{/pgfplots/group/vertical sep}},
+            title={$I_\text{app} = 0.0$}
+        ]
+        \addplot[matrix plot, point meta=explicit, mesh/rows=81, mesh/cols=71]  
+        table [col sep=comma, y=gsm, x=gup, meta=value] {data/Neuron/Map/neuron_Iapp0_b_freq.csv};
+        
+        \nextgroupplot[
+            title={$I_\text{app} = 1.0$}
+        ]
+        \addplot[matrix plot, point meta=explicit, mesh/rows=81, mesh/cols=71]  
+        table [col sep=comma, y=gsm, x=gup, meta=value] {data/Neuron/Map/neuron_Iappp1_b_freq.csv};
+        
+        \nextgroupplot[
+            title={$I_\text{app} = 2.0$}
+        ]
+        \addplot[matrix plot, point meta=explicit, mesh/rows=81, mesh/cols=71]  
+        table [col sep=comma, y=gsm, x=gup, meta=value] {data/Neuron/Map/neuron_Iappp2_b_freq.csv};
+    \end{groupplot}
+\end{tikzpicture} 
+ 

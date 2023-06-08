@@ -1,0 +1,2 @@
+figures/diagrams/two_motor.tikz.pdf: data/Neuron/voltage_burst_stable.csv
+figures/diagrams/two_motor.tikz.pdf: data/Neuron/voltage_burst_stable.csv

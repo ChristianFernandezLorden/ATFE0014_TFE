@@ -1,0 +1,14 @@
+\begin{tikzpicture}
+    \begin{axis}[
+            xlabel=$g_{s-}$, ylabel=Number of spikes,
+            grid=both,
+            grid style={line width=.2pt, draw=gray!30},
+            width = .95\textwidth,
+            height = 0.5\textwidth,
+            y unit=-,
+            x unit=\unit{\siemens},
+            xmin=-4.3,xmax=-2,
+            ]
+            \addplot[only marks, color=blue] table [col sep=comma, x=gsm, y=value]{data/Neuron/burst_nb_spikes.csv};
+    \end{axis}
+\end{tikzpicture}

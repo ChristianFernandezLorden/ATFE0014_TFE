@@ -1,0 +1,2 @@
+figures/plots/power_burst_curve.tikz.pdf: data/Neuron/burst_duty.csv
+figures/plots/power_burst_curve.tikz.pdf: data/Neuron/burst_power.csv

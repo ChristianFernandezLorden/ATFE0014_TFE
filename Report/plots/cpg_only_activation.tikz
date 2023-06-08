@@ -1,0 +1,52 @@
+\begin{tikzpicture}
+    \begin{groupplot}[
+        group style={
+            % set how the plots should be organized
+            group size=2 by 2,
+            % only show ticklabels and axis labels on the bottom
+            x descriptions at=edge bottom,
+            y descriptions at=edge left,
+            % set the `vertical sep' to zero
+            vertical sep=0.1\textwidth,
+            horizontal sep=0.1\textwidth,
+        },
+        width=0.45\textwidth,
+        height=0.45\textwidth,
+        point meta min = 0.3,
+        point meta max = 1.75,
+        mesh/ordering=x varies, 
+        % Remove NaN value from plot
+        unbounded coords=jump,
+        ylabel=$g_{u+}$,xlabel=$I_\text{app}$,
+        ymin = 2, ymax=6, xmin=-3, xmax=0,
+        ]
+    % start the first plot
+        \nextgroupplot[
+            title={$g_\text{syn} = -0.2$}
+        ]
+        \addplot[matrix plot*, point meta=explicit, mesh/rows=101,mesh/cols=134]  
+        table [col sep=comma, y=gup, x=Iapp, meta=value] {data/CPG/cpg_only_activation_gsyn0.2.csv};
+
+    % start the second plot
+        \nextgroupplot[
+            colorbar right,
+            colorbar style = {x unit=\unit{\hertz}, xticklabel pos=upper},
+            every colorbar/.append style={height=2*\pgfkeysvalueof{/pgfplots/parent axis height} + \pgfkeysvalueof{/pgfplots/group/vertical sep}},
+            title={$g_\text{syn} = -0.5$}
+        ]
+        \addplot[matrix plot*, point meta=explicit, mesh/rows=101,mesh/cols=134]  
+        table [col sep=comma, y=gup, x=Iapp, meta=value] {data/CPG/cpg_only_activation_gsyn0.5.csv};
+        
+        \nextgroupplot[
+            title={$g_\text{syn} = -1.0$}
+        ]
+        \addplot[matrix plot*, point meta=explicit, mesh/rows=101,mesh/cols=134]  
+        table [col sep=comma, y=gup, x=Iapp, meta=value] {data/CPG/cpg_only_activation_gsyn1.0.csv};
+        
+        \nextgroupplot[
+            title={$g_\text{syn} = -2.0$}
+        ]
+        \addplot[matrix plot*, point meta=explicit, mesh/rows=101,mesh/cols=134]  
+        table [col sep=comma, y=gup, x=Iapp, meta=value] {data/CPG/cpg_only_activation_gsyn2.0.csv};
+    \end{groupplot}
+\end{tikzpicture}

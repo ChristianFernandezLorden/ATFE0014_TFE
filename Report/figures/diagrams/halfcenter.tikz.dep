@@ -1,0 +1,2 @@
+figures/diagrams/halfcenter.tikz.pdf: data/CPG/voltage_network_bursting.csv
+figures/diagrams/halfcenter.tikz.pdf: data/CPG/voltage_network_bursting.csv

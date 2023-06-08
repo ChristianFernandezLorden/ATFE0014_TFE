@@ -1,0 +1,116 @@
+\begin{tikzpicture}
+    \begin{groupplot}[
+        group style={
+            group name=g,
+            % set how the plots should be organized
+            group size=4 by 3,
+            % only show ticklabels and axis labels on the bottom
+            x descriptions at=edge bottom,
+            y descriptions at=edge left,
+            % set the `vertical sep' to zero
+            vertical sep=0.01\textwidth,
+            horizontal sep=0.01\textwidth,
+        },
+        %colormap name=jet,
+        colormap/jet,
+        width=0.27\textwidth,
+        height=0.27\textwidth,
+        point meta min = 0.0,
+        point meta max = 2.7,
+        % Remove NaN value from plot
+        %xlabel=Time, x unit=\unit{\second},
+        %ylabel=$g_{s-}$,
+        ymin=3.9, ymax=6.1,
+        xmin=-5.1, xmax=-2.9,
+        %ylabel style={rotate=-90},
+        %every axis y label/.style={at={(0,0.5)}, xshift=-3.2em},
+        mesh/ordering=x varies, 
+        % Remove NaN value from plot
+        unbounded coords=jump,
+        xtick = {-4.5, -3.5},
+        ytick = {4.5, 5.5},
+        xlabel = $g_{s-}$, x unit=\unit{\siemens},
+        ylabel = $g_{u+}$, 
+        %colorbar,
+        title style={anchor=center, yshift=6pt},
+        ]
+        
+        \nextgroupplot[
+            y unit=\unit{\siemens},
+            title={No feedback},
+        ]
+        \addplot[matrix plot, point meta=explicit, mesh/rows=9, mesh/cols=9]  
+        table [col sep=comma, x=gsm, y=gup, meta=value] {data/Control/Map/double_nofeed/double_nofeed_freq_t1_im2.csv};
+        
+        \nextgroupplot[
+            title={Sinusoidal},
+        ]
+        \addplot[matrix plot, point meta=explicit, mesh/rows=9, mesh/cols=9]  
+        table [col sep=comma, x=gsm, y=gup, meta=value] {data/Control/Map/double_sin/double_sin_freq_t1_r1_im2.csv};
+        
+        \nextgroupplot[
+            title={Mixed},
+        ]
+        \addplot[matrix plot, point meta=explicit, mesh/rows=9, mesh/cols=9]  
+        table [col sep=comma, x=gsm, y=gup, meta=value] {data/Control/Map/double_speed/double_speed_freq_t1_r1_im2.csv};
+        
+        \nextgroupplot[
+            title={Spiking neuron},
+            colorbar right,
+            colorbar style = {x unit=\unit{\hertz}, xticklabel pos=upper, y tick label style={/pgf/number format/.cd,fixed,fixed zerofill,precision=1,/tikz/.cd}},
+            every colorbar/.append style={height=3*\pgfkeysvalueof{/pgfplots/parent axis height} + 2*\pgfkeysvalueof{/pgfplots/group/vertical sep}},
+        ]
+        \addplot[matrix plot, point meta=explicit, mesh/rows=9, mesh/cols=9]  
+        table [col sep=comma, x=gsm, y=gup, meta=value] {data/Control/Map/double_neuron/double_neuron_freq_t1_s1_im2.csv};
+        
+        %==========================%
+        \nextgroupplot[
+            y unit=\unit{\siemens},
+        ]
+        \addplot[matrix plot, point meta=explicit, mesh/rows=9, mesh/cols=9]  
+        table [col sep=comma, x=gsm, y=gup, meta=value] {data/Control/Map/double_nofeed/double_nofeed_freq_t1_im1.csv};
+        
+        \nextgroupplot[
+        ]
+        \addplot[matrix plot, point meta=explicit, mesh/rows=9, mesh/cols=9]  
+        table [col sep=comma, x=gsm, y=gup, meta=value] {data/Control/Map/double_sin/double_sin_freq_t1_r1_im1.csv};
+        
+        \nextgroupplot[
+        ]
+        \addplot[matrix plot, point meta=explicit, mesh/rows=9, mesh/cols=9]  
+        table [col sep=comma, x=gsm, y=gup, meta=value] {data/Control/Map/double_speed/double_speed_freq_t1_r1_im1.csv};
+        
+        \nextgroupplot[
+        ]
+        \addplot[matrix plot, point meta=explicit, mesh/rows=9, mesh/cols=9]  
+        table [col sep=comma, x=gsm, y=gup, meta=value] {data/Control/Map/double_neuron/double_neuron_freq_t1_s1_im1.csv};
+        
+        %==========================%
+        \nextgroupplot[
+            y unit=\unit{\siemens},
+        ]
+        \addplot[matrix plot, point meta=explicit, mesh/rows=9, mesh/cols=9]  
+        table [col sep=comma, x=gsm, y=gup, meta=value] {data/Control/Map/double_nofeed/double_nofeed_freq_t1_i0.csv};
+        
+        \nextgroupplot[
+        ]
+        \addplot[matrix plot, point meta=explicit, mesh/rows=9, mesh/cols=9]  
+        table [col sep=comma, x=gsm, y=gup, meta=value] {data/Control/Map/double_sin/double_sin_freq_t1_r1_i0.csv};
+        
+        \nextgroupplot[
+        ]
+        \addplot[matrix plot, point meta=explicit, mesh/rows=9, mesh/cols=9]  
+        table [col sep=comma, x=gsm, y=gup, meta=value] {data/Control/Map/double_speed/double_speed_freq_t1_r1_i0.csv};
+        
+        \nextgroupplot[
+        ]
+        \addplot[matrix plot, point meta=explicit, mesh/rows=9, mesh/cols=9]  
+        table [col sep=comma, x=gsm, y=gup, meta=value] {data/Control/Map/double_neuron/double_neuron_freq_t1_s1_i0.csv};
+    \end{groupplot}
+    \coordinate (top_middle) at ($(g c1r1.north west)!0.5!(g c1r1.south west)$);
+    \coordinate (mid_middle) at ($(g c1r2.north west)!0.5!(g c1r2.south west)$);
+    \coordinate (bot_middle) at ($(g c1r3.north west)!0.5!(g c1r3.south west)$);
+    \node[anchor=south, rotate=90] at ([xshift=-1.8cm]top_middle) {$I_\text{app} = \qty{-2}{\ampere}$};
+    \node[anchor=south, rotate=90] at ([xshift=-1.8cm]mid_middle) {$I_\text{app} = \qty{-1}{\ampere}$};
+    \node[anchor=south, rotate=90] at ([xshift=-1.8cm]bot_middle) {$I_\text{app} = \qty{0}{\ampere}$};
+\end{tikzpicture}

@@ -1,0 +1,94 @@
+\begin{tikzpicture}
+    \tikzstyle{box}=[
+        rectangle,
+        draw=black, 
+        align=center,
+        text width=2.2cm,
+        minimum width=2.2cm,
+        minimum height=1.5cm, 
+    ]
+    \tikzstyle{neuron}=[
+        circle,
+        draw=black, 
+        inner sep=0pt, 
+        outer sep=0pt,
+        minimum size=1.5cm,
+    ]
+    \tikzstyle{system}=[
+        rectangle,
+        draw=black, 
+        minimum size=2cm,
+    ]
+    \node[neuron] (bn) at (0,0) {};
+    \begin{axis}[
+            at=(bn),
+            anchor=center,
+            width=2.5cm,
+            height=2.5cm,
+            hide axis,
+            ymin=-4, ymax=4.5,
+            xmin=10.95, xmax=11.5,
+        ]
+        \addplot[color=black] table [col sep=comma, x=time, y=1]{data/Neuron/voltage_burst_stable.csv};
+    \end{axis}
+    
+    \node[rectangle, draw=black, minimum width=1.8cm, minimum height=1.5cm] (sat) at ([xshift=4cm]bn) {};
+    \coordinate (low_flat) at ([shift={(-0.7,-0.5)}]sat);
+    \coordinate (low_slope) at ([shift={(-0.4,-0.5)}]sat);
+    \coordinate (high_slope) at ([shift={(0.4,0.5)}]sat);
+    \coordinate (high_flat) at ([shift={(0.7,0.5)}]sat);
+    \draw (low_flat)--(low_slope)--(high_slope)--(high_flat);
+    
+    \node[neuron] (bn2) at ([yshift=2cm]bn) {};
+    \begin{axis}[
+            at=(bn2),
+            anchor=center,
+            width=2.5cm,
+            height=2.5cm,
+            hide axis,
+            ymin=-4, ymax=4.5,
+            xmin=10.95, xmax=11.5,
+        ]
+        \addplot[color=black] table [col sep=comma, x=time, y=1]{data/Neuron/voltage_burst_stable.csv};
+    \end{axis}
+    
+    \node[rectangle, draw=black, minimum width=1.8cm, minimum height=1.5cm] (sat2) at ([xshift=4cm]bn2) {};
+    \coordinate (low_flat) at ([shift={(-0.7,-0.5)}]sat2);
+    \coordinate (low_slope) at ([shift={(-0.4,-0.5)}]sat2);
+    \coordinate (high_slope) at ([shift={(0.4,0.5)}]sat2);
+    \coordinate (high_flat) at ([shift={(0.7,0.5)}]sat2);
+    \draw (low_flat)--(low_slope)--(high_slope)--(high_flat);
+    
+    \coordinate (break_pt) at ([xshift=2.5cm]sat);
+    \coordinate (left_margin) at ([xshift=-1.5cm]bn);
+    \coordinate (left_margin2) at ([xshift=-2cm]bn);
+    
+    \node[circle, draw=black, inner sep=0pt, outer sep=0pt, minimum size=0.8cm] (add) at (sat-|break_pt) {};
+    \node[scale=0.8,below] at (add.north) {$-$};
+    \node[scale=0.8,right] at (add.west) {$+$};
+    
+    \node[system] (sys) at ([shift={(5,-1.2)}]sat) {};
+    \node[cylinder, shape border rotate=90, draw,minimum height=1.5cm,minimum width=0.4cm, rotate=30] at (sys) {};
+    
+    \coordinate (middle) at ($(bn)!0.5!(sat)$);
+    \node[box] (cont) at ([yshift=-2.4cm]middle) {Feedback\\Forward};
+    \node[box] (cont2) at ([yshift=-2cm]cont) {Feedback\\Backward};
+    
+    \coordinate (up_in) at ($(sys.north west)!0.3!(sys.south west)$);
+    \coordinate (down_out) at ($(sys.north west)!0.7!(sys.south west)$);
+    
+    \node[right,scale=0.8,green] at (up_in) {$\tau$};
+    \node[right,scale=0.8,align=left,red] at (down_out) {$\theta$\\$\dot{\theta}$};
+    
+    \draw[-stealth] (bn)--(sat);
+    \draw[-stealth] (bn2)--(sat2);
+    \draw[-stealth] (sat)--(add.west);
+    \draw[-stealth] (sat2)--(sat2-|add.north)--(add.north);
+    \draw[-stealth] (add)--(up_in-|add)--(up_in);
+    \draw[-stealth] (down_out)--(down_out-|add)--(cont-|add)--(cont);
+    \draw[-stealth] (down_out)--(down_out-|add)--(cont2-|add)--(cont2);
+    \draw[-stealth] (cont)--(cont-|left_margin)--(bn-|left_margin)--(bn);
+    \draw[-stealth] (cont2)--(cont2-|left_margin2)--(bn2-|left_margin2)--(bn2);
+    \path (bn.north west)  edge [bend left,-{Circle[open, length=3mm, width=3mm]}] (bn2.south west) 
+          (bn2.south east)  edge [bend left,-{Circle[open, length=3mm, width=3mm]}] (bn.north east);
+\end{tikzpicture}  

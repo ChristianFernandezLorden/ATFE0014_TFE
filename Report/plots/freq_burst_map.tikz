@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+    \begin{axis}[
+            width=0.45\textwidth,
+            height=0.45\textwidth,
+            %point meta min = 0.3,
+            %point meta max = 1.75,
+            mesh/ordering=x varies, 
+            % Remove NaN value from plot
+            unbounded coords=jump,
+            ylabel=$g_{u+}$,xlabel=$I_\text{app}$,
+            ymin = 2, ymax=6, xmin=-3, xmax=0,
+            colorbar right,
+            colorbar style = {x unit=\unit{\hertz}, xticklabel pos=upper},
+        ]
+        \addplot[matrix plot*, point meta=explicit, mesh/rows=101,mesh/cols=134]  
+        table [col sep=comma, y=gup, x=Iapp, meta=value] {data/Neuron/single_neuron_activation.csv};
+    \end{axis}
+\end{tikzpicture}

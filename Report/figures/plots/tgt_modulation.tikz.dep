@@ -1,0 +1,13 @@
+figures/plots/tgt_modulation.tikz.pdf: data/Neuromod/map/mod_tgt_amplitude_dgsm2.csv
+figures/plots/tgt_modulation.tikz.pdf: data/Neuromod/map/mod_tgt_amplitude_dgsm02.csv
+figures/plots/tgt_modulation.tikz.pdf: data/Neuromod/map/mod_tgt_amplitude_dgsm05.csv
+figures/plots/tgt_modulation.tikz.pdf: data/Neuromod/map/mod_tgt_amplitude_dgsm1.csv
+figures/plots/tgt_modulation.tikz.pdf: data/Neuromod/map/mod_tgt_amplitude_dgsm2.csv
+figures/plots/tgt_modulation.tikz.pdf: data/Neuromod/map/mod_tgt_range_dgsm02.csv
+figures/plots/tgt_modulation.tikz.pdf: data/Neuromod/map/mod_tgt_range_dgsm05.csv
+figures/plots/tgt_modulation.tikz.pdf: data/Neuromod/map/mod_tgt_range_dgsm1.csv
+figures/plots/tgt_modulation.tikz.pdf: data/Neuromod/map/mod_tgt_range_dgsm2.csv
+figures/plots/tgt_modulation.tikz.pdf: data/Neuromod/map/mod_tgt_time_dgsm02.csv
+figures/plots/tgt_modulation.tikz.pdf: data/Neuromod/map/mod_tgt_time_dgsm05.csv
+figures/plots/tgt_modulation.tikz.pdf: data/Neuromod/map/mod_tgt_time_dgsm1.csv
+figures/plots/tgt_modulation.tikz.pdf: data/Neuromod/map/mod_tgt_time_dgsm2.csv

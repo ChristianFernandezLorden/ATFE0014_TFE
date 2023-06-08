@@ -50,10 +50,14 @@ model = "test_stability_link_auto_speed";
 load("Speed_monteCarloNormal.mat");
 figure
 histogram(return_vec(:,1))
+T = array2table(return_vec(:,1), 'VariableNames', ["value"]);
+writetable(T, "speed_control_monte_eliptic.csv");
 
 load("Speed_monteCarloEliptic.mat");
 figure
 histogram(return_vec(:,1))
+T = array2table(return_vec(:,1), 'VariableNames', ["value"]);
+writetable(T, "speed_control_monte_normal.csv");
 
 u_params = struct();
 variable_params_fields = fieldnames(var_params);
@@ -70,10 +74,14 @@ model = "test_stability_link_auto";
 load("Sin_monteCarloNormal.mat");
 figure
 histogram(return_vec(:,1))
+T = array2table(return_vec(:,1), 'VariableNames', ["value"]);
+writetable(T, "sin_control_monte_eliptic.csv");
 
 load("Sin_monteCarloEliptic.mat");
 figure
 histogram(return_vec(:,1))
+T = array2table(return_vec(:,1), 'VariableNames', ["value"]);
+writetable(T, "sin_control_monte_normal.csv");
 
 u_params = struct();
 variable_params_fields = fieldnames(var_params);
@@ -90,10 +98,14 @@ model = "test_stability_link_auto_neuron_sense";
 load("Neuron_monteCarloNormal.mat");
 figure
 histogram(return_vec(:,1))
+T = array2table(return_vec(:,1), 'VariableNames', ["value"]);
+writetable(T, "neuron_control_monte_eliptic.csv");
 
 load("Neuron_monteCarloEliptic.mat");
 figure
 histogram(return_vec(:,1))
+T = array2table(return_vec(:,1), 'VariableNames', ["value"]);
+writetable(T, "neuron_control_monte_normal.csv");
 
 u_params = struct();
 variable_params_fields = fieldnames(var_params);

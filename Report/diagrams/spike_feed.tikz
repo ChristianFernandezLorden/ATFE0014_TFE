@@ -1,0 +1,86 @@
+\begin{tikzpicture}
+    \tikzstyle{box}=[
+        rectangle,
+        draw=black, 
+        align=center,
+        text width=1.8cm,
+        minimum width=1.8cm,
+        minimum height=1.5cm, 
+    ]
+    \tikzstyle{neuron}=[
+        circle,
+        draw=black, 
+        inner sep=0pt, 
+        outer sep=0pt,
+        minimum size=1.5cm,
+    ]
+    
+    \node (theta) at (0, 0) {\Large$\theta$};
+    \node (theta_d) at ([yshift=-3cm]theta) {\Large$\dot{\theta}$};
+
+    \node[box] (sin) at ([xshift=2.3cm]theta) {\Large$\sin$};
+    
+    \node[box] (tanh) at ([xshift=3.3cm]sin) {};
+    \begin{axis}[
+            at=(tanh),
+            anchor=center,
+            width=3cm,
+            height=2.6cm,
+            hide axis,
+            ymin=-1.1, ymax=1.1,
+            xmin=-4, xmax=4,
+        ]
+        %\addplot[color=black] table [col sep=comma, x=time, y=1]{data/Intro/voltage_spiking.csv};
+        \addplot[color=black,domain=-4:4,samples=100] {tanh(x)};
+        \draw[gray,-stealth] (-3.9,0)--(3.9,0);
+        \draw[gray,-stealth] (0,-1)--(0,1);
+    \end{axis}
+    
+    \node[box] (bump) at ([yshift=-3cm]sin) {};
+    \begin{axis}[
+            at=(bump),
+            anchor=center,
+            width=3cm,
+            height=2.7cm,
+            hide axis,
+            ymin=-0.1, ymax=2.6,
+            xmin=-10.1, xmax=10.1,
+        ]
+        %\addplot[color=black] table [col sep=comma, x=time, y=1]{data/Intro/voltage_spiking.csv};
+        \addplot[color=black,domain=-9:9,samples=100] {tanh(x+2.5)-tanh(x-2.5)};
+        \draw[gray,-stealth] (-10,0)--(10,0);
+        \draw[gray,-stealth] (0,0)--(0,2.5);
+    \end{axis}
+    
+    \coordinate (mean) at ($(tanh)!0.5!(bump)$);
+    
+    \node[circle, draw=black, inner sep=0pt, outer sep=0pt, minimum size=0.8cm] (add) at ([yshift=-3cm]tanh) {};
+    \node[scale=0.8,below] at (add.north) {$+$};
+    \node[scale=0.8,right] at (add.west) {$+$};
+    
+    \node[neuron] (spike) at ([xshift=2.5cm]add) {};
+    \begin{axis}[
+            at=(spike),
+            anchor=center,
+            width=2.5cm,
+            height=2.5cm,
+            hide axis,
+            ymin=-2.5, ymax=2.5,
+            xmin=6.8, xmax=7.2,
+        ]
+        \addplot[color=black] table [col sep=comma, x=time, y=1]{data/Intro/voltage_spiking.csv};
+    \end{axis}
+    
+    \node[box] (synap) at ([xshift=2.8cm]spike) {Synapse};
+    
+    \node (out) at ([xshift=2.8cm]synap) {\Large$I_\text{feed}$};
+    
+    \draw[-stealth] (theta) -- (sin);
+    \draw[-stealth] (sin) -- (tanh);
+    \draw[-stealth] (tanh) -- (add);
+    \draw[-stealth] (theta_d) -- (bump);
+    \draw[-stealth] (bump)  -- (add);
+    \draw[-stealth] (add) -- (spike);
+    \draw[-stealth] (spike) -- (synap);
+    \draw[-stealth] (synap) -- (out);
+\end{tikzpicture}  

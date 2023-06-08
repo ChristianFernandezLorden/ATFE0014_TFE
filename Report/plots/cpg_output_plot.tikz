@@ -1,0 +1,74 @@
+\iffalse
+\begin{tikzpicture}
+    \begin{axis}[
+            xlabel=Time, ylabel=Neuron Output,
+            grid=both,
+            legend cell align=left,
+            grid style={line width=.2pt, draw=gray!30},
+            width = \textwidth,
+            height = 0.5\textwidth,
+            y unit=\unit{\volt},
+            x unit=\unit{\second},
+            ymin=-5, ymax=5,
+            xmin=0, xmax=25,
+            ]
+            \addplot[color=blue] table [col sep=comma, x=time, y=1]{data/CPG/voltage_network_bursting.csv};
+            \addplot[color=red] table [col sep=comma, x=time, y=2]{data/CPG/voltage_network_bursting.csv};
+            \legend{Neuron 1, Neuron 2};
+    \end{axis}
+\end{tikzpicture} 
+\fi
+
+\begin{tikzpicture}
+    \begin{groupplot}[
+            group style={
+                % set how the plots should be organized
+                group size=1 by 2,
+                % only show ticklabels and axis labels on the bottom
+                %x label at=edge bottom,
+                %y descriptions at=edge left,
+                % set the `vertical sep' to zero
+                vertical sep=0.05\textwidth,,
+            },
+            width=.95\textwidth,
+            height=0.4\textwidth,
+            grid=both,
+            grid style={line width=.2pt, draw=gray!30},
+            ylabel=Neuron Output,
+            y unit=\unit{\volt},
+        ]
+    % start the first plot
+        \nextgroupplot[
+            ymin=-5, ymax=5,
+            xmin=0, xmax=25,
+            ]
+            \addplot[color=blue] table [col sep=comma, x=time, y=1]{data/CPG/voltage_network_bursting.csv};
+            \addplot[color=red] table [col sep=comma, x=time, y=2]{data/CPG/voltage_network_bursting.csv};
+            \legend{Neuron 1, Neuron 2};
+            \coordinate (tl) at (6,4.7);
+            \coordinate (tr) at (12,4.7);
+            \coordinate (bl) at (6,-4.5);
+            \coordinate (br) at (12,-4.5);
+            \draw[thick] (bl) rectangle (tr);
+        
+        \nextgroupplot[
+            name=ax2,
+            xlabel=Time,
+            x unit=\unit{\second},
+            ymin=-4.5, ymax=4.7,
+            xmin=6, xmax=12,
+            ]
+            \addplot[color=blue] table [col sep=comma, x=time, y=1]{data/CPG/voltage_network_bursting.csv};
+            \addplot[color=red] table [col sep=comma, x=time, y=2]{data/CPG/voltage_network_bursting.csv};
+            \legend{Neuron 1, Neuron 2};
+    \end{groupplot}
+    \draw[thick] [dashed] (tl) -- (ax2.north west);
+    \draw[thick] [dashed] (tr) -- (ax2.north east);
+    \path[name path=hor] (ax2.north west) -- (ax2.north east);
+    \path[name path=sw] (bl) -- (ax2.south west);
+    \draw[thick] [dashed, name intersections={of=hor and sw, by={swp}}] (bl) -- (swp);
+    \path[name path=se] (br) -- (ax2.south east);
+    \draw[thick] [dashed, name intersections={of=hor and se, by={swe}}] (br) -- (swe);
+\end{tikzpicture} 
+
+

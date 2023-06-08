@@ -1,0 +1,51 @@
+ \begin{tikzpicture}
+    \begin{groupplot}[
+            group style={
+                % set how the plots should be organized
+                group size=1 by 2,
+                % only show ticklabels and axis labels on the bottom
+                x descriptions at=edge bottom,
+                ylabels at=edge left,
+                %y descriptions at=edge left,
+                % set the `vertical sep' to zero
+                vertical sep=0.05\textwidth,,
+            },
+            width=.9\textwidth,
+            grid=both,
+            grid style={line width=.2pt, draw=gray!30},
+            %ylabel=Spiking Frequency,
+            %y unit=\unit{\hertz},
+            xlabel=Time, 
+            x unit=\unit{\second},
+            xmin=3, xmax=8,
+        ]
+        
+        \nextgroupplot[
+            %name=ax2,
+            %xmin=-0.1, xmax=1, 
+            ymin=-4,% ymax=6, 
+            ylabel=Neuron Output,
+            y unit=\unit{\volt},
+            height=0.4\textwidth,
+            ]
+            \addplot[color=blue] table [col sep=comma, x=time, y=1]{data/Intro/voltage_exc_no_burst.csv};
+            \addplot[color=red] table [col sep=comma, x=time, y=1]{data/Intro/voltage_exc_burst.csv};
+            %\legend{Push Neuron, Pull Neuron};
+            
+        \nextgroupplot[
+            %name=ax2,
+            %xmin=-0.1, xmax=1, 
+            %ymin=-4, ymax=6, 
+            ylabel=Neuron Input,
+            y unit=\unit{\ampere},
+            height=0.3\textwidth,
+            ]
+            \addplot[color=blue] table [col sep=comma, x=time, y=1]{data/Intro/input_exc_no_burst.csv};
+            \addplot[color=red] table [col sep=comma, x=time, y=1]{data/Intro/input_exc_burst.csv};
+            %\legend{$g_{s-}$ up Neuron, $g_{s-}$ down Neuron};
+    \end{groupplot}
+\end{tikzpicture} 
+
+
+ 
+ 

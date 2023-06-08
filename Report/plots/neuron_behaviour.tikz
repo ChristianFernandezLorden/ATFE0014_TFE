@@ -1,0 +1,49 @@
+ \begin{tikzpicture}
+    \begin{groupplot}[
+            group style={
+                % set how the plots should be organized
+                group size=2 by 1,
+                % only show ticklabels and axis labels on the bottom
+                %x descriptions at=edge bottom,
+                %ylabels at=edge left,
+                y descriptions at=edge left,
+                % set the `vertical sep' to zero
+                horizontal sep=0.05\textwidth,,
+            },
+            width=.48\textwidth,
+            height=.48\textwidth,
+            grid=both,
+            grid style={line width=.2pt, draw=gray!30},
+            %ylabel=Spiking Frequency,
+            %y unit=\unit{\hertz},
+            xlabel=Time, 
+            x unit=\unit{\second},
+            ylabel=Neuron Output,
+            y unit=\unit{\volt},
+            xmin=6, xmax=8,
+            ymin=-3, ymax=4,
+        ]
+        
+        \nextgroupplot[
+            %name=ax2,
+            %xmin=-0.1, xmax=1, 
+            title=Spiking
+            ]
+            \addplot[color=blue] table [col sep=comma, x=time, y=1]{data/Intro/voltage_spiking.csv};
+            %\legend{Push Neuron, Pull Neuron};
+            
+        \nextgroupplot[
+            %name=ax2,
+            %xmin=-0.1, xmax=1, 
+            %ymin=-4, ymax=6, 
+            title=Bursting
+            ]
+            \addplot[color=blue] table [col sep=comma, x=time, y=1]{data/Intro/voltage_bursting.csv};
+            %\legend{$g_{s-}$ up Neuron, $g_{s-}$ down Neuron};
+    \end{groupplot}
+\end{tikzpicture} 
+
+
+ 
+ 
+ 

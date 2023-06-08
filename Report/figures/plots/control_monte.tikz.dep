@@ -1,0 +1,8 @@
+figures/plots/control_monte.tikz.pdf: data/Control/monte/single_nofeed_monte_normal.csv
+figures/plots/control_monte.tikz.pdf: data/Control/monte/single_sin_monte_normal.csv
+figures/plots/control_monte.tikz.pdf: data/Control/monte/single_speed_monte_normal.csv
+figures/plots/control_monte.tikz.pdf: data/Control/monte/single_neuron_monte_normal.csv
+figures/plots/control_monte.tikz.pdf: data/Control/monte/single_nofeed_monte_fragile.csv
+figures/plots/control_monte.tikz.pdf: data/Control/monte/single_sin_monte_fragile.csv
+figures/plots/control_monte.tikz.pdf: data/Control/monte/single_speed_monte_fragile.csv
+figures/plots/control_monte.tikz.pdf: data/Control/monte/single_neuron_monte_fragile.csv

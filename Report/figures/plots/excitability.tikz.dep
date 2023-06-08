@@ -1,0 +1,4 @@
+figures/plots/excitability.tikz.pdf: data/Intro/voltage_exc_no_burst.csv
+figures/plots/excitability.tikz.pdf: data/Intro/voltage_exc_burst.csv
+figures/plots/excitability.tikz.pdf: data/Intro/input_exc_no_burst.csv
+figures/plots/excitability.tikz.pdf: data/Intro/input_exc_burst.csv

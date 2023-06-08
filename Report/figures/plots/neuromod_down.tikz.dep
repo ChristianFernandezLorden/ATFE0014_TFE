@@ -1,0 +1,6 @@
+figures/plots/neuromod_down.tikz.pdf: data/Neuromod/angle_neuromod_down.csv
+figures/plots/neuromod_down.tikz.pdf: data/Neuromod/voltage_neuromod_down.csv
+figures/plots/neuromod_down.tikz.pdf: data/Neuromod/voltage_neuromod_down.csv
+figures/plots/neuromod_down.tikz.pdf: data/Neuromod/voltage_neuromod_down.csv
+figures/plots/neuromod_down.tikz.pdf: data/Neuromod/voltage_neuromod_down.csv
+figures/plots/neuromod_down.tikz.pdf: data/Neuromod/gsm_neuromod_down.csv

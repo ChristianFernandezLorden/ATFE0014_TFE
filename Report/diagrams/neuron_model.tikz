@@ -1,0 +1,77 @@
+\begin{tikzpicture}[-stealth,thick]
+    \tikzstyle{box}=[
+        rectangle,
+        draw=black, 
+        align=center,
+        text width=1.8cm,
+        minimum width=1.8cm,
+        minimum height=1.3cm, 
+    ]
+
+    \node[box] (fast_lp) at (0, 0) {\large$\frac{1}{1+\tau_f s}$};
+    
+    \node[box] (slow_lp) at (0, -3) {\large$\frac{1}{1+\tau_s s}$};
+    
+    \node[box] (ultraslow_lp) at (0, -6) {\large$\frac{1}{1+\tau_u s}$};
+    
+    \node (v_f) at ([xshift=2cm]fast_lp.east) {\Large$v_f$};
+    
+    \node (v_s) at ([xshift=2cm]slow_lp.east) {\Large$v_s$};
+    
+    \node (v_u) at ([xshift=2cm]ultraslow_lp.east) {\Large$v_u$};
+    
+    \draw (fast_lp) -- (v_f);
+    \draw (slow_lp) -- (v_s);
+    \draw (ultraslow_lp) -- (v_u);
+    
+    \node[box] (v_to_i_fm) at ([xshift=3cm]v_f.east) {$f_{v_f\rightarrow i_{f-}}$};
+    
+    \node[box] (v_to_i_sp) at ([shift={(3, 1)}]v_s.east) {$f_{v_s\rightarrow i_{s+}}$};
+    \node[box] (v_to_i_sm) at ([shift={(3, -1)}]v_s.east) {$f_{v_s\rightarrow i_{s-}}$};
+    \coordinate (v_to_i_s_mid) at ([xshift=1cm]v_s.east);
+    
+    \node[box] (v_to_i_up) at ([xshift=3cm]v_u.east) {$f_{v_u\rightarrow i_{u+}}$};
+    
+    \node (Iapp) at ([yshift=-2cm]v_to_i_up) {$I_\text{app}$};
+    \node (V0) at ([yshift=-2cm]Iapp) {$V_{0}$};
+    
+    \draw (v_f) -- (v_to_i_fm);
+    
+    \draw (v_s) -- (v_to_i_s_mid) -- (v_to_i_s_mid|-v_to_i_sp) -- (v_to_i_sp);
+    \draw (v_s) -- (v_to_i_s_mid) -- (v_to_i_s_mid|-v_to_i_sm) -- (v_to_i_sm);
+    
+    \draw (v_u) -- (v_to_i_up);
+    
+    \draw[draw=black] (10,-1) rectangle (11,-5);
+    \coordinate (rect_top) at (10,-1);
+    \coordinate (rect_bottom) at (10,-5);
+    \coordinate (rect_out) at (11,-3);
+    \node[anchor=west] (m1) at ($(rect_top)!0.14!(rect_bottom)$) {$-$};
+    \node[anchor=west] (m2) at ($(rect_top)!0.29!(rect_bottom)$) {$-$};
+    \node[anchor=west] (m3) at ($(rect_top)!0.43!(rect_bottom)$) {$-$};
+    \node[anchor=west] (m4) at ($(rect_top)!0.57!(rect_bottom)$) {$-$};
+    \node[anchor=west] (p1) at ($(rect_top)!0.71!(rect_bottom)$) {$+$};
+    \node[anchor=west] (p2) at ($(rect_top)!0.86!(rect_bottom)$) {$+$};
+    
+    \coordinate (i_fm_add_mid) at ([xshift=3cm]v_to_i_fm);
+    \coordinate (i_sp_add_mid) at ([xshift=2.5cm]v_to_i_sp);
+    \coordinate (i_sm_add_mid) at ([xshift=1.5cm]v_to_i_sm);
+    \coordinate (i_up_add_mid) at ([xshift=2cm]v_to_i_up);
+    \coordinate (Iapp_add_mid) at ([xshift=2.5cm]Iapp);
+    \coordinate (V0_add_mid) at ([xshift=3cm]V0);
+    \draw (v_to_i_fm) -- (i_fm_add_mid) -- (i_fm_add_mid|-m1) -- (m1);
+    \draw (v_to_i_sp) -- (i_sp_add_mid) -- (i_sp_add_mid|-m2) -- (m2);
+    \draw (v_to_i_sm) -- (i_sm_add_mid) -- (i_sm_add_mid|-m3) -- (m3);
+    \draw (v_to_i_up) -- (i_up_add_mid) -- (i_up_add_mid|-m4) -- (m4);
+    \draw (Iapp) -- (Iapp_add_mid) -- (Iapp_add_mid|-p1) -- (p1);
+    \draw (V0) -- (V0_add_mid) -- (V0_add_mid|-p2) -- (p2);
+    
+    \node[box] (out_lp) at (6, 3) {\large$\frac{1}{1+\tau_o s}$};
+    \node (V) at ([xshift=-3cm]out_lp) {$V$};
+    \coordinate (feedback_start) at ([xshift=-1cm]fast_lp.west);
+    \draw (rect_out) -- ++(1,0) coordinate (tmp) -- (tmp|-out_lp) -- (out_lp);
+    \draw (out_lp) -- (V);
+    \draw (V) -- (V-|feedback_start) coordinate (tmp) -- (tmp|-fast_lp) -- (fast_lp);
+    \draw (V) -- (V-|feedback_start) coordinate (tmp) -- (tmp|-slow_lp) -- (slow_lp);
+    \draw (V) -- (V-|feedback_start) coordinate (tmp) -- (tmp|-ultraslow_lp) -- (ultraslow_lp);
+\end{tikzpicture} 

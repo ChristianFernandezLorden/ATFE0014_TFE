@@ -1,0 +1,68 @@
+The previous chapter established a strongly connected sensorimotor system. But, the control of the oscillation was nearly impossible and required change in the model parameter. This chapter introduce a neuromodulation model that is able to automatically modify the neuron parameters to reach a target amplitude. 
+
+\section{Design of the controller}
+
+The neuromodulation is added to the two system defined in \cref{sec:pendulum}. The parameter neuromodulated is $g_{s-}$ since \cref{sec:spike_mod} established that this was a good parameter to control the power transmitted by a burst. \Cref{fig:neuromod_motor} displays the diagram of the model. This diagram add two new spiking neuron whose output are passed through a saturation to only have a non-zero output when spiking. The output of these neurons are merged and fed through an integrator. The output of this integrator is then fed to a low-pass filter. The output of this filter is the parameter $g_{s-}$.
+ 
+\begin{figure}
+    \centering
+    \inserttikzfig{diagrams/modulation_motor.tikz}
+    \caption{Diagram of the control loop of the controller with neuromodulation. The adding blocks also contain internal output gains. The bursting neurons are connected by inhibitory synapses. Blue lines represent parameters and not input/output values.}
+    \label{fig:neuromod_motor}
+\end{figure}
+
+The idea of this architecture is to have the spiking increase or decrease the value of $g_{s-}$ by steps and the low-pass filter is only there to smooth the value of the parameter and avoid weird neuronal behaviors due to steps in the parameters.
+
+The feedback fed to those spiking neuron is vastly different from the feedback to the bursting neurons. \Cref{fig:neuro_feed} displays this different architecture. It can be understood as a check of the amplitude at the peak of the oscillation. One neuron will spike if the amplitude is too low and the other will spike if it is too high. The parameter $IDK$ defines a zone near the desired amplitude that is deemed acceptable.
+% Feedback explaination
+\begin{figure}[htb]
+    \centering
+    %\inserttikzfig{diagrams/neuromod_cont.tikz}
+    \caption{Diagram of the neuromodulation feedback.}
+    \label{fig:neuro_feed}
+\end{figure}
+
+\begin{align}
+    I_\theta &= \sigma\left(g_\theta\left(\cos\left(\theta_\text{ref}\right) - \cos\left(\theta\right)\right)\right)\\
+    I_{\dot{\theta}} &= \frac{\tanh\left(g_{\dot{\theta}}\left(\dot{\theta}+d_\text{bump}\right)\right) -\tanh\left(g_{\dot{\theta}}\left(\dot{\theta}-d_\text{bump}\right)\right)}{2}-1\\
+    I_\text{feed} &= K_\text{feed}\text{min}\left(\text{max}\left(0,\, I_\theta + I_{\dot{\theta}}\right),\, 1\right)
+\end{align}
+
+
+\section{Controller performance}
+
+\subsection{Static}
+
+\begin{figure}
+    \centering
+    \inserttikzfig{plots/tgt_modulation.tikz}
+    \caption{Desired angle vs realized angle.}
+    \label{fig:neuromod_tgt}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \inserttikzfig{plots/neuromod_up.tikz}
+    \caption{Oscillation of the pendulum in a neuromodulated case where the initial oscillation is smaller than desired.}
+    \label{fig:neuromod_up}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \inserttikzfig{plots/neuromod_down.tikz}
+    \caption{Oscillation of the pendulum in a neuromodulated case where the initial oscillation is higher than desired.}
+    \label{fig:neuromod_down}
+\end{figure}
+
+\subsection{Dynamic}
+
+\begin{figure}
+    \centering
+    \inserttikzfig{plots/gain_modulation.tikz}
+    \caption{Desired angle vs realized angle.}
+    \label{fig:neuromod_gain}
+\end{figure}
+
+
+
+\section{Robustness analysis}

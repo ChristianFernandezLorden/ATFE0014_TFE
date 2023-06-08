@@ -1,1 +1,0 @@
-%% Plot Single neuron stabilities

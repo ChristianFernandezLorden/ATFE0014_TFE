@@ -22,14 +22,14 @@ function out_val = monteCarloTest(params, var_params, model, eval_params, nb_par
         
         sim_tmp = setModelParameter(sim_tmp, "StopTime", num2str(eval_params.StopTime));
 
-        sim_tmp = setPostSimFcn(sim_tmp, @(o) (eval_params.func(o, eval_params.StartAnalyseTime)));
+        sim_tmp = setPostSimFcn(sim_tmp, @(o) (eval_params.func(o, eval_params, params)));
         
         ind = ind+1;
         sim_in(ind) = sim_tmp;
 
         if (ind == nb_par)
             out = parsim(sim_in);
-            disp(i)
+            disp(string(i)+"/"+string(eval_params.nbEval))
             for j = 1:nb_par
                 out_val(i+j-ind, :) = out(j).val;
             end

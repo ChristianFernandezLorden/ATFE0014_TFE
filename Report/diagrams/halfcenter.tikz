@@ -1,0 +1,37 @@
+\begin{tikzpicture}
+    \begin{groupplot}[
+            group style={
+                % set how the plots should be organized
+                group name=plot,
+                group size=1 by 2,
+                % only show ticklabels and axis labels on the bottom
+                %x label at=edge bottom,
+                %y descriptions at=edge left,
+                x descriptions at=edge bottom,
+                % set the `vertical sep' to zero
+                vertical sep=0.07\textwidth,,
+            },
+            width=0.7\textwidth,
+            height=0.3\textwidth,
+            grid=both,
+            grid style={line width=.2pt, draw=gray!30},
+            xlabel=Time,
+            x unit=\unit{\second},
+            xmin=6, xmax=12,
+            ylabel=Neuron Output,
+            y unit=\unit{\volt},
+            ymin=-5, ymax=5,
+        ]
+    % start the first plot
+        \nextgroupplot[]
+            \addplot[color=red] table [col sep=comma, x=time, y=1]{data/CPG/voltage_network_bursting.csv};
+        
+        \nextgroupplot[]
+            \addplot[color=blue] table [col sep=comma, x=time, y=2]{data/CPG/voltage_network_bursting.csv};
+    \end{groupplot}
+    \coordinate (middle) at ($(plot c1r1.south west)!0.5!(plot c1r2.north west)$);
+    \node[circle, draw, minimum size=1.5cm, inner sep=0pt, outer sep=0pt] (n1) at ([shift=({-4cm, 2.5cm})]middle) {\textcolor{red}{1}};
+    \node[circle, draw, minimum size=1.5cm, inner sep=0pt, outer sep=0pt] (n2) at ([shift=({-4cm, -2.5cm})]middle) {\textcolor{blue}{2}};
+    \path (n1)  edge [bend left,-{Circle[open, length=3mm, width=3mm]}] (n2) 
+          (n2)  edge [bend left,-{Circle[open, length=3mm, width=3mm]}] (n1);
+\end{tikzpicture}  

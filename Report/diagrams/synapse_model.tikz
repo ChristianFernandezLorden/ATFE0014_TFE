@@ -1,0 +1,28 @@
+\begin{tikzpicture}[-stealth,thick]
+    \tikzstyle{box}=[
+        rectangle,
+        draw=black, 
+        align=center,
+        text width=1.8cm,
+        minimum width=1.8cm,
+        minimum height=1.3cm, 
+    ]
+    \node (v_in) at (0, 0) {\Large$V$};
+
+    \node[box] (lp) at ([xshift=3cm]v_in.east) {\large$\frac{1}{1+\tau_\text{syn} s}$};
+    
+    \draw (v_in) -- (lp);
+    
+    \node (v_int) at ([xshift=2cm]lp.east) {\Large$v_\text{syn}$};
+    
+    \draw (lp) -- (v_int);
+    
+    \node[box] (v_to_i) at ([xshift=3cm]v_int.east) {$f_{v_\text{syn}\rightarrow i_\text{syn}}$};
+    
+    \draw (v_int) -- (v_to_i);
+    
+    \node (i_syn) at ([xshift=2cm]v_to_i.east) {\Large$i_\text{syn}$};
+    
+    \draw (v_to_i) -- (i_syn);
+\end{tikzpicture} 
+ 
