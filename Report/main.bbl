@@ -1,9 +1,16 @@
-\begin{thebibliography}{11}
+\begin{thebibliography}{21}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[B{\"a}ssler and B{\"u}schges(1998)]{stickInsect}
+U.~B{\"a}ssler and A.~B{\"u}schges.
+\newblock Pattern generation for stick insect walking movements—multisensory
+  control of a locomotor program.
+\newblock \emph{Brain research reviews}, 27\penalty0 (1):\penalty0 65--88,
+  1998.
 
 \bibitem[Cangelosi et~al.(2015)Cangelosi, Bongard, Fischer, and
   Nolfi]{embodiedDef}
@@ -12,6 +19,18 @@ A.~Cangelosi, J.~Bongard, M.~H. Fischer, and S.~Nolfi.
 \newblock In J.~Kacprzyk and W.~Pedrycz, editors, \emph{Springer Handbook of
   Computational Intelligence}, pages 697--714. Springer Berlin Heidelberg,
   Berlin, Heidelberg, 2015.
+
+\bibitem[Drion et~al.(2019)Drion, Franci, and Sepulchre]{Franci2}
+G.~Drion, A.~Franci, and R.~Sepulchre.
+\newblock Cellular switches orchestrate rhythmic circuits.
+\newblock \emph{Biological Cybernetics}, 113, 04 2019.
+
+\bibitem[Dzeladini et~al.(2014)Dzeladini, Van Den~Kieboom, and
+  Ijspeert]{related4}
+F.~Dzeladini, J.~Van Den~Kieboom, and A.~Ijspeert.
+\newblock The contribution of a central pattern generator in a reflex-based
+  neuromuscular model.
+\newblock \emph{Frontiers in human neuroscience}, 8:\penalty0 371, 2014.
 
 \bibitem[Franci et~al.(2018)Franci, Drion, and Sepulchre]{burstingSlowFeedback}
 A.~Franci, G.~Drion, and R.~Sepulchre.
@@ -45,10 +64,41 @@ H.~Lodish, A.~Berk, P.~Matsudaira, C.~A. Kaiser, M.~Krieger, M.~P. Scott,
 \newblock WH Freeman and Company and Sumanas, Media Connected, 4th edition,
   1999.
 
+\bibitem[Lu et~al.(2022)Lu, Wang, and Tian]{related5}
+Q.~Lu, X.~Wang, and J.~Tian.
+\newblock A new biological central pattern generator model and its relationship
+  with the motor units.
+\newblock \emph{Cognitive Neurodynamics}, 16\penalty0 (1):\penalty0 135--147,
+  2022.
+
+\bibitem[Luo et~al.(2017)Luo, Zhou, Jia, Gao, and Liu]{related1}
+Q.~Luo, C.~Zhou, Y.~Jia, J.~Gao, and F.~Liu.
+\newblock Cpg-based control scheme for quadruped robot to withstand the lateral
+  impact.
+\newblock \emph{arXiv preprint arXiv:1711.07044}, 2017.
+
+\bibitem[Marder(2012)]{MARDER}
+E.~Marder.
+\newblock Neuromodulation of neuronal circuits: Back to the future.
+\newblock \emph{Neuron}, 76\penalty0 (1):\penalty0 1--11, 2012.
+
 \bibitem[Marder and Bucher(2001)]{cpgMotion}
 E.~Marder and D.~Bucher.
 \newblock Central pattern generators and the control of rhythmic movements.
 \newblock \emph{Current Biology}, 11\penalty0 (23):\penalty0 R986--R996, 2001.
+
+\bibitem[Saputra et~al.(2022)Saputra, Botzheim, Ijspeert, and Kubota]{related3}
+A.~A. Saputra, J.~Botzheim, A.~J. Ijspeert, and N.~Kubota.
+\newblock Combining reflexes and external sensory information in a
+  neuromusculoskeletal model to control a quadruped robot.
+\newblock \emph{IEEE Transactions on Cybernetics}, 52\penalty0 (8):\penalty0
+  7981--7994, 2022.
+
+\bibitem[Schneider and Smarandache-Wellmann(2022)]{crayfish}
+A.~C. Schneider and C.~Smarandache-Wellmann.
+\newblock Unmasking hidden changes in intrinsic properties in neurons that
+  coordinate oscillatory networks.
+\newblock \emph{bioRxiv}, 2022.
 
 \bibitem[Sepulchre et~al.(2018)Sepulchre, Drion, and Franci]{excDef}
 R.~Sepulchre, G.~Drion, and A.~Franci.
@@ -72,11 +122,24 @@ V.~A. Straub.
   \emph{Encyclopedia of Neuroscience}, pages 650--654. Springer Berlin
   Heidelberg, Berlin, Heidelberg, 2009.
 
+\bibitem[Suzuki et~al.(2017)Suzuki, Lee, and Okamoto]{related2}
+H.~Suzuki, J.~H. Lee, and S.~Okamoto.
+\newblock Development of semi-passive biped walking robot embedded with
+  cpg-based locomotion control.
+\newblock In \emph{2017 14th International Conference on Ubiquitous Robots and
+  Ambient Intelligence (URAI)}, pages 75--78. IEEE, 2017.
+
 \bibitem[Vazifehkhah~Ghaffari et~al.(2017)Vazifehkhah~Ghaffari, Kouhnavard, and
   Elbasiouny]{electricDiagram}
 B.~Vazifehkhah~Ghaffari, M.~Kouhnavard, and S.~Elbasiouny.
 \newblock Mixed-mode oscillations in pyramidal neurons under antiepileptic drug
   conditions.
 \newblock \emph{PLoS One}, 12\penalty0 (6):\penalty0 e0178244, 2017.
+
+\bibitem[Yu et~al.(2020)Yu, Gao, and Deng]{CPGRobot}
+H.~Yu, H.~Gao, and Z.~Deng.
+\newblock Enhancing adaptability with local reactive behaviors for hexapod
+  walking robot via sensory feedback integrated central pattern generator.
+\newblock \emph{Robotics and Autonomous Systems}, 124:\penalty0 103401, 2020.
 
 \end{thebibliography}

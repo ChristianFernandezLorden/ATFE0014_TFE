@@ -1,0 +1,77 @@
+\begin{tikzpicture}
+    \tikzstyle{box}=[
+        rectangle,
+        draw=black, 
+        align=center,
+        text width=1.8cm,
+        minimum width=1.8cm,
+        minimum height=1.5cm, 
+    ]
+    
+    \node (theta) at (0, 0) {\Large$\theta$};
+    \node (theta_d) at ([yshift=-3cm]theta) {\Large$\dot{\theta}$};
+
+    \node[box] (sin) at ([xshift=2.3cm]theta) {\Large$\left|\;.\;\right|$};
+    
+    \node[circle, draw=black, inner sep=0pt, outer sep=0pt, minimum size=0.8cm] (add_theta) at ([xshift=2.8cm]sin) {};
+    \node[scale=0.8,above] at (add_theta.south) {$-$};
+    \node[scale=0.8,right] at (add_theta.west) {$+$};
+    \node (theta_ref) at ([yshift=-1.5cm]add_theta) {\Large$\theta_\text{ref}$};
+    
+    \node[box] (tanh) at ([xshift=2.8cm]add_theta) {};
+    \begin{axis}[
+            at=(tanh),
+            anchor=center,
+            width=3cm,
+            height=2.6cm,
+            hide axis,
+            ymin=-1.1, ymax=1.1,
+            xmin=-4, xmax=4,
+        ]
+        %\addplot[color=black] table [col sep=comma, x=time, y=1]{data/Intro/voltage_spiking.csv};
+        \addplot[color=black,domain=-4:4,samples=100] {tanh(x)};
+        \draw[gray,-stealth] (-3.9,0)--(3.9,0);
+        \draw[gray,-stealth] (0,-1)--(0,1);
+    \end{axis}
+    
+    \node[box] (bump) at ([yshift=-3cm]sin) {};
+    \begin{axis}[
+            at=(bump),
+            anchor=center,
+            width=3cm,
+            height=2.7cm,
+            hide axis,
+            ymin=-0.1, ymax=2.6,
+            xmin=-10.1, xmax=10.1,
+        ]
+        %\addplot[color=black] table [col sep=comma, x=time, y=1]{data/Intro/voltage_spiking.csv};
+        \addplot[color=black,domain=-9:9,samples=100] {tanh(x+2.5)-tanh(x-2.5)};
+        \draw[gray,-stealth] (-10,0)--(10,0);
+        \draw[gray,-stealth] (0,0)--(0,2.5);
+    \end{axis}
+    
+    \coordinate (mean) at ($(tanh)!0.5!(bump)$);
+    
+    \node[circle, draw=black, inner sep=0pt, outer sep=0pt, minimum size=0.8cm] (add) at ([yshift=-3cm]tanh) {};
+    \node[scale=0.8,below] at (add.north) {$+$};
+    \node[scale=0.8,right] at (add.west) {$+$};
+    
+    \node[box] (sat) at ([xshift=2.5cm]add) {};
+    \coordinate (low_flat) at ([shift={(-0.7,-0.5)}]sat);
+    \coordinate (low_slope) at ([shift={(-0.4,-0.5)}]sat);
+    \coordinate (high_slope) at ([shift={(0.4,0.5)}]sat);
+    \coordinate (high_flat) at ([shift={(0.7,0.5)}]sat);
+    \draw (low_flat)--(low_slope)--(high_slope)--(high_flat);
+    
+    \node (out) at ([xshift=2.8cm]sat) {\Large$I_\text{feed}$};
+    
+    \draw[-stealth] (theta) -- (sin);
+    \draw[-stealth] (sin) -- (add_theta);
+    \draw[-stealth] (theta_ref) -- (add_theta);
+    \draw[-stealth] (add_theta) -- (tanh);
+    \draw[-stealth] (tanh) -- (add);
+    \draw[-stealth] (theta_d) -- (bump);
+    \draw[-stealth] (bump) -- (add);
+    \draw[-stealth] (add) -- (sat);
+    \draw[-stealth] (sat) -- (out);
+\end{tikzpicture}

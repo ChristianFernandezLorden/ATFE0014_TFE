@@ -9,9 +9,9 @@
             %y descriptions at=edge left,
             % set the `vertical sep' to zero
             vertical sep=0.015\textwidth,
-            horizontal sep=0.07\textwidth,
+            horizontal sep=0.09\textwidth,
         },
-        width=0.37\textwidth,
+        width=0.36\textwidth,
         height=0.25\textwidth,
         % Remove NaN value from plot
         %xlabel=Time, x unit=\unit{\second},
@@ -141,6 +141,4 @@
     \node[anchor=west,align=left] at ([xshift=-0.37\textwidth]7) {Mixed, $K_\text{feed} = 1$\\$I_\text{app} = \qty{-2}{\ampere}$, $\tau_\text{max}=\qty{1}{\newton\meter}$\\$g_{s-}=\qty{-5}{\siemens}$, $g_{u+}=\qty{5}{\siemens}$};
     
     \node[anchor=west,align=left] at ([xshift=-0.37\textwidth]8) {Neuron, $g_{\text{syn}} = \qty{1}{\siemens}$\\$I_\text{app} = \qty{-2}{\ampere}$, $\tau_\text{max}=\qty{1}{\newton\meter}$\\$g_{s-}=\qty{-5}{\siemens}$, $g_{u+}=\qty{5}{\siemens}$};
-\end{tikzpicture} 
- 
- 
+\end{tikzpicture}

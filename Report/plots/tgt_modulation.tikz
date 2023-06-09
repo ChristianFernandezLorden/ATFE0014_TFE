@@ -41,7 +41,7 @@
             vertical sep=0.01\textwidth,
             horizontal sep=0.01\textwidth,
         },
-        xlabel=Set Amplitude, 
+        xlabel=$\theta_\text{ref}$, 
         grid=both,
         grid style={line width=.2pt, draw=gray!30},
         width = .95\textwidth,
@@ -71,13 +71,13 @@
         
         \addplot[only marks,red,mark size=0.3pt] table [col sep=comma, x=amp, y=value]{data/Neuromod/map/mod_tgt_amplitude_dgsm2.csv};
         
-        \legend{$d_{g_{s-}} = \qty{0.2}{\radian}$, $d_{g_{s-}} = \qty{0.5}{\radian}$, $d_{g_{s-}} = \qty{1}{\radian}$, $d_{g_{s-}} = \qty{2}{\radian}$, Perfect};
+        \legend{$\mathrm{d}g_{s-} = \qty{0.2}{\siemens\per\volt}$, $\mathrm{d}g_{s-} = \qty{0.5}{\siemens\per\volt}$, $\mathrm{d}g_{s-} = \qty{1}{\siemens\per\volt}$, $\mathrm{d}g_{s-} = \qty{2}{\siemens\per\volt}$, Perfect};
         
         \nextgroupplot[
             legend pos=north west,
             legend cell align={left},
             %ymin=0.2,ymax=2.4,
-            ylabel=Standard deviation,
+            ylabel=Amplitude std,
             change y base,
             y SI prefix=milli,
             y unit=\unit{\radian},
@@ -94,13 +94,13 @@
         
         \addplot[only marks,red,mark size=0.3pt] table [col sep=comma, x=amp, y=value]{data/Neuromod/map/mod_tgt_range_dgsm2.csv};
         
-        \legend{$d_{g_{s-}} = \qty{0.2}{\radian}$, $d_{g_{s-}} = \qty{0.5}{\radian}$, $d_{g_{s-}} = \qty{1}{\radian}$, $d_{g_{s-}} = \qty{2}{\radian}$};
+        \legend{$\mathrm{d}g_{s-} = \qty{0.2}{\siemens\per\volt}$, $\mathrm{d}g_{s-} = \qty{0.5}{\siemens\per\volt}$, $\mathrm{d}g_{s-} = \qty{1}{\siemens\per\volt}$, $\mathrm{d}g_{s-} = \qty{2}{\siemens\per\volt}$};
         
         \nextgroupplot[
             legend pos=north west,
             legend cell align={left},
             ymin=0,ymax=120,
-            ylabel=Time Delay,
+            ylabel=Rise Time,
             y unit=\unit{\second},
         ]
         \addlegendimage{only marks,blue};
@@ -115,7 +115,7 @@
         
         \addplot[only marks,red,mark size=0.3pt] table [col sep=comma, x=amp, y=value]{data/Neuromod/map/mod_tgt_time_dgsm2.csv};
         
-        \legend{$d_{g_{s-}} = \qty{0.2}{\radian}$, $d_{g_{s-}} = \qty{0.5}{\radian}$, $d_{g_{s-}} = \qty{1}{\radian}$, $d_{g_{s-}} = \qty{2}{\radian}$};
+        \legend{$\mathrm{d}g_{s-} = \qty{0.2}{\siemens\per\volt}$, $\mathrm{d}g_{s-} = \qty{0.5}{\siemens\per\volt}$, $\mathrm{d}g_{s-} = \qty{1}{\siemens\per\volt}$, $\mathrm{d}g_{s-} = \qty{2}{\siemens\per\volt}$};
         
     \end{groupplot}
 \end{tikzpicture} 

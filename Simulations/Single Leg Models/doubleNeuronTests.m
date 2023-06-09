@@ -482,3 +482,346 @@ var_params.Iapp = [-2, 0.05];
 return_vec = monteCarloTest(params, var_params, model, eval_params, nb_par);
 
 save("Double_Neuron_monteCarloNormal.mat", "return_vec", "params", "var_params", "eval_params", "model");
+
+
+%% No feed 
+
+eval_params = struct();
+eval_params.StopTime = 40;
+eval_params.func = @postsim_identity;
+
+model = "test_stability_link_auto_sin_two_motor_neurons";
+
+params = struct();
+
+params.dfm = 0.0;
+params.dsp = 0.5;
+params.dsm = -0.5;
+params.dup = -0.5;
+params.noisePwr = 3*10^-7;
+params.sampleTime = 0.001;
+
+params.gfm = -2.0;
+params.gsp = 6.0;
+
+params.gsm = -4.8;
+params.gup = 4.2;
+params.Iapp = 0.0;
+
+params.rflx_g = 0;
+params.max_torque = 10;
+
+params.dsyn = 0.0;
+params.gsyn = -1;
+
+
+out = single_postsim_sim(model, params, eval_params);
+
+figure
+plot(out.angle.time, squeeze(out.angle.signals.values(:, 1)));
+figure
+plot(out.angle.time, squeeze(out.angle.signals.values(:, 2)));
+
+%simToCsv("double_nofeed_i0.csv", model, params, 40);
+
+
+%% Sin 
+
+eval_params = struct();
+eval_params.StopTime = 40;
+eval_params.func = @postsim_identity;
+
+model = "test_stability_link_auto_sin_two_motor_neurons";
+
+params = struct();
+
+params.dfm = 0.0;
+params.dsp = 0.5;
+params.dsm = -0.5;
+params.dup = -0.5;
+params.noisePwr = 3*10^-7;
+params.sampleTime = 0.001;
+
+params.gfm = -2.0;
+params.gsp = 6.0;
+
+params.gsm = -4.8;
+params.gup = 4.2;
+params.Iapp = 0.0;
+
+params.rflx_g = 5;
+params.max_torque = 10;
+
+params.dsyn = 0.0;
+params.gsyn = -1;
+
+
+%out = single_postsim_sim(model, params, eval_params);
+
+%plot(out.angle.time, squeeze(out.angle.signals.values(:, 1)));
+
+simToCsv("double_sin_i0.csv", model, params, 40);
+
+
+%% speed 
+
+eval_params = struct();
+eval_params.StopTime = 40;
+eval_params.func = @postsim_identity;
+
+model = "test_stability_link_auto_speed_two_motor_neurons";
+
+params = struct();
+
+params.dfm = 0.0;
+params.dsp = 0.5;
+params.dsm = -0.5;
+params.dup = -0.5;
+params.noisePwr = 3*10^-7;
+params.sampleTime = 0.001;
+
+params.gfm = -2.0;
+params.gsp = 6.0;
+
+params.gsm = -4.8;
+params.gup = 4.2;
+params.Iapp = 0.0;
+
+params.rflx_g = 5;
+params.max_torque = 10;
+
+params.dsyn = 0.0;
+params.gsyn = -1;
+
+
+%out = single_postsim_sim(model, params, eval_params);
+
+%plot(out.angle.time, squeeze(out.angle.signals.values(:, 1)));
+
+simToCsv("double_speed_i0.csv", model, params, 40);
+
+%% neuron
+
+eval_params = struct();
+eval_params.StopTime = 40;
+eval_params.func = @postsim_identity;
+
+model = "test_stability_link_auto_neuron_two_motor_neurons";
+
+params = struct();
+
+params.dfm = 0.0;
+params.dsp = 0.5;
+params.dsm = -0.5;
+params.dup = -0.5;
+params.noisePwr = 3*10^-7;
+params.sampleTime = 0.001;
+
+params.Iapp_s = 0.1;
+params.gfm_s = -2; % Balance between Gsp and Gsm (at the equilibrium point)
+params.gsp_s = 4;
+params.gsm_s = -1;
+params.gup_s = 1;
+params.dfm_s = 0.0;
+params.dsp_s = 0.5;
+params.dsm_s = -0.5;
+params.dup_s = -0.5;
+params.dsyn_s = -0.5;
+
+params.gsyn_s = 3;
+
+params.gfm = -2.0;
+params.gsp = 6.0;
+
+params.gsm = -4.8;
+params.gup = 4.2;
+params.Iapp = 0.0;
+
+params.rflx_g = 1;
+params.max_torque = 10;
+
+params.dsyn = 0.0;
+params.gsyn = -1;
+
+
+%out = single_postsim_sim(model, params, eval_params);
+
+%plot(out.angle.time, squeeze(out.angle.signals.values(:, 1)));
+
+simToCsv("double_neuron_i0.csv", model, params, 40);
+
+%% Speed good
+
+
+eval_params = struct();
+eval_params.StopTime = 40;
+eval_params.func = @postsim_identity;
+
+model = "test_stability_link_auto_speed_two_motor_neurons";
+
+params = struct();
+
+params.dfm = 0.0;
+params.dsp = 0.5;
+params.dsm = -0.5;
+params.dup = -0.5;
+params.noisePwr = 3*10^-7;
+params.sampleTime = 0.001;
+
+params.gfm = -2.0;
+params.gsp = 6.0;
+
+params.gsm = -4;
+params.gup = 5;
+params.Iapp = -2.0;
+
+params.rflx_g = 5;
+params.max_torque = 10;
+
+params.dsyn = 0.0;
+params.gsyn = -1;
+
+
+%out = single_postsim_sim(model, params, eval_params);
+
+%plot(out.angle.time, squeeze(out.angle.signals.values(:, 1)));
+
+simToCsv("double_speed_im2.csv", model, params, 40);
+
+%% neuron good
+
+eval_params = struct();
+eval_params.StopTime = 40;
+eval_params.func = @postsim_identity;
+
+model = "test_stability_link_auto_neuron_two_motor_neurons";
+
+params = struct();
+
+params.dfm = 0.0;
+params.dsp = 0.5;
+params.dsm = -0.5;
+params.dup = -0.5;
+params.noisePwr = 3*10^-7;
+params.sampleTime = 0.001;
+
+params.Iapp_s = 0.1;
+params.gfm_s = -2; % Balance between Gsp and Gsm (at the equilibrium point)
+params.gsp_s = 4;
+params.gsm_s = -1;
+params.gup_s = 1;
+params.dfm_s = 0.0;
+params.dsp_s = 0.5;
+params.dsm_s = -0.5;
+params.dup_s = -0.5;
+params.dsyn_s = -0.5;
+
+params.gsyn_s = 3;
+
+params.gfm = -2.0;
+params.gsp = 6.0;
+
+params.gsm = -4;
+params.gup = 5;
+params.Iapp = -2.0;
+
+params.rflx_g = 1;
+params.max_torque = 10;
+
+params.dsyn = 0.0;
+params.gsyn = -1;
+
+
+%out = single_postsim_sim(model, params, eval_params);
+
+%plot(out.angle.time, squeeze(out.angle.signals.values(:, 1)));
+
+simToCsv("double_neuron_im2.csv", model, params, 40);
+
+%% Speed bad
+
+
+eval_params = struct();
+eval_params.StopTime = 40;
+eval_params.func = @postsim_identity;
+
+model = "test_stability_link_auto_speed_two_motor_neurons";
+
+params = struct();
+
+params.dfm = 0.0;
+params.dsp = 0.5;
+params.dsm = -0.5;
+params.dup = -0.5;
+params.noisePwr = 3*10^-7;
+params.sampleTime = 0.001;
+
+params.gfm = -2.0;
+params.gsp = 6.0;
+
+params.gsm = -4.5;
+params.gup = 5;
+params.Iapp = -2.0;
+
+params.rflx_g = 5;
+params.max_torque = 1;
+
+params.dsyn = 0.0;
+params.gsyn = -1;
+
+
+%out = single_postsim_sim(model, params, eval_params);
+
+%plot(out.angle.time, squeeze(out.angle.signals.values(:, 1)));
+
+simToCsv("double_speed_im2_bad.csv", model, params, 40);
+
+%% neuron bad
+
+eval_params = struct();
+eval_params.StopTime = 40;
+eval_params.func = @postsim_identity;
+
+model = "test_stability_link_auto_neuron_two_motor_neurons";
+
+params = struct();
+
+params.dfm = 0.0;
+params.dsp = 0.5;
+params.dsm = -0.5;
+params.dup = -0.5;
+params.noisePwr = 3*10^-7;
+params.sampleTime = 0.001;
+
+params.Iapp_s = 0.1;
+params.gfm_s = -2; % Balance between Gsp and Gsm (at the equilibrium point)
+params.gsp_s = 4;
+params.gsm_s = -1;
+params.gup_s = 1;
+params.dfm_s = 0.0;
+params.dsp_s = 0.5;
+params.dsm_s = -0.5;
+params.dup_s = -0.5;
+params.dsyn_s = -0.5;
+
+params.gsyn_s = 3;
+
+params.gfm = -2.0;
+params.gsp = 6.0;
+
+params.gsm = -4.5;
+params.gup = 5;
+params.Iapp = -2.0;
+
+params.rflx_g = 1;
+params.max_torque = 1;
+
+params.dsyn = 0.0;
+params.gsyn = -1;
+
+
+%out = single_postsim_sim(model, params, eval_params);
+
+%plot(out.angle.time, squeeze(out.angle.signals.values(:, 1)));
+
+simToCsv("double_neuron_im2_bad.csv", model, params, 40);

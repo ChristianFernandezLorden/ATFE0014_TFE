@@ -1,0 +1,3 @@
+figures/plots/neuron_type_ex.tikz.pdf: data/Neuron/voltage_plateau_ex.csv
+figures/plots/neuron_type_ex.tikz.pdf: data/Neuron/voltage_bursting_ex.csv
+figures/plots/neuron_type_ex.tikz.pdf: data/Neuron/voltage_spiking_ex.csv

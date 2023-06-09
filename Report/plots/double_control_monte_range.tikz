@@ -7,11 +7,11 @@
             x descriptions at=edge bottom,
             y descriptions at=edge right,
             % set the `vertical sep' to zero
-            vertical sep=0.02\textwidth,
+            vertical sep=0.03\textwidth,
             horizontal sep=0.03\textwidth,
         },
         width=0.28\textwidth,
-        height=0.33\textwidth,
+        height=0.32\textwidth,
         %point meta min = 0.3,
         %point meta max = 1.75,
         %mesh/ordering=x varies, 
@@ -29,7 +29,7 @@
         ]
     % start the first plot
         \nextgroupplot[
-            title={No Control}
+            title={No Feedback}
         ]
         \addplot [
             hist={bins=20},%, data min=-2.5, data max=2.5},
@@ -37,7 +37,7 @@
         ] table [y=value] {data/Control/monte/double_nofeed_range_monte_normal.csv};
         
         \nextgroupplot[
-            title={Sin Control}
+            title={Sinusoidal}
         ]
         \addplot [
             hist={bins=20},%, data min=-2.5, data max=2.5},
@@ -45,7 +45,7 @@
         ] table [y=value] {data/Control/monte/double_sin_range_monte_normal.csv};
 
         \nextgroupplot[
-            title={Speed Control}
+            title={Mixed}
         ]
         \addplot [
             hist={bins=20},%, data min=-2.5, data max=2.5},
@@ -53,7 +53,7 @@
         ] table [y=value] {data/Control/monte/double_speed_range_monte_normal.csv};
         
         \nextgroupplot[
-            title={Neuron Control}
+            title={Spiking Neuron}
         ]
         \addplot [
             hist={bins=20},%, data min=-2.5, data max=2.5},
@@ -94,11 +94,11 @@
             %x descriptions at=edge bottom,
             y descriptions at=edge left,
             % set the `vertical sep' to zero
-            vertical sep=0.02\textwidth,
-            horizontal sep=0.02\textwidth,
+            vertical sep=0.03\textwidth,
+            horizontal sep=0.03\textwidth,
         },
         width=0.28\textwidth,
-        height=0.33\textwidth,
+        height=0.32\textwidth,
         %point meta min = 0.3,
         %point meta max = 1.75,
         %mesh/ordering=x varies, 

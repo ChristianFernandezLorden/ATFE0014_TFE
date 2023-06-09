@@ -5,44 +5,49 @@ Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: abbrvnat.bst
 Reallocating 'name_of_file' (item size: 1) to 11 items.
 Database file #1: references.bib
-You've used 11 entries,
+Repeated entry---line 152 of file references.bib
+ : @article{related4
+ :                  ,
+I'm skipping whatever remains of this entry
+You've used 21 entries,
             2773 wiz_defined-function locations,
-            683 strings with 6727 characters,
-and the built_in function-call counts, 5963 in all, are:
-= -- 525
-> -- 356
-< -- 7
-+ -- 118
-- -- 107
-* -- 506
-:= -- 910
-add.period$ -- 36
-call.type$ -- 11
-change.case$ -- 66
-chr.to.int$ -- 11
-cite$ -- 22
-duplicate$ -- 266
-empty$ -- 482
-format.name$ -- 122
-if$ -- 1271
+            750 strings with 8691 characters,
+and the built_in function-call counts, 10649 in all, are:
+= -- 937
+> -- 645
+< -- 11
++ -- 215
+- -- 194
+* -- 903
+:= -- 1636
+add.period$ -- 67
+call.type$ -- 21
+change.case$ -- 125
+chr.to.int$ -- 21
+cite$ -- 42
+duplicate$ -- 480
+empty$ -- 859
+format.name$ -- 223
+if$ -- 2251
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 12
-newline$ -- 63
-num.names$ -- 50
-pop$ -- 128
+missing$ -- 22
+newline$ -- 113
+num.names$ -- 90
+pop$ -- 236
 preamble$ -- 1
-purify$ -- 55
+purify$ -- 104
 quote$ -- 0
-skip$ -- 203
+skip$ -- 364
 stack$ -- 0
-substring$ -- 268
-swap$ -- 38
-text.length$ -- 3
+substring$ -- 422
+swap$ -- 57
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 116
+type$ -- 226
 warning$ -- 0
-while$ -- 52
+while$ -- 93
 width$ -- 0
-write$ -- 156
+write$ -- 285
+(There was 1 error message)

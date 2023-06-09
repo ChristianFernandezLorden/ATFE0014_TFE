@@ -260,3 +260,61 @@ var_params.bar_amp = [pi/6, pi/3, pi/2];
 
 out_values = parameterChart(params, var_params, model, eval_params, nb_par);
 save("Gain_Modulation_ParamChart.mat", "out_values", "params", "var_params", "eval_params", "model");
+
+%% Sim with var ref
+
+eval_params = struct();
+eval_params.StopTime = 100;
+eval_params.func = @postsim_identity;
+
+model = "test_stability_link_auto_speed_two_neurons_mod_time";
+
+
+params = struct();
+
+params.noisePwr = 3*10^-7;
+params.sampleTime = 0.001;
+
+params.gfm = -2.0;
+params.gsp = 6.0;
+params.gsm = -3;
+params.gup = 5;
+params.dfm = 0.0;
+params.dsp = 0.5;
+params.dsm = -0.5;
+params.dup = -0.5;
+
+params.gfm_mod = -2.0;
+params.gsp_mod = 4.0;
+params.gsm_mod = -1;
+params.gup_mod = 1;
+params.dfm_mod = 0.0;
+params.dsp_mod = 0.5;
+params.dsm_mod = -0.5;
+params.dup_mod = -0.5;
+
+params.rflx_g = 5;
+params.max_torque = 10;
+
+params.dsyn = 0.0;
+params.gsyn = -1;
+
+params.Iapp = -2;
+params.Iapp_mod = -0.5;
+
+params.buff_amp = pi/60;
+params.sr_gain = 2;
+
+params.dgsm_g = 0.5;
+
+max_t = 110;
+switch_t = 30;
+time_sin = linspace(switch_t, max_t, 2000);
+time = [0 time_sin];
+base_amp = pi/3;
+sin_amp = base_amp + base_amp*sin(pi*(time_sin-switch_t)/50)/2;
+amp = [base_amp sin_amp];
+
+time_in = [time', amp'];
+
+simToCsv("modulation_in_time.csv", model, params, max_t, time_in);

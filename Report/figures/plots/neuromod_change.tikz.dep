@@ -1,0 +1,6 @@
+figures/plots/neuromod_change.tikz.pdf: data/Neuromod/angle_modulation_in_time.csv
+figures/plots/neuromod_change.tikz.pdf: data/Neuromod/amp_modulation_in_time.csv
+figures/plots/neuromod_change.tikz.pdf: data/Neuromod/amp_modulation_in_time.csv
+figures/plots/neuromod_change.tikz.pdf: data/Neuromod/voltage_modulation_in_time.csv
+figures/plots/neuromod_change.tikz.pdf: data/Neuromod/voltage_modulation_in_time.csv
+figures/plots/neuromod_change.tikz.pdf: data/Neuromod/gsm_modulation_in_time.csv

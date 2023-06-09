@@ -109,6 +109,12 @@ Disp3DMap(squeeze(out_values(3,:,:,:,2,1)), var_params.gsm, var_params.gup, var_
 Disp3DMap(squeeze(out_values(1,:,:,:,2,2)), var_params.gsm, var_params.gup, var_params.Iapp, ["gsm", "gup", "Iapp"], 3)
 Disp3DMap(squeeze(out_values(3,:,:,:,2,2)), var_params.gsm, var_params.gup, var_params.Iapp, ["gsm", "gup", "Iapp"], 3)
 
+%% Speed feedback
+
+load("Speed_double_Sensory_ParamChart.mat")
+
+%Disp3DMap(squeeze(out_values(1,:,:,:,1,1)), var_params.gsm, var_params.gup, var_params.Iapp, ["gsm", "gup", "Iapp"], 3)
+Disp3DMap(squeeze(out_values(3,:,:,:,2,1)), var_params.gsm, var_params.gup, var_params.Iapp, ["gsm", "gup", "Iapp"], 3)
 %%
 
 id_r1 = 1;

@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.16.0 (MiKTeX 23.1) (format=lualatex 2023.2.21)  12 MAY 2023 03:14
+This is LuaHBTeX, Version 1.16.0 (MiKTeX 23.1) (format=lualatex 2023.2.21)  9 JUN 2023 15:28
  system commands enabled.
 **\def\tikzexternalrealjob{main}\input{main}
 Lua module: luaotfload 2022-10-03 3.23 Lua based OpenType font support
@@ -88,284 +88,13 @@ Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 \f@nch@O@erf=\skip56
 \f@nch@O@olf=\skip57
 \f@nch@O@orf=\skip58
-) (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/biblatex.sty
-Package: biblatex 2022/07/12 v3.18b programmable bibliographies (PK/MW)
-
-(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pdftexcmds/pdftexcmds
-.sty
-Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/infwarerr/infwarerr.s
-ty
-Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-) (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
-)
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-\pdftexcmds@toks=\toks18
-) (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count195
-)
-(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/kvoptions/kvoptions.sty
-Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
-
-(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/kvsetkeys/kvsetkeys.sty
-Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-)) (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/logreq/logreq.sty
-Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count196
-(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/logreq/logreq.def
-File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
-)) (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/base/ifthen.sty
-Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
-) (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty
-\Urlmuskip=\muskip16
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
-\c@tabx@nest=\count197
-\c@listtotal=\count198
-\c@listcount=\count199
-\c@liststart=\count266
-\c@liststop=\count267
-\c@citecount=\count268
-\c@citetotal=\count269
-\c@multicitecount=\count270
-\c@multicitetotal=\count271
-\c@instcount=\count272
-\c@maxnames=\count273
-\c@minnames=\count274
-\c@maxitems=\count275
-\c@minitems=\count276
-\c@citecounter=\count277
-\c@maxcitecounter=\count278
-\c@savedcitecounter=\count279
-\c@uniquelist=\count280
-\c@uniquename=\count281
-\c@refsection=\count282
-\c@refsegment=\count283
-\c@maxextratitle=\count284
-\c@maxextratitleyear=\count285
-\c@maxextraname=\count286
-\c@maxextradate=\count287
-\c@maxextraalpha=\count288
-\c@abbrvpenalty=\count289
-\c@highnamepenalty=\count290
-\c@lownamepenalty=\count291
-\c@maxparens=\count292
-\c@parenlevel=\count293
-\blx@tempcnta=\count294
-\blx@tempcntb=\count295
-\blx@tempcntc=\count296
-\c@blx@maxsection=\count297
-\blx@maxsegment@0=\count298
-\blx@notetype=\count299
-\blx@parenlevel@text=\count300
-\blx@parenlevel@foot=\count301
-\blx@sectionciteorder@0=\count302
-\blx@sectionciteorderinternal@0=\count303
-\blx@entrysetcounter=\count304
-\blx@biblioinstance=\count305
-\labelnumberwidth=\skip59
-\labelalphawidth=\skip60
-\biblabelsep=\skip61
-\bibitemsep=\skip62
-\bibnamesep=\skip63
-\bibinitsep=\skip64
-\bibparsep=\skip65
-\bibhang=\skip66
-\blx@bcfin=\read2
-\blx@bcfout=\write3
-\blx@langwohyphens=\language2
-\c@mincomprange=\count306
-\c@maxcomprange=\count307
-\c@mincompwidth=\count308
-Package biblatex Info: Trying to load biblatex default data model...
-Package biblatex Info: ... file 'blx-dm.def' found.
-(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/blx-dm.def
-File: blx-dm.def 2022/07/12 v3.18b biblatex localization (PK/MW)
-)
-Package biblatex Info: Trying to load biblatex custom data model...
-Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count309
-\c@savedafterword=\count310
-\c@annotator=\count311
-\c@savedannotator=\count312
-\c@author=\count313
-\c@savedauthor=\count314
-\c@bookauthor=\count315
-\c@savedbookauthor=\count316
-\c@commentator=\count317
-\c@savedcommentator=\count318
-\c@editor=\count319
-\c@savededitor=\count320
-\c@editora=\count321
-\c@savededitora=\count322
-\c@editorb=\count323
-\c@savededitorb=\count324
-\c@editorc=\count325
-\c@savededitorc=\count326
-\c@foreword=\count327
-\c@savedforeword=\count328
-\c@holder=\count329
-\c@savedholder=\count330
-\c@introduction=\count331
-\c@savedintroduction=\count332
-\c@namea=\count333
-\c@savednamea=\count334
-\c@nameb=\count335
-\c@savednameb=\count336
-\c@namec=\count337
-\c@savednamec=\count338
-\c@translator=\count339
-\c@savedtranslator=\count340
-\c@shortauthor=\count341
-\c@savedshortauthor=\count342
-\c@shorteditor=\count343
-\c@savedshorteditor=\count344
-\c@labelname=\count345
-\c@savedlabelname=\count346
-\c@institution=\count347
-\c@savedinstitution=\count348
-\c@lista=\count349
-\c@savedlista=\count350
-\c@listb=\count351
-\c@savedlistb=\count352
-\c@listc=\count353
-\c@savedlistc=\count354
-\c@listd=\count355
-\c@savedlistd=\count356
-\c@liste=\count357
-\c@savedliste=\count358
-\c@listf=\count359
-\c@savedlistf=\count360
-\c@location=\count361
-\c@savedlocation=\count362
-\c@organization=\count363
-\c@savedorganization=\count364
-\c@origlocation=\count365
-\c@savedoriglocation=\count366
-\c@origpublisher=\count367
-\c@savedorigpublisher=\count368
-\c@publisher=\count369
-\c@savedpublisher=\count370
-\c@language=\count371
-\c@savedlanguage=\count372
-\c@origlanguage=\count373
-\c@savedoriglanguage=\count374
-\c@pageref=\count375
-\c@savedpageref=\count376
-\shorthandwidth=\skip67
-\shortjournalwidth=\skip68
-\shortserieswidth=\skip69
-\shorttitlewidth=\skip70
-\shortauthorwidth=\skip71
-\shorteditorwidth=\skip72
-\locallabelnumberwidth=\skip73
-\locallabelalphawidth=\skip74
-\localshorthandwidth=\skip75
-\localshortjournalwidth=\skip76
-\localshortserieswidth=\skip77
-\localshorttitlewidth=\skip78
-\localshortauthorwidth=\skip79
-\localshorteditorwidth=\skip80
-Package biblatex Info: Trying to load enhanced support for Unicode engines...
-Package biblatex Info: ... file 'blx-unicode.def' found.
-
-(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/blx-unicode.de
-f)
-Package biblatex Info: Trying to load compatibility code...
-Package biblatex Info: ... file 'blx-compat.def' found.
-
-(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/blx-compat.def
-File: blx-compat.def 2022/07/12 v3.18b biblatex compatibility (PK/MW)
-)
-Package biblatex Info: Trying to load generic definitions...
-Package biblatex Info: ... file 'biblatex.def' found.
-(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/biblatex.def
-File: biblatex.def 2022/07/12 v3.18b biblatex compatibility (PK/MW)
-\c@textcitecount=\count377
-\c@textcitetotal=\count378
-\c@textcitemaxnames=\count379
-\c@biburlbigbreakpenalty=\count380
-\c@biburlbreakpenalty=\count381
-\c@biburlnumpenalty=\count382
-\c@biburlucpenalty=\count383
-\c@biburllcpenalty=\count384
-\biburlbigskip=\muskip17
-\biburlnumskip=\muskip18
-\biburlucskip=\muskip19
-\biburllcskip=\muskip20
-\c@smartand=\count385
-)
-Package biblatex Info: Trying to load bibliography style 'numeric'...
-Package biblatex Info: ... file 'numeric.bbx' found.
-
-(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/bbx/numeric.bb
-x
-File: numeric.bbx 2022/07/12 v3.18b biblatex bibliography style (PK/MW)
-Package biblatex Info: Trying to load bibliography style 'standard'...
-Package biblatex Info: ... file 'standard.bbx' found.
-
-(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/bbx/standard.b
-bx
-File: standard.bbx 2022/07/12 v3.18b biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count386
-\c@bbx:relatedtotal=\count387
-))
-Package biblatex Info: Trying to load citation style 'numeric'...
-Package biblatex Info: ... file 'numeric.cbx' found.
-
-(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/cbx/numeric.cb
-x
-File: numeric.cbx 2022/07/12 v3.18b biblatex citation style (PK/MW)
-Package biblatex Info: Redefining '\cite'.
-Package biblatex Info: Redefining '\parencite'.
-Package biblatex Info: Redefining '\footcite'.
-Package biblatex Info: Redefining '\footcitetext'.
-Package biblatex Info: Redefining '\smartcite'.
-Package biblatex Info: Redefining '\supercite'.
-Package biblatex Info: Redefining '\textcite'.
-Package biblatex Info: Redefining '\textcites'.
-Package biblatex Info: Redefining '\cites'.
-Package biblatex Info: Redefining '\parencites'.
-Package biblatex Info: Redefining '\smartcites'.
-)
-Package biblatex Info: Trying to load configuration file...
-Package biblatex Info: ... file 'biblatex.cfg' found.
-(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/biblatex.cfg
-File: biblatex.cfg 
-)
-Package biblatex Info: LuaTeX detected.
-(biblatex)             Assuming input encoding 'utf8'.
-Package biblatex Info: Document encoding is UTF8 ....
-(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/l3kernel/expl3.sty
-Package: expl3 2023-02-02 L3 programming layer (loader) 
-
-(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-lua
-tex.def
-File: l3backend-luatex.def 2023-01-16 L3 backend support: PDF output (LuaTeX)
-\l__color_backend_stack_int=\count388
-\l__pdf_internal_box=\box51
-))
-Package biblatex Info: ... and expl3
-(biblatex)             2023-02-02 L3 programming layer (loader) 
-(biblatex)             is new enough (at least 2020/04/06),
-(biblatex)             setting 'casechanger=expl3'.
-
-(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/blx-case-expl3
-.sty
-(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/l3packages/xparse/xpars
-e.sty
-Package: xparse 2023-01-16 L3 Experimental document command parser
-)
-Package: blx-case-expl3 2022/07/12 v3.18b expl3 case changing code for biblatex
-
-)) (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/graphics/graphicx.st
-y
+) (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip59
+\bibsep=\skip60
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count195
+) (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/graphics/graphics.sty
 Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
@@ -386,24 +115,43 @@ File: luatex.def 2022/09/22 v1.2d Graphics/color driver for luatex
 ) (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/siunitx/siunitx.sty
 Package: siunitx 2023-04-13 v3.2.5 A comprehensive (SI) units package
 \l__siunitx_angle_tmp_dim=\dimen150
-\l__siunitx_angle_marker_box=\box52
-\l__siunitx_angle_unit_box=\box53
-\l__siunitx_compound_count_int=\count389
+\l__siunitx_angle_marker_box=\box51
+\l__siunitx_angle_unit_box=\box52
+\l__siunitx_compound_count_int=\count196
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/translations/translatio
 ns.sty
 Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages
  (CN)
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count197
 )
-\l__siunitx_number_exponent_fixed_int=\count390
-\l__siunitx_number_min_decimal_int=\count391
-\l__siunitx_number_min_integer_int=\count392
-\l__siunitx_number_round_precision_int=\count393
-\l__siunitx_number_lower_threshold_int=\count394
-\l__siunitx_number_upper_threshold_int=\count395
-\l__siunitx_number_group_first_int=\count396
-\l__siunitx_number_group_size_int=\count397
-\l__siunitx_number_group_minimum_int=\count398
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pdftexcmds/pdftexcmds
+.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/infwarerr/infwarerr.s
+ty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+) (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+\pdftexcmds@toks=\toks18
+))
+\l__siunitx_number_exponent_fixed_int=\count198
+\l__siunitx_number_min_decimal_int=\count199
+\l__siunitx_number_min_integer_int=\count266
+\l__siunitx_number_round_precision_int=\count267
+\l__siunitx_number_lower_threshold_int=\count268
+\l__siunitx_number_upper_threshold_int=\count269
+\l__siunitx_number_group_first_int=\count270
+\l__siunitx_number_group_size_int=\count271
+\l__siunitx_number_group_minimum_int=\count272
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsgen.sty
@@ -411,29 +159,57 @@ File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks19
 \ex@=\dimen151
 ))
-\l__siunitx_table_tmp_box=\box54
+\l__siunitx_table_tmp_box=\box53
 \l__siunitx_table_tmp_dim=\dimen152
 \l__siunitx_table_column_width_dim=\dimen153
-\l__siunitx_table_integer_box=\box55
-\l__siunitx_table_decimal_box=\box56
-\l__siunitx_table_uncert_box=\box57
-\l__siunitx_table_before_box=\box58
-\l__siunitx_table_after_box=\box59
+\l__siunitx_table_integer_box=\box54
+\l__siunitx_table_decimal_box=\box55
+\l__siunitx_table_uncert_box=\box56
+\l__siunitx_table_before_box=\box57
+\l__siunitx_table_after_box=\box58
 \l__siunitx_table_before_dim=\dimen154
 \l__siunitx_table_carry_dim=\dimen155
-\l__siunitx_unit_tmp_int=\count399
-\l__siunitx_unit_position_int=\count400
-\l__siunitx_unit_total_int=\count401
+\l__siunitx_unit_tmp_int=\count273
+\l__siunitx_unit_position_int=\count274
+\l__siunitx_unit_total_int=\count275
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/tools/array.sty
 Package: array 2022/03/10 v2.5f Tabular extension package (FMi)
 \col@sep=\dimen156
-\ar@mcellbox=\box60
+\ar@mcellbox=\box59
 \extrarowheight=\dimen157
 \NC@list=\toks20
-\extratabsurround=\skip81
-\backup@length=\skip82
-\ar@cellbox=\box61
-))
+\extratabsurround=\skip61
+\backup@length=\skip62
+\ar@cellbox=\box60
+)) (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/placeins/placeins.st
+y
+Package: placeins 2005/04/18  v 2.2
+) (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
+\csq@reset=\count276
+\csq@gtype=\count277
+\csq@glevel=\count278
+\csq@qlevel=\count279
+\csq@maxlvl=\count280
+\csq@tshold=\count281
+\csq@ltx@everypar=\toks21
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2022-09-14 v5.2n csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+)) (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/enumitem/enumitem.st
+y
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip63
+\enit@outerparindent=\dimen158
+\enit@toks=\toks22
+\enit@inbox=\box61
+\enit@count@id=\count282
+\enitdp@description=\count283
+)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/pgf/frontendlayer/tikz.
 sty (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/pgf/basiclayer/pgf.
 sty
@@ -441,9 +217,9 @@ sty
 y
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfutil
 -common.tex
-\pgfutil@everybye=\toks21
-\pgfutil@tempdima=\dimen158
-\pgfutil@tempdimb=\dimen159
+\pgfutil@everybye=\toks23
+\pgfutil@tempdima=\dimen159
+\pgfutil@tempdimb=\dimen160
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfutil
 -latex.def
@@ -466,33 +242,33 @@ Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfkeys
 .code.tex
-\pgfkeys@pathtoks=\toks22
-\pgfkeys@temptoks=\toks23
+\pgfkeys@pathtoks=\toks24
+\pgfkeys@temptoks=\toks25
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfkeys
 libraryfiltered.code.tex
-\pgfkeys@tmptoks=\toks24
+\pgfkeys@tmptoks=\toks26
 ))
-\pgf@x=\dimen160
-\pgf@y=\dimen161
-\pgf@xa=\dimen162
-\pgf@ya=\dimen163
-\pgf@xb=\dimen164
-\pgf@yb=\dimen165
-\pgf@xc=\dimen166
-\pgf@yc=\dimen167
-\pgf@xd=\dimen168
-\pgf@yd=\dimen169
-\w@pgf@writea=\write4
-\r@pgf@reada=\read3
-\c@pgf@counta=\count402
-\c@pgf@countb=\count403
-\c@pgf@countc=\count404
-\c@pgf@countd=\count405
-\t@pgf@toka=\toks25
-\t@pgf@tokb=\toks26
-\t@pgf@tokc=\toks27
-\pgf@sys@id@count=\count406
+\pgf@x=\dimen161
+\pgf@y=\dimen162
+\pgf@xa=\dimen163
+\pgf@ya=\dimen164
+\pgf@xb=\dimen165
+\pgf@yb=\dimen166
+\pgf@xc=\dimen167
+\pgf@yc=\dimen168
+\pgf@xd=\dimen169
+\pgf@yd=\dimen170
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count284
+\c@pgf@countb=\count285
+\c@pgf@countc=\count286
+\c@pgf@countd=\count287
+\t@pgf@toka=\toks27
+\t@pgf@tokb=\toks28
+\t@pgf@tokc=\toks29
+\pgf@sys@id@count=\count288
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgf.c
 fg
@@ -511,8 +287,8 @@ File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgfsy
 ssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count407
-\pgfsyssoftpath@bigbuffer@items=\count408
+\pgfsyssoftpath@smallbuffer@items=\count289
+\pgfsyssoftpath@bigbuffer@items=\count290
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgfsy
 sprotocol.code.tex
@@ -544,12 +320,12 @@ Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
 code.tex)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathparse
 r.code.tex
-\pgfmath@dimen=\dimen170
-\pgfmath@count=\count409
+\pgfmath@dimen=\dimen171
+\pgfmath@count=\count291
 \pgfmath@box=\box63
-\pgfmath@toks=\toks28
-\pgfmath@stack@operand=\toks29
-\pgfmath@stack@operation=\toks30
+\pgfmath@toks=\toks30
+\pgfmath@stack@operand=\toks31
+\pgfmath@stack@operation=\toks32
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfunct
 ions.code.tex)
@@ -573,39 +349,39 @@ ions.integerarithmetics.code.tex)
 code.tex)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfloat
 .code.tex
-\c@pgfmathroundto@lastzeros=\count410
+\c@pgfmathroundto@lastzeros=\count292
 ))
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfint.code.
 tex)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 epoints.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@picminx=\dimen171
-\pgf@picmaxx=\dimen172
-\pgf@picminy=\dimen173
-\pgf@picmaxy=\dimen174
-\pgf@pathminx=\dimen175
-\pgf@pathmaxx=\dimen176
-\pgf@pathminy=\dimen177
-\pgf@pathmaxy=\dimen178
-\pgf@xx=\dimen179
-\pgf@xy=\dimen180
-\pgf@yx=\dimen181
-\pgf@yy=\dimen182
-\pgf@zx=\dimen183
-\pgf@zy=\dimen184
+\pgf@picminx=\dimen172
+\pgf@picmaxx=\dimen173
+\pgf@picminy=\dimen174
+\pgf@picmaxy=\dimen175
+\pgf@pathminx=\dimen176
+\pgf@pathmaxx=\dimen177
+\pgf@pathminy=\dimen178
+\pgf@pathmaxy=\dimen179
+\pgf@xx=\dimen180
+\pgf@xy=\dimen181
+\pgf@yx=\dimen182
+\pgf@yy=\dimen183
+\pgf@zx=\dimen184
+\pgf@zy=\dimen185
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 epathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@path@lastx=\dimen185
-\pgf@path@lasty=\dimen186
+\pgf@path@lastx=\dimen186
+\pgf@path@lasty=\dimen187
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 epathusage.code.tex
 File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@shorten@end@additional=\dimen187
-\pgf@shorten@start@additional=\dimen188
+\pgf@shorten@end@additional=\dimen188
+\pgf@shorten@start@additional=\dimen189
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 escopes.code.tex
@@ -613,19 +389,19 @@ File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfpic=\box64
 \pgf@hbox=\box65
 \pgf@layerbox@main=\box66
-\pgf@picture@serial@count=\count411
+\pgf@picture@serial@count=\count293
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 egraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgflinewidth=\dimen189
+\pgflinewidth=\dimen190
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 etransformations.code.tex
 File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@pt@x=\dimen190
-\pgf@pt@y=\dimen191
-\pgf@pt@temp=\dimen192
+\pgf@pt@x=\dimen191
+\pgf@pt@y=\dimen192
+\pgf@pt@temp=\dimen193
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 equick.code.tex
@@ -642,14 +418,14 @@ File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 earrows.code.tex
 File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowsep=\dimen193
+\pgfarrowsep=\dimen194
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 eshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@max=\dimen194
-\pgf@sys@shading@range@num=\count412
-\pgf@shadingcount=\count413
+\pgf@max=\dimen195
+\pgf@sys@shading@range@num=\count294
+\pgf@shadingcount=\count295
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 eimage.code.tex
@@ -688,8 +464,8 @@ File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/pgf/compatibility/pgfco
 mp-version-0-65.sty
 Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
-\pgf@nodesepstart=\dimen195
-\pgf@nodesepend=\dimen196
+\pgf@nodesepstart=\dimen196
+\pgf@nodesepend=\dimen197
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/pgf/compatibility/pgfco
 mp-version-1-18.sty
@@ -707,10 +483,10 @@ fmath.sty
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgffor.
 code.tex
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
-\pgffor@iter=\dimen197
-\pgffor@skip=\dimen198
-\pgffor@stack=\toks31
-\pgffor@toks=\toks32
+\pgffor@iter=\dimen198
+\pgffor@skip=\dimen199
+\pgffor@stack=\toks33
+\pgffor@toks=\toks34
 ))
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
 z/tikz.code.tex
@@ -719,34 +495,34 @@ Package: tikz 2023-01-15 v3.1.10 (3.1.10)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgflibr
 aryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count414
-\pgfplotmarksize=\dimen199
+\pgf@plot@mark@count=\count296
+\pgfplotmarksize=\dimen256
 )
-\tikz@lastx=\dimen256
-\tikz@lasty=\dimen257
-\tikz@lastxsaved=\dimen258
-\tikz@lastysaved=\dimen259
-\tikz@lastmovetox=\dimen260
-\tikz@lastmovetoy=\dimen261
-\tikzleveldistance=\dimen262
-\tikzsiblingdistance=\dimen263
+\tikz@lastx=\dimen257
+\tikz@lasty=\dimen258
+\tikz@lastxsaved=\dimen259
+\tikz@lastysaved=\dimen260
+\tikz@lastmovetox=\dimen261
+\tikz@lastmovetoy=\dimen262
+\tikzleveldistance=\dimen263
+\tikzsiblingdistance=\dimen264
 \tikz@figbox=\box69
 \tikz@figbox@bg=\box70
 \tikz@tempbox=\box71
 \tikz@tempbox@bg=\box72
-\tikztreelevel=\count415
-\tikznumberofchildren=\count416
-\tikznumberofcurrentchild=\count417
-\tikz@fig@count=\count418
+\tikztreelevel=\count297
+\tikznumberofchildren=\count298
+\tikznumberofcurrentchild=\count299
+\tikz@fig@count=\count300
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/modules/pgfmodule
 matrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count419
-\pgfmatrixcurrentcolumn=\count420
-\pgf@matrix@numberofcolumns=\count421
+\pgfmatrixcurrentrow=\count301
+\pgfmatrixcurrentcolumn=\count302
+\pgf@matrix@numberofcolumns=\count303
 )
-\tikz@expandcount=\count422
+\tikz@expandcount=\count304
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
 z/libraries/tikzlibrarytopaths.code.tex
@@ -763,12 +539,12 @@ e.tex
 .code.tex
 Package pgfplots info on input line 124: Initializing with LUA version Lua 5.3
 \pgfplots@luabackend@table=\catcodetable12
-\t@pgfplots@toka=\toks33
-\t@pgfplots@tokb=\toks34
-\t@pgfplots@tokc=\toks35
-\pgfplots@tmpa=\dimen264
-\c@pgfplots@coordindex=\count423
-\c@pgfplots@scanlineindex=\count424
+\t@pgfplots@toka=\toks35
+\t@pgfplots@tokb=\toks36
+\t@pgfplots@tokc=\toks37
+\pgfplots@tmpa=\dimen265
+\c@pgfplots@coordindex=\count305
+\c@pgfplots@scanlineindex=\count306
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/sys/pgfplots
 sysgeneric.code.tex))
@@ -779,9 +555,9 @@ ib/pgfplotsoldpgfsupp_loader.code.tex
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgflibr
 aryfpu.code.tex)
 Package pgfplots: loading complementary utilities for your pgf version...
-\t@pgf@toka=\toks36
-\t@pgf@tokb=\toks37
-\t@pgf@tokc=\toks38
+\t@pgf@toka=\toks38
+\t@pgf@tokb=\toks39
+\t@pgf@tokc=\toks40
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/oldpgfcompat
 ib/pgfplotsoldpgfsupp_pgfutil-common-lists.tex)
@@ -801,14 +577,14 @@ e/pgfplotsliststructure.code.tex)
 e/pgfplotsliststructureext.code.tex)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/liststructur
 e/pgfplotsarray.code.tex
-\c@pgfplotsarray@tmp=\count425
+\c@pgfplotsarray@tmp=\count307
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/liststructur
 e/pgfplotsmatrix.code.tex)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/numtable/pgf
 plotstableshared.code.tex
-\c@pgfplotstable@counta=\count426
-\t@pgfplotstable@a=\toks39
+\c@pgfplotstable@counta=\count308
+\t@pgfplotstable@a=\toks41
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/liststructur
 e/pgfplotsdeque.code.tex)
@@ -820,7 +596,7 @@ sbinary.data.code.tex))
 sutil.verb.code.tex)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/libs/pgflibr
 arypgfplots.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count427
+\c@pgfplotslibrarysurf@no=\count309
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/sys/pgflibra
 rypgfplots.surfshading.pgfsys-luatex.def)))
@@ -852,14 +628,14 @@ hs.code.tex)
 z/libraries/tikzlibrarydecorations.code.tex
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/modules/pgfmodule
 decorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen265
-\pgfdecoratedremainingdistance=\dimen266
-\pgfdecoratedinputsegmentcompleteddistance=\dimen267
-\pgfdecoratedinputsegmentremainingdistance=\dimen268
-\pgf@decorate@distancetomove=\dimen269
-\pgf@decorate@repeatstate=\count428
-\pgfdecorationsegmentamplitude=\dimen270
-\pgfdecorationsegmentlength=\dimen271
+\pgfdecoratedcompleteddistance=\dimen266
+\pgfdecoratedremainingdistance=\dimen267
+\pgfdecoratedinputsegmentcompleteddistance=\dimen268
+\pgfdecoratedinputsegmentremainingdistance=\dimen269
+\pgf@decorate@distancetomove=\dimen270
+\pgf@decorate@repeatstate=\count310
+\pgfdecorationsegmentamplitude=\dimen271
+\pgfdecorationsegmentlength=\dimen272
 )
 \tikz@lib@dec@box=\box73
 )
@@ -873,13 +649,13 @@ z/libraries/tikzlibrarydecorations.pathreplacing.code.tex
 ions/pgflibrarydecorations.pathreplacing.code.tex))
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/libs/tikzlib
 rarypgfplots.contourlua.code.tex)
-\pgfplots@numplots=\count429
-\pgfplots@xmin@reg=\dimen272
-\pgfplots@xmax@reg=\dimen273
-\pgfplots@ymin@reg=\dimen274
-\pgfplots@ymax@reg=\dimen275
-\pgfplots@zmin@reg=\dimen276
-\pgfplots@zmax@reg=\dimen277
+\pgfplots@numplots=\count311
+\pgfplots@xmin@reg=\dimen273
+\pgfplots@xmax@reg=\dimen274
+\pgfplots@ymin@reg=\dimen275
+\pgfplots@ymax@reg=\dimen276
+\pgfplots@zmin@reg=\dimen277
+\pgfplots@zmax@reg=\dimen278
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
 z/libraries/tikzlibraryplotmarks.code.tex
@@ -892,10 +668,10 @@ File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgflibr
 aryarrows.meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowinset=\dimen278
-\pgfarrowlength=\dimen279
-\pgfarrowwidth=\dimen280
-\pgfarrowlinewidth=\dimen281
+\pgfarrowinset=\dimen279
+\pgfarrowlength=\dimen280
+\pgfarrowwidth=\dimen281
+\pgfarrowlinewidth=\dimen282
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
 z/libraries/tikzlibrarypositioning.code.tex
@@ -909,7 +685,7 @@ File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
 z/libraries/tikzlibraryintersections.code.tex
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgflibr
 aryintersections.code.tex
-\pgf@intersect@solutions=\count430
+\pgf@intersect@solutions=\count312
 ))
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/pgf/frontendlayer/libra
 ries/tikzlibraryexternal.code.tex (C:/Users/chris/AppData/Local/Programs/MiKTeX
@@ -920,77 +696,165 @@ with kernel methods
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
 z/libraries/tikzexternalshared.code.tex))
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
+z/libraries/tikzlibraryshapes.code.tex
+File: tikzlibraryshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
+z/libraries/tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/shapes/
+pgflibraryshapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
+z/libraries/tikzlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/shapes/
+pgflibraryshapes.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
+z/libraries/tikzlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/shapes/
+pgflibraryshapes.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
+z/libraries/tikzlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/shapes/
+pgflibraryshapes.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
+z/libraries/tikzlibraryshapes.callouts.code.tex
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/shapes/
+pgflibraryshapes.callouts.code.tex))
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
+z/libraries/tikzlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/shapes/
+pgflibraryshapes.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodepartlowerbox=\box74
+\pgfnodeparttwobox=\box75
+\pgfnodepartthreebox=\box76
+\pgfnodepartfourbox=\box77
+\pgfnodeparttwentybox=\box78
+\pgfnodepartnineteenbox=\box79
+\pgfnodeparteighteenbox=\box80
+\pgfnodepartseventeenbox=\box81
+\pgfnodepartsixteenbox=\box82
+\pgfnodepartfifteenbox=\box83
+\pgfnodepartfourteenbox=\box84
+\pgfnodepartthirteenbox=\box85
+\pgfnodeparttwelvebox=\box86
+\pgfnodepartelevenbox=\box87
+\pgfnodeparttenbox=\box88
+\pgfnodepartninebox=\box89
+\pgfnodeparteightbox=\box90
+\pgfnodepartsevenbox=\box91
+\pgfnodepartsixbox=\box92
+\pgfnodepartfivebox=\box93
+)))
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
+z/libraries/tikzlibraryangles.code.tex
+File: tikzlibraryangles.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
+z/libraries/tikzlibrarypatterns.code.tex
+File: tikzlibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgflibr
+arypatterns.code.tex
+File: pgflibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
+z/libraries/tikzlibraryquotes.code.tex
+File: tikzlibraryquotes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/libs/tikzlib
 rarypgfplots.units.code.tex)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/libs/tikzlib
 rarypgfplots.groupplots.code.tex
-\pgfplots@group@current@plot=\count431
-\pgfplots@group@current@row=\count432
-\pgfplots@group@current@column=\count433
+\pgfplots@group@current@plot=\count313
+\pgfplots@group@current@row=\count314
+\pgfplots@group@current@column=\count315
 )
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/libs/tikzlib
+rarypgfplots.statistics.code.tex)
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/libs/tikzlib
+rarypgfplots.colormaps.code.tex)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/libs/tikzlib
 rarypgfplots.external.code.tex)
 No auxiliary output files.
 
-\w@pgfexternal@auxout=\write5
+\w@pgfexternal@auxout=\write4
 Package TikZ externalization: calling \geometry{driver=none} during externaliza
 tion.
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2022/04/08 v2.17n AMS math features
-\@mathmargin=\skip83
+\@mathmargin=\skip64
 For additional information on amsmath, use the `?' option.
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen282
+\pmbraise@=\dimen283
 ) (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count434
+\inf@bad=\count316
 LaTeX Info: Redefining \frac on input line 236.
-\uproot@=\count435
-\leftroot@=\count436
+\uproot@=\count317
+\leftroot@=\count318
 LaTeX Info: Redefining \overline on input line 399.
 LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count437
-\DOTSCASE@=\count438
+\classnum@=\count319
+\DOTSCASE@=\count320
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box74
-\strutbox@=\box75
+\Mathstrutbox@=\box94
+\strutbox@=\box95
 LaTeX Info: Redefining \big on input line 722.
 LaTeX Info: Redefining \Big on input line 723.
 LaTeX Info: Redefining \bigg on input line 724.
 LaTeX Info: Redefining \Bigg on input line 725.
-\big@size=\dimen283
+\big@size=\dimen284
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count439
+\macc@depth=\count321
 LaTeX Info: Redefining \bmod on input line 905.
 LaTeX Info: Redefining \pmod on input line 910.
 LaTeX Info: Redefining \smash on input line 940.
 LaTeX Info: Redefining \relbar on input line 970.
 LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count440
-\dotsspace@=\muskip21
-\c@parentequation=\count441
-\dspbrk@lvl=\count442
-\tag@help=\toks40
-\row@=\count443
-\column@=\count444
-\maxfields@=\count445
-\andhelp@=\toks41
-\eqnshift@=\dimen284
-\alignsep@=\dimen285
-\tagshift@=\dimen286
-\tagwidth@=\dimen287
-\totwidth@=\dimen288
-\lineht@=\dimen289
-\@envbody=\toks42
-\multlinegap=\skip84
-\multlinetaggap=\skip85
-\mathdisplay@stack=\toks43
+\c@MaxMatrixCols=\count322
+\dotsspace@=\muskip16
+\c@parentequation=\count323
+\dspbrk@lvl=\count324
+\tag@help=\toks42
+\row@=\count325
+\column@=\count326
+\maxfields@=\count327
+\andhelp@=\toks43
+\eqnshift@=\dimen285
+\alignsep@=\dimen286
+\tagshift@=\dimen287
+\tagwidth@=\dimen288
+\totwidth@=\dimen289
+\lineht@=\dimen290
+\@envbody=\toks44
+\multlinegap=\skip65
+\multlinetaggap=\skip66
+\mathdisplay@stack=\toks45
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 ) (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/amsfonts.sty
@@ -1002,9 +866,35 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ) (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
+) (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/caption/caption.sty
+Package: caption 2023/03/12 v3.6j Customizing captions (AR)
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/caption/caption3.sty
+Package: caption3 2023/03/12 v2.4 caption3 kernel (AR)
+\caption@tempdima=\dimen291
+\captionmargin=\dimen292
+\caption@leftmargin=\dimen293
+\caption@rightmargin=\dimen294
+\caption@width=\dimen295
+\caption@indent=\dimen296
+\caption@parindent=\dimen297
+\caption@hangindent=\dimen298
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count328
+\c@continuedfloat=\count329
+) (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/caption/subcaption.st
+y
+Package: subcaption 2023/02/19 v1.6 Sub-captions (AR)
+Package caption Info: New subtype `subfigure' on input line 239.
+\c@subfigure=\count330
+Package caption Info: New subtype `subtable' on input line 239.
+\c@subtable=\count331
 ) (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2022-11-13 v7.00u Hypertext links for LaTeX
 
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/kvdefinekeys/kvdefine
 keys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
@@ -1028,12 +918,15 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/gettitlestring/gettit
 lestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count332
 )
-\c@section@level=\count446
-)
-\@linkdim=\dimen290
-\Hy@linkcounter=\count447
-\Hy@pagecounter=\count448
+\@linkdim=\dimen299
+\Hy@linkcounter=\count333
+\Hy@pagecounter=\count334
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2022-11-13 v7.00u Hyperref: PDFDocEncoding definition (HO)
 ) (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/intcalc/intcalc.sty
@@ -1042,7 +935,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count449
+\Hy@SavedSpaceFactor=\count335
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/puenc.def
 File: puenc.def 2022-11-13 v7.00u Hyperref: PDF Unicode definition (HO)
 )
@@ -1053,9 +946,13 @@ Package hyperref Info: Plain pages OFF on input line 4177.
 Package hyperref Info: Backreferencing OFF on input line 4182.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4410.
-\c@Hy@tempcnt=\count450
+\c@Hy@tempcnt=\count336
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
 LaTeX Info: Redefining \url on input line 4748.
-\XeTeXLinkMargin=\dimen291
+\XeTeXLinkMargin=\dimen300
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
@@ -1064,9 +961,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count451
-\Field@Width=\dimen292
-\Fld@charsize=\dimen293
+\Fld@menulength=\count337
+\Field@Width=\dimen301
+\Fld@charsize=\dimen302
 Package hyperref Info: Hyper figures OFF on input line 6027.
 Package hyperref Info: Link nesting OFF on input line 6032.
 Package hyperref Info: Hyper index ON on input line 6035.
@@ -1078,9 +975,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6057.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count452
-\c@Item=\count453
-\c@Hfootnote=\count454
+\Hy@abspage=\count338
+\c@Item=\count339
+\c@Hfootnote=\count340
 )
 Package hyperref Info: Driver (autodetected): hluatex.
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/hluatex.def
@@ -1091,8 +988,8 @@ ty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\Fld@listcount=\count455
-\c@bookmark@seq@number=\count456
+\Fld@listcount=\count341
+\c@bookmark@seq@number=\count342
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/rerunfilecheck/rerunfil
 echeck.sty
@@ -1105,38 +1002,58 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 85.
 )
-\Hy@SectionHShift=\skip86
+\Hy@SectionHShift=\skip67
+) (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/cleveref/cleveref.sty
+Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
+Package cleveref Info: `hyperref' support loaded on input line 2370.
+LaTeX Info: Redefining \cref on input line 2370.
+LaTeX Info: Redefining \Cref on input line 2370.
+LaTeX Info: Redefining \crefrange on input line 2370.
+LaTeX Info: Redefining \Crefrange on input line 2370.
+LaTeX Info: Redefining \cpageref on input line 2370.
+LaTeX Info: Redefining \Cpageref on input line 2370.
+LaTeX Info: Redefining \cpagerefrange on input line 2370.
+LaTeX Info: Redefining \Cpagerefrange on input line 2370.
+LaTeX Info: Redefining \labelcref on input line 2370.
+LaTeX Info: Redefining \labelcpageref on input line 2370.
 )
-\@quotelevel=\count457
-\@quotereset=\count458
 Package translations Info: No language package found. I am going to use `englis
-h' as default language. on input line 69.
+h' as default language. on input line 86.
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... none found.
+
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-lua
+tex.def
+File: l3backend-luatex.def 2023-01-16 L3 backend support: PDF output (LuaTeX)
+\l__color_backend_stack_int=\count343
+\l__pdf_internal_box=\box96
+)
 No file figures/plots/neuron_type.tikz.aux.
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 69.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 6
-9.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 86.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 8
+6.
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
 *geometry* detected driver: <none>
 *geometry* verbose mode - [ preamble ] result:
 * driver: \Gm@driver 
@@ -1146,14 +1063,14 @@ LaTeX Font Info:    ... okay on input line 69.
 * bindingoffset: 17.07164pt
 * modes: twoside 
 * h-part:(L,W,R)=(61.45795pt, 426.79134pt, 92.18695pt)
-* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* v-part:(T,H,B)=(85.35826pt, 645.87756pt, 113.81102pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
 * \textwidth=426.79134pt
-* \textheight=702.78308pt
+* \textheight=645.87756pt
 * \oddsidemargin=6.2596pt
 * \evensidemargin=19.91696pt
-* \topmargin=-54.59085pt
+* \topmargin=-40.36447pt
 * \headheight=28.45274pt
 * \headsep=25.0pt
 * \topskip=12.0pt
@@ -1171,38 +1088,21 @@ LaTeX Font Info:    ... okay on input line 69.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package biblatex Info: Trying to load language 'english'...
-Package biblatex Info: ... file 'english.lbx' found.
-
-(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/biblatex/lbx/english.lb
-x
-File: english.lbx 2022/07/12 v3.18b biblatex localization (PK/MW)
-)
-Package biblatex Info: LuaTeX detected.
-(biblatex)             Assuming input encoding 'utf8'.
-Package biblatex Info: Automatic encoding selection.
-(biblatex)             Assuming data encoding 'utf8'.
-Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'figures/plots/neuron_type.tikz.bbl' not found.
-
-No file figures/plots/neuron_type.tikz.bbl.
-Package biblatex Info: Reference section=0 on input line 69.
-Package biblatex Info: Reference segment=0 on input line 69.
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count459
-\scratchdimen=\dimen294
-\scratchbox=\box76
-\nofMPsegments=\count460
-\nofMParguments=\count461
-\everyMPshowfont=\toks44
-\MPscratchCnt=\count462
-\MPscratchDim=\dimen295
-\MPnumerator=\count463
-\makeMPintoPDFobject=\count464
-\everyMPtoPDFconversion=\toks45
+\scratchcounter=\count344
+\scratchdimen=\dimen303
+\scratchbox=\box97
+\nofMPsegments=\count345
+\nofMParguments=\count346
+\everyMPshowfont=\toks46
+\MPscratchCnt=\count347
+\MPscratchDim=\dimen304
+\MPnumerator=\count348
+\makeMPintoPDFobject=\count349
+\everyMPtoPDFconversion=\toks47
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/epstopdf-pkg/epstopdf-b
 ase.sty
@@ -1220,12 +1120,15 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 69.
+or `english'. on input line 86.
 Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: End \AtBeginDocument code.
 \providecommand\hyper@newdestlabel[2]{}
-Package hyperref Info: Link coloring OFF on input line 69.
+Package hyperref Info: Link coloring OFF on input line 86.
 (./titlepage.tex
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: \Gm@driver 
@@ -1263,137 +1166,1075 @@ The command '\includegraphics [width=\textwidth ]{uliege_logo_rvb_pos.pdf}' has
  been optimized away. Use '/tikz/external/optimize=false' to disable this.
 ) (./abstract.tex
 
-LaTeX Warning: Citation 'test_bib' on page 2 undefined on input line 17.
+Package natbib Warning: Citation `CPGRobot' on page 2 undefined on input line 1
+8.
+
+
+Package natbib Warning: Citation `crayfish' on page 2 undefined on input line 1
+8.
+
+
+Package natbib Warning: Citation `stickInsect' on page 2 undefined on input lin
+e 18.
+
+
+Package natbib Warning: Citation `MARDER' on page 2 undefined on input line 18.
+
+
+
+Package natbib Warning: Citation `burstingSlowFeedback' on page 2 undefined on 
+input line 20.
+
+
+Package natbib Warning: Citation `Franci2' on page 2 undefined on input line 20
+.
 
 )
 No file figures/plots/neuron_type.tikz.toc.
 Chapter 1.
-(./chapters/introduction.tex)
+(./chapters/introduction.tex
+
+Package natbib Warning: Citation `crayfish' on page 4 undefined on input line 1
+1.
+
+
+Package natbib Warning: Citation `stickInsect' on page 4 undefined on input lin
+e 11.
+
+
+Package natbib Warning: Citation `MARDER' on page 4 undefined on input line 11.
+
+
+
+Overfull \hbox (9.32864pt too wide) in paragraph at lines 24--25
+[]\TU/lmr/m/n/12 In this
+ []
+
+
+Overfull \hbox (8.34865pt too wide) in paragraph at lines 25--26
+[]\TU/lmr/m/n/12 The last chap-
+ []
+
+)
 Chapter 2.
-(./chapters/neuron.tex (./diagrams/neuron_model.tikz
+(./chapters/neuronandcpg.tex
+
+Package natbib Warning: Citation `excDef' on page 6 undefined on input line 9.
+
+
+LaTeX Warning: Reference `fig:excitability' on page 1 undefined on input line 1
+2.
+
+(./plots/excitability.tikz
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
 isable this.
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 10.
+
+LaTeX Warning: Reference `sec:model' on page 1 undefined on input line 20.
+
+
+LaTeX Warning: Reference `sec:model' on page 1 undefined on input line 20.
+
+
+Package natbib Warning: Citation `excDef' on page 6 undefined on input line 30.
+
+
+
+Package natbib Warning: Citation `neuronIons' on page 7 undefined on input line
+ 44.
+
+
+LaTeX Warning: Reference `fig:conductance_neuron' on page 1 undefined on input 
+line 48.
+
+The command '\includegraphics [width=.9\textwidth ]{channels.png}' has been opt
+imized away. Use '/tikz/external/optimize=false' to disable this.
+
+Package natbib Warning: Citation `channelDiagram' on page 7 undefined on input 
+line 53.
+
+
+Package natbib Warning: Citation `channelDiagram' on page 7 undefined on input 
+line 53.
+
+The command '\includegraphics [width=.9\textwidth ]{conductanceNet.png}' has be
+en optimized away. Use '/tikz/external/optimize=false' to disable this.
+
+Package natbib Warning: Citation `electricDiagram' on page 7 undefined on input
+ line 60.
+
+
+Package natbib Warning: Citation `electricDiagram' on page 7 undefined on input
+ line 60.
+
+
+Package natbib Warning: Citation `conductanceModel' on page 7 undefined on inpu
+t line 65.
+
+
+LaTeX Warning: Reference `fig:conductance_neuron_circuit' on page 1 undefined o
+n input line 67.
+
+
+LaTeX Warning: Reference `eq:hodgkinstart' on page 7 undefined on input line 73
+.
+
+
+LaTeX Warning: Reference `eq:hodgkinend' on page 7 undefined on input line 73.
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 74.
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 10.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 74.
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./plots/neuron_type.tikz
-\openout5 = figures/plots/neuron_type.tikz.dpth
+)
 
-Package pgfplots info on input line 48: Using 'lua backend=false' for plot 0 (t
+LaTeX Warning: Reference `fig:conductance_neuron_circuit' on page 1 undefined o
+n input line 74.
+
+
+LaTeX Warning: Reference `fig:behaviours' on page 1 undefined on input line 90.
+
+
+
+LaTeX Warning: Reference `fig:behaviours' on page 1 undefined on input line 95.
+
+
+
+LaTeX Warning: Reference `fig:excitability' on page 1 undefined on input line 9
+6.
+
+(./plots/neuron_behaviour.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+)
+
+LaTeX Warning: Reference `sec:model' on page 1 undefined on input line 103.
+
+
+LaTeX Warning: Reference `sec:model' on page 1 undefined on input line 103.
+
+
+LaTeX Warning: Reference `fig:burst_metrics' on page 1 undefined on input line 
+113.
+
+(./diagrams/burst_metrics.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+)
+
+LaTeX Warning: Reference `sec:model' on page 1 undefined on input line 125.
+
+
+LaTeX Warning: Reference `sec:model' on page 1 undefined on input line 125.
+
+
+Package natbib Warning: Citation `cpgDef' on page 9 undefined on input line 150
+.
+
+
+Package natbib Warning: Citation `cpgMotion' on page 9 undefined on input line 
+155.
+
+
+Package natbib Warning: Citation `cpgMotion2' on page 9 undefined on input line
+ 155.
+
+
+Package natbib Warning: Citation `halfcenter' on page 10 undefined on input lin
+e 162.
+
+
+LaTeX Warning: Reference `fig:halfcenter' on page 10 undefined on input line 16
+4.
+
+(./diagrams/halfcenter.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+)
+
+LaTeX Warning: Reference `sec:model' on page 1 undefined on input line 170.
+
+
+LaTeX Warning: Reference `sec:model' on page 1 undefined on input line 170.
+
+
+Package natbib Warning: Citation `embodiedDef' on page 10 undefined on input li
+ne 182.
+
+)
+Chapter 3.
+(./chapters/neuroncircuits.tex
+
+LaTeX Warning: Reference `fig:neuron_mod' on page 1 undefined on input line 10.
+
+
+
+LaTeX Warning: Reference `eq:neur_start' on page 12 undefined on input line 15.
+
+
+
+LaTeX Warning: Reference `eq:neur_end' on page 12 undefined on input line 15.
+
+(./diagrams/neuron_model.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Package natbib Warning: Citation `burstingSlowFeedback' on page 13 undefined on
+ input line 43.
+
+
+LaTeX Warning: Reference `fig:neuron_inside' on page 1 undefined on input line 
+66.
+
+(./plots/neuron_inside.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+)
+
+LaTeX Warning: Reference `fig:neuron_activation' on page 1 undefined on input l
+ine 91.
+
+(./plots/neuron_type.tikz
+\openout4 = figures/plots/neuron_type.tikz.dpth
+
+Package pgfplots info on input line 28: Using 'lua backend=false' for plot 0 (t
 ype 'mesh'): plot handler does not support LUA.
 PGFPlots: reading {data/Neuron/Map/neuron_Iappm2_spiking.csv}
-\tikzexternal@dep@file=\write6
+\tikzexternal@dep@file=\write5
 
-\openout6 = figures/plots/neuron_type.tikz.dep
-Package pgfplots info on input line 49: Using 'lua backend=false' for plot 1 (t
+\openout5 = figures/plots/neuron_type.tikz.dep
+Package pgfplots info on input line 29: Using 'lua backend=false' for plot 1 (t
 ype 'mesh'): plot handler does not support LUA.
 PGFPlots: reading {data/Neuron/Map/neuron_Iappm2_bursting.csv}
-Package pgfplots info on input line 50: Using 'lua backend=false' for plot 2 (t
+Package pgfplots info on input line 30: Using 'lua backend=false' for plot 2 (t
 ype 'mesh'): plot handler does not support LUA.
 PGFPlots: reading {data/Neuron/Map/neuron_Iappm2_plateau.csv}
-Package pgfplots info on input line 56: Using 'lua backend=false' for plot 0 (t
+Package pgfplots info on input line 36: Using 'lua backend=false' for plot 0 (t
 ype 'mesh'): plot handler does not support LUA.
 PGFPlots: reading {data/Neuron/Map/neuron_Iappm1_spiking.csv}
-Package pgfplots info on input line 57: Using 'lua backend=false' for plot 1 (t
+Package pgfplots info on input line 37: Using 'lua backend=false' for plot 1 (t
 ype 'mesh'): plot handler does not support LUA.
 PGFPlots: reading {data/Neuron/Map/neuron_Iappm1_bursting.csv}
-Package pgfplots info on input line 58: Using 'lua backend=false' for plot 2 (t
+Package pgfplots info on input line 38: Using 'lua backend=false' for plot 2 (t
 ype 'mesh'): plot handler does not support LUA.
 PGFPlots: reading {data/Neuron/Map/neuron_Iappm1_plateau.csv}
-Package pgfplots info on input line 73: Using 'lua backend=false' for plot 0 (t
+Package pgfplots info on input line 53: Using 'lua backend=false' for plot 0 (t
 ype 'mesh'): plot handler does not support LUA.
 PGFPlots: reading {data/Neuron/Map/neuron_Iapp0_spiking.csv}
-Package pgfplots info on input line 74: Using 'lua backend=false' for plot 1 (t
+Package pgfplots info on input line 54: Using 'lua backend=false' for plot 1 (t
 ype 'mesh'): plot handler does not support LUA.
 PGFPlots: reading {data/Neuron/Map/neuron_Iapp0_bursting.csv}
-Package pgfplots info on input line 75: Using 'lua backend=false' for plot 2 (t
+Package pgfplots info on input line 55: Using 'lua backend=false' for plot 2 (t
 ype 'mesh'): plot handler does not support LUA.
 PGFPlots: reading {data/Neuron/Map/neuron_Iapp0_plateau.csv}
-Package pgfplots info on input line 80: Using 'lua backend=false' for plot 0 (t
+Package pgfplots info on input line 60: Using 'lua backend=false' for plot 0 (t
 ype 'mesh'): plot handler does not support LUA.
 PGFPlots: reading {data/Neuron/Map/neuron_Iappp1_spiking.csv}
-Package pgfplots info on input line 81: Using 'lua backend=false' for plot 1 (t
+Package pgfplots info on input line 61: Using 'lua backend=false' for plot 1 (t
 ype 'mesh'): plot handler does not support LUA.
 PGFPlots: reading {data/Neuron/Map/neuron_Iappp1_bursting.csv}
-Package pgfplots info on input line 82: Using 'lua backend=false' for plot 2 (t
+Package pgfplots info on input line 62: Using 'lua backend=false' for plot 2 (t
 ype 'mesh'): plot handler does not support LUA.
 PGFPlots: reading {data/Neuron/Map/neuron_Iappp1_plateau.csv}
-Package pgfplots info on input line 87: Using 'lua backend=false' for plot 0 (t
+Package pgfplots info on input line 67: Using 'lua backend=false' for plot 0 (t
 ype 'mesh'): plot handler does not support LUA.
 PGFPlots: reading {data/Neuron/Map/neuron_Iappp2_spiking.csv}
-Package pgfplots info on input line 88: Using 'lua backend=false' for plot 1 (t
+Package pgfplots info on input line 68: Using 'lua backend=false' for plot 1 (t
 ype 'mesh'): plot handler does not support LUA.
 PGFPlots: reading {data/Neuron/Map/neuron_Iappp2_bursting.csv}
-Package pgfplots info on input line 89: Using 'lua backend=false' for plot 2 (t
+Package pgfplots info on input line 69: Using 'lua backend=false' for plot 2 (t
 ype 'mesh'): plot handler does not support LUA.
 PGFPlots: reading {data/Neuron/Map/neuron_Iappp2_plateau.csv}
-[5
+[14
 
 {C:/Users/chris/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
 Missing character: There is no ; (U+003B) in font nullfont!
 Missing character: There is no ; (U+003B) in font nullfont!
 Missing character: There is no ; (U+003B) in font nullfont!
 Missing character: There is no ; (U+003B) in font nullfont!
-]) (./plots/spike_burst_curve.tikz
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
-isable this.
-) (./plots/power_burst_curve.tikz
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
-isable this.
-) (./plots/fi_curve.tikz
+]) (./plots/neuron_type_ex.tikz
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
 isable this.
 )
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
-)
-Chapter 3.
-(./chapters/pendulum.tex (./plots/cpg_activation.tikz
+LaTeX Warning: Reference `fig:neuron_burts' on page 1 undefined on input line 1
+18.
+
+(./plots/neuron_burst.tikz
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
 isable this.
-) (./plots/cpg_only_activation.tikz
+)
+
+LaTeX Warning: Reference `fig:neuron_burts_fragile' on page 1 undefined on inpu
+t line 127.
+
+
+Package natbib Warning: Citation `burstingSlowFeedback' on page 15 undefined on
+ input line 127.
+
+(./plots/neuron_burst_close.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+)
+
+LaTeX Warning: Reference `fig:neuron_burts_comp' on page 1 undefined on input l
+ine 136.
+
+(./plots/burst_stable_fragile.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+)
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 151.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 151.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 151.
+
+
+LaTeX Warning: Reference `fig:neuron_burts' on page 1 undefined on input line 1
+55.
+
+
+LaTeX Warning: Reference `fig:neuron_burst_spikes' on page 1 undefined on input
+ line 157.
+
+(./plots/spike_burst_curve.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+)
+
+LaTeX Warning: Reference `fig:neuron_burst_power' on page 1 undefined on input 
+line 168.
+
+(./plots/power_burst_curve.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+)
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 183.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 183.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 183.
+
+
+LaTeX Warning: Reference `fig:neuron_burst_freq' on page 1 undefined on input l
+ine 187.
+
+(./plots/freq_burst_map.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+)
+
+LaTeX Warning: Reference `fig:neuron_spiking' on page 1 undefined on input line
+ 202.
+
+(./plots/fi_curve.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+)
+
+LaTeX Warning: Reference `fig:synapse_mod' on page 1 undefined on input line 21
+5.
+
+(./diagrams/synapse_model.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+)
+
+LaTeX Warning: Reference `sec:neuro_expl' on page 1 undefined on input line 239
+.
+
+
+LaTeX Warning: Reference `fig:halfcenter' on page 1 undefined on input line 239
+.
+
+
+LaTeX Warning: Reference `fig:cpg_time' on page 1 undefined on input line 239.
+
+(./plots/cpg_output_plot.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+)
+
+LaTeX Warning: Reference `fig:cpg_act' on page 1 undefined on input line 248.
+
+
+LaTeX Warning: Reference `fig:neuron_burst_freq' on page 1 undefined on input l
+ine 248.
+
+(./plots/cpg_activation.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+)
+
+LaTeX Warning: Reference `fig:cpg_only_act' on page 1 undefined on input line 2
+57.
+
+(./plots/cpg_only_activation.tikz
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
 isable this.
 ))
 Chapter 4.
+(./chapters/pendulum.tex
+
+LaTeX Warning: Reference `fig:pendulum' on page 1 undefined on input line 12.
+
+(./diagrams/pendulum_system.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+)
+
+LaTeX Warning: Reference `fig:direct_angle' on page 1 undefined on input line 5
+9.
+
+(./diagrams/direct_angle_feed.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+)
+
+LaTeX Warning: Reference `fig:speed_angle' on page 1 undefined on input line 80
+.
+
+(./diagrams/speed_angle_feed.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+)
+
+LaTeX Warning: Reference `fig:spike_feed' on page 1 undefined on input line 116
+.
+
+(./diagrams/spike_feed.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+)
+Underfull \vbox (badness 4366) has occurred while \output is active []
+
+
+LaTeX Warning: Reference `fig:neuron_mod' on page 1 undefined on input line 133
+.
+
+
+LaTeX Warning: Reference `fig:synapse_mod' on page 1 undefined on input line 13
+3.
+
+
+LaTeX Warning: Reference `fig:one_motor' on page 1 undefined on input line 164.
+
+
+(./diagrams/one_motor.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+)
+
+LaTeX Warning: Reference `fig:single_t1_high' on page 1 undefined on input line
+ 186.
+
+
+LaTeX Warning: Reference `fig:single_t1_low' on page 1 undefined on input line 
+186.
+
+
+LaTeX Warning: Reference `fig:single_t10_high' on page 1 undefined on input lin
+e 186.
+
+
+LaTeX Warning: Reference `fig:single_t10_low' on page 1 undefined on input line
+ 186.
+
+
+LaTeX Warning: Reference `fig:single_t10_high_freq' on page 1 undefined on inpu
+t line 194.
+
+
+LaTeX Warning: Reference `fig:single_t10_low_freq' on page 1 undefined on input
+ line 194.
+
+
+LaTeX Warning: Reference `fig:single_t1_high_freq' on page 1 undefined on input
+ line 194.
+
+
+LaTeX Warning: Reference `fig:single_t1_low_freq' on page 1 undefined on input 
+line 194.
+
+
+LaTeX Warning: Reference `fig:single_t10_high_range' on page 1 undefined on inp
+ut line 195.
+
+
+LaTeX Warning: Reference `fig:single_t10_low_range' on page 1 undefined on inpu
+t line 195.
+
+
+LaTeX Warning: Reference `fig:single_t10_high_range' on page 1 undefined on inp
+ut line 202.
+
+
+LaTeX Warning: Reference `fig:neuron_burst_power' on page 1 undefined on input 
+line 202.
+
+
+LaTeX Warning: Reference `fig:neuron_burst_spikes' on page 1 undefined on input
+ line 202.
+
+
+LaTeX Warning: Reference `fig:single_t1_high' on page 1 undefined on input line
+ 208.
+
+(./plots/single_freq_t1.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+) (./plots/single_range_t1.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+) (./plots/single_freq_t1_high.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+) (./plots/single_range_t1_high.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+) (./plots/single_freq_t10.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+) (./plots/single_range_t10.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+) (./plots/single_freq_t10_high.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+) (./plots/single_range_t10_high.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+)
+
+LaTeX Warning: Reference `fig:single_control_traces' on page 1 undefined on inp
+ut line 290.
+
+
+LaTeX Warning: Reference `fig:single_t10_high' on page 1 undefined on input lin
+e 292.
+
+
+LaTeX Warning: Reference `fig:neuron_activation' on page 1 undefined on input l
+ine 298.
+
+
+LaTeX Warning: Reference `fig:single_control_traces' on page 1 undefined on inp
+ut line 301.
+
+
+LaTeX Warning: Reference `fig:single_t10_high' on page 1 undefined on input lin
+e 302.
+
+
+LaTeX Warning: Reference `fig:single_control_traces' on page 1 undefined on inp
+ut line 310.
+
+
+LaTeX Warning: Reference `fig:single_t1_low' on page 1 undefined on input line 
+311.
+
+
+LaTeX Warning: Reference `sec:speed_feed' on page 1 undefined on input line 318
+.
+
+
+LaTeX Warning: Reference `eq:speed_bump' on page 1 undefined on input line 319.
+
+
+
+LaTeX Warning: Reference `eq:speed_bump' on page 1 undefined on input line 321.
+
+
+(./plots/single_traces.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+)
+
+LaTeX Warning: Reference `fig:single_t10_high' on page 1 undefined on input lin
+e 340.
+
+
+LaTeX Warning: Reference `fig:single_t10_low' on page 1 undefined on input line
+ 340.
+
+
+LaTeX Warning: Reference `fig:single_t1_high' on page 1 undefined on input line
+ 340.
+
+
+LaTeX Warning: Reference `fig:single_t1_low' on page 1 undefined on input line 
+340.
+
+
+LaTeX Warning: Reference `fig:single_t10_high' on page 1 undefined on input lin
+e 341.
+
+
+LaTeX Warning: Reference `fig:neuron_burts_comp' on page 1 undefined on input l
+ine 345.
+
+
+LaTeX Warning: Reference `fig:neuron_burts_fragile' on page 1 undefined on inpu
+t line 345.
+
+
+LaTeX Warning: Reference `fig:single_monte' on page 1 undefined on input line 3
+48.
+
+
+LaTeX Warning: Reference `fig:single_monte_freq' on page 1 undefined on input l
+ine 350.
+
+
+LaTeX Warning: Reference `fig:single_monte_range' on page 1 undefined on input 
+line 355.
+
+
+LaTeX Warning: Reference `fig:neuron_burts_comp' on page 1 undefined on input l
+ine 359.
+
+(./plots/control_monte.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+) (./plots/control_monte_range.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+)
+
+LaTeX Warning: Float too large for page by 10.56764pt on input line 381.
+
+
+LaTeX Warning: Reference `fig:single_monte_robust' on page 1 undefined on input
+ line 383.
+
+(./plots/control_monte_robust.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+) (./plots/control_monte_range_robust.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+) (./diagrams/two_motor.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+)
+
+LaTeX Warning: Reference `fig:double_t10_high' on page 1 undefined on input lin
+e 439.
+
+
+LaTeX Warning: Reference `fig:double_t10_low' on page 1 undefined on input line
+ 439.
+
+
+LaTeX Warning: Reference `fig:double_t1_high' on page 1 undefined on input line
+ 439.
+
+
+LaTeX Warning: Reference `fig:double_t1_low' on page 1 undefined on input line 
+439.
+
+
+LaTeX Warning: Reference `fig:single_t10_high' on page 1 undefined on input lin
+e 439.
+
+
+LaTeX Warning: Reference `fig:single_t10_low' on page 1 undefined on input line
+ 439.
+
+
+LaTeX Warning: Reference `fig:single_t1_high' on page 1 undefined on input line
+ 439.
+
+
+LaTeX Warning: Reference `fig:single_t1_low' on page 1 undefined on input line 
+439.
+
+
+LaTeX Warning: Reference `fig:double_t1_high' on page 1 undefined on input line
+ 442.
+
+
+LaTeX Warning: Reference `fig:double_t1_high' on page 1 undefined on input line
+ 444.
+
+
+LaTeX Warning: Reference `fig:double_t1_low' on page 1 undefined on input line 
+444.
+
+
+LaTeX Warning: Reference `fig:single_t10_high' on page 1 undefined on input lin
+e 447.
+
+
+LaTeX Warning: Reference `fig:double_t1_high' on page 1 undefined on input line
+ 447.
+
+
+LaTeX Warning: Reference `fig:cpg_time' on page 1 undefined on input line 450.
+
+
+LaTeX Warning: Reference `fig:double_t10_high' on page 1 undefined on input lin
+e 454.
+
+
+LaTeX Warning: Reference `fig:neuron_burst_power' on page 1 undefined on input 
+line 454.
+
+
+LaTeX Warning: Reference `fig:neuron_burst_spikes' on page 1 undefined on input
+ line 454.
+
+
+LaTeX Warning: Reference `fig:cpg_act' on page 1 undefined on input line 456.
+
+(./plots/double_freq_t1.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+) (./plots/double_range_t1.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+) (./plots/double_freq_t1_high.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+) (./plots/double_range_t1_high.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+) (./plots/double_freq_t10.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+) (./plots/double_range_t10.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+) (./plots/double_freq_t10_high.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+) (./plots/double_range_t10_high.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+)
+
+LaTeX Warning: Reference `fig:double_control_traces' on page 1 undefined on inp
+ut line 539.
+
+
+LaTeX Warning: Reference `fig:double_t10_high_range' on page 1 undefined on inp
+ut line 541.
+
+
+LaTeX Warning: Reference `fig:single_control_traces' on page 1 undefined on inp
+ut line 542.
+
+
+LaTeX Warning: Reference `fig:double_t10_high' on page 1 undefined on input lin
+e 559.
+
+
+LaTeX Warning: Reference `fig:double_t1_high' on page 1 undefined on input line
+ 564.
+
+
+LaTeX Warning: Reference `fig:double_t10_high' on page 1 undefined on input lin
+e 564.
+
+
+LaTeX Warning: Reference `fig:double_t10_low' on page 1 undefined on input line
+ 564.
+
+
+LaTeX Warning: Reference `fig:double_t1_low' on page 1 undefined on input line 
+564.
+
+
+LaTeX Warning: Reference `par:mixed_problem' on page 1 undefined on input line 
+567.
+
+
+LaTeX Warning: Reference `par:mixed_problem' on page 1 undefined on input line 
+567.
+
+
+LaTeX Warning: Reference `sec:speed_feed' on page 1 undefined on input line 567
+.
+
+(./plots/double_traces.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+)
+
+LaTeX Warning: Reference `fig:double_t10_high' on page 1 undefined on input lin
+e 583.
+
+
+LaTeX Warning: Reference `fig:neuron_burts_comp' on page 1 undefined on input l
+ine 588.
+
+
+LaTeX Warning: Reference `fig:neuron_burts_fragile' on page 1 undefined on inpu
+t line 588.
+
+
+LaTeX Warning: Reference `fig:double_monte' on page 1 undefined on input line 5
+91.
+
+
+LaTeX Warning: Reference `fig:double_monte_range' on page 1 undefined on input 
+line 592.
+
+
+LaTeX Warning: Reference `fig:single_monte_range' on page 1 undefined on input 
+line 595.
+
+
+LaTeX Warning: Reference `fig:double_monte_freq' on page 1 undefined on input l
+ine 596.
+
+
+LaTeX Warning: Reference `fig:double_monte_freq' on page 1 undefined on input l
+ine 600.
+
+
+LaTeX Warning: Reference `fig:double_monte_range' on page 1 undefined on input 
+line 600.
+
+(./plots/double_control_monte.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+) (./plots/double_control_monte_range.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+)
+
+LaTeX Warning: Reference `fig:double_monte_zoom' on page 1 undefined on input l
+ine 626.
+
+
+LaTeX Warning: Reference `fig:double_monte_freq_zoom' on page 1 undefined on in
+put line 629.
+
+
+LaTeX Warning: Reference `fig:double_monte' on page 1 undefined on input line 6
+30.
+
+
+LaTeX Warning: Reference `fig:single_monte_robust' on page 1 undefined on input
+ line 631.
+
+
+LaTeX Warning: Reference `fig:double_monte_range_zoom' on page 1 undefined on i
+nput line 634.
+
+
+LaTeX Warning: Reference `fig:single_monte_robust' on page 1 undefined on input
+ line 634.
+
+(./plots/double_control_monte_robust.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+) (./plots/double_control_monte_range_robust.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+))
 Chapter 5.
+(./chapters/neuromod.tex
+
+LaTeX Warning: Reference `sec:two_neuron' on page 1 undefined on input line 8.
+
+
+LaTeX Warning: Reference `sec:pendulum' on page 1 undefined on input line 9.
+
+
+LaTeX Warning: Reference `sec:spike_mod' on page 1 undefined on input line 13.
+
+
+LaTeX Warning: Reference `fig:double_t10_high' on page 1 undefined on input lin
+e 13.
+
+
+LaTeX Warning: Reference `fig:neuromod_motor' on page 1 undefined on input line
+ 15.
+
+
+LaTeX Warning: Reference `fig:two_motor' on page 1 undefined on input line 16.
+
+(./diagrams/modulation_motor.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+)
+
+LaTeX Warning: Reference `fig:neuro_feed' on page 1 undefined on input line 43.
+
+
+
+LaTeX Warning: Reference `fig:neuron_burst_power' on page 1 undefined on input 
+line 45.
+
+
+LaTeX Warning: Reference `fig:neuron_burst_spikes' on page 1 undefined on input
+ line 45.
+
+(./diagrams/neuromod_cont.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+)
+
+LaTeX Warning: Reference `sec:speed_feed' on page 1 undefined on input line 80.
+
+
+
+LaTeX Warning: Reference `fig:neuromod_down' on page 1 undefined on input line 
+83.
+
+
+LaTeX Warning: Reference `fig:neuromod_up' on page 1 undefined on input line 83
+.
+
+(./plots/neuromod_up.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+) (./plots/neuromod_down.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+)
+
+LaTeX Warning: Reference `fig:neuromod_up' on page 1 undefined on input line 11
+2.
+
+
+LaTeX Warning: Reference `fig:neuromod_gain' on page 1 undefined on input line 
+116.
+
+
+LaTeX Warning: Reference `fig:neuromod_tgt' on page 1 undefined on input line 1
+16.
+
+
+LaTeX Warning: Reference `fig:neuromod_tgt' on page 1 undefined on input line 1
+17.
+
+
+LaTeX Warning: Reference `fig:neuromod_gain' on page 1 undefined on input line 
+117.
+
+(./plots/tgt_modulation.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+) (./plots/gain_modulation.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+)
+
+LaTeX Warning: Reference `fig:neuromod_tgt' on page 1 undefined on input line 1
+37.
+
+
+LaTeX Warning: Reference `fig:neuron_burst_power' on page 1 undefined on input 
+line 140.
+
+
+LaTeX Warning: Reference `fig:neuron_burst_spikes' on page 1 undefined on input
+ line 140.
+
+
+LaTeX Warning: Reference `fig:neuromod_gain' on page 1 undefined on input line 
+150.
+
+
+LaTeX Warning: Reference `fig:neuromod_gain' on page 1 undefined on input line 
+168.
+
+
+LaTeX Warning: Reference `fig:neuromod_tgt' on page 1 undefined on input line 1
+78.
+
+
+LaTeX Warning: Reference `fig:neuromod_tgt' on page 1 undefined on input line 1
+88.
+
+
+LaTeX Warning: Reference `fig:neuromod_gain' on page 1 undefined on input line 
+188.
+
+
+LaTeX Warning: Reference `fig:neuromod_gain' on page 1 undefined on input line 
+189.
+
+
+LaTeX Warning: Reference `fig:neuromod_gain' on page 1 undefined on input line 
+197.
+
+
+LaTeX Warning: Reference `fig:neuromod_change' on page 1 undefined on input lin
+e 200.
+
+(./plots/neuromod_change.tikz
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
+isable this.
+))
 Chapter 6.
+(./chapters/conclusion.tex
 
-LaTeX Warning: Empty bibliography on input line 107.
+Package natbib Warning: Citation `related1' on page 48 undefined on input line 
+16.
 
+
+Package natbib Warning: Citation `related2' on page 48 undefined on input line 
+16.
+
+
+Package natbib Warning: Citation `related3' on page 48 undefined on input line 
+16.
+
+
+Package natbib Warning: Citation `related4' on page 48 undefined on input line 
+16.
+
+
+Package natbib Warning: Citation `related5' on page 48 undefined on input line 
+16.
+
+)
+No file figures/plots/neuron_type.tikz.bbl.
 Appendix A.
+
+Package natbib Warning: There were undefined citations.
+
 
 LaTeX Warning: There were undefined references.
 
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                figures/plots/neuron_type.tikz
-(biblatex)                and rerun LaTeX afterwards.
-
-Package logreq Info: Writing requests to 'figures/plots/neuron_type.tikz.run.xm
-l'.
-
-\openout1 = figures/plots/neuron_type.tikz.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 45056 strings out of 478326
- 2846104,7087374 words of node,token memory allocated
- 569 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 8 attribute, 65 glue_spec,
+ 45402 strings out of 478326
+ 2842396,7087374 words of node,token memory allocated
+ 529 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 8 attribute, 57 glue_spec,
  8 attribute_list, 2 write nodes
-   avail lists: 1:7,2:396961,3:576840,4:80,5:254,6:24,7:20335,8:36,9:1946,10:13,
-11:141
- 63718 multiletter control sequences out of 65536+600000
- 46 fonts using 3549687 bytes
- 88i,21n,88p,779b,2826s stack positions out of 10000i,1000n,20000p,200000b,200000s
+   avail lists: 1:2,2:396781,3:576836,4:80,5:525,6:56,7:21706,8:49,9:1722,10:27,
+11:810
+ 63492 multiletter control sequences out of 65536+600000
+ 79 fonts using 5805967 bytes
+ 88i,23n,94p,779b,3106s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <//?/c:/users/chris/appdata/local/programs/miktex/fonts/opentype/public/lm/lmrom
 an12-regular.otf><//?/c:/users/chris/appdata/local/programs/miktex/fonts/opentyp
 e/public/lm/lmroman8-regular.otf><C:/Users/chris/AppData/Local/Programs/MiKTeX/f
@@ -1403,7 +2244,7 @@ ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/chris/AppData/L
 ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/chris/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/c
 hris/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on figures/plots/neuron_type.tikz.pdf (1 page, 250919 bytes).
+Output written on figures/plots/neuron_type.tikz.pdf (1 page, 251521 bytes).
 
 PDF statistics: 51 PDF objects out of 1000 (max. 8388607)
  1 named destinations out of 1000 (max. 131072)

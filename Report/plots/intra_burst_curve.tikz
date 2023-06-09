@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+    \begin{axis}[
+            xlabel=$g_{s-}$, ylabel=Intra-Burst Frequency,
+            grid=both,
+            legend cell align=left,
+            grid style={line width=.2pt, draw=gray!30},
+            width = .95\textwidth,
+            height = 0.5\textwidth,
+            x unit=\unit{\siemens},
+            y unit=\unit{\hertz},
+            xmin=-4.3,xmax=-2,
+            ]
+            \addplot[only marks, color=blue] table [col sep=comma, x=gsm, y=value]{data/Neuron/burst_intra.csv};
+    \end{axis}
+\end{tikzpicture}
+ 
+ 

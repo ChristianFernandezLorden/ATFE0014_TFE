@@ -11,7 +11,7 @@
             vertical sep=0.01\textwidth,
             horizontal sep=0.01\textwidth,
         },
-        xlabel=$d_{g_{s-}}$, 
+        xlabel=$\mathrm{d}g_{s-}$, 
         grid=both,
         grid style={line width=.2pt, draw=gray!30},
         width = .95\textwidth,
@@ -23,7 +23,7 @@
             legend pos=north west,
             legend cell align={left},
             ymin=0,ymax=120,
-            ylabel=Time Delay,
+            ylabel=Rise Time,
             y unit=\unit{\second},
         ]
         \addlegendimage{only marks,blue};
@@ -35,7 +35,7 @@
         
         \addplot[only marks,purple,mark size=0.3pt] table [col sep=comma, x=dgsm, y=value]{data/Neuromod/map/mod_gain_time_amppi2.csv};
         
-        \legend{$angle = \frac{pi}{6}\unit{\radian}$, $angle = \frac{pi}{3}\unit{\radian}$, $angle = \frac{pi}{2}\unit{\radian}$};
+        \legend{$\theta_\text{ref} = \frac{\pi}{6}\unit{\radian}$, $\theta_\text{ref} = \frac{\pi}{3}\unit{\radian}$, $\theta_\text{ref} = \frac{\pi}{2}\unit{\radian}$};
         
         
         \nextgroupplot[
@@ -54,13 +54,13 @@
         
         \addplot[only marks,purple,mark size=0.3pt] table [col sep=comma, x=dgsm, y=value]{data/Neuromod/map/mod_gain_amplitude_amppi2.csv};
         
-        \legend{$angle = \frac{pi}{6}\unit{\radian}$, $angle = \frac{pi}{3}\unit{\radian}$, $angle = \frac{pi}{2}\unit{\radian}$};
+        \legend{$\theta_\text{ref} = \frac{\pi}{6}\unit{\radian}$, $\theta_\text{ref} = \frac{\pi}{3}\unit{\radian}$, $\theta_\text{ref} = \frac{\pi}{2}\unit{\radian}$};
         
         \nextgroupplot[
             legend pos=north west,
             legend cell align={left},
             %ymin=0.2,ymax=2.4,
-            ylabel=Standard deviation,
+            ylabel=Amplitude std,
             change y base,
             y SI prefix=milli,
             y unit=\unit{\radian},
@@ -74,6 +74,6 @@
         
         \addplot[only marks,purple,mark size=0.3pt] table [col sep=comma, x=dgsm, y=value]{data/Neuromod/map/mod_gain_range_amppi2.csv};
         
-        \legend{$angle = \frac{pi}{6}\unit{\radian}$, $angle = \frac{pi}{3}\unit{\radian}$, $angle = \frac{pi}{2}\unit{\radian}$};
+        \legend{$\theta_\text{ref} = \frac{\pi}{6}\unit{\radian}$, $\theta_\text{ref} = \frac{\pi}{3}\unit{\radian}$, $\theta_\text{ref} = \frac{\pi}{2}\unit{\radian}$};
     \end{groupplot}
 \end{tikzpicture}  

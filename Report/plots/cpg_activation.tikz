@@ -1,32 +1,3 @@
-\iffalse
-\begin{tikzpicture}
-    %\begin{axis}[mesh/ordering=y varies, 
-    %            unbounded coords=jump,
-    %            colorbar,
-    %            %title={data from infrared measurements},
-    %            view={0}{90},
-    %            ylabel=$g_{up}$,xlabel=$I_\text{app}$,
-    %            colorbar style={
-    %                xticklabel pos=upper,
-    %                xlabel style={yshift=.22cm}
-    %            }]
-    %    \addplot3[surf, mesh/rows=134,mesh/cols=101, shader=flat]
-    %        table[col sep = comma,
-    %                x = Iapp, y = gup, z = value
-    %            ] {data/CPG/cpg_activation_gsyn0.2.csv};
-    %\end{axis}
-    \begin{axis}[mesh/ordering=x varies, 
-                unbounded coords=jump,
-                colorbar,
-                view={0}{90},
-                ylabel=$g_{up}$,xlabel=$I_\text{app}$,
-                ymin = 2, ymax=6, xmin=-3, xmax=0]
-      \addplot[matrix plot*, point meta=explicit, mesh/rows=101,mesh/cols=134]  
-        table [col sep=comma, y=gup, x=Iapp, meta=value] {data/CPG/cpg_activation_gsyn0.2.csv};
-    \end{axis}  
-\end{tikzpicture}
-\fi
-
 \begin{tikzpicture}
     \begin{groupplot}[
         group style={
@@ -47,11 +18,12 @@
         % Remove NaN value from plot
         unbounded coords=jump,
         ylabel=$g_{u+}$,xlabel=$I_\text{app}$,
+        x unit=\unit{\ampere}, y unit=\unit{\siemens},
         ymin = 2, ymax=6, xmin=-3, xmax=0,
         ]
     % start the first plot
         \nextgroupplot[
-            title={$g_\text{syn} = -0.2$}
+            title={$g_\text{syn} = \qty{-0.2}{\siemens}$}
         ]
         \addplot[matrix plot*, point meta=explicit, mesh/rows=101,mesh/cols=134]  
         table [col sep=comma, y=gup, x=Iapp, meta=value] {data/CPG/cpg_activation_gsyn0.2.csv};
@@ -61,19 +33,19 @@
             colorbar right,
             colorbar style = {x unit=\unit{\hertz}, xticklabel pos=upper},
             every colorbar/.append style={height=2*\pgfkeysvalueof{/pgfplots/parent axis height} + \pgfkeysvalueof{/pgfplots/group/vertical sep}},
-            title={$g_\text{syn} = -0.5$}
+            title={$g_\text{syn} = \qty{-0.5}{\siemens}$}
         ]
         \addplot[matrix plot*, point meta=explicit, mesh/rows=101,mesh/cols=134]  
         table [col sep=comma, y=gup, x=Iapp, meta=value] {data/CPG/cpg_activation_gsyn0.5.csv};
         
         \nextgroupplot[
-            title={$g_\text{syn} = -1.0$}
+            title={$g_\text{syn} = \qty{-1}{\siemens}$}
         ]
         \addplot[matrix plot*, point meta=explicit, mesh/rows=101,mesh/cols=134]  
         table [col sep=comma, y=gup, x=Iapp, meta=value] {data/CPG/cpg_activation_gsyn1.0.csv};
         
         \nextgroupplot[
-            title={$g_\text{syn} = -2.0$}
+            title={$g_\text{syn} = \qty{-2}{\siemens}$}
         ]
         \addplot[matrix plot*, point meta=explicit, mesh/rows=101,mesh/cols=134]  
         table [col sep=comma, y=gup, x=Iapp, meta=value] {data/CPG/cpg_activation_gsyn2.0.csv};

@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.16.0 (MiKTeX 23.1) (format=lualatex 2023.2.21)  3 JUN 2023 04:43
+This is LuaHBTeX, Version 1.16.0 (MiKTeX 23.1) (format=lualatex 2023.2.21)  9 JUN 2023 06:01
  system commands enabled.
 **test_figure.tex
 (./test_figure.tex
@@ -1080,20 +1080,18 @@ Package hyperref Info: Link coloring OFF on input line 32.
 \@outlinefile=\write4
 
 \openout4 = test_figure.out
-LaTeX Font Info:    Trying to load font information for U+msa on input line 53.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 46.
 
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 53.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 46.
 
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-PGFPlots: reading {data/Intro/voltage_spiking.csv}
-
 [1
 
 {C:/Users/chris/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
@@ -1103,24 +1101,25 @@ Package rerunfilecheck Info: File `test_figure.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 40310 strings out of 478326
- 381496,4921788 words of node,token memory allocated
- 149411 words of node memory still in use:
-   136 hlist, 7 vlist, 2 rule, 1 disc, 4 local_par, 12 math, 302 glue, 8 kern, 4
- penalty, 26 glyph, 20868 attribute, 53 glue_spec, 20868 attribute_list, 2 write
-, 20594 pdf_literal, 12 pdf_colorstack nodes
-   avail lists: 1:3,2:47,3:61802,4:51,5:54,6:15,7:1060,8:5,9:459,11:3
- 59121 multiletter control sequences out of 65536+600000
+ 40311 strings out of 478326
+ 100000,1977958 words of node,token memory allocated
+ 9837 words of node memory still in use:
+   158 hlist, 7 vlist, 2 rule, 4 local_par, 18 math, 319 glue, 6 kern, 4 penalty
+, 20 glyph, 902 attribute, 53 glue_spec, 902 attribute_list, 2 write, 592 pdf_li
+teral, 12 pdf_colorstack nodes
+   avail lists: 1:1,2:47,3:1796,4:51,5:48,6:15,7:1111,8:5,9:525
+ 59128 multiletter control sequences out of 65536+600000
  41 fonts using 2475479 bytes
- 84i,7n,85p,752b,2101s stack positions out of 10000i,1000n,20000p,1175000b,200000s
+ 84i,7n,85p,752b,2099s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <//?/c:/users/chris/appdata/local/programs/miktex/fonts/opentype/public/lm/lmrom
 an10-regular.otf><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/publi
 c/amsfonts/cm/cmmi12.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/typ
 e1/public/amsfonts/cm/cmr10.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmr12.pfb>
-Output written on test_figure.pdf (1 page, 189155 bytes).
+nts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/chris/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on test_figure.pdf (1 page, 37805 bytes).
 
-PDF statistics: 33 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 37 PDF objects out of 1000 (max. 8388607)
  2 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 

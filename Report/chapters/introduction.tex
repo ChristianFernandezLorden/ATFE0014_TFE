@@ -1,19 +1,37 @@
-The control of robotic locomotion poses important challenges. In particular, we are still very far from achieving in robotic locomotion control with the same degree of robustness and adaptability to unexpected environmental perturbations exhibited by moving biological systems.
+The control of robotic locomotion poses important challenges. 
+In particular, we are still very far from achieving in robotic locomotion control with the same degree of robustness and adaptability to unexpected environmental perturbations exhibited by moving biological systems.
 
-Also, the mobile nature of robots forces them to use a batteries to power themselves. But, this create an enormous problem, the battery limits the power that can be allocated to on-board computing. Yet, the state of the art in artificial intelligence nowadays is Deep Learning and it requires a lot of computing power to work well. This leads to two unsatisfactory solutions. Either get state of the art control, but dissociate the computing from the robot or drastically limit the robot autonomy. Or uses simpler methods that give poorer results but can be computed on-board.
+Also, the mobile nature of robots forces them to use a batteries to power themselves. But, this create an enormous problem, the battery limits the power that can be allocated to on-board computing. 
 
-To solve this energy problem, new approaches are emerging. One of them is neuromorphic engineering which aims to extract the useful properties of biological neuronal system to create highly efficient artificial neuronal controller or computing unit.
+To solve this energy and robustness problem, new approaches are emerging. One of them is neuromorphic engineering which aims to extract the useful properties of biological neuronal system to create highly efficient artificial neuronal controller or computing unit.
 
-Indeed, the human brain is an incredibly energy-efficient processor. It is capable of simultaneously processing audio, visual and other sensory feedback while making decision on the future based on incomplete knowledge. To reuse an somewhat old but striking example, in 2016 AlphaGO bested one of the best human go player. Yet, AlphaGO consumed around \qty{1}{\mega\watt} to accomplish this feat while the brain of Lee Sedol, the human player, only consumed around \qty{20}{\watt}. And, in addition to playing the game, Lee's brain also processed all its sensory inputs, controlled its arm to make the moves on the board and continued regulating the equilibrium of its body. Better yet, after the game, he was able to go home and perform activities that are fundamentally different from playing go.
+Indeed, the human brain, for example, is an incredibly energy-efficient processor. 
+It is capable of simultaneously processing audio, visual and other sensory feedback while making decision on the future based on incomplete knowledge. 
 
-This energy gap between machine and human is explained by the fundamental difference in their computational architecture. The traditional architecture uses synchronized computing steps with memory separated from the computing. Conversely, in a neuronal net, the computing is done completely asynchronously and the memory of the systems is integrated in the computing since it is represented by the dynamical nature of the neurons.
+Multiple researches \citep{crayfish,stickInsect,MARDER} show that simple neuronal systems are the basis of motion in nature.
+It is thought that these basic system exhibit very important properties that are the reason of the success of their control.
 
 In accordance with the limitations laid earlier, the goal of this thesis is to create and analyses a artificial neuronal controller capable of regulating the oscillation of a simple pendulum. The generated oscillation needs to be regular and the amplitude of this motion should be dynamically controllable using an external parameter.
 
-Furthermore, the control architecture should be able to  be interconnected to create a network of pendulums oscillation with different gaits.
-
 Traditionally, control of such a system would be achieved through a PID using trajectory tracking or other simple continuous controllers. Those controllers often work in very restrained pendulum size spaces and need additional controllers to achieve gaits between multiple pendulums.
 
-In this thesis, I will first define and explain some key neuromorphic concepts that will permeate my entire work. Then, I will define and analyse the specific neuronal model I used. After that, I will analyse simple controller that need to be able to sustain a regular oscillation. To this model I will add neuromodulation to be able to control the amplitude of the oscillation. Finally I will study the interconnection of multiple controllers to acheive gaits patterns.
+In this thesis, I aim to create a neuromorphic controller capable of generating a sustained oscillation that tunes its oscillations to reach an amplitude based on the value of an external input.
 
-Note that multiple parameter will be assigned units, these are for distinguishing the role of the parameters but they do not represent physical values. 
+This thesis is separated into multiple chapters with distinguishing themes.
+\begin{description}
+ \item[Chapter 2: Neurons and CPGs] This chapter will serve as an introduction to the world of neuromorphic engineering. It will explain and define terms that are specific to this domain and that will be used throughout the thesis.
+ \item[Chapter 3: Modeling and analysis of neuronal circuits] In this chapter the models of neurons and synapses that will be used to create the controller will be defined. It will also explore the behavior of the neuron model in function of its parameters. 
+ \item[Chapter 4: A neuromorphic sensorimotor loop for pendulum swing] In this chapter the problem of the thesis will be approached. Two models of controllers will be defined and analyzed. The goal is to find which set of parameter leads to a strong connection between the controller and the mechanical system.
+ \item[Chapter 5: Neuromodulation for adaptive amplitude control] The last chapter will expand the model found in the previous chapter to include a system that is capable of modifying the parameters of the controller to achieve a desired amplitude. 
+\end{description}
+
+Note that multiple parameter will be assigned units. 
+These unit are for distinguishing the role of the parameters play in the models.
+They often are not completely correct do. 
+
+
+\iffalse
+To reuse an somewhat old but striking example, in 2016 AlphaGO bested one of the best human go player. Yet, AlphaGO consumed around \qty{1}{\mega\watt} to accomplish this feat while the brain of Lee Sedol, the human player, only consumed around \qty{20}{\watt}. And, in addition to playing the game, Lee's brain also processed all its sensory inputs, controlled its arm to make the moves on the board and continued regulating the equilibrium of its body. Better yet, after the game, he was able to go home and perform activities that are fundamentally different from playing go.
+
+This energy gap between machine and human is explained by the fundamental difference in their computational architecture. The traditional architecture uses synchronized computing steps with memory separated from the computing. Conversely, in a neuronal net, the computing is done completely asynchronously and the memory of the systems is integrated in the computing since it is represented by the dynamical nature of the neurons.
+\fi

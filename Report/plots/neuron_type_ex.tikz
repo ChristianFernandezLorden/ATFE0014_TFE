@@ -1,0 +1,41 @@
+\begin{tikzpicture} 
+    \begin{groupplot}[
+        group style={
+            group name=g,
+            % set how the plots should be organized
+            group size=1 by 3,
+            % only show ticklabels and axis labels on the bottom
+            x descriptions at=edge bottom,
+            y descriptions at=edge left,
+            % set the `vertical sep' to zero
+            vertical sep=0.03\textwidth,
+            horizontal sep=0.01\textwidth,
+        },
+        xlabel=Time, 
+        grid=both,
+        grid style={line width=.2pt, draw=gray!30},
+        width = .95\textwidth,
+        height = 0.23\textwidth,
+        x unit=\unit{\second},
+        xmin=10,xmax=15,
+        ]
+        
+        \nextgroupplot[
+            ylabel=Plateau,
+            y unit=\unit{\volt},
+        ]
+        \addplot[blue] table [col sep=comma, x=time, y=1] {data/Neuron/voltage_plateau_ex.csv};
+        
+        \nextgroupplot[
+            ylabel=Bursting,
+            y unit=\unit{\volt},
+        ]
+        \addplot[green] table [col sep=comma, x=time, y=1] {data/Neuron/voltage_bursting_ex.csv}; 
+        
+        \nextgroupplot[
+            ylabel=Spiking,
+            y unit=\unit{\volt},
+        ]
+        \addplot[red] table [col sep=comma, x=time, y=1] {data/Neuron/voltage_spiking_ex.csv};
+    \end{groupplot}
+\end{tikzpicture}

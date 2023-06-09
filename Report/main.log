@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.16.0 (MiKTeX 23.1) (format=lualatex 2023.2.21)  8 JUN 2023 22:04
+This is LuaHBTeX, Version 1.16.0 (MiKTeX 23.1) (format=lualatex 2023.2.21)  9 JUN 2023 16:43
  system commands enabled.
 **main.tex
 (./main.tex
@@ -1238,36 +1238,46 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 Chapter 1.
 (./chapters/introduction.tex [5
 
-]) [6]
+]
+Overfull \hbox (9.32864pt too wide) in paragraph at lines 24--25
+[]\TU/lmr/m/n/12 In this
+ []
+
+
+Overfull \hbox (8.34865pt too wide) in paragraph at lines 25--26
+[]\TU/lmr/m/n/12 The last chap-
+ []
+
+) [6]
 Chapter 2.
 (./chapters/neuronandcpg.tex (./plots/excitability.tikz
 ===== Image 'figures/plots/excitability.tikz' is up-to-date. ======
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [7
+) [7
 
 ]
-<./images//channels.png, id=241, 190.311pt x 63.8385pt>
+<./images//channels.png, id=257, 190.311pt x 63.8385pt>
 File: ./images//channels.png Graphic file (type png)
 <use ./images//channels.png>
-Package luatex.def Info: ./images//channels.png  used on input line 31.
+Package luatex.def Info: ./images//channels.png  used on input line 52.
 (luatex.def)             Requested size: 384.10959pt x 128.86603pt.
-<./images//conductanceNet.png, id=244, 853.1875pt x 390.45876pt>
+<./images//conductanceNet.png, id=260, 853.1875pt x 390.45876pt>
 File: ./images//conductanceNet.png Graphic file (type png)
 <use ./images//conductanceNet.png>
-Package luatex.def Info: ./images//conductanceNet.png  used on input line 38.
+Package luatex.def Info: ./images//conductanceNet.png  used on input line 59.
 (luatex.def)             Requested size: 384.10959pt x 175.78822pt.
+ [8<./figures/plots/excitability.tikz.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[8<./figures/plots/excitability.tikz.pdf>] [9<./images//channels.png><./images//
-conductanceNet.png>] (./plots/neuron_behaviour.tikz
+ [9<./images//channels.png><./images//conductanceNet.png>] (./plots/neuron_beha
+viour.tikz
 ===== Image 'figures/plots/neuron_behaviour.tikz' is up-to-date. ======
-) [10<./figures/plots/neuron_behaviour.tikz.pdf>]
-(./diagrams/burst_metrics.tikz
+) (./diagrams/burst_metrics.tikz
 ===== Image 'figures/diagrams/burst_metrics.tikz' is up-to-date. ======
-) [11<./figures/diagrams/burst_metrics.tikz.pdf>] (./diagrams/halfcenter.tikz
+) [10] [11<./figures/plots/neuron_behaviour.tikz.pdf>]
+(./diagrams/halfcenter.tikz
 ===== Image 'figures/diagrams/halfcenter.tikz' is up-to-date. ======
-) [12<./figures/diagrams/halfcenter.tikz.pdf>]) [13]
+) [12<./figures/diagrams/burst_metrics.tikz.pdf>]) [13<./figures/diagrams/halfce
+nter.tikz.pdf>]
 Chapter 3.
 (./chapters/neuroncircuits.tex (./diagrams/neuron_model.tikz
 ===== Image 'figures/diagrams/neuron_model.tikz' is up-to-date. ======
@@ -1276,92 +1286,125 @@ Chapter 3.
 ] [15<./figures/diagrams/neuron_model.tikz.pdf>]
 (./plots/neuron_inside.tikz
 ===== Image 'figures/plots/neuron_inside.tikz' is up-to-date. ======
-) (./plots/neuron_type.tikz
+) [16] (./plots/neuron_type.tikz
 ===== Image 'figures/plots/neuron_type.tikz' is up-to-date. ======
-) [16<./figures/plots/neuron_inside.tikz.pdf>] (./plots/neuron_burst.tikz
+) (./plots/neuron_type_ex.tikz
+===== Image 'figures/plots/neuron_type_ex.tikz' is up-to-date. ======
+)
+
+LaTeX Warning: Float too large for page by 7.32259pt on input line 120.
+
+(./plots/neuron_burst.tikz
 ===== Image 'figures/plots/neuron_burst.tikz' is up-to-date. ======
 
-Overfull \hbox (22.77223pt too wide) in paragraph at lines 1--60
+Overfull \hbox (38.97275pt too wide) in paragraph at lines 1--61
  [][] 
  []
 
 ) (./plots/neuron_burst_close.tikz
 ===== Image 'figures/plots/neuron_burst_close.tikz' is up-to-date. ======
-) (./plots/burst_stable_fragile.tikz
+)
+Overfull \hbox (10.8236pt too wide) in paragraph at lines 1--149
+ [][] 
+ []
+
+
+Underfull \vbox (badness 3291) has occurred while \output is active []
+
+ [17<./figures/plots/neuron_inside.tikz.pdf>] [18<./figures/plots/neuron_type.ti
+kz.pdf><./figures/plots/neuron_type_ex.tikz.pdf>] (./plots/burst_stable_fragile
+.tikz
 ===== Image 'figures/plots/burst_stable_fragile.tikz' is up-to-date. ======
-) [17<./figures/plots/neuron_type.tikz.pdf>]
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Text page 18 contains only floats.
+ [19<./figures/plots/neuron_burst.tikz.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[18<./figures/plots/neuron_burst.tikz.pdf><./figures/plots/neuron_burst_close.ti
-kz.pdf>]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 110.
-
+ [20<./figures/plots/neuron_burst_close.tikz.pdf><./figures/plots/burst_stable_f
+ragile.tikz.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 110.
+(hyperref)                removing `math shift' on input line 177.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 110.
+(hyperref)                removing `subscript' on input line 177.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 177.
 
 (./plots/spike_burst_curve.tikz
 ===== Image 'figures/plots/spike_burst_curve.tikz' is up-to-date. ======
-) [19<./figures/plots/burst_stable_fragile.tikz.pdf>]
+) [21<./figures/plots/spike_burst_curve.tikz.pdf>]
 (./plots/power_burst_curve.tikz
 ===== Image 'figures/plots/power_burst_curve.tikz' is up-to-date. ======
+) (./plots/intra_burst_curve.tikz
+===== Image 'figures/plots/intra_burst_curve.tikz' is up-to-date. ======
 )
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 142.
+(hyperref)                removing `math shift' on input line 237.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 142.
+(hyperref)                removing `subscript' on input line 237.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 142.
+(hyperref)                removing `math shift' on input line 237.
 
-(./plots/freq_burst_map.tikz
+[22<./figures/plots/power_burst_curve.tikz.pdf>] (./plots/freq_burst_map.tikz
 ===== Image 'figures/plots/freq_burst_map.tikz' is up-to-date. ======
-) [20<./figures/plots/spike_burst_curve.tikz.pdf>] (./plots/fi_curve.tikz
+) (./plots/fi_curve.tikz
 ===== Image 'figures/plots/fi_curve.tikz' is up-to-date. ======
-) [21<./figures/plots/power_burst_curve.tikz.pdf><./figures/plots/freq_burst_map
-.tikz.pdf>] (./diagrams/synapse_model.tikz
+) [23<./figures/plots/intra_burst_curve.tikz.pdf>]
+
+LaTeX Warning: Text page 24 contains only floats.
+
+[24<./figures/plots/freq_burst_map.tikz.pdf><./figures/plots/fi_curve.tikz.pdf>] (./diagrams/synapse_model.tikz
 ===== Image 'figures/diagrams/synapse_model.tikz' is up-to-date. ======
-) [22<./figures/plots/fi_curve.tikz.pdf>] (./plots/cpg_output_plot.tikz
+) (./plots/cpg_output_plot.tikz
 ===== Image 'figures/plots/cpg_output_plot.tikz' is up-to-date. ======
 ) (./plots/cpg_activation.tikz
 ===== Image 'figures/plots/cpg_activation.tikz' is up-to-date. ======
-) (./plots/cpg_only_activation.tikz
+)
+Overfull \hbox (14.4411pt too wide) in paragraph at lines 1--308
+ [][] 
+ []
+
+(./plots/cpg_only_activation.tikz
 ===== Image 'figures/plots/cpg_only_activation.tikz' is up-to-date. ======
-)) [23<./figures/diagrams/synapse_model.tikz.pdf>] [24<./figures/plots/cpg_outpu
-t_plot.tikz.pdf>] [25<./figures/plots/cpg_activation.tikz.pdf>] [26<./figures/pl
-ots/cpg_only_activation.tikz.pdf>]
+)
+Overfull \hbox (14.4411pt too wide) in paragraph at lines 1--317
+ [][] 
+ []
+
+) [25<./figures/diagrams/synapse_model.tikz.pdf>] [26<./figures/plots/cpg_output
+_plot.tikz.pdf>] [27<./figures/plots/cpg_activation.tikz.pdf>] [28<./figures/plo
+ts/cpg_only_activation.tikz.pdf>]
 Chapter 4.
 (./chapters/pendulum.tex (./diagrams/pendulum_system.tikz
 ===== Image 'figures/diagrams/pendulum_system.tikz' is up-to-date. ======
-) [27
+) [29
 
 ] (./diagrams/direct_angle_feed.tikz
 ===== Image 'figures/diagrams/direct_angle_feed.tikz' is up-to-date. ======
-) [28<./figures/diagrams/pendulum_system.tikz.pdf><./figures/diagrams/direct_ang
+) [30<./figures/diagrams/pendulum_system.tikz.pdf><./figures/diagrams/direct_ang
 le_feed.tikz.pdf>] (./diagrams/speed_angle_feed.tikz
 ===== Image 'figures/diagrams/speed_angle_feed.tikz' is up-to-date. ======
-) (./diagrams/spike_feed.tikz
+) [31<./figures/diagrams/speed_angle_feed.tikz.pdf>]
+(./diagrams/spike_feed.tikz
 ===== Image 'figures/diagrams/spike_feed.tikz' is up-to-date. ======
-) [29<./figures/diagrams/speed_angle_feed.tikz.pdf>] [30<./figures/diagrams/spik
-e_feed.tikz.pdf>] (./diagrams/one_motor.tikz
+) [32<./figures/diagrams/spike_feed.tikz.pdf>] (./diagrams/one_motor.tikz
 ===== Image 'figures/diagrams/one_motor.tikz' is up-to-date. ======
-) [31<./figures/diagrams/one_motor.tikz.pdf>] (./plots/single_freq_t1.tikz
+) [33<./figures/diagrams/one_motor.tikz.pdf>] (./plots/single_freq_t1.tikz
 ===== Image 'figures/plots/single_freq_t1.tikz' is up-to-date. ======
 ) (./plots/single_range_t1.tikz
 ===== Image 'figures/plots/single_range_t1.tikz' is up-to-date. ======
 )
-Overfull \hbox (5.51978pt too wide) in paragraph at lines 1--166
+Overfull \hbox (5.51978pt too wide) in paragraph at lines 1--224
  [][] 
  []
 
@@ -1370,7 +1413,7 @@ Overfull \hbox (5.51978pt too wide) in paragraph at lines 1--166
 ) (./plots/single_range_t1_high.tikz
 ===== Image 'figures/plots/single_range_t1_high.tikz' is up-to-date. ======
 )
-Overfull \hbox (5.51978pt too wide) in paragraph at lines 1--185
+Overfull \hbox (5.51978pt too wide) in paragraph at lines 1--243
  [][] 
  []
 
@@ -1382,31 +1425,35 @@ Overfull \hbox (5.51978pt too wide) in paragraph at lines 1--185
 ===== Image 'figures/plots/single_freq_t10_high.tikz' is up-to-date. ======
 ) (./plots/single_range_t10_high.tikz
 ===== Image 'figures/plots/single_range_t10_high.tikz' is up-to-date. ======
-) [32] [33<./figures/plots/single_freq_t1.tikz.pdf><./figures/plots/single_range
-_t1.tikz.pdf>] [34<./figures/plots/single_freq_t1_high.tikz.pdf><./figures/plots
-/single_range_t1_high.tikz.pdf>] [35<./figures/plots/single_freq_t10.tikz.pdf><.
-/figures/plots/single_range_t10.tikz.pdf>] [36<./figures/plots/single_freq_t10_h
+) [34] [35<./figures/plots/single_freq_t1.tikz.pdf><./figures/plots/single_range
+_t1.tikz.pdf>] [36<./figures/plots/single_freq_t1_high.tikz.pdf><./figures/plots
+/single_range_t1_high.tikz.pdf>] [37<./figures/plots/single_freq_t10.tikz.pdf><.
+/figures/plots/single_range_t10.tikz.pdf>] [38<./figures/plots/single_freq_t10_h
 igh.tikz.pdf><./figures/plots/single_range_t10_high.tikz.pdf>]
 (./plots/single_traces.tikz
 ===== Image 'figures/plots/single_traces.tikz' is up-to-date. ======
-) [37] [38<./figures/plots/single_traces.tikz.pdf>] (./plots/control_monte.tikz
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [39]
+[40<./figures/plots/single_traces.tikz.pdf>] (./plots/control_monte.tikz
 ===== Image 'figures/plots/control_monte.tikz' is up-to-date. ======
 ) (./plots/control_monte_range.tikz
 ===== Image 'figures/plots/control_monte_range.tikz' is up-to-date. ======
 )
 
-LaTeX Warning: Float too large for page by 7.56764pt on input line 291.
+LaTeX Warning: Float too large for page by 7.56764pt on input line 381.
 
-[39] [40<./figures/plots/control_monte.tikz.pdf><./figures/plots/control_monte_r
+[41] [42<./figures/plots/control_monte.tikz.pdf><./figures/plots/control_monte_r
 ange.tikz.pdf>] (./plots/control_monte_robust.tikz
 ===== Image 'figures/plots/control_monte_robust.tikz' is up-to-date. ======
 ) (./plots/control_monte_range_robust.tikz
 ===== Image 'figures/plots/control_monte_range_robust.tikz' is up-to-date. ====
 ==
-) [41<./figures/plots/control_monte_robust.tikz.pdf><./figures/plots/control_mon
+) [43<./figures/plots/control_monte_robust.tikz.pdf><./figures/plots/control_mon
 te_range_robust.tikz.pdf>] (./diagrams/two_motor.tikz
 ===== Image 'figures/diagrams/two_motor.tikz' is up-to-date. ======
-) [42<./figures/diagrams/two_motor.tikz.pdf>] (./plots/double_freq_t1.tikz
+) [44<./figures/diagrams/two_motor.tikz.pdf>] (./plots/double_freq_t1.tikz
 ===== Image 'figures/plots/double_freq_t1.tikz' is up-to-date. ======
 ) (./plots/double_range_t1.tikz
 ===== Image 'figures/plots/double_range_t1.tikz' is up-to-date. ======
@@ -1422,106 +1469,103 @@ te_range_robust.tikz.pdf>] (./diagrams/two_motor.tikz
 ===== Image 'figures/plots/double_freq_t10_high.tikz' is up-to-date. ======
 ) (./plots/double_range_t10_high.tikz
 ===== Image 'figures/plots/double_range_t10_high.tikz' is up-to-date. ======
-) (./plots/double_control_monte.tikz
+) [45] [46<./figures/plots/double_freq_t1.tikz.pdf><./figures/plots/double_range
+_t1.tikz.pdf>] [47<./figures/plots/double_freq_t1_high.tikz.pdf><./figures/plots
+/double_range_t1_high.tikz.pdf>] [48<./figures/plots/double_freq_t10.tikz.pdf><.
+/figures/plots/double_range_t10.tikz.pdf>] [49<./figures/plots/double_freq_t10_h
+igh.tikz.pdf><./figures/plots/double_range_t10_high.tikz.pdf>]
+(./plots/double_traces.tikz
+===== Image 'figures/plots/double_traces.tikz' is up-to-date. ======
+)
+
+LaTeX Warning: Float too large for page by 8.34471pt on input line 575.
+
+[50] [51<./figures/plots/double_traces.tikz.pdf>]
+(./plots/double_control_monte.tikz
 ===== Image 'figures/plots/double_control_monte.tikz' is up-to-date. ======
 ) (./plots/double_control_monte_range.tikz
 ===== Image 'figures/plots/double_control_monte_range.tikz' is up-to-date. ====
 ==
-)) [43]
+)
 
-LaTeX Warning: Text page 44 contains only floats.
+LaTeX Warning: Float too large for page by 7.71416pt on input line 624.
 
-
-Overfull \vbox (1.83842pt too high) has occurred while \output is active []
-
-
-[44<./figures/plots/double_freq_t1.tikz.pdf><./figures/plots/double_range_t1.tik
-z.pdf>]
-
-LaTeX Warning: Text page 45 contains only floats.
-
-
-Overfull \vbox (1.83842pt too high) has occurred while \output is active []
-
-
-[45<./figures/plots/double_freq_t1_high.tikz.pdf><./figures/plots/double_range_t
-1_high.tikz.pdf>]
-
-LaTeX Warning: Text page 46 contains only floats.
-
-
-Overfull \vbox (1.83842pt too high) has occurred while \output is active []
-
-
-[46<./figures/plots/double_freq_t10.tikz.pdf><./figures/plots/double_range_t10.t
-ikz.pdf>]
-
-LaTeX Warning: Text page 47 contains only floats.
-
-
-Overfull \vbox (1.83842pt too high) has occurred while \output is active []
-
-
-[47<./figures/plots/double_freq_t10_high.tikz.pdf><./figures/plots/double_range_
-t10_high.tikz.pdf>] [48<./figures/plots/double_control_monte.tikz.pdf><./figures
-/plots/double_control_monte_range.tikz.pdf>]
+[52] [53<./figures/plots/double_control_monte.tikz.pdf><./figures/plots/double_c
+ontrol_monte_range.tikz.pdf>] (./plots/double_control_monte_robust.tikz
+===== Image 'figures/plots/double_control_monte_robust.tikz' is up-to-date. ===
+===
+) (./plots/double_control_monte_range_robust.tikz
+===== Image 'figures/plots/double_control_monte_range_robust.tikz' is up-to-dat
+e. ======
+)) [54<./figures/plots/double_control_monte_robust.tikz.pdf><./figures/plots/dou
+ble_control_monte_range_robust.tikz.pdf>]
 Chapter 5.
 (./chapters/neuromod.tex (./diagrams/modulation_motor.tikz
 ===== Image 'figures/diagrams/modulation_motor.tikz' is up-to-date. ======
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
+) [55
 
- [49
-
-]
-[50<./figures/diagrams/modulation_motor.tikz.pdf>] (./plots/tgt_modulation.tikz
-===== Image 'figures/plots/tgt_modulation.tikz' is up-to-date. ======
-) (./plots/neuromod_up.tikz
+] [56<./figures/diagrams/modulation_motor.tikz.pdf>]
+(./diagrams/neuromod_cont.tikz
+===== Image 'figures/diagrams/neuromod_cont.tikz' is up-to-date. ======
+) [57<./figures/diagrams/neuromod_cont.tikz.pdf>] (./plots/neuromod_up.tikz
 ===== Image 'figures/plots/neuromod_up.tikz' is up-to-date. ======
-
-Overfull \hbox (2.14919pt too wide) in paragraph at lines 1--64
+)
+Overfull \hbox (2.14919pt too wide) in paragraph at lines 1--89
  [][] 
  []
 
-) (./plots/neuromod_down.tikz
+
+LaTeX Warning: Float too large for page by 11.83174pt on input line 91.
+
+(./plots/neuromod_down.tikz
 ===== Image 'figures/plots/neuromod_down.tikz' is up-to-date. ======
 )
 
-LaTeX Warning: Float too large for page by 0.23961pt on input line 55.
+LaTeX Warning: Float too large for page by 0.23961pt on input line 98.
 
-(./plots/gain_modulation.tikz
+(./plots/tgt_modulation.tikz
+===== Image 'figures/plots/tgt_modulation.tikz' is up-to-date. ======
+) (./plots/gain_modulation.tikz
 ===== Image 'figures/plots/gain_modulation.tikz' is up-to-date. ======
-)) [51] [52<./figures/plots/tgt_modulation.tikz.pdf>] [53<./figures/plots/neurom
-od_up.tikz.pdf>] [54<./figures/plots/neuromod_down.tikz.pdf>] [55<./figures/plot
-s/gain_modulation.tikz.pdf>]
+) [58] [59<./figures/plots/neuromod_up.tikz.pdf>] [60<./figures/plots/neuromod_d
+own.tikz.pdf>] [61<./figures/plots/tgt_modulation.tikz.pdf>] [62<./figures/plots
+/gain_modulation.tikz.pdf>] [63] (./plots/neuromod_change.tikz
+===== Image 'figures/plots/neuromod_change.tikz' is up-to-date. ======
+)) [64] [65<./figures/plots/neuromod_change.tikz.pdf>]
 Chapter 6.
-(./chapters/conclusion.tex) [56
+(./chapters/conclusion.tex [66
 
-] (./main.bbl [57
+]) [67] (./main.bbl
+Underfull \hbox (badness 1264) in paragraph at lines 75--79
+\TU/lmr/m/n/12 for quadruped robot to with-stand the lat-eral im-pact.  \TU/lmr
+/m/it/12 arXiv preprint
+ []
 
-]) [58]
+[68
+
+]) [69]
 Appendix A.
-[59
+[70
 
 ] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 9DCBC77CFF6EF8C4913B1B6E88473219;7461.
+(rerunfilecheck)             Checksum: 5FCF6E5EBE08E41E956274C4C80A3155;7556.
 )
 
 Here is how much of LuaTeX's memory you used:
- 45564 strings out of 478326
- 100000,1977958 words of node,token memory allocated
- 534 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 8 attribute, 58 glue_spec,
+ 45806 strings out of 478326
+ 125007,1977958 words of node,token memory allocated
+ 529 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 8 attribute, 57 glue_spec,
  8 attribute_list, 2 write nodes
-   avail lists: 2:1035,3:355,4:116,5:419,6:110,7:9410,8:49,9:816,10:27,11:712
- 62952 multiletter control sequences out of 65536+600000
- 72 fonts using 5304399 bytes
- 84i,14n,91p,2242b,971s stack positions out of 10000i,1000n,20000p,200000b,200000s
+   avail lists: 2:1115,3:355,4:116,5:451,6:110,7:11035,8:49,9:799,10:27,11:833
+ 63022 multiletter control sequences out of 65536+600000
+ 78 fonts using 5676519 bytes
+ 84i,14n,91p,1062b,1054s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <//?/c:/users/chris/appdata/local/programs/miktex/fonts/opentype/public/lm/lmrom
 an12-italic.otf><//?/c:/users/chris/appdata/local/programs/miktex/fonts/opentype
-/public/lm/lmroman10-regular.otf><//?/c:/users/chris/appdata/local/programs/mikt
-ex/fonts/opentype/public/lm/lmroman6-regular.otf><//?/c:/users/chris/appdata/loc
+/public/lm/lmroman6-regular.otf><//?/c:/users/chris/appdata/local/programs/mikte
+x/fonts/opentype/public/lm/lmroman10-regular.otf><//?/c:/users/chris/appdata/loc
 al/programs/miktex/fonts/opentype/public/lm/lmroman8-regular.otf><//?/c:/users/c
 hris/appdata/local/programs/miktex/fonts/opentype/public/lm/lmroman12-regular.ot
 f><//?/c:/users/chris/appdata/local/programs/miktex/fonts/opentype/public/lm/lmr
@@ -1531,18 +1575,19 @@ onts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/chris/AppData/Local/Programs/
 MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/chris/AppData/Local/P
 rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/chris/AppData
 /Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/chris
-/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/User
-s/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/User
+s/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
 C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr1
-2.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmr6.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmr8.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmsy10.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmsy8.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (59 pages, 16605251 bytes).
+0.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmr12.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmr6.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmr8.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmsy10.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/chris/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (70 pages, 29232278 bytes).
 
-PDF statistics: 2486 PDF objects out of 2487 (max. 8388607)
- 181 named destinations out of 1000 (max. 131072)
+PDF statistics: 2838 PDF objects out of 2984 (max. 8388607)
+ 206 named destinations out of 1000 (max. 131072)
  304 words of extra memory for PDF output out of 10000 (max. 100000000)
 

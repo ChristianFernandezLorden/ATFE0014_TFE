@@ -1,0 +1,152 @@
+\begin{tikzpicture}
+    \begin{groupplot}[
+        group style={
+            group name=g,
+            % set how the plots should be organized
+            group size=2 by 8,
+            % only show ticklabels and axis labels on the bottom
+            x descriptions at=edge bottom,
+            %y descriptions at=edge left,
+            % set the `vertical sep' to zero
+            vertical sep=0.015\textwidth,
+            horizontal sep=0.09\textwidth,
+        },
+        width=0.36\textwidth,
+        height=0.25\textwidth,
+        % Remove NaN value from plot
+        %xlabel=Time, x unit=\unit{\second},
+        %ylabel=$g_{s-}$,
+        %ymin=3.9, ymax=6.1,
+        xmin=20, xmax=30,
+        %ylabel style={rotate=-90},
+        % Remove NaN value from plot
+        xlabel = Time, 
+        x unit=\unit{\second},
+        % ylabel = $g_{u+}$, 
+        %colorbar,
+        %title style={anchor=center, yshift=6pt},
+        ]
+        
+        \nextgroupplot[
+            title={Neuron output [\unit{\volt}]},
+        ]
+        \addplot[blue] table [col sep=comma, x=time, y=1] {data/Control/time/voltage_double_nofeed_i0.csv};
+        \addplot[green] table [col sep=comma, x=time, y=2] {data/Control/time/voltage_double_nofeed_i0.csv};
+        
+        \nextgroupplot[
+            title={$\theta$ [\unit{\radian}]},
+        ]
+        \addplot[blue] table [col sep=comma, x=time, y=1] {data/Control/time/angle_double_nofeed_i0.csv};
+        \addplot[red,dashed,thick,domain=20:30] {0};
+        
+        % === %
+        
+        \nextgroupplot[
+        ]
+        \addplot[blue] table [col sep=comma, x=time, y=1] {data/Control/time/voltage_double_sin_i0.csv};
+        \addplot[green] table [col sep=comma, x=time, y=2] {data/Control/time/voltage_double_sin_i0.csv};
+        
+        \nextgroupplot[
+        ]
+        \addplot[blue] table [col sep=comma, x=time, y=1] {data/Control/time/angle_double_sin_i0.csv};
+        \addplot[red,dashed,thick,domain=20:30] {0};
+        
+        % === %
+        
+        \nextgroupplot[
+        ]
+        \addplot[blue] table [col sep=comma, x=time, y=1] {data/Control/time/voltage_double_speed_i0.csv};
+        \addplot[green] table [col sep=comma, x=time, y=2] {data/Control/time/voltage_double_speed_i0.csv};
+        
+        \nextgroupplot[
+        ]
+        \addplot[blue] table [col sep=comma, x=time, y=1] {data/Control/time/angle_double_speed_i0.csv};
+        \addplot[red,dashed,thick,domain=20:30] {0};
+        
+        % === %
+        
+        \nextgroupplot[
+        ]
+        \addplot[blue] table [col sep=comma, x=time, y=1] {data/Control/time/voltage_double_neuron_i0.csv};
+        \addplot[green] table [col sep=comma, x=time, y=2] {data/Control/time/voltage_double_neuron_i0.csv};
+        
+        \nextgroupplot[
+        ]
+        \addplot[blue] table [col sep=comma, x=time, y=1] {data/Control/time/angle_double_neuron_i0.csv};
+        \addplot[red,dashed,thick,domain=20:30] {0};
+        
+        % === %
+        
+        \nextgroupplot[
+        ]
+        \addplot[blue] table [col sep=comma, x=time, y=1] {data/Control/time/voltage_double_speed_im2.csv};
+        \addplot[green] table [col sep=comma, x=time, y=2] {data/Control/time/voltage_double_speed_im2.csv};
+        
+        \nextgroupplot[
+        ]
+        \addplot[blue] table [col sep=comma, x=time, y=1] {data/Control/time/angle_double_speed_im2.csv};
+        \addplot[red,dashed,thick,domain=20:30] {0};
+        
+        % === %
+        
+        \nextgroupplot[
+        ]
+        \addplot[blue] table [col sep=comma, x=time, y=1] {data/Control/time/voltage_double_neuron_im2.csv};
+        \addplot[green] table [col sep=comma, x=time, y=2] {data/Control/time/voltage_double_neuron_im2.csv};
+        
+        \nextgroupplot[
+        ]
+        \addplot[blue] table [col sep=comma, x=time, y=1] {data/Control/time/angle_double_neuron_im2.csv};
+        \addplot[red,dashed,thick,domain=20:30] {0};
+        
+        % === %
+        
+        \nextgroupplot[
+        ]
+        \addplot[blue] table [col sep=comma, x=time, y=1] {data/Control/time/voltage_double_speed_im2_bad.csv};
+        \addplot[green] table [col sep=comma, x=time, y=2] {data/Control/time/voltage_double_speed_im2_bad.csv};
+        
+        \nextgroupplot[
+            y tick label style={/pgf/number format/.cd,fixed,fixed zerofill,precision=2,/tikz/.cd},
+            scaled y ticks=false
+        ]
+        \addplot[blue] table [col sep=comma, x=time, y=1] {data/Control/time/angle_double_speed_im2_bad.csv};
+        \addplot[red,dashed,thick,domain=20:30] {0};
+        
+        % === %
+        
+        \nextgroupplot[
+        ]
+        \addplot[blue] table [col sep=comma, x=time, y=1] {data/Control/time/voltage_double_neuron_im2_bad.csv};
+        \addplot[green] table [col sep=comma, x=time, y=2] {data/Control/time/voltage_double_neuron_im2_bad.csv};
+        
+        \nextgroupplot[
+        ]
+        \addplot[blue] table [col sep=comma, x=time, y=1] {data/Control/time/angle_double_neuron_im2_bad.csv};
+        \addplot[red,dashed,thick,domain=20:30] {0};
+    \end{groupplot}
+    \coordinate (1) at ($(g c1r1.north west)!0.5!(g c1r1.south west)$);
+    \coordinate (2) at ($(g c1r2.north west)!0.5!(g c1r2.south west)$);
+    \coordinate (3) at ($(g c1r3.north west)!0.5!(g c1r3.south west)$);
+    \coordinate (4) at ($(g c1r4.north west)!0.5!(g c1r4.south west)$);
+    \coordinate (5) at ($(g c1r5.north west)!0.5!(g c1r5.south west)$);
+    \coordinate (6) at ($(g c1r6.north west)!0.5!(g c1r6.south west)$);
+    \coordinate (7) at ($(g c1r7.north west)!0.5!(g c1r7.south west)$);
+    \coordinate (8) at ($(g c1r8.north west)!0.5!(g c1r8.south west)$);
+    
+    \node[anchor=west,align=left] at ([xshift=-0.37\textwidth]1) {No Feedback\\$I_\text{app} = \qty{0}{\ampere}$, $\tau_\text{max}=\qty{10}{\newton\meter}$\\$g_{s-}=\qty{-4.8}{\siemens}$, $g_{u+}=\qty{4.2}{\siemens}$};
+    
+    \node[anchor=west,align=left] at ([xshift=-0.37\textwidth]2) {Sinusoidal, $K_\text{feed} = 5$\\$I_\text{app} = \qty{0}{\ampere}$, $\tau_\text{max}=\qty{10}{\newton\meter}$\\$g_{s-}=\qty{-4.8}{\siemens}$, $g_{u+}=\qty{4.2}{\siemens}$};
+    
+    \node[anchor=west,align=left] at ([xshift=-0.37\textwidth]3) {Mixed, $K_\text{feed} = 5$\\$I_\text{app} = \qty{0}{\ampere}$, $\tau_\text{max}=\qty{10}{\newton\meter}$\\$g_{s-}=\qty{-4.8}{\siemens}$, $g_{u+}=\qty{4.2}{\siemens}$};
+    
+    \node[anchor=west,align=left] at ([xshift=-0.37\textwidth]4) {Neuron, $g_{\text{syn}} = \qty{3}{\siemens}$\\$I_\text{app} = \qty{0}{\ampere}$, $\tau_\text{max}=\qty{10}{\newton\meter}$\\$g_{s-}=\qty{-4.8}{\siemens}$, $g_{u+}=\qty{4.2}{\siemens}$};
+    
+    \node[anchor=west,align=left] at ([xshift=-0.37\textwidth]5) {Mixed, $K_\text{feed} = 5$\\$I_\text{app} = \qty{-2}{\ampere}$, $\tau_\text{max}=\qty{10}{\newton\meter}$\\$g_{s-}=\qty{-4}{\siemens}$, $g_{u+}=\qty{5}{\siemens}$};
+    
+    \node[anchor=west,align=left] at ([xshift=-0.37\textwidth]6) {Neuron, $g_{\text{syn}} = \qty{3}{\siemens}$\\$I_\text{app} = \qty{-2}{\ampere}$, $\tau_\text{max}=\qty{10}{\newton\meter}$\\$g_{s-}=\qty{-4}{\siemens}$, $g_{u+}=\qty{5}{\siemens}$};
+    
+    \node[anchor=west,align=left] at ([xshift=-0.37\textwidth]7) {Mixed, $K_\text{feed} = 5$\\$I_\text{app} = \qty{-2}{\ampere}$, $\tau_\text{max}=\qty{1}{\newton\meter}$\\$g_{s-}=\qty{-4.5}{\siemens}$, $g_{u+}=\qty{5}{\siemens}$};
+    
+    \node[anchor=west,align=left] at ([xshift=-0.37\textwidth]8) {Neuron, $g_{\text{syn}} = \qty{3}{\siemens}$\\$I_\text{app} = \qty{-2}{\ampere}$, $\tau_\text{max}=\qty{1}{\newton\meter}$\\$g_{s-}=\qty{-4.5}{\siemens}$, $g_{u+}=\qty{5}{\siemens}$};
+\end{tikzpicture} 

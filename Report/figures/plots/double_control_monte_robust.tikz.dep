@@ -1,0 +1,4 @@
+figures/plots/double_control_monte_robust.tikz.pdf: data/Control/monte/double_nofeed_monte_normal.csv
+figures/plots/double_control_monte_robust.tikz.pdf: data/Control/monte/double_sin_monte_normal.csv
+figures/plots/double_control_monte_robust.tikz.pdf: data/Control/monte/double_speed_monte_normal.csv
+figures/plots/double_control_monte_robust.tikz.pdf: data/Control/monte/double_neuron_monte_normal.csv

@@ -137,6 +137,7 @@ save("bursting_gsm_analysis.mat", "out_values", "params", "var_params", "eval_pa
 matrixToCsv("burst_nb_spikes.csv", out_values(1,:), {var_params.gsm}, ["gsm"])
 matrixToCsv("burst_power.csv", out_values(3,:), {var_params.gsm}, ["gsm"])
 matrixToCsv("burst_duty.csv", out_values(5,:).*out_values(2,:), {var_params.gsm}, ["gsm"])
+matrixToCsv("burst_intra.csv", out_values(4,:), {var_params.gsm}, ["gsm"])
 
 
 %% Parametrer map
@@ -537,6 +538,70 @@ simToCsv("burst_fragile.csv", model, params, 20);
 params.noisePwr = 3*10^-7;
 
 simToCsv("burst_fragile_noise.csv", model, params, 20);
+
+%%
+
+
+model = "test_behaviour_auto_cst_current";
+
+params = struct();
+
+params.gfm = -2.0;
+params.gsp = 6.0;
+params.gsm = -2;
+params.gup = 6;
+
+params.dfm = 0.0;
+params.dsp = 0.5;
+params.dsm = -0.5;
+params.dup = -0.5;
+
+params.Iapp = -1.0;
+
+params.noisePwr = 0;
+params.sampleTime = 0.001;
+
+simToCsv("spiking_ex.csv", model, params, 20);
+
+params = struct();
+
+params.gfm = -2.0;
+params.gsp = 6.0;
+params.gsm = -4;
+params.gup = 6;
+
+params.dfm = 0.0;
+params.dsp = 0.5;
+params.dsm = -0.5;
+params.dup = -0.5;
+
+params.Iapp = -1.0;
+
+params.noisePwr = 0;
+params.sampleTime = 0.001;
+
+simToCsv("bursting_ex.csv", model, params, 20);
+
+params = struct();
+
+params.gfm = -2.0;
+params.gsp = 6.0;
+params.gsm = -6;
+params.gup = 6;
+
+params.dfm = 0.0;
+params.dsp = 0.5;
+params.dsm = -0.5;
+params.dup = -0.5;
+
+params.Iapp = -1.0;
+
+params.noisePwr = 0;
+params.sampleTime = 0.001;
+
+simToCsv("plateau_ex.csv", model, params, 20);
+
+
 
 %%
 p = [-2.0, 6.0, -4.0, 5.0,  0.0, 0.5, -0.5, -0.5,  -0.85,  0.0004];

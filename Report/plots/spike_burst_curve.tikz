@@ -1,6 +1,6 @@
 \begin{tikzpicture}
     \begin{axis}[
-            xlabel=$g_{s-}$, ylabel=Number of spikes,
+            xlabel=$g_{s-}$, ylabel=\# spikes,
             grid=both,
             grid style={line width=.2pt, draw=gray!30},
             width = .95\textwidth,

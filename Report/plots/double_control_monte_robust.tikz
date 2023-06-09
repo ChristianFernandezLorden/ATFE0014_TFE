@@ -1,0 +1,71 @@
+\begin{tikzpicture}
+    \begin{groupplot}[
+        group style={
+            % set how the plots should be organized
+            group size=4 by 1,
+            % only show ticklabels and axis labels on the bottom
+            x descriptions at=edge bottom,
+            y descriptions at=edge right,
+            % set the `vertical sep' to zero
+            vertical sep=0.03\textwidth,
+            horizontal sep=0.03\textwidth,
+        },
+        width=0.28\textwidth,
+        height=0.32\textwidth,
+        %point meta min = 0.3,
+        %point meta max = 1.75,
+        %mesh/ordering=x varies, 
+        % Remove NaN value from plot
+        %unbounded coords=jump,
+        %xlabel=$g_{u+}$, 
+        ylabel=\# Simulations,
+        %ytick=\empty,
+        %yticklabels={,,},
+        xlabel=Frequency,
+        x unit=\unit{\hertz},
+        ymin=0, ymax=2000,
+        %xmin=0, xmax=1.5,
+        %ymin = -7, ymax=0, xmin=1, xmax=9,
+        ]
+    % start the first plot
+        \nextgroupplot[
+            title={No Feedback},
+            xmin=-0.12, xmax=0.12,
+            xtick = {-0.1, 0.0, 0.1}
+        ]
+        \addplot [
+            hist={bins=20},%, data min=-2.5, data max=2.5},
+            fill=blue, draw=none,
+        ] table [y=value] {data/Control/monte/double_nofeed_monte_normal.csv};
+        
+        \nextgroupplot[
+            title={Sinusoidal},
+            xmin=1, xmax=1.2,
+            xtick = {1.05, 1.15}
+        ]
+        \addplot [
+            hist={bins=20},%, data min=-2.5, data max=2.5},
+            fill=blue, draw=none,
+        ] table [y=value] {data/Control/monte/double_sin_monte_normal.csv};
+
+        \nextgroupplot[
+            title={Mixed},
+            xmin=0.72, xmax=0.87,
+            xtick = {0.75, 0.8, 0.85},
+        ]
+        \addplot [
+            hist={bins=20},%, data min=-2.5, data max=2.5},
+            fill=blue, draw=none,
+        ] table [y=value] {data/Control/monte/double_speed_monte_normal.csv};
+        
+        \nextgroupplot[
+            title={Spiking Neuron},
+            xmin=0.72, xmax=0.87,
+            xtick = {0.75, 0.8, 0.85},
+        ]
+        \addplot [
+            hist={bins=20},%, data min=-2.5, data max=2.5},
+            fill=blue, draw=none,
+        ] table [y=value] {data/Control/monte/double_neuron_monte_normal.csv};
+    \end{groupplot}
+\end{tikzpicture}

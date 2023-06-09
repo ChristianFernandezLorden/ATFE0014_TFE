@@ -1,0 +1,1 @@
+figures/plots/intra_burst_curve.tikz.pdf: data/Neuron/burst_intra.csv
