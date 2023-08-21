@@ -1,0 +1,195 @@
+\begin{tikzpicture}
+    \begin{groupplot}[
+        group style={
+            % set how the plots should be organized
+            group size=3 by 4,
+            % only show ticklabels and axis labels on the bottom
+            x descriptions at=edge bottom,
+            y descriptions at=edge right,
+            % set the `vertical sep' to zero
+            vertical sep=0.05\textwidth,
+            horizontal sep=0.04\textwidth,
+        },
+        width=0.34\textwidth,
+        height=0.34\textwidth,
+        %point meta min = 0.3,
+        %point meta max = 1.75,
+        %mesh/ordering=x varies, 
+        % Remove NaN value from plot
+        %unbounded coords=jump,
+        %xlabel=$g_{u+}$, 
+        ylabel=\# Simulations,
+        %ytick=\empty,
+        %yticklabels={,,},
+        ymin=0, ymax=1000,
+        %xmin=0, xmax=4,
+        %ymin = -7, ymax=0, xmin=1, xmax=9,
+        ]
+    % start the first plot
+        \nextgroupplot[
+            title={Rise Time}, 
+            xmin=0, xmax=50
+        ]
+        \addplot [
+            hist={bins=40},%, data min=-2.5, data max=2.5},
+            fill=blue, draw=none,
+        ] table [y=value] {data/Neuromod/monte/modulation_time_low_slow_monte.csv};
+        
+        \nextgroupplot[
+            title={Mean Amplitude},
+            xmin=0, xmax=1.7
+        ]
+        \addplot [
+            hist={bins=40},%, data min=-2.5, data max=2.5},
+            fill=blue, draw=none,
+        ] table [y=value] {data/Neuromod/monte/modulation_amp_low_slow_monte.csv};
+        \draw[gray,dashed] (0.52,0)--(0.52,1000);
+        
+        \nextgroupplot[
+            title={Amplitude SD},
+            xmin=0, xmax=0.075,
+        ]
+        \addplot [
+            hist={bins=40},%, data min=-2.5, data max=2.5},
+            fill=blue, draw=none,
+        ] table [y=value] {data/Neuromod/monte/modulation_range_low_slow_monte.csv};
+        
+        
+        
+        \nextgroupplot[
+            xmin=0, xmax=50
+        ]
+        \addplot [
+            hist={bins=40},%, data min=-2.5, data max=2.5},
+            fill=blue, draw=none,
+        ] table [y=value] {data/Neuromod/monte/modulation_time_low_fast_monte.csv};
+        
+        \nextgroupplot[
+            xmin=0, xmax=1.7
+        ]
+        \addplot [
+            hist={bins=40},%, data min=-2.5, data max=2.5},
+            fill=blue, draw=none,
+        ] table [y=value] {data/Neuromod/monte/modulation_amp_low_fast_monte.csv};
+        \draw[gray,dashed] (0.52,0)--(0.52,1000);
+
+        \nextgroupplot[
+            xmin=0, xmax=0.075,
+        ]
+        \addplot [
+            hist={bins=40},%, data min=-2.5, data max=2.5},
+            fill=blue, draw=none,
+        ] table [y=value] {data/Neuromod/monte/modulation_range_low_fast_monte.csv};
+        
+        
+        
+        \nextgroupplot[
+            xmin=0, xmax=50
+        ]
+        \addplot [
+            hist={bins=40},%, data min=-2.5, data max=2.5},
+            fill=blue, draw=none,
+        ] table [y=value] {data/Neuromod/monte/modulation_time_high_slow_monte.csv};
+        
+        \nextgroupplot[
+            xmin=0, xmax=1.7
+        ]
+        \addplot [
+            hist={bins=40},%, data min=-2.5, data max=2.5},
+            fill=blue, draw=none,
+        ] table [y=value] {data/Neuromod/monte/modulation_amp_high_slow_monte.csv};
+        \draw[gray,dashed] (1.57,0)--(1.57,1000);
+
+        \nextgroupplot[
+            xmin=0, xmax=0.075,
+        ]
+        \addplot [
+            hist={bins=40},%, data min=-2.5, data max=2.5},
+            fill=blue, draw=none,
+        ] table [y=value] {data/Neuromod/monte/modulation_range_high_slow_monte.csv};
+        
+        
+        
+        \nextgroupplot[
+            xmin=0, xmax=50,
+            x unit=\unit{\second},
+        ]
+        \addplot [
+            hist={bins=40},%, data min=-2.5, data max=2.5},
+            fill=blue, draw=none,
+        ] table [y=value] {data/Neuromod/monte/modulation_time_high_fast_monte.csv};
+        
+        \nextgroupplot[
+            xmin=0, xmax=1.7,
+            x unit=\unit{\radian},
+        ]
+        \addplot [
+            hist={bins=40},%, data min=-2.5, data max=2.5},
+            fill=blue, draw=none,
+        ] table [y=value] {data/Neuromod/monte/modulation_amp_high_fast_monte.csv};
+        \draw[gray,dashed] (1.57,0)--(1.57,1000);
+
+        \nextgroupplot[
+            xmin=0, xmax=0.075,
+            x unit=\unit{\radian},
+        ]
+        \addplot [
+            hist={bins=40},%, data min=-2.5, data max=2.5},
+            fill=blue, draw=none,
+        ] table [y=value] {data/Neuromod/monte/modulation_range_high_fast_monte.csv};
+    \end{groupplot}
+    
+    \begin{groupplot}[
+        group style={
+            % set how the plots should be organized
+            group size=3 by 4,
+            % only show ticklabels and axis labels on the bottom
+            x descriptions at=edge bottom,
+            y descriptions at=edge right,
+            % set the `vertical sep' to zero
+            vertical sep=0.04\textwidth,
+            horizontal sep=0.04\textwidth,
+        },
+        width=0.34\textwidth,
+        height=0.34\textwidth,
+        %point meta min = 0.3,
+        %point meta max = 1.75,
+        %mesh/ordering=x varies, 
+        % Remove NaN value from plot
+        %unbounded coords=jump,
+        %xlabel=$g_{u+}$, 
+        %ylabel=Number of Simulation,
+        %ymin = -7, ymax=0, xmin=1, xmax=9,
+        xmin=0, xmax=0, ymin=0, ymax=0,
+        xtick=\empty, ytick=\empty,
+        axis line style=transparent,
+        ]
+    \nextgroupplot[ylabel style={align=left}, ylabel={$\theta_\text{ref} = \frac{\pi}{6}\unit{\radian}$\\$\mathrm{d}g_{s-} = \qty{0.5}{\siemens\per\volt}$}]
+    
+    \nextgroupplot[]
+    
+    \nextgroupplot[]
+    
+    
+    \nextgroupplot[ylabel style={align=left}, ylabel={$\theta_\text{ref} = \frac{\pi}{6}\unit{\radian}$\\$\mathrm{d}g_{s-} = \qty{1}{\siemens\per\volt}$}]
+    
+    \nextgroupplot[]
+    
+    \nextgroupplot[]
+    
+    
+    \nextgroupplot[ylabel style={align=left}, ylabel={$\theta_\text{ref} = \frac{\pi}{2}\unit{\radian}$\\$\mathrm{d}g_{s-} = \qty{0.5}{\siemens\per\volt}$}]
+    
+    \nextgroupplot[]
+    
+    \nextgroupplot[]
+    
+    
+    \nextgroupplot[ylabel style={align=left}, ylabel={$\theta_\text{ref} = \frac{\pi}{2}\unit{\radian}$\\$\mathrm{d}g_{s-} = \qty{1}{\siemens\per\volt}$}]
+    
+    \nextgroupplot[]
+    
+    \nextgroupplot[]
+  \end{groupplot}
+\end{tikzpicture}
+ 

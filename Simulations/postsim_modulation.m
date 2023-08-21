@@ -101,7 +101,7 @@ function newout = postsim_modulation(o, eval_params, params)
             range = 0;
         end
     else 
-        min_time = 0;
+        min_time = startAnalyseTime;
         amplitude = 0;
         range = NaN;
     end

@@ -7,7 +7,7 @@
             x descriptions at=edge bottom,
             y descriptions at=edge left,
             % set the `vertical sep' to zero
-            vertical sep=0.1\textwidth,
+            vertical sep=0.07\textwidth,
             horizontal sep=0.02\textwidth,
         },
         width=0.37\textwidth,

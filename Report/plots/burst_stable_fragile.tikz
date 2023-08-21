@@ -23,13 +23,13 @@
         ]
     % start the first plot
         \nextgroupplot[
-            title={Stable with no Noise}
+            title={Stable without Noise}
         ]
         \addplot[color=blue] table [col sep=comma, x=time, y=1]{data/Neuron/voltage_burst_stable.csv};
 
     % start the second plot
         \nextgroupplot[
-            title={Fragile with no Noise}
+            title={Fragile without Noise}
         ]
         \addplot[color=blue] table [col sep=comma, x=time, y=1]{data/Neuron/voltage_burst_fragile.csv};
         

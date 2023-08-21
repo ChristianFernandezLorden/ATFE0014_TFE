@@ -1,0 +1,175 @@
+\label{apx:algos}
+
+This appendix contains pseudocodes of the algorithms used to compute the different metrics used throughout this thesis. All of them are custom algorithms designed specifically for the thesis and implemented in Matlab.
+
+The algorithms described directly show the analysis of the signal. 
+However, for all of them, the beginning of the vectors is cut from a certain time value to avoid analyzing transient effects.
+This was not included in the algorithms because it is a preprocessing step and not part of the logic.
+The index of the vectors starts at 1.
+
+\section{Neuronal signal analysis}
+
+\Cref{alg:neuron} is used to extract information from a neuronal trace. It can handle and classify all major neuronal behaviors (silence, spiking and bursting) and even make some inner distinctions (hyperpolarized or depolarized silence and normal or plateau bursting).
+The algorithm works by first classifying the behavior and then extracting the desired information by leveraging some assumptions about the behavior.
+The main idea is to segment the signal into positive and negative components.
+By counting the total number of pieces, the algorithm can distinguish whether the neuron is silent or not.
+If it is not silent, it analyzes the distribution of the length of the negative pieces to determine whether the neuron is bursting or spiking.
+Finally, if it is bursting, it analyzes the positive pieces to determine whether the bursting is normal or has a plateau.
+Not all paths of execution define all possible return values.
+To avoid any problem, it is assumed that the return values are initialized to NaN before execution.
+
+\begin{algorithm}
+    \caption{Neuronal Signal Analysis}
+    \begin{algorithmic}[1]
+        \Require Vectors $t$ and $V$ of length $L$
+        \State Compute all times when $V$ goes from negative to positive and store in $c_\text{up}$
+        \State Compute all times when $V$ goes from positive to negative and store in $c_\text{down}$
+        \If{length of $c_\text{up}$ or $c_\text{down}$ $< 3$} \Comment{Silent Neuron}
+        
+            \If{mean of $V$ $< 0$}
+                \State Type $\gets$ "hyperpolarized"
+            \Else
+                \State Type $\gets$ "depolarized"
+            \EndIf
+            
+        \Else
+        
+            \State Compute lengths of positive periods from $c_\text{up}$ and $c_\text{down}$ and store in $\lambda_+$
+            \State Compute lengths of negative periods from $c_\text{up}$ and $c_\text{down}$ and store in $\lambda_-$
+            \State Cluster $\lambda_+$ in two groups and compute their mean value in $\mu_{+\downarrow}$ and $\mu_{+\uparrow}$
+            \State Cluster $\lambda_-$ in two groups and compute their mean value in $\mu_{-\downarrow}$ and $\mu_{-\uparrow}$
+            
+            \If{$\mu_{-\uparrow} > 4\mu_{-\downarrow}$} \Comment{Bursting}
+                \State Compute indexes of the elements of $\lambda_-$ in the $\uparrow$ cluster and store in $b_\text{gap}$
+                \State Remove partial burst from start and end of $V$
+                \If{$\mu_{+\uparrow} > 4\mu_{+\downarrow}$} \Comment{Plateau Bursting}
+                    \State Type $\gets$ "plateau"
+                    \State $p_\text{len} \gets \mu_{+\uparrow}$
+                \Else
+                    \State Type $\gets$ "bursting"
+                \EndIf
+                
+                \State Remove first element of $\lambda_+$ if length of $\lambda_+$ is higher than length of $\lambda_-$
+                
+                \State $i_0 \gets b_\text{gap}\left[1\right] + 1$ \Comment{Get index of the start of the first full burst} 
+                \State $i_\text{max} \gets \text{min}\left(\text{len}\left(\lambda_-\right),\left(\lambda_+\right)\right)$ 
+                
+                \State Create vectors $b_\text{cycle}$, $b_\text{size}$, $b_\text{duty}$, $\text{spikes}$ and $s_\text{cycle}$
+                
+                \State $n \gets 0$ 
+                \State $c_t \gets 0$ 
+                \State $\text{tmp} \gets \lambda_+\left[i_0 - 1\right]$
+                
+                \ForAll{$i \in \left\{i_0,...,i_\text{max}\right\}$}
+                    \State $n \gets n+1$
+                    \If{$i \in b_\text{gap}$}
+                        \State $b_\text{cycle} \gets b_\text{cycle} +\!\!\!+  \left[c_t + \text{tmp} + \lambda_-\left[i\right]\right]\$$
+                        \State $b_\text{size} \gets b_\text{size} +\!\!\!+  \left[c_t + \text{tmp}\right]$ 
+                        \State $b_\text{duty} \gets b_\text{duty} +\!\!\!+  \left[\left(c_t + \text{tmp}\right)/\left(c_t + \text{tmp} + \lambda_-\left[i\right]\right)\right]$
+                        \State $\text{spikes} \gets \text{spikes} +\!\!\!+ \left[n\right]$
+                        \State $s_\text{cycle} \gets s_\text{cycle} +\!\!\!+ \left[c_t/\left(n-1\right)\right]$
+                        
+                        \State $n \gets 0$ 
+                        \State $c_t \gets 0$ 
+                        \State $\text{tmp} \gets \lambda_+\left[i\right]$
+                    \Else
+                        \State $c_t \gets \lambda_-\left[i\right] + \lambda_+\left[i\right]$
+                    \EndIf
+    \algstore{myalg}
+    \end{algorithmic}
+    \label{alg:neuron}
+\end{algorithm}
+
+\addtocounter{algorithm}{-1}
+\begin{algorithm}[!t]
+    \caption{Neuronal Signal Analysis (cont.)}
+    \begin{algorithmic}[1]                  % enter the algorithmic environment
+    \algrestore{myalg}
+                    
+                \EndFor
+                
+                \State $f_\text{inter} \gets$ inverse of mean of $b_\text{cycle}$
+                \State $b_\text{len} \gets$ mean of $b_\text{size}$
+                \State $D \gets$ mean of $b_\text{duty}$
+                \State $n_\text{spikes} \gets$ mean of $\text{spikes}$
+                \State $f_\text{intra} \gets$ inverse of mean of $s_\text{cycle}$
+                
+            \Else \Comment{Spiking}
+                \State Type $\gets$ "spiking"
+                \State Remove first element of $\lambda_-$ if length of $\lambda_-$ is higher than length of $\lambda_+$
+                \State Remove partial spike from start and end of $V$
+                \State $i_\text{max} \gets \text{min}\left(\text{len}\left(\lambda_-\right),\left(\lambda_+\right)\right)$ 
+                \State $\lambda_\text{tot} \gets \lambda_-\left[1:i_\text{max}\right] + \lambda_+\left[1:i_\text{max}\right]$
+                \State $f_\text{intra} \gets$ inverse of mean of $\lambda_\text{tot}$
+                \State $D \gets$ mean of $\lambda_+/\lambda_\text{tot}$
+            \EndIf
+            
+        \EndIf
+        
+        \State $V \gets \text{min}\left(V,0\right)$
+        \State $P \gets$ mean of $V$
+        
+        \State \Return Type, $P$, $n_\text{spikes}$, $D$, $f_\text{intra}$, $f_\text{inter}$, $b_\text{len}$, $p_\text{len}$
+    \end{algorithmic} 
+\end{algorithm}   
+
+\section{Oscillation analysis}
+
+\Cref{alg:oscillation} is used to analyze the oscillation of the pendulum.
+It extracts the dominant frequency to characterize the oscillation frequency and the amplitude of the oscillation to quantify its quality.
+This is the simplest algorithm of the list.
+
+\begin{algorithm}
+    \caption{Oscillation Analysis}
+    \begin{algorithmic}[1]
+        \Require Vectors $t$ and $\theta$ of length $L$
+        \State Compute FFT of $\theta$ and store in $f_\text{vec}$
+        \State Find the frequency of the maximum value of $f_\text{vec}$ and store in $f$
+        \State $R \gets \text{max}\left(\theta\right) - \text{min}\left(\theta\right)$ \Comment{Range of oscillation}
+        \State \Return $f$, $R$
+    \end{algorithmic}
+    \label{alg:oscillation}
+\end{algorithm}
+
+\section{Modulation analysis}
+
+For this part the algorithm should start after a period of stabilization with a different $\theta_\text{ref}$ to guarantee good results.
+\Cref{alg:modulation} is used to analyze the modulation of $g_{s-}$.
+It computes three values, the time when the modulation stabilizes or the rise time, and the mean and standard deviation of the amplitude of the oscillations after stabilization.
+The three values indicate that there are two possibilities for stabilization.
+Either the modulation stops and the system falls into a constant amplitude or the modulation never stops and the system oscillates constantly around the desired amplitude.
+The algorithm handles both cases.
+Finally, there exists another less important possibility, the final time of the simulation is too small and the system has not yet reached the steady state.
+This should be seen as a degenerate case, and its treatment is not important.
+
+\begin{algorithm}
+    \caption{Modulation Analysis}
+    \begin{algorithmic}[1]
+        \Require Vectors $t$, $\theta$, $\dot{\theta}$, $v_d$ and $v_u$ of length $L$
+        \State Compute when $v_d$ last changes sign and store it in $t_d$
+        \State Compute when $v_u$ last changes sign and store it in $t_u$
+        \State $t_n \gets \text{max}\left(t_d, t_u\right)$ 
+        \Comment{Contains the time of the last change in the $g_{s-}$ parameter}
+        \ForAll{$i \in \left\{2,...,L\right\}$} \Comment{Compute value and time of the peaks in amplitude}
+            \If{$\text{sign}(\dot{\theta}\left[i-1\right]) \ne \text{sign}(\dot{\theta}\left[i\right])$}
+            \State Compute $t_\text{int}$, the linear approximation of the time where $\dot{\theta} = 0$
+            \State Compute $\theta_\text{int}$, the linear approximation of the value of $\theta$ at $t_\text{int}$
+            \State Append $t_\text{int}$ to $t_\text{vec}$
+            \State Append $\left|\theta_\text{int}\right|$ to $\theta_\text{vec}$
+            \EndIf
+        \EndFor
+        \State Compute when $\theta_\text{int}$ first crosses the desired amplitude and store it in $t_\text{amp}$
+        \If{$t_\text{amp}$ < $t_n$} \Comment{Amplitude is oscillating}
+            \State $t_\text{rise} \gets t_\text{amp}$
+            \State $\mu_A \gets$ mean of $\theta_\text{vec}$ where $t_\text{vec} \ge t_\text{amp}$ 
+            \State $\sigma_A \gets$ SD of $\theta_\text{vec}$ where $t_\text{vec} \ge t_\text{amp}$ 
+        \Else \Comment{Amplitude is stable}
+            \State $t_\text{rise} \gets t_n$
+            \State $\mu_A \gets$ mean of $\theta_\text{vec}$ where $t_\text{vec} \ge t_n$ 
+            \State $\sigma_A \gets 0$
+        \EndIf
+        \State \Return$t_\text{rise}$, $\mu_A$, $\sigma_A$ 
+    \end{algorithmic}
+    \label{alg:modulation}
+\end{algorithm}
+ 

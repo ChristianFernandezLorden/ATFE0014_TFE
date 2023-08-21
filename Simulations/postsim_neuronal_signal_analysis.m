@@ -156,7 +156,7 @@ function newout = postsim_neuronal_signal_analysis(o, eval_params, params)
                 end
             end
             ind_burst = 0;
-            cumulative_time = up_sep(ind_start);
+            cumulative_time = up_sep(ind_start-1);
             cumulative_spike_cycle = 0;
             nb_spike = 0;
             for i = ind_start:min_length

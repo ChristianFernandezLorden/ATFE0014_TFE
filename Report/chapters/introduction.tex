@@ -1,34 +1,73 @@
-The control of robotic locomotion poses important challenges. 
-In particular, we are still very far from achieving in robotic locomotion control with the same degree of robustness and adaptability to unexpected environmental perturbations exhibited by moving biological systems.
+In robotics, the control of locomotion still presents significant difficulties.
+On one hand, we are currently distant from attaining the level of robustness and adaptability to unforeseen changes in the environment that is demonstrated by living organisms. 
+On the other hand, the mobile nature of most robots forces them to resort to batteries or other embedded energy sources to power themselves. 
+However, an embedded energy source often means that energy becomes a valuable resource for the robot. 
+This limits the power that can be allocated to onboard computing, leading to a trade-off between power allocated to computing and autonomy and increasing the difficulty of creating robust controllers. 
 
-Also, the mobile nature of robots forces them to use a batteries to power themselves. But, this create an enormous problem, the battery limits the power that can be allocated to on-board computing. 
+To solve this energy and robustness problem, new approaches are emerging. 
+One of them is neuromorphic engineering, which aims to extract the useful properties of biological neuronal systems to create highly efficient artificial neuronal controllers or processing units.
 
-To solve this energy and robustness problem, new approaches are emerging. One of them is neuromorphic engineering which aims to extract the useful properties of biological neuronal system to create highly efficient artificial neuronal controller or computing unit.
+While not directly related to robotics, a relatively classic and old but still striking example is the game of Go between Lee Sedol and AlphaGo \citep{alphago1,alphago2,alphago3}. 
+This match marked the first time a top-tier Go player was beaten by an AI. While this appears to contradict the first sentences of this paragraph, an aspect that should not be overlooked is the power consumed by both player. 
+\citet{alphagoenergy} cite that AlphaGo needed around \qty{1}{\mega\watt} of power to play Go, while Lee Sedol brain only sipped around \qty{20}{\watt}, while also performing other tasks such as processing visual information. 
+This shows that the current machine learning approach achieves impressive performance but, even with current improvements \citep{alphagolessenergy}, fails to even approach the power efficiency and versatility of neuronal structures.
+In comparison, the human brain is an extremely energy-efficient processor. 
+It is capable of simultaneously processing audio, visual, and other sensory feedback while making decisions based on incomplete knowledge. 
+Neuromorphic engineering tries to reproduce the efficiency that was seen in the brain or other biological systems.
 
-Indeed, the human brain, for example, is an incredibly energy-efficient processor. 
-It is capable of simultaneously processing audio, visual and other sensory feedback while making decision on the future based on incomplete knowledge. 
+For motion, multiple researches \citep{crayfish,stickInsect,MARDER} show that simple neuronal systems called central pattern generators (CPGs) are the basis of motion in nature. 
+\citet{crayfish} shows that this system is the basis of the movement of the crayfish while \citet{stickInsect} proves a similar thing for the stick insect.
+It is thought that these basic systems exhibit very important properties that are the reason for their success.
 
-Multiple researches \citep{crayfish,stickInsect,MARDER} show that simple neuronal systems are the basis of motion in nature.
-It is thought that these basic system exhibit very important properties that are the reason of the success of their control.
+\section{Problem Statement}
 
-In accordance with the limitations laid earlier, the goal of this thesis is to create and analyses a artificial neuronal controller capable of regulating the oscillation of a simple pendulum. The generated oscillation needs to be regular and the amplitude of this motion should be dynamically controllable using an external parameter.
+This thesis investigates the control of a simple resonant mechanical system (a pendulum).
+Traditionally, the control of such a system is achieved through a PID using trajectory tracking or other continuous controllers. 
+%These controllers often work in a very restrained pendulum size space and require additional controllers to achieve gaits between multiple pendulums.
 
-Traditionally, control of such a system would be achieved through a PID using trajectory tracking or other simple continuous controllers. Those controllers often work in very restrained pendulum size spaces and need additional controllers to achieve gaits between multiple pendulums.
+%In accordance with the limitations laid earlier, 
+This thesis aims to create and analyze an artificial neuronal controller capable of generating sustained oscillations of a simple pendulum.
+The generated oscillation must be regular, and the amplitude of this motion should be dynamically controlled using an external parameter.
+To achieve this goal, this thesis explores the concepts of excitability and CPGs to create a more robust controller.
 
-In this thesis, I aim to create a neuromorphic controller capable of generating a sustained oscillation that tunes its oscillations to reach an amplitude based on the value of an external input.
+%I aim to create a neuromorphic controller capable of generating a sustained oscillation that tunes its oscillations to reach an amplitude based on the value of an external input.
 
-This thesis is separated into multiple chapters with distinguishing themes.
+To be clearer, the controller should fulfill the following properties.
+\begin{itemize}
+    \item Be an end-to-end neuromorphic controller
+    \item Act by generating torque at the attachment point.
+    \item Use only the angular position and velocity as observed variables
+    \item Maintain stable symmetric oscillations
+    \item Regulate oscillations to achieve the desired amplitude 
+    \item Be resilient to inaccuracies in the controller parameters
+    \item Respect the natural frequency of the system
+\end{itemize}
+
+\section{Related literature}
+
+For this thesis, two fields of study are relevant because the thesis sits at their intersection. These are the fields of neuromorphic control and pendulum control.
+
+Strangely enough, very little literature exists on the control of a simple pendulum. The best match is the work of \citet{Pendulum3} which is based on \citet{Pendulum3comp} and develops a controller for regulating the energy of a pendulum attached to a cart. This is similar to regulating the amplitude because a given amount of energy can be linked to a certain amplitude. 
+
+Others are more distant from the classical pendulum. \citet{Pendulum2} explore to control of a pendulum with propellers attached on its side using an adaptive Kalman filtering PID. While \citet{Pendulum1} are interested in controlling the swing of a leg system using a H2 full state feedback with a PID controller.
+
+Conversely, extensive literature exists on neuromorphic control. Like \citet{neuromorph1} who designed a biomimetic controller for biped motion control. Or \citet{cpgmotorpattern} which proposed a new CPG structure for motion control. Many articles could be cited, but suffice it to say that the field is gaining traction. No article was found that directly solved the problem of pendulum swing, but the closest subject would probably be bipedal locomotion on which many people have done research \citep{related2,related5,neuromorph1,related4}.
+
+From this research, it seems that the problem presented in this thesis has not yet been considered. However, perhaps it was a sub-problem of some other research that was not found.
+
+\section{Structure and remarks}
+
+This thesis is divided into multiple chapters with distinguishing themes.
 \begin{description}
- \item[Chapter 2: Neurons and CPGs] This chapter will serve as an introduction to the world of neuromorphic engineering. It will explain and define terms that are specific to this domain and that will be used throughout the thesis.
- \item[Chapter 3: Modeling and analysis of neuronal circuits] In this chapter the models of neurons and synapses that will be used to create the controller will be defined. It will also explore the behavior of the neuron model in function of its parameters. 
- \item[Chapter 4: A neuromorphic sensorimotor loop for pendulum swing] In this chapter the problem of the thesis will be approached. Two models of controllers will be defined and analyzed. The goal is to find which set of parameter leads to a strong connection between the controller and the mechanical system.
- \item[Chapter 5: Neuromodulation for adaptive amplitude control] The last chapter will expand the model found in the previous chapter to include a system that is capable of modifying the parameters of the controller to achieve a desired amplitude. 
+ \item[Chapter 2: Neurons and CPGs] This chapter serves as an introduction to the field of neuromorphic engineering. This section explains and defines the terms specific to this domain that are used throughout the thesis.
+ \item[Chapter 3: Modeling and analysis of neuronal circuits] In this chapter, the models of neurons and synapses that are used to create the controller are defined. It also explores the behavior of the neuron model as a function of its parameters.
+ \item[Chapter 4: A neuromorphic sensorimotor loop for pendulum swing] In this chapter, the main problem of the thesis is addressed. Two models of controllers are defined and analyzed. The goal is to determine which subspace of parameters leads to a strong connection between the controller and the mechanical system.
+ \item[Chapter 5: Neuromodulation for adaptive amplitude control] This chapter expands the model found in the previous chapter to include a system capable of modifying the controller parameters to achieve a desired amplitude.
+ \item[Chapter 6: Simple interconnection of controller-pendulum systems] The last chapter briefly explores the idea of generating specific spatiotemporal patterns between pendulums by interconnecting their controllers.
 \end{description}
+Note that throughout the thesis, multiple parameters are assigned units. These units distinguish the role that the parameters play in the models. They do not represent actual physical quantities. 
 
-Note that multiple parameter will be assigned units. 
-These unit are for distinguishing the role of the parameters play in the models.
-They often are not completely correct do. 
-
+Also, the thesis rely on multiple metrics to make decision or compare sets of parameters. \Cref{apx:algos} contains the explanation of the metrics as well as the algorithms used to compute them.
 
 \iffalse
 To reuse an somewhat old but striking example, in 2016 AlphaGO bested one of the best human go player. Yet, AlphaGO consumed around \qty{1}{\mega\watt} to accomplish this feat while the brain of Lee Sedol, the human player, only consumed around \qty{20}{\watt}. And, in addition to playing the game, Lee's brain also processed all its sensory inputs, controlled its arm to make the moves on the board and continued regulating the equilibrium of its body. Better yet, after the game, he was able to go home and perform activities that are fundamentally different from playing go.

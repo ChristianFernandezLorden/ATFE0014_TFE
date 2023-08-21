@@ -1,10 +1,161 @@
-\section{Interconnection of pendulums systems}
+The previous chapters discussed the design of a controller for a single pendulum system. However, control systems are rarely used in isolation but often need to be synchronized.
+Thus, a point of interest is to determine whether it is possible to interconnect multiple controller-pendulum systems to generate specific spatiotemporal patterns.
+The neuromorphic approach of the controller should facilitate this goal because interconnecting controllers only involves creating synapses between certain neurons.
+This chapter will serve as a proof of feasibility and will only explore a single interconnection scheme of two pendulums. 
 
-\FloatBarrier
-\section{Gait 1}
+\section{Nature of the interconnection}
 
-\FloatBarrier
-\section{Gait 2}
+The goal of this chapter is to manage the interconnection of multiple controllers.
+To prove the feasibility of this concept, the simplest interconnection is chosen.
+The system will be composed of two interconnected controllers, and the goal is to achieve phase opposition between the pendulums.
+This is similar to an HCO in a purely neuronal network.
 
-\FloatBarrier
-\section{Gait 3}
+The only way to interconnect neurons defined to this point is through synapses.
+This type of connection is sufficient to interconnect multiple controllers and achieve the desired spatiotemporal pattern.
+To generate this pattern, the easiest approach is to use the HCO structure between the corresponding motor neurons in both controllers.
+This pushes the neurons to work in opposition, thus achieving the desired pattern.
+\Cref{fig:network_motor} represents the use of synapses proposed to reach the phase opposition between pendulums.
+It clearly shows the interconnection between the corresponding motor neurons in the controllers.
+In addition, the control of a pendulum remains mostly local, and the state of one pendulum does not directly affect the motor neurons of the other controller.
+The link between the pendulums is realized only at the neuronal level.
+
+\begin{figure}[!htbp]
+    \centering
+    \inserttikzfig{diagrams/network_neuron.tikz}
+    \caption{Diagram of the interconnection of the controllers. For simplicity and generality, only the motor neurons and mechanical system are represented for each controller-pendulum system.}
+    \label{fig:network_motor}
+\end{figure}
+
+The realization of the opposition will be harder than in an HCO because each controller is strongly linked with its pendulum, which has inertia.
+This means that the system may settle near perfect opposition but never achieve it because the control of the oscillation will become far more prevalent than the effect of the synapses.
+
+The addition of new synapses leads to a change in the conductance defined in \cref{sec:pendulum}.
+For intra-controller synapses $g_\text{syn}$ becomes equal to $\qty{-0.8}{\siemens}$ and for inter-controller synapses $g_\text{syn} = \qty{-0.2}{\siemens}$.
+This results in similar behavior if the pendulums are in phase opposition.
+
+%In this use case we want to generate patterns in the activation of the motor neurons thus only those neurons will be interconnected. 
+%In fact connecting the sensing neuron would make little sense since their effect only make sense locally. We cannot define a global criterion on $g_{s-}$.
+
+
+\section{Non-neuromodulated system}
+% Give values
+
+The first step in testing the interconnection model is to find if it works when the controllers have static dynamics.
+Thus, the model defined at the end of \cref{sec:pendulum} is reused.
+The goal is to simulate two copies of the controller-pendulum system in the configuration of \cref{fig:network_motor} to generate the desired spatiotemporal pattern with the pendulums.
+
+Simulations of this test can be found in \cref{fig:hco_simple}.
+The figure shows that the interconnection successfully generates the pattern.
+The zoom indicates that the difference with  a perfect opposition of phase is very small because the plot of the angles cross very close to 0.
+The pattern seems to have taken \qtyrange{15}{20}{\second} to establish itself.
+At first, the oscillations of both pendulums were in phase because both started with the same initial conditions.
+The separation of the oscillation occurred gradually. This is a good result because it indicates that the local control of the pendulum primed the realization of the pattern. 
+Interestingly enough around \qty{15}{\second} the interaction between the controllers seemed to generate the highest perturbations , and then abruptly, the quasi-steady state is established.
+
+\begin{figure}[!htbp]
+    \centering
+    \begin{subfigure}[t]{\textwidth}
+        \centering
+        \caption{Entire simulation.}
+        \inserttikzfig{plots/hco_simple.tikz}
+    \end{subfigure}
+    
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \caption{Zoom on the last part of the simulation.}
+        \inserttikzfig{plots/hco_simple_zoom.tikz}
+    \end{subfigure}
+    \caption{Simulation of interconnection using a controller without neuromodulation.}
+    \label{fig:hco_simple}
+\end{figure}
+
+\section{Independently neuromodulated system}
+
+The previous section shows that interconnecting controllers is possible for controllers with static parameters.
+The next step is to reintroduce neuromodulation to allow amplitude control.
+Because the oscillation frequency depends on the amplitude, the target amplitude should be the same for both controllers.
+Otherwise, opposing two signals with different frequencies is impossible to achieve well.
+The challenge lies in the mismatch between the values of $g_{s-}$ for both controllers.
+To avoid conflict between disturbances linked to the realization of the opposition of phase and neuromodulation, the value of the neuromorphic gain $\mathrm{d}g_{s-}$ is lowered to $\mathrm{d}g_{s-} = \qty{0.1}{\siemens\per\volt}$.
+This limits the speed of neuromodulation and allows time for the network to stabilize.
+% Reduce the value of neuromodulation
+
+\Cref{fig:hco_mod} contains the simulation of the interconnected neuromodulated controller.
+It is clear that the system manages to find a steady state in which the values of $g_{s-}$ for both controllers remain very close.
+Looking at the zoom at the end of the simulation, the phase opposition of the pendulum is clearly realized but seems less perfect than in the not neuromodulated case.
+However, the smaller value of $g_{s-}$  in this cases likely plays a role in the difference in behavior.
+A smaller burst length may render opposition more difficult.
+Finally, independent neuromodulation setting $g_{s-}$ to different values for each controller may also prevent perfect opposition due to a break in symmetry.
+
+Looking at the entire simulation, it is interesting to see that phase opposition is present during neuromodulation.
+This shows that the desired spatiotemporal relationship is compatible with the amplitude control.
+
+\begin{figure}[!b]
+    \centering
+    \begin{subfigure}[t]{\textwidth}
+        \centering
+        \caption{Entire simulation.}
+        \inserttikzfig{plots/hco_mod.tikz}
+    \end{subfigure}
+    \caption{Simulation of interconnection using a controller with local neuromodulation.}
+    \label{fig:hco_mod}
+\end{figure}
+
+\begin{figure}[!t]\ContinuedFloat
+    \centering
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \caption{Zoom on the last part of the simulation.}
+        \inserttikzfig{plots/hco_mod_zoom.tikz}
+    \end{subfigure}
+    \caption[]{Simulation of the interconnection using a controller with local neuromodulation. (cont.)}
+    \label{fig:hco_mod2}
+\end{figure}
+
+\section{Globally neuromodulated system}
+
+The previous section showed that coupling controllers with neuromodulation was somewhat more difficult.
+This may be due to neuromodulation breaking the symmetry between the controllers.
+Indeed, the motor neurons of both controllers end up with different $g_{s-}$ values leading to a potentially more difficult control.
+ 
+It then becomes quite interesting to observe the effect of restoring this symmetry by forcing a global $g_{s-}$ value.
+To achieve this, the outputs of the four sensory neurons are fed to the same integrator, and the resulting $g_{s-}$ is applied to the four motor neurons.
+This amounts to the same neuromodulation loop but on a global scale.
+Obviously, keeping the independent $g_{s-}$ would be better because pooling them destroys the capacity of local control.
+Nevertheless, possible improvements in performance from this change must be studied.
+
+\Cref{fig:hco_mod_global} displays the simulation of the system with global neuromodulation.
+Compared with local neuromodulation, the first difference is the rise time of $g_{s-}$ which  is faster because the integrator combines the changes of two sets of sensory neurons.
+Looking at the zoom at the end of the simulation, it appears that pooling the $g_{s-}$ did not improve the opposition.
+This indicates that this imperfection lies deeper in the model rather than being caused by a slight break in symmetry.
+There is a lone jump in $g_{s-}$ near the end, but it is probably due to a random fluctuation.
+
+\begin{figure}[!b]
+    \centering
+    \begin{subfigure}[t]{\textwidth}
+        \centering
+        \caption{Entire simulation.}
+        \inserttikzfig{plots/hco_mod_global.tikz}
+    \end{subfigure}
+    \caption{Simulation of the interconnection using a controller with global neuromodulation.}
+    \label{fig:hco_mod_global}
+\end{figure}
+
+\begin{figure}[!t]\ContinuedFloat
+    \centering
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \caption{Zoom on the last part of the simulation.}
+        \inserttikzfig{plots/hco_mod_global_zoom.tikz}
+    \end{subfigure}
+    \caption{Simulation of interconnection using a controller with global neuromodulation. (cont.)}
+    \label{fig:hco_mod_global2}
+\end{figure}
+
+The simulation points toward the pooling of $g_{s-}$ being unnecessary.
+This is nice because it means that forfeiting the local control does not yield significant performance improvements.
+This agrees with neuromorphic principles.
+%\section{Gait Transition}
+
+%\section{Discussion}
+%Check if system is able to switch between gaits

@@ -1,26 +1,62 @@
 \thispagestyle{plain}
 \begin{center}
-    \Large
+    \LARGE
     \textbf{\mytitle}
         
     \vspace{0.4cm}
-    \large
+    \Large
     \mysubtitle
         
     \vspace{0.4cm}
+    \large
     \textbf{\myname}
+    
+    \vspace{0.1cm}
+    Supervised by Pr. Pierre Sacré and Pr. Guillaume Drion 
+    
+    \vspace{0.4cm}
+    \normalsize
+    University of Liège - School of Engineering and Computer Science\\
+    Academic year 2022-2023
        
-    \vspace{0.9cm}
+    \vspace{0.6cm}
+    \Large
     \textbf{Abstract}
 \end{center}
-The control of robotic locomotion poses important challenges. In particular, we are still very far from achieving in robotic locomotion control with the same degree of robustness and adaptability to unexpected environmental perturbations exhibited by moving biological systems.
 
-In my master thesis research, I use biological neuron models to create artificial CPG to control a simple mechanical system in a robust and efficient manner. Akin to \citet{CPGRobot}, my inspiration is the known electrophysiology, sensory response, and modulation of biological CPGs \citet{crayfish,stickInsect,MARDER}.
+% Objective
+%The control of robotic locomotion poses important challenges. In particular, we are still very far from achieving in robotic locomotion control with the same degree of robustness and adaptability to unexpected environmental perturbations exhibited by moving biological systems.
 
-My research started by exploring how a single neuron is able to robustly generate a high-amplitude periodic motion in a simple resonant mechanical system (a pendulum) without fine tuning of the neuron parameters and with weak sensory feedback and actuation. I found that only if the motor neuron exhibits a robust type of bursting \citet{burstingSlowFeedback,Franci2} it is able to robustly and rapidly adapt its excitable behavior to the unknown mechanical system's properties (damping, resonant frequency, mass, etc.).
+% Method
+%This master thesis aims to design a robust and efficient controller for the control a simple mechanical system. Biological neuron models are used to create artificial central pattern generators(CPGs) that are the core of the controller. Akin to \citet{CPGRobot}, my inspiration is the known electrophysiology, sensory response, and modulation of biological CPGs \citep{crayfish,stickInsect,MARDER}.
 
-I am now exploring how to use a pair of bursting neurons in a push-pull configuration to simultaneously achieve robust amplitude and oscillation frequency control and how to create network of bursting neuron to achieve robust and adaptable spatio-temporal coordination of coupled mechanical systems, akin to multi-legged 
-locomotion.
 
-The hope is that a good and robust control over simple mechanical systems is the first step toward efficient adaptive walking.
+%I use biological neuron models to create artificial central pattern generators(CPGs) to control a simple mechanical system in a robust and efficient manner. Akin to \citet{CPGRobot}, my inspiration is the known electrophysiology, sensory response, and modulation of biological CPGs \citep{crayfish,stickInsect,MARDER}.
 
+% Result
+%This research explores the control of a simple resonant mechanical system (a pendulum) to achieve high-amplitude periodic motion without fine-tuning the neuron parameters and with weak sensory feedback and actuation. The design follows multiple steps. It starts with the design and tuning of the controller using a single neuron. This uncovers that only the motor neurons exhibiting a robust type of bursting \citep{burstingSlowFeedback,Franci2} are able to robustly and easily adapt their excitable behavior to the unknown mechanical system's properties (damping, resonant frequency, mass, etc.).
+%This is followed by the natural addition of another motor neuron to form a CPG (central pattern generator) and make the controller symmetric. This increases the achievable amplitude and improves the resilience to the perturbations of the controller's parameters.
+%Then, neuromodulation is added to allow the dynamic change of the properties of the controller in order to control the amplitude of the oscillations. This leads to a trade-off between the speed of convergence to the desired amplitude and the stability of the controller.
+%Finally, multiple controller-pendulum systems are interconnected at the controller level to achieve a desired spatio-temporal pattern between the pendulums.
+
+
+
+%My research started by exploring how a single neuron is able to robustly generate a high-amplitude periodic motion in a simple resonant mechanical system (a pendulum) without fine tuning of the neuron parameters and with weak sensory feedback and actuation. I found that only if the motor neuron exhibits a robust type of bursting \citet{burstingSlowFeedback,Franci2} it is able to robustly and rapidly adapt its excitable behavior to the unknown mechanical system's properties (damping, resonant frequency, mass, etc.).
+
+%I then explored how to use a pair of bursting neurons in a push-pull configuration to simultaneously achieve robust amplitude and oscillation frequency control and how to create network of bursting neuron to achieve robust and adaptable spatio-temporal coordination of coupled mechanical systems, akin to multi-legged locomotion.
+
+% Conclusion
+%The results indicate that the neuromorphic approach is well-suited for the design of robust controllers. The proposed controller demonstrates the ability to easily adapt to the mechanical system properties to achieve the amplitude goal, as well as the ability to interconnect in a network of controllers. Extensions of the model could be used in the control of locomotion in robotics or other domains.
+
+
+
+The control of robotic locomotion poses important challenges. In particular, we are still very far from achieving robotic locomotion control with the same degree of robustness and adaptability to unexpected environmental perturbations exhibited by moving biological systems.
+
+This master’s thesis aims to create a robust and efficient controller for regulating a simple mechanical system. Biological neuron models are used to create artificial central pattern generators (CPGs) that form the core of the controller. Similar to \citet{CPGRobot}, the inspiration of this thesis is the known electrophysiology, sensory response, and modulation of biological CPGs \citep{crayfish,stickInsect,MARDER}.
+
+This study explores the control of a simple resonant mechanical system (a pendulum) to achieve high-amplitude periodic motion without fine-tuning the neuron parameters and with sensory feedback and weak actuation. The design follows multiple steps. It starts with the design and tuning of the controller using a single neuron. This uncovers that only the motor neurons exhibiting a robust type of bursting \citep{burstingSlowFeedback,Franci2} are able to robustly and easily adapt their excitable behavior to the unknown mechanical system's properties (damping, resonant frequency, mass, etc.).
+This is followed by the natural addition of another motor neuron to form a CPG and make the controller symmetric. This increases the achievable amplitude and improves the resilience to perturbations in the controller parameters.
+Then, neuromodulation is added to allow the dynamic change of the controller properties to control the amplitude of the oscillations. This leads to a trade-off between the speed of convergence to the desired amplitude and the stability of the controller.
+Finally, multiple controller-pendulum systems are interconnected at the controller level to achieve the desired spatiotemporal pattern between the pendulums.
+
+The results indicate that the neuromorphic approach is well-suited for the design of robust controllers. The proposed controller demonstrates the ability to easily adapt to the mechanical system properties to achieve the amplitude goal, as well as the ability to interconnect in a network of controllers. Extensions of the model could be used to control locomotion in robotics or other domains.

@@ -4,7 +4,8 @@ function matrixToCsv(filename, matrix, vectors, names)
     dims = zeros(length(vectors), 1);
     if length(vectors) == 1
         matrix = squeeze(matrix);
-        if size(matrix, 1) ~= 1
+        if size(matrix, 1) ~= 1 && size(matrix, 2) ~= 1
+            disp("Incompatible number of dimensions (expected 1, got "+size(matrix, 1)+")")
             return
         end
         
@@ -15,6 +16,7 @@ function matrixToCsv(filename, matrix, vectors, names)
         for i = 1:length(vectors)
             dims(i) = length(vectors{i});
             if dims(i) ~= size(matrix, i)
+                disp("Incompatible dimension size")
                 return
             end
         end

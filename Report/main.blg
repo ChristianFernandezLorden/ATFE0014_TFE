@@ -5,49 +5,69 @@ Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: abbrvnat.bst
 Reallocating 'name_of_file' (item size: 1) to 11 items.
 Database file #1: references.bib
-Repeated entry---line 152 of file references.bib
- : @article{related4
- :                  ,
-I'm skipping whatever remains of this entry
-You've used 21 entries,
+Too many commas in name 1 of "Jiayong Chen, Bo Yin, Chengcai Wang, Fengran Xie, Ruxu Du, Yong Zhong" for entry related8
+while executing---line 1347 of file abbrvnat.bst
+Too many commas in name 1 of "Jiayong Chen, Bo Yin, Chengcai Wang, Fengran Xie, Ruxu Du, Yong Zhong" for entry related8
+while executing---line 1347 of file abbrvnat.bst
+Too many commas in name 1 of "Jiayong Chen, Bo Yin, Chengcai Wang, Fengran Xie, Ruxu Du, Yong Zhong" for entry related8
+while executing---line 1347 of file abbrvnat.bst
+Too many commas in name 1 of "Jiayong Chen, Bo Yin, Chengcai Wang, Fengran Xie, Ruxu Du, Yong Zhong" for entry related8
+while executing---line 1347 of file abbrvnat.bst
+Too many commas in name 1 of "Jiayong Chen, Bo Yin, Chengcai Wang, Fengran Xie, Ruxu Du, Yong Zhong" for entry related8
+while executing---line 1347 of file abbrvnat.bst
+Too many commas in name 1 of "Jiayong Chen, Bo Yin, Chengcai Wang, Fengran Xie, Ruxu Du, Yong Zhong" for entry related8
+while executing---line 1347 of file abbrvnat.bst
+Too many commas in name 1 of "Jiayong Chen, Bo Yin, Chengcai Wang, Fengran Xie, Ruxu Du, Yong Zhong" for entry related8
+while executing---line 1429 of file abbrvnat.bst
+Too many commas in name 1 of "Jiayong Chen, Bo Yin, Chengcai Wang, Fengran Xie, Ruxu Du, Yong Zhong" for entry related8
+while executing---line 1429 of file abbrvnat.bst
+Too many commas in name 1 of "Jiayong Chen, Bo Yin, Chengcai Wang, Fengran Xie, Ruxu Du, Yong Zhong" for entry related8
+while executing---line 1429 of file abbrvnat.bst
+Too many commas in name 1 of "Jiayong Chen, Bo Yin, Chengcai Wang, Fengran Xie, Ruxu Du, Yong Zhong" for entry related8
+while executing---line 1429 of file abbrvnat.bst
+Too many commas in name 1 of "Jiayong Chen, Bo Yin, Chengcai Wang, Fengran Xie, Ruxu Du, Yong Zhong" for entry related8
+while executing---line 1429 of file abbrvnat.bst
+Too many commas in name 1 of "Jiayong Chen, Bo Yin, Chengcai Wang, Fengran Xie, Ruxu Du, Yong Zhong" for entry related8
+while executing---line 1429 of file abbrvnat.bst
+You've used 36 entries,
             2773 wiz_defined-function locations,
-            750 strings with 8691 characters,
-and the built_in function-call counts, 10649 in all, are:
-= -- 937
-> -- 645
-< -- 11
-+ -- 215
-- -- 194
-* -- 903
-:= -- 1636
-add.period$ -- 67
-call.type$ -- 21
-change.case$ -- 125
-chr.to.int$ -- 21
-cite$ -- 42
-duplicate$ -- 480
-empty$ -- 859
-format.name$ -- 223
-if$ -- 2251
+            854 strings with 11785 characters,
+and the built_in function-call counts, 19676 in all, are:
+= -- 1716
+> -- 1313
+< -- 19
++ -- 439
+- -- 403
+* -- 1723
+:= -- 3039
+add.period$ -- 116
+call.type$ -- 36
+change.case$ -- 237
+chr.to.int$ -- 36
+cite$ -- 72
+duplicate$ -- 818
+empty$ -- 1496
+format.name$ -- 455
+if$ -- 4127
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 22
-newline$ -- 113
-num.names$ -- 90
-pop$ -- 236
+missing$ -- 37
+newline$ -- 191
+num.names$ -- 152
+pop$ -- 436
 preamble$ -- 1
-purify$ -- 104
+purify$ -- 201
 quote$ -- 0
-skip$ -- 364
+skip$ -- 651
 stack$ -- 0
-substring$ -- 422
-swap$ -- 57
-text.length$ -- 4
+substring$ -- 817
+swap$ -- 97
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 226
+type$ -- 391
 warning$ -- 0
-while$ -- 93
+while$ -- 160
 width$ -- 0
-write$ -- 285
-(There was 1 error message)
+write$ -- 489
+(There were 12 error messages)

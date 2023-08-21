@@ -1,0 +1,43 @@
+\begin{thebibliography}{6}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[B{\"a}ssler and B{\"u}schges(1998)]{stickInsect}
+U.~B{\"a}ssler and A.~B{\"u}schges.
+\newblock Pattern generation for stick insect walking movements—multisensory
+  control of a locomotor program.
+\newblock \emph{Brain research reviews}, 27\penalty0 (1):\penalty0 65--88,
+  1998.
+
+\bibitem[Drion et~al.(2019)Drion, Franci, and Sepulchre]{Franci2}
+G.~Drion, A.~Franci, and R.~Sepulchre.
+\newblock Cellular switches orchestrate rhythmic circuits.
+\newblock \emph{Biological Cybernetics}, 113, 04 2019.
+
+\bibitem[Franci et~al.(2018)Franci, Drion, and Sepulchre]{burstingSlowFeedback}
+A.~Franci, G.~Drion, and R.~Sepulchre.
+\newblock Robust and tunable bursting requires slow positive feedback.
+\newblock \emph{Journal of Neurophysiology}, 119\penalty0 (3):\penalty0
+  1222--1234, 2018.
+
+\bibitem[Marder(2012)]{MARDER}
+E.~Marder.
+\newblock Neuromodulation of neuronal circuits: Back to the future.
+\newblock \emph{Neuron}, 76\penalty0 (1):\penalty0 1--11, 2012.
+
+\bibitem[Schneider and Smarandache-Wellmann(2022)]{crayfish}
+A.~C. Schneider and C.~Smarandache-Wellmann.
+\newblock Unmasking hidden changes in intrinsic properties in neurons that
+  coordinate oscillatory networks.
+\newblock \emph{bioRxiv}, 2022.
+
+\bibitem[Yu et~al.(2020)Yu, Gao, and Deng]{CPGRobot}
+H.~Yu, H.~Gao, and Z.~Deng.
+\newblock Enhancing adaptability with local reactive behaviors for hexapod
+  walking robot via sensory feedback integrated central pattern generator.
+\newblock \emph{Robotics and Autonomous Systems}, 124:\penalty0 103401, 2020.
+
+\end{thebibliography}

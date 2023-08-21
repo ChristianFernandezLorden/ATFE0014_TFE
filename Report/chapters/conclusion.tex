@@ -1,37 +1,53 @@
-Coming from biology this thesis intended to propose a controller that was able to control a pendulum to generate oscillations at a given amplitude. 
-The work started with the definition of a neuronal model capable of the most common neuronal behaviors that are spiking and bursting.
-The analysis of this model led to the highlights of the distinct effect of certain parameters on certain metrics.
-Building on this understanding of the neuronal behavior, a single neuron controller was built and tests using multiple sensory feedback showed great performances.
-Then, the model was modified to a second motor neuron and connect both neuron to form an half-center oscillator capable of symmetrical oscillation.
-Finally, the model was expended once again to add neuromodulation of the parameters of the neuron in order to control the amplitude of oscillation. 
-This lead to analysis to find good compromise between the speed of the control and its precision. 
+Coming from biology, this thesis proposes a controller that can control a pendulum to generate oscillations at a given amplitude.
+This work began with the definition of a neuronal model capable of performing the most common neuronal behaviors, i.e., spiking and bursting.
+The analysis of this model highlighted the distinct effect of certain parameters on certain metrics.
+Building on this understanding of neuronal behavior, a single-neuron controller was built and tested using multiple sensory feedback and showed great performance.
+The model was modified to a second motor neuron, and both neurons were connected to form a half-center oscillator capable of symmetrical oscillation.
+Finally, the model was extended once again to add neuromodulation of the parameters of the neuron to control the oscillation amplitude.
+This led to an analysis to find a good compromise between the speed of the control and its precision. 
 
-The final controller was tested and showed it was able to follow a dynamic target amplitude relatively fast. 
-Yet, the controller shines in its way of changing the amplitude, it never requires forcing the pendulum to swing higher.
-It organically increase the height while keeping the actuation near the optimal timing.
+The final controller was tested and showed that it could follow a dynamic target amplitude relatively quickly.
+Yet, the controller shines in its way of changing the amplitude, it never requires forcing the pendulum to swing lower by activating earlier.
+Rather, it organically changes the amplitude by modulating the energy transmitted while keeping the actuation near the optimal timing.
+In addition to this, a proof of the possibility of interconnection was made in the design of a simple network of pendulums to achieve a given spatiotemporal pattern.
 
-This controller is an interesting to world on controls. 
-Its reliance on excitable systems makes it stand apart from classical controllers.
+This controller is an interesting addition to the field of control.
+Its reliance on excitable systems distinguishes it from classical controllers.
+This design approach has already shown that it can be easily scaled or synchronized.
+More than its performances,  what is impressing is that the controller achieved those performances without excessive tuning. 
+This shows the stability of the controller with respect to the perturbation of the different parameters.
 
-Use of CPG in control is a field that is emerging and a lot of research is produced around the world in this domain. \citep{related1,related2,related3,related4,related5}.
+The use of CPG in control is an emerging field, and much research is being conducted around the world.
+Works of \citet{related2,related3,related4,related5} have investigated the use of CPGs to create controllers for biped locomotion. \citet{related1} showed that using a CPG controller, they managed to improve the ability of a quadruped robot to withstand impact from the side. Others have designed animal-like robots that use CPG for motor control. \citet{related6} have managed to design a robotic snake while \citet{related7,related8} have both focused on designing fishes that are able to swim.
+% MOOOOOOOOOORE
 
-But, the work done here only opens the door of the subject of neuromorphic control and many questions are waiting to be answered. 
+%Related1 -> CPG for better reflexes on quadriped
+%Related2 -> CPG for walking (quite short may be at the end)
+%Related3 -> CPG for walking trained using genectic algo
+%Related4 -> CPG for human walking
+%Related5 -> CPG for walking
+%Related6 -> Snake like robot based on CPG
+%Related7 -> fish multimodal swimming CPG
+%Related8 -> fish multimodal swimming CPG
 
-For example, the performances of the controller were only discussed in comparison with itself and some natural control criteria. 
-It would be natural to compare this controller to more classical approaches such as the PID. 
-This would help setting both control scheme apart and find their weaknesses and strengths.
-This could show the usefulness of this controller.
+However, the work done here has only opened the door to neuromorphic control, and many questions are waiting to be answered.
 
-Another interesting addition to this work would be to interconnect multiple pendulum controllers to generate different gaits patterns between pendulum. 
-Another step after reaching those gaits would be to try to switch dynamically between them in a smooth way to avoid unnatural and abrupt transitions.
+The performance of the controller was discussed only compared with itself and some natural control criteria.
+It would be natural to compare this controller with more classical approaches such as a PID.
+This would help set both control schemes apart and identify their weaknesses and strengths.
+In essence, this analysis would show the usefulness of this controller over existing controllers.
 
-Also, the controller proposed here relies heavily on a very strong sensory feedback. An interesting challenge would be to use a very weak feedback but try to use neuromodulation to adapt the natural frequency of the half-center oscillator to match the frequency of the pendulum. 
-Keeping the already existing neuromodulation for amplitude control in this system would also be very interesting.
+Another interesting addition to this work would be to extend the interconnection of multiple pendulum controllers to generate other more complicated gait or spatiotemporal patterns.
+Another step would be to try to switch dynamically between them smoothly to avoid unnatural and abrupt transitions.
+This would show that the model can be used in the real world in situations that require multiple modes of control.
 
+In addition, the controller proposed here relies heavily on strong sensory feedback. An interesting challenge would be to use weak feedback but try to use neuromodulation to adapt the natural frequency of the half-center oscillator to match the frequency of the pendulum.
+Keeping the already existing neuromodulation for amplitude control in this system would make this feat more challenging.
 
-This work clearly demonstrate the relevance of neuromorphic engineering in our current society.
-Effective and energy efficient control scheme are in demand to reduce consumption without compromising on quality.
-
+%This work clearly demonstrate the relevance of neuromorphic engineering in our current society.
+Effective and energy-efficient control schemes are in demand to reduce consumption without compromising quality.
+The field of neuromorphic engineering aims to provide these benefits by taking inspiration from the most efficient data processing devices known, biological systems.
+This study takes a step toward fully neuromorphic design by using a completely analog controller that receives direct sensory feedback and can generate direct motor actions.
 
 
 % Summary

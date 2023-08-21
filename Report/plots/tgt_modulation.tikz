@@ -77,7 +77,7 @@
             legend pos=north west,
             legend cell align={left},
             %ymin=0.2,ymax=2.4,
-            ylabel=Amplitude std,
+            ylabel=Amplitude SD,
             change y base,
             y SI prefix=milli,
             y unit=\unit{\radian},

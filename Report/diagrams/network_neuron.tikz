@@ -1,0 +1,137 @@
+\begin{tikzpicture}
+    \tikzstyle{box}=[
+        rectangle,
+        draw=black, 
+        align=center,
+        text width=2.2cm,
+        minimum width=2.2cm,
+        minimum height=1.5cm, 
+    ]
+    \tikzstyle{neuron}=[
+        circle,
+        draw=black, 
+        inner sep=0pt, 
+        outer sep=0pt,
+        minimum size=1.5cm,
+    ]
+    \tikzstyle{system}=[
+        rectangle,
+        draw=black, 
+        minimum size=2cm,
+    ]
+    \node[neuron] (b1n1) at (0,0) {};
+    \begin{axis}[
+            at=(b1n1),
+            anchor=center,
+            width=2.5cm,
+            height=2.5cm,
+            hide axis,
+            ymin=-4, ymax=4.5,
+            xmin=10.95, xmax=11.5,
+        ]
+        \addplot[color=black] table [col sep=comma, x=time, y=1]{data/Neuron/voltage_burst_stable.csv};
+    \end{axis}
+    
+    \node[neuron] (b1n2) at ([yshift=3cm]b1n1) {};
+    \begin{axis}[
+            at=(b1n2),
+            anchor=center,
+            width=2.5cm,
+            height=2.5cm,
+            hide axis,
+            ymin=-4, ymax=4.5,
+            xmin=10.95, xmax=11.5,
+        ]
+        \addplot[color=black] table [col sep=comma, x=time, y=1]{data/Neuron/voltage_burst_stable.csv};
+    \end{axis}
+    
+    \coordinate (middle1) at ($(b1n1)!0.5!(b1n2)$);
+    
+    \node[system] (sys1) at ([xshift=3cm]middle1) {};
+    \node[cylinder, shape border rotate=90, draw,minimum height=1.5cm,minimum width=0.4cm, rotate=30] at (sys1) {};
+    
+    \coordinate (up_in1) at ($(sys1.north west)!0.3!(sys1.south west)$);
+    \coordinate (down_out1) at ($(sys1.north west)!0.7!(sys1.south west)$);
+    
+    \node[right,scale=0.8,green] at (up_in1) {$\tau$};
+    \node[right,scale=0.8,align=left,red] at (down_out1) {$\theta$\\$\dot{\theta}$};
+    
+    
+    \node[neuron] (b2n1) at ([xshift=-5cm]b1n1) {};
+    \begin{axis}[
+            at=(b2n1),
+            anchor=center,
+            width=2.5cm,
+            height=2.5cm,
+            hide axis,
+            ymin=-4, ymax=4.5,
+            xmin=10.95, xmax=11.5,
+        ]
+        \addplot[color=black] table [col sep=comma, x=time, y=1]{data/Neuron/voltage_burst_stable.csv};
+    \end{axis}
+    
+    \node[neuron] (b2n2) at ([yshift=3cm]b2n1) {};
+    \begin{axis}[
+            at=(b2n2),
+            anchor=center,
+            width=2.5cm,
+            height=2.5cm,
+            hide axis,
+            ymin=-4, ymax=4.5,
+            xmin=10.95, xmax=11.5,
+        ]
+        \addplot[color=black] table [col sep=comma, x=time, y=1]{data/Neuron/voltage_burst_stable.csv};
+    \end{axis}
+    
+    \coordinate (middle2) at ($(b2n1)!0.5!(b2n2)$);
+    
+    \node[system] (sys2) at ([xshift=-3cm]middle2) {};
+    \node[cylinder, shape border rotate=90, draw,minimum height=1.5cm,minimum width=0.4cm, rotate=30] at (sys2) {};
+    
+    \coordinate (up_in2) at ($(sys2.north east)!0.3!(sys2.south east)$);
+    \coordinate (down_out2) at ($(sys2.north east)!0.7!(sys2.south east)$);
+    
+    \node[left,scale=0.8,green] at (up_in2) {$\tau$};
+    \node[left,scale=0.8,align=right,red] at (down_out2) {$\theta$\\$\dot{\theta}$};
+    
+    \coordinate (tmp) at ($(b1n1.east)!0.5!(sys1.west)$);
+    \draw[blue,-stealth] (b1n1.east)--(b1n1.east-|tmp)--(up_in1-|tmp)--(up_in1);
+    \draw[blue,-stealth] (b1n2.east)--(b1n2.east-|tmp)--(up_in1-|tmp)--(up_in1);
+    
+    \draw[blue,-stealth] (down_out1) -- (b1n1|-down_out1) -- (b1n1);
+    \draw[blue,-stealth] (down_out1) -- (b1n2|-down_out1) -- (b1n2);
+    
+    \path (b1n1.north west)  edge [bend left,-{Circle[open, length=3mm, width=3mm]}] (b1n2.south west) 
+          (b1n2.south east)  edge [bend left,-{Circle[open, length=3mm, width=3mm]}] (b1n1.north east);
+          
+    \coordinate (up) at ([yshift=0.5cm]b1n2.north);
+    \coordinate (down) at ([yshift=-0.5cm]b1n1.south);
+    \coordinate (left) at ([xshift=-0.5cm]b1n1.west);
+    \coordinate (right) at ([xshift=0.5cm]sys1.east);
+    \draw[red,dashed] (up-|left)--(up-|right)--(down-|right)-- node[below] {Controller 2} (down-|left)--(up-|left);
+          
+    
+    \coordinate (tmp) at ($(b2n1.west)!0.5!(sys2.east)$);
+    \draw[blue,-stealth] (b2n1.west)--(b2n1.west-|tmp)--(up_in2-|tmp)--(up_in2);
+    \draw[blue,-stealth] (b2n2.west)--(b2n2.west-|tmp)--(up_in2-|tmp)--(up_in2);
+    
+    \draw[blue,-stealth] (down_out2) -- (b2n1|-down_out2) -- (b2n1);
+    \draw[blue,-stealth] (down_out2) -- (b2n2|-down_out2) -- (b2n2);
+    
+    \path (b2n1.north west)  edge [bend left,-{Circle[open, length=3mm, width=3mm]}] (b2n2.south west) 
+          (b2n2.south east)  edge [bend left,-{Circle[open, length=3mm, width=3mm]}] (b2n1.north east);
+          
+    \coordinate (up) at ([yshift=0.5cm]b2n2.north);
+    \coordinate (down) at ([yshift=-0.5cm]b2n1.south);
+    \coordinate (left) at ([xshift=-0.5cm]sys2.west);
+    \coordinate (right) at ([xshift=0.5cm]b2n1.east);
+    \draw[red,dashed] (up-|left)--(up-|right)--(down-|right)-- node[below] {Controller 1} (down-|left)--(up-|left);
+    
+    
+    \path (b1n1)  edge [bend left,-{Circle[open, length=3mm, width=3mm]}] (b2n1) 
+          (b2n1)  edge [bend left,-{Circle[open, length=3mm, width=3mm]}] (b1n1);
+    
+    \path (b1n2)  edge [bend left,-{Circle[open, length=3mm, width=3mm]}] (b2n2) 
+          (b2n2)  edge [bend left,-{Circle[open, length=3mm, width=3mm]}] (b1n2);
+\end{tikzpicture}  
+ 

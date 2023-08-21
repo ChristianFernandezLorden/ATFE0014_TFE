@@ -1,20 +1,21 @@
 \label{sec:model}
 
-Now that the essential behaviors linked to neurons are defined the analysis if the neuron can begin.
-This chapter aims to show and understand all the different possible behaviors that the model can exhibit.
-The discussion will also include the definition of synapse and their use to create a half-center oscillator.
+%Now that the essential behaviors linked to neurons are defined the analysis of the neuronal model can begin.
+Building upon the concepts defined previously, this chapter aims to show and study the different possible behaviors that the neuronal model can exhibit.
+In more detail, a quick explanation of the model is provided, followed by a general analysis of the active regions of the model. Then, a more detailed analysis of specific parameter values is conducted for some bursting and some spiking.
+The discussion will also include the definition of synapses and their use to create a half-center oscillator.
 
 \section{ODEs of the Neuronal Model}
 
-The backbone of the model I used is based on a model developed by A. Franci. 
-A diagram of this model can be seen in \cref{fig:neuron_mod}. 
-The diagram shows that the  model is composed of four different internal variables.
+The backbone of the model I used is based on a model developed by Pr. A. Franci.
+A diagram representing this model can be seen in \cref{fig:neuron_mod}. 
+The diagram shows that the  model is composed of four different internal variables.
 The membrane potential $V$, the fast voltage $v_f$, the slow voltage $v_s$ and the ultra-slow voltage $v_u$.
 The system also has a single input $I_\text{app}$ the applied current.
-This block diagram can be translated into ODEs. 
-\Crefrange{eq:neur_start}{eq:neur_end} represent the neuron system in a formal way.
+This block diagram can be easily translated into ODEs because it is composed only of functions and first-order low-pass filters.
+\Crefrange{eq:neur_start}{eq:neur_end} are a more formal description of the neuron model.
 
-\begin{figure}[!htb]
+\begin{figure}[!hb]
     \centering
     \inserttikzfig{diagrams/neuron_model.tikz}
     \caption{Diagram of the Neuron Model. The output of the neuron is $V$ and the input is $I_\text{app}$.}
@@ -33,271 +34,309 @@ This block diagram can be translated into ODEs.
 \end{align}
 with $g_{f-},\, g_{s-} < 0$, $g_{s+},\, g_{u+} > 0$ and $d_{f-},\, d_{s+},\, d_{s-},\, d_{u+} \in \mathbb{R}$.
 
-Here $i_{f-}$ is the fast positive feedback to the neuron, $i_{s+}$ and $i_{s-}$ are the slow negative and positive feedback and $i_{u+}$ is the ultra-slow negative feedback.
+Here $i_{f-}$ is the fast positive feedback to the neuron, $i_{s+}$ and $i_{s-}$ are the slow negative and positive feedback and $i_{u+}$ is the ultra-slow negative feedback. $+$ represents negative feedback and $-$ represents positive feedback because, in electrical notation, the current is oriented to discharge the neuron. Therefore, an increase in the current tends to decrease the membrane voltage, whereas a decrease in the current tends to increase the membrane voltage.
 
-$i_{s+}$ and $i_{s-}$ could be written as a single current, but since they play a different role in the neuron behavior and to keep the symmetry between the currents they are written separately.
+$i_{s+}$ and $i_{s-}$ could be written as a single current because they are on the same timescale $v_S$.
+However, since they play a different role in the behavior of the neuron and to maintain the symmetry between the currents, they are written separately.
 
 This model displays local positive feedback both with $i_{f-}$ and $i_{s-}$.
-As seen in the previous chapter this positive feedback necessary for excitable behaviors.
-
-This model follows the findings of \citet{burstingSlowFeedback}. 
-They state that a tunable and robust behavior must have a slow positive feedback. 
-Slow in this context means in a timescale between the fast positive feedback that creates the spike and the ultra-slow feedback that slowly bring the neuron back to a resting voltage.
-Here the $i_{s-}$ currents fill this role.
+As seen in the previous chapter, this positive feedback is necessary for excitable behaviors.
+More precisely, this model follows the findings of \citet{burstingSlowFeedback}.
+They stated that tunable and robust neuronal behavior must include slow positive feedback.
+Slow in this context means in a timescale between the fast positive feedback that creates the spike and the ultra-slow feedback that slowly brings the neuron back to a resting voltage.
+In this model, the $i_{s-}$ currents fill this role.
 Designing a system with this slow feedback should make its bursting more resilient to changes in other parameters.
 
-This model is clearly a simplified version of a conductance based model, with the conductance changing at different time scale though the multiple time scale of the voltages and the saturation coming from the $\tanh$ function.
-The model being written in the language of currents and voltages is clear indicator of this.
+%This model is clearly a simplified version of a conductance based model, with the conductance changing at different time scale though the multiple time scale of the voltages and the saturation coming from the $\tanh$ function.
+This model is a simplification of a conductance-based model with four currents on three fixed timescales and variable conductances replaced by a low-pass filter followed by explicit voltage-to-current relationships.
+The model being written in the language of currents and voltages is reminiscent of the origin of this model.
 
-For this thesis, some of the parameters of the model will remain fixed to the following values.
+For this thesis, some parameters of the model will remain fixed at the following values. Exploring these parameters does not lead to interesting results that are not reachable without tuning them. 
 {
 
 \large\centering
 \begin{tabular}{lr|lr}
-    $V_0$    & \qty{-0.85}{\volt} & $\tau_{o}$ & \num{0.0004}\\
-    $d_{f-}$ & \qty{0.0}{\volt}   & $\tau_{f}$ & \num{0.001}\\
-    $d_{s+}$ & \qty{0.5}{\volt}   & $\tau_{s}$ & \num{0.04}\\
-    $d_{s-}$ & \qty{-0.5}{\volt}  & $\tau_{u}$ & \num{0.8}\\
+    $V_0$    & \qty{-0.85}{\volt} & $\tau_{o}$ & \qty{0.0004}{\second}\\
+    $d_{f-}$ & \qty{0.0}{\volt}   & $\tau_{f}$ & \qty{0.001}{\second}\\
+    $d_{s+}$ & \qty{0.5}{\volt}   & $\tau_{s}$ & \qty{0.04}{\second}\\
+    $d_{s-}$ & \qty{-0.5}{\volt}  & $\tau_{u}$ & \qty{0.8}{\second}\\
     $d_{u+}$ & \qty{-0.5}{\volt}  & &
 \end{tabular}
 
 }
 
-To ensure the stability of models it is always a good idea to apply some noise to simulate real world dynamics.
-In the case of the neuron the best way to add noise is to add it to the input current.
-It affects the entire neuron and is a good way to represent real use since most of the noise should come from the outside world. 
+To ensure the stability of the models, it is always a good idea to apply some noise to simulate real-world conditions.
+In the case of the neuron, the best way to add noise easily is to add it to the input current.
+In this way, noise affects the entire neuron. This is also a good way to represent real use because in an integrated chip, most of the noise should come from the outside world. 
 
-To better understand the inner working of the neuron, \cref{fig:neuron_inside} presents a representation of all the currents and voltages of the model. 
+To better understand the inner workings of the neuron, \cref{fig:neuron_inside} shows a representation of the currents and voltages of the model during a simulation. 
 
-The low-pass filter effect is very clear when looking on the different voltages cannot be mistaken.
+The low-pass filter effect is very clear when looking at the different voltages.
 $v_f$ is nearly indistinguishable from $V$ due to the very high cutoff frequency of the filter.
-$v_s$ on the other follows the general pattern of the bursting, but has a cutoff frequency low enough to filter the spikes inside the burst.
-$v_u$ filters $V$ nearly completely and does not vary a lot.
+$v_s$, on the other hand, follows the general pattern of the bursting but has a cutoff frequency low enough to filter the spikes inside the burst.
+$v_u$ filters the bursting and follows a smooth sawtooth pattern, rising during the burst and falling down during the inactivity between bursts.
 
-The saturation of the current is very clear when seeing the flat regions of some currents, especially $i_{s+}$ which is a flat line between the bursts.
+The saturation of the current is very visible when looking at the flat regions of some currents, especially $i_{s+}$, which is nearly a flat line between the bursts.
+This indicates the inactivation of the slow negative feedback because changes in voltages do not result in changes in $i_{s+}$.
 Furthermore, the "launching" effect of the slow positive feedback is visible.
-$i_{s-}$, is the first current to activate just before the burst and seems to start the burst. 
-Then the increase in voltage seems to launch $i_{f-}$ which starts the burst.
+$i_{s-}$, is the first current to activate with a slow slope before the burst and seems to start the burst by activating $i_{f-}$.
+Then, the increase in voltage seems to launch $i_{f-}$ which starts the first spike of the burst. 
+This indicates a $i_{f-}$, $i_{s+}$ pair that is more closely linked with the spikes inside the burst and a $i_{s-}$, $i_{u+}$ pair that is more associated with the burst itself.
 
 \begin{figure}[!htb]
     \centering
     \inserttikzfig{plots/neuron_inside.tikz}
-    \caption{Currents an voltages inside the neuron model. The linked currents and voltages are color coded.}
+    \caption{Currents and voltages inside the neuron model. Currents share the color of their generating voltages.}
     \label{fig:neuron_inside}
 \end{figure}
 
 \section{Behavior of neuron in function of its parameters}
 
-Before designing a controller, the behavior of this neuron under different parameters must be studied to choose good parameters for the controller. 
-For this analysis only an exploration of the parameters $g_{s-}$, $g_{u-}$ and $I_\text{app}$ is be done.
-$g_{f-}$ and $g_{s+}$ are fixed to $g_{f-} = \qty{-2}{\siemens}$ and $g_{f-} = \qty{6}{\siemens}$ since those parameters gave a good bursting behavior.
+Before designing a controller, the behavior of the neuron under different parameters must be studied to determine the best parameters for the controller.
+For this analysis, only an exploration of the parameters $g_{s-}$, $g_{u-}$ and $I_\text{app}$ is done since they are the parameters most relevant to bursting.
+$g_{f-}$ and $g_{s+}$ are fixed to $g_{f-} = \qty{-2}{\siemens}$ and $g_{f-} = \qty{6}{\siemens}$ since those parameters gave good bursting behavior.
 
 Firstly, \cref{fig:neuron_activation} displays an overview of the different regions where the neuron is active.
-It also shows the shape of the different activation types.
+More precisely, it distinguishes between different activation types. Here 3 different activation types are considered.
+Spiking and bursting, which were defined in the previous chapter, and plateau, which is short for plateau bursting.
+Plateau bursting is a degenerate form of bursting that sees the apparition of a plateau voltage between the first spike and the rest of the spikes of the burst. 
+In extreme cases, plateau bursting stops containing any spike other than the first spike, and the behavior becomes analogous to periodic pulses.
 
-For this thesis purposes, the bursting region is the most interesting. 
-The bursting region seems to advance until $I_\text{app}=\qty{0}{\ampere}$ then in recede back pushed by the spiking behavior.
-Its border with the plateau behavior seems to follow a line that does not really change during with the increasing $I_\text{app}$. 
-This shows that the boundary between those zones is probably controlled by $g_{f-}$ and/or $g_{s+}$.
-It would seem that the parameters at the center of the chart are capable of sustaining bursting for a wide range of applied current. 
-A neuron with $g_{s-} \approx \qty{-4}{\siemens}$ and $g_{u+} \approx \qty{5}{\siemens}$ seems to be in a very stable bursting zone zone for the controller.
+For this thesis purpose, the bursting region is the most interesting because it allows tunability by playing with intra- and inter-burst characteristics.
+
+In this configuration, the bursting region seems to advance with an increase in the applied current until $I_\text{app}=\qty{0}{\ampere}$ then in recedes, seemingly pushed by the spiking region.
+The border between normal bursting and plateau behavior seems to follow a line that does not really depend on $I_\text{app}$.
+This border indicates that the plateau behavior is mostly dependent on the value of $g_{s-}$ and nearly independent of the value of $g_{u+}$.
+The shape of this boundary is probably controlled by $g_{f-}$ and/or $g_{s+}$.
+The parameters at the center of the chart are capable of sustaining bursting for various applied currents.
+Indeed, a neuron with $g_{s-} \approx \qty{-4}{\siemens}$ and $g_{u+} \approx \qty{5}{\siemens}$ seems to be in a very stable bursting zone for the controller. It can sustain bursting from $I_\text{app} = \qty{-1.8}{\ampere}$ to $I_\text{app} = \qty{2}{\ampere}$ and seems far enough from plateau bursting to never show unwanted behaviors.
 
 \begin{figure}[!htbp]
     \centering
     \begin{subfigure}[t]{\textwidth}
         \centering
-        \caption{Map of the neuron activation types with $g_{f-} =  \qty{-2}{\siemens}$ and $g_{s+} =  \qty{6}{\siemens}$.}
+        \caption{Map of neuron activation types with $g_{f-} =  \qty{-2}{\siemens}$ and $g_{s+} =  \qty{6}{\siemens}$.}
         \inserttikzfig{plots/neuron_type.tikz}
     \end{subfigure}
     
     \begin{subfigure}[b]{\textwidth}
         \centering
-        \caption{Traces of the different neuron activation types. Computed using $I_\text{app} = \qty{-1}{\ampere}$, $g_{u+} = \qty{6}{\siemens}$ and $g_{s-}  \in \left\{\num{-6},\,\num{-4},\,\num{-2}\right\}\unit{\siemens}$.}
+        \caption{Traces of the three different neuron activation types. Computed using $I_\text{app} = \qty{-1}{\ampere}$, $g_{u+} = \qty{6}{\siemens}$ and $g_{s-}  \in \left\{\num{-6},\,\num{-4},\,\num{-2}\right\}\unit{\siemens}$.}
         \inserttikzfig{plots/neuron_type_ex.tikz}
     \end{subfigure}
-    \caption{Different type of neuron activation. The plateau region correspond to bursting with a voltage plateau between the first spike and the rest.}
+    \caption{Different types of neuron activation. The plateau region corresponds to the bursting region, where a voltage plateau exists between the first spike and the rest of the spikes.}
     \label{fig:neuron_activation}
 \end{figure}
 
-Now that the good region has been highlighted, a closer look at the inter-burst frequency will be useful to categorize the bursting. 
-Indeed it is better to have neurons that are attuned to the frequency of the pendulum to get good results. 
-In \cref{fig:neuron_burts}, it can be seen that the inter burst frequency is mostly decided by the conductances and not the applied current. 
-Changing the applied current mostly only changes the "discovered" zone.
-The applied current changes the frequency, but changing $g_{s-}$ and $g_{u+}$ has a far greater effect.
+Now that the good region has been highlighted, a closer look at the inter-burst frequency will be useful to categorize bursting.
+Indeed, it is better to have neurons attuned to the frequency of the pendulum to obtain good results.
+However, let us keep in mind that for large swings, the frequency of the pendulum depends on the amplitude of the swing; therefore, a perfect match for changing amplitudes will probably not be found.
+In \cref{fig:neuron_burts}, it can be seen that the inter-burst frequency is mostly determined by the value of the conductances and not the applied current.
+Changing the applied current mostly only changes the zone where bursting occurs.
+The applied current still has an effect on the frequency, higher currents leads to a slightly higher frequency.
+However, changing the values $g_{s-}$ and $g_{u+}$ has a far greater effect on the inter-burst frequency.
 Note that the inter-burst frequency is also computed on the plateau behavior.
-The apparent continuity between the two behaviors show that the plateau behavior is just degenerate bursting.
+The continuity between both behaviors shows that the plateau behavior is actually just degenerate bursting.
 
 \begin{figure}[!htb]
     \centering
     \inserttikzfig{plots/neuron_burst.tikz}
-    \caption{Neuron bursting frequency.}
+    \caption{Map of neuron bursting frequency with $g_{f-} = \qty{-2}{\siemens}$ and $g_{s+} =  \qty{6}{\siemens}$.}
     \label{fig:neuron_burts}
 \end{figure}
 
-Yet, by doing a finer analysis on $I_\text{app}$, another zone of bursting can be discovered. 
-In \cref{fig:neuron_burts_fragile}, this zone is highlighted. 
-It exists in a zone with next to no slow positive feedback. 
+However, by performing a finer analysis on $I_\text{app}$, another zone of bursting can be discovered.
+In \cref{fig:neuron_burts_fragile}, this zone is highlighted.
+This bursting occurs in a zone with nearly no slow positive feedback.
 Yet,\citet{burstingSlowFeedback} indicated that the slow positive feedback is integral to a reliable bursting.
-This assertion can already be verified by how much the zone of bursting shift with a small change in input current. 
-Also the boundary of bursting seems more diffuse and the inter-burst frequency inside the zone does not follow a clear rule. 
-Those signs also point toward this zone being an unreliable bursting. 
-Still, a more detailed analysis to show the fragility of this bursting is necessary to eliminate it as a possibility.
+The lack of robustness of this bursting can already be inferred from the extent to which the zone of bursting shifts when subject to a small change in the input current.
+In addition, the boundary of bursting seems more diffuse and the inter-burst frequency inside the zone does not seem to not follow a continuous pattern.
+All these signs point toward this zone being an unreliable bursting behavior.
+Still, a more detailed analysis to show the fragility of this bursting is necessary to eliminate it completely as a possibility.
 
 \begin{figure}[!htb]
     \centering
     \inserttikzfig{plots/neuron_burst_close.tikz}
-    \caption{Neuron bursting frequency, zoom on some specific $I_\text{app}$. Apparitions of another bursting region.}
+    \caption{Map of neuron bursting frequency with $g_{f-} = \qty{-2}{\siemens}$ and $g_{s+} =  \qty{6}{\siemens}$. Zoom on specific $I_\text{app}$ with apparitions of another bursting region.}
     \label{fig:neuron_burts_fragile}
 \end{figure}
 
-\Cref{fig:neuron_burts_comp} reveals that the "fragile" burst is totally destabilized by the addition of a small noise.
-The regular two spikes pattern ceases to exist and the number of spike per burst and the inter-burst frequency seem to become very random. 
-On the other hand, the "stable" burst seems unaffected by the noise, the only visual indicator of the added noise is the shape of the voltage during the resting period.
-The number of spikes and the inter burst frequency remains unchanged by the noise.
-This proves that region of "stable" is a far better burst than the "fragile" zone since it is resistant to noise.
+\Cref{fig:neuron_burts_comp} shows a comparison of the simulations of the stable bursting found earlier and the "fragile" bursting discovered here with and without noise.
+This reveals that "fragile" bursting is totally destabilized by the addition of a small noise.
+The regular two-spike pattern that appears without noise ceases to exist, and the number of spikes per burst and the inter-burst frequency seem to be very random.
+The spikes probably correlate with the noise inside the neuron.
+On the other hand, the "stable" burst seems unaffected by the noise.
+The only visual indicator of the added noise is the shape of the voltage during the resting period, where small oscillations caused by the noise can be observed.
+The number of spikes and the inter-burst frequency of stable bursting remain unchanged by noise.
+This proves that the region of "stable" bursting is a far better burst than the region of "fragile" bursting since the first is resistant to noise and the latter is not.
 
-This behavior is probably due to "stable" burst being launch by $i_{s-}$ and the "fragile" burst being launch by $i_{f-}$ since $i_{s-}$ is nearly zero. 
-And the filtering of the noise is far better in $v_s$ than in $v_s$ due to the lower cut-off frequency of $v_s$.
-Thus the parameter that launch the "fragile" burst is affected a lot by the noise leading to the noise being able to launch a burst. 
+This behavior is probably due to "stable" bursts being launched by $i_{s-}$ and the "fragile" burst being launched by $i_{f-}$ since $i_{s-}$ is nearly zero.
+The filtering of noise is far better for $v_s$ than for $v_f$ because of the lower cut-off frequency of $v_s$.
+Thus, the variable $v_f$ that launch the "fragile" burst is greatly affected by the noise, leading to the noise being able to launch a burst.
+On the other hand, what launches the "stable" bursting nearly unaffected by the noise, leading to almost no change in the behavior of the neuron.
+% Maybe make a plot but time is short
 
 \begin{figure}[!htb]
     \centering
     \inserttikzfig{plots/burst_stable_fragile.tikz}
-    \caption{Comparison of both time of bursting at $I_\text{app}=\qty{0.2}{\ampere}$. Stable model used $g_{s-}=\qty{-4}{\siemens}$ and $g_{u+}=\qty{5}{\siemens}$ and fragile model used $g_{s-}=\qty{-0.2}{\siemens}$ and $g_{u+}=\qty{4}{\siemens}$. The noise applied had a spectral power density of  $n_{I_\text{app}} = \qty{3e-7}{\volt\squared\per\hertz}$.}
+    \caption{Comparison of both times of bursting at $I_\text{app}=\qty{0.2}{\ampere}$. The stable model used $g_{s-}=\qty{-4}{\siemens}$ and $g_{u+}=\qty{5}{\siemens}$ and fragile model used $g_{s-}=\qty{-0.2}{\siemens}$ and $g_{u+}=\qty{4}{\siemens}$. The applied noise had a spectral power density of  $n_{I_\text{app}} = \qty{3e-7}{\volt\squared\per\hertz}$.}
     \label{fig:neuron_burts_comp}
 \end{figure}
 %% Plot montecarlo analysis (necessary ?)
 
 \section{Bursting neuron characteristics}
 
-In this section the bursting behavior change through the modification of certain parameters is studied. 
-Some graphs or analysis will only be done with one set of parameters for burstingv
-,but the conclusions draw will hold for most of the bursting region. 
+In this section the changes in bursting behavior through the modification of certain parameters are studied.
+Some analyses or graphs will only be performed with one set of parameters for bursting. Nonetheless, the conclusions drawn will hold for most of the normal bursting region and especially for the bursting region of interest in this thesis. 
 
 \subsection{Spike number modulation with $g_{s-}$}\label{sec:spike_mod}
+% Add a graph of the number of spikes per burst
 
-A great way to change the amount of power transmitted by a burst is to change the number of spikes that are present in the burst. 
-Indeed, if $g_{f-}$ and $g_{s+}$ are fixed, then the up time of a spike will remain nearly the same whatever the values of $g_{s-}$ and $g_{u+}$ are. 
-This leads to the number of spike being the most important metric to characterize the power transmitted by the spikes. 
+A simple way to change the amount of power transmitted by a burst is to change the number of spikes in the burst.
+Indeed, if $g_{f-}$ and $g_{s+}$ are fixed, the spike uptime will remain nearly the same regardless of the values of $g_{s-}$ and $g_{u+}$.
+This leads to the number of spikes being the most important metric for characterizing the power transmitted by the spikes.
+Indeed, the integral of the positive value of the membrane voltage can be seen as very strongly correlated with the number of spikes in the burst.
 
-Both $g_{s-}$ and $g_{u+}$ could be used to modulate the number of spikes. 
-But, since \cref{fig:neuron_burts} shows that the value of $g_{u+}$ is more important to guarantee the existence of bursting at a specific $I_\text{app}$.
-Indeed, the range of $g_{s-}$ where bursting exist is more or less constant at $\left[-4;\;-2\right]\unit{\siemens}$ for all $I_\text{app}$.
-On the other hand, the range of where bursting exist for $g_{u+}$ varies from $\left[6;\;9\right]\unit{\siemens}$ to $\left[1;\;9\right]\unit{\siemens}$ as $I_\text{app}$ goes from \qty{-2}{\ampere} to \qty{0}{\ampere}.
-Thus, $g_{s-}$ will be used as the parameter to modulate the number of spikes.
+Both $g_{s-}$ and $g_{u+}$ could be used to modulate the number of spikes. 
 
-The effect of this modulation can be seen in \cref{fig:neuron_burst_spikes}. 
-The graph shows a clear link between the number of spike in the burst and the $g_{s-}$ parameter. 
-The number of spike decreased "linearly" in as the amplitude of the feedback decreased.
-Until of course the number of spikes hit one and the neuron starts spiking instead of bursting.
+But, \cref{fig:neuron_burts} shows that the value of $g_{u+}$ is more important to guarantee the existence of bursting at a specific $I_\text{app}$.
+Indeed, the range of $g_{s-}$ where bursting exists is almost constant at $\left[-4;\;-2\right]\unit{\siemens}$ for all $I_\text{app}$.
+On the other hand, the range of where bursting exists for $g_{u+}$ varies from $\left[6;\;9\right]\unit{\siemens}$ to $\left[1;\;9\right]\unit{\siemens}$ as $I_\text{app}$ goes from \qty{-2}{\ampere} to \qty{0}{\ampere}.
+Thus, $g_{s-}$ will be used as the parameter to modulate the number of spikes because it is less likely to annihilate bursting.
+
+The effect of this modulation can be seen in \cref{fig:neuron_burst_spikes} where the value of $g_{s-}$ is varied while counting the number of spikes.
+The graph shows a clear link between the number of spikes in the burst and the value of $g_{s-}$ parameter.
+The number of spikes decreased "linearly" as the amplitude of the feedback decreased.
+Since the number of spikes must obviously be an integer, "linearly" means that the width of a region with a certain number of spikes is nearly constant.
+Thus, the shape can be regarded as rounding the value of a linear function.
+This trend holds until the number of spikes hits one and the neuron starts spiking instead of bursting.
 
 \begin{figure}[!htb]
     \centering
     \inserttikzfig{plots/spike_burst_curve.tikz}
-    \caption{Curve of the number of spikes in function of the $g_{s-}$ parameter. With $I_\text{app} = \qty{-1}{\ampere}$, $g_{f-} = \qty{-2}{\siemens}$, $g_{s+} = \qty{6}{\siemens}$ and $g_{u+} = \qty{5}{\siemens}$.}
+    \caption{Curve of the number of spikes as a function of the $g_{s-}$ parameter. With $I_\text{app} = \qty{-1}{\ampere}$, $g_{f-} = \qty{-2}{\siemens}$, $g_{s+} = \qty{6}{\siemens}$ and $g_{u+} = \qty{5}{\siemens}$.}
     \label{fig:neuron_burst_spikes}
 \end{figure}
 
-The explanation of why the number of spike is important for the power transmitted was a bit ad hoc. 
-To confirm that this metric is well correlated with the amount of power transmitted by the burst, a comparison with other metrics is necessary. 
-The metrics proposed to compare with the number of spikes is the duty cycle of the burst and the mean positive value of the bursting. 
-The mean positive value is a value defined as 
+The explanation of why the number of spikes is strongly linked to the power transmitted was slightly ad hoc.
+To confirm that this metric correlates well with the amount of power transmitted by the burst, a comparison with other metrics is necessary.
+The metrics proposed for comparison with the number of spikes are the duty cycle of the burst and the mean positive value of the bursting.
+The mean positive value is a value defined as
 \begin{align}
     \text{mean positive value} = \frac{1}{T}\int_{t_0}^{t_0+T} \text{max}\left(0, V(t)\right) \mathop{\mathrm{d}t} 
 \end{align}
-Of those two metrics the mean positive value is obviously the most reliable one, but it is also interesting to see how well the duty cycle correlates with this value.
+The mean positive value is interesting because, in this thesis, when the membrane voltage is negative, the neuron is always considered inactive.
+Of these two metrics, the mean positive value is obviously the most reliable; however, it is also interesting to see how well the duty cycle correlates with this value.
 
-\Cref{fig:neuron_burst_power} displays the plot of those two metrics at the same $g_{d-}$ values as \cref{fig:neuron_burst_spikes}.
-This tells us that the number of spikes is indeed correlated with the power transmitted since the mean positive value is nearly constant with the number of spikes. 
+\Cref{fig:neuron_burst_power} displays the plot of these two metrics as a function of $g_{s-}$ values like in \cref{fig:neuron_burst_spikes}.
+Analyzing this figure reveals that the number of spikes is indeed correlated with the power transmitted because the mean positive value is nearly constant with the number of spikes.
 
 \begin{figure}[!htb]
     \centering
     \inserttikzfig{plots/power_burst_curve.tikz}
-    \caption{Curve of the burst power in function of the $g_{s-}$ parameter. With $I_\text{app} = \qty{-1}{\ampere}$, $g_{f-} = \qty{-2}{\siemens}$, $g_{s+} = \qty{6}{\siemens}$ and $g_{u+} = \qty{5}{\siemens}$.}
+    \caption{Curve of the burst power as a function of the $g_{s-}$ parameter. With $I_\text{app} = \qty{-1}{\ampere}$, $g_{f-} = \qty{-2}{\siemens}$, $g_{s+} = \qty{6}{\siemens}$ and $g_{u+} = \qty{5}{\siemens}$.}
     \label{fig:neuron_burst_power}
 \end{figure}
 
-But, the duty cycle seems to be a poorer indicator since it can have the same value in two very different cases.
-In fact it seems to follow some kind of saw-tooth pattern where it grows with $g_{s-}$ but then drops when the number of spikes drops.
-It seems that increasing $g_{s-}$ (thus reducing its effect) increases the intra-burst frequency until a spike drops and the intra-burst resets to a higher level.
+In addition, these figures show that the duty cycle is a poorer indicator of power because it can have the same value at two very different values of $g_{s-}$.
+Moreover, at two $g_{s-}$ where the duty cycles are equal, the number of spikes and the mean positive value are very different, indicating poor performance of the metric.
+In fact, the duty cycle follows a sawtooth pattern in which it grows with $g_{s-}$ but then has a large discontinuity when the number of spikes changes.
+It appears that increasing $g_{s-}$ (thus reducing its effect) decreases the intra-burst frequency until a spike drops and the frequency returns to a higher level.
+The observation of the intra-burst frequency is linked to the fact that a lower frequency leads to a larger burst, which means a larger duty cycle.
 
-\Cref{fig:neuron_burst_intra} plots just that and shows that it is indeed what happens. 
-The intra-burst frequency has a strange relation with $g_{s-}$ as increasing $g_{s-}$ can locally increases the intra-burst frequency, but globally decreases it.
+To confirm this explanation, \cref{fig:neuron_burst_intra} plots the intra-burst frequency as a function of $g_{s-}$ and shows that this is indeed the case.
+The intra-burst frequency has a strange relationship with $g_{s-}$ as increasing $g_{s-}$ can locally increase the intra-burst frequency but globally decrease it.
 
 \begin{figure}[!htb]
     \centering
     \inserttikzfig{plots/intra_burst_curve.tikz}
-    \caption{Curve of the intra-burst frequency in function of the $g_{s-}$ parameter. With $I_\text{app} = \qty{-1}{\ampere}$, $g_{f-} = \qty{-2}{\siemens}$, $g_{s+} = \qty{6}{\siemens}$ and $g_{u+} = \qty{5}{\siemens}$.}
+    \caption{Curve of the intra-burst frequency as a function of the $g_{s-}$ parameter. With $I_\text{app} = \qty{-1}{\ampere}$, $g_{f-} = \qty{-2}{\siemens}$, $g_{s+} = \qty{6}{\siemens}$ and $g_{u+} = \qty{5}{\siemens}$.}
     \label{fig:neuron_burst_intra}
 \end{figure}
 
-The reason this whole analysis was done is that changing the power transmitted by the burst is integral in the control of the pendulum.
-This power is linked with the torque applied to the pendulum and controlling this torque is necessary to achieve control of the oscillation amplitude.
+This entire analysis was performed because changing the power transmitted by the burst is integral to the control of the pendulum.
+This power is linked to the torque applied to the pendulum, and controlling this torque is necessary to control the oscillation amplitude.
+Having a good understanding of the modulation of $g_{s-}$ is thus crucial to the creation of a robust controller.
 
 \subsection{Inter-burst frequency modulation with $g_{p+}$}
 
-To get a reliable control, it is necessary for the natural frequency of the neuron to be close to the natural frequency of the pendulum.
+To obtain a reliable control, it is necessary for the natural frequency of the neuron to be close to that of the pendulum.
 Otherwise a good coupling between both systems will not be possible.
 
-Since $g_{s-}$, will be modulated to change the power of a burst, $g_{u+}$ will be used for this analysis of the inter-burst frequency.
-$g_{s-}$ cannot be used since not be fixed in the final controller rendering the analysis meaningless.
-\Cref{fig:neuron_burst_freq} shows the influence of the parameter and the applied current on the inter-burst frequency. 
-Interestingly, it seems that the bursting limit follows a linear relationship between $I_\text{app}$ and $g_{u+}$ in this model. 
-This is probably just an artifact of the model and not a general neuronal behavior.
+Since $g_{s-}$, will be modulated to change the power of a burst, $g_{u+}$ must be used for the modulation of the inter-burst frequency.
+$g_{s-}$ cannot be used because it will not be fixed in the final controller, rendering any analysis worthless.
+
+\Cref{fig:neuron_burst_freq} shows the influence of the parameter and the applied current on the inter-burst frequency.
+Interestingly, the limit between bursting and silence seems to follow a linear relationship between $I_\text{app}$ and $g_{u+}$ in this model.
+This is probably an artifact of the specific values of other parameters and is not a general behavior of this neuronal model.
 The inter-burst frequency seems to be mostly dependent on $g_{u+}$ when far away from the bursting boundary.
-When approaching the boundary the frequency quickly decreases compared to further inside the boundary.
-A higher $g_{u+}$ leads to a higher oscillation frequency.
+When approaching the boundary, the frequency quickly decreases compared with that further inside the boundary.
+Therefore, in that region, the applied current starts to have a larger impact on the frequency.
+A higher $g_{u+}$ leads to a higher oscillation frequency but also to an earlier activation of bursting.
+A link can be made with \cref{fig:neuron_activation} where the higher the value of $g_{u+}$ the longer the neuron stays in the bursting region.
 
 \begin{figure}[!htb]
     \centering
     \inserttikzfig{plots/freq_burst_map.tikz}
-    \caption{Map of the  in function of the $g_{u+}$ parameter. With $g_{f-} = \qty{-2}{\siemens}$, $g_{s+} = \qty{6}{\siemens}$ and $g_{s-} = \qty{-4}{\siemens}$.}
+    \caption{Map of the inter-burst frequency as a function of the $g_{u+}$ parameter. With $g_{f-} = \qty{-2}{\siemens}$, $g_{s+} = \qty{6}{\siemens}$ and $g_{s-} = \qty{-4}{\siemens}$.}
     \label{fig:neuron_burst_freq}
 \end{figure}
 
-This analysis does not the same goal as the previous one since no $g_{u+}$ modulation is done in this thesis. 
-Rather, it allows to better understand why later some parameter values will lead to a better control of the pendulum.
+This analysis does not have the same goal as the previous one because no neuromodulation of $g_{u+}$ is done in this thesis.
+Rather, it allows us to better understand later why some parameter values will lead to better control of the pendulum.
+It was also used to slightly guide the design of the controller by restricting the parameter space for the bursting neurons
 
 \section{Tonic spiking type-I neuron characteristics}
 % Good parameter map for -2 4 parameters
 
-For sensory feedbacks a tonic type-I spiking neuron will be useful since it will be able to transform continuous signals into discrete events.
-Such a neuron must be able to sustain spiking since it is tonic and have a spiking frequency that is closely correlated with the input current since it is type-I.
+For sensory feedback, a tonic type-I spiking neuron will be useful because it will be able to transform continuous signals into discrete events.
+A neuron of that type can sustain spiking because it is tonic and has a spiking frequency that is closely correlated with the input because it is type-I.
+These are the definitions of both terms.
+This type of neuron is useful for sensory inputs because it is event based but keeps a trace of the strength of the input through the spiking frequency.
 
-In \cref{fig:neuron_spiking}, the firing frequency is plotted in function of the applied current. 
+The following neuron will deviate from the standard values of $g_{f-}$ and $g_{s+}$ defined previously.
+These values were chosen for bursting, and here spiking is of interest.
+A detailed exploration of the parameter space was not performed either because only a single set of parameters is needed.
+Indeed, modulation is not necessary for the sensory neurons in this thesis.
+
+Now, in \cref{fig:neuron_spiking}, the firing frequency of the neuron is plotted in function of the input current. 
 This figure clearly shows that for low values of applied current the spiking frequency is very strongly related with the input current. 
 For higher currents the frequency saturates and even decreases before the spiking disappears.
 But, this behavior happens at very high input current and the neuron frequency is very close to a linear function of the input for $I_\text{app} \in \left[0;\;1\right]\unit{\ampere}$.
-And this range is more than enough for the controller.
+In normal use the neuron will never be subject to current high enough to make it exit the region of linearity.
+Thus, the poor performances at high input current are not problematic.
 
 \begin{figure}[!htb]
     \centering
     \inserttikzfig{plots/fi_curve.tikz}
-    \caption{F-I curve of the type I neuron. With $g_{f-}=\qty{-2}{\siemens}$, $g_{s+}=\qty{4}{\siemens}$, $g_{s-}=\qty{-1}{\siemens}$ and $g_{u+}=\qty{1}{\siemens}$. The curve starts and ends at the beginning and the end of spiking.}
+    \caption{F-I curve of a type I neuron. With $g_{f-}=\qty{-2}{\siemens}$, $g_{s+}=\qty{4}{\siemens}$, $g_{s-}=\qty{-1}{\siemens}$ and $g_{u+}=\qty{1}{\siemens}$. The curve starts and ends at the beginning and end of spiking.}
     \label{fig:neuron_spiking}
 \end{figure}
 
-The correlation of the applied current with the spiking frequency is necessary to have a good representation of the input at the output of the neuron. In some way the neuron converts the amplitude of the input into a frequency. 
+The correlation of the applied current with the spiking frequency is necessary to obtain a good representation of the input at the output of the neuron. 
+Indeed, the neuron is supposed to convert the amplitude of the input into a frequency.
 
 \section{ODEs of the synaptic connections}
 
-After the study of a single neuron, networks of neurons must be considered to find generate useful spatio-temporal patterns. 
-Biologically, a classical and easy way to connect two neuron is through a synapses.
-\Cref{fig:synapse_mod} show the diagram of the synapse model that will be used in this thesis. 
-It is composed of a low-pass filter followed by a non-linear voltage to current function. 
-The synapse takes as input the voltage of a neuron a produces a current that can be fed as input to another neuron.
+After studying a single neuron, networks of neurons must be considered to generate more complex spatiotemporal patterns.
+Biologically, a classical way in which two neurons are connected is through a synapse.
+A synapse is a connection between two neurons that allows the membrane voltage of the presynaptic neuron to generate a current in the postsynaptic neuron.
+\Cref{fig:synapse_mod} show the diagram of the synapse model that will be used in this thesis. 
 
-It resembles the feedback system inside the neuron model, but here it connects multiple two neurons.
+Similar to the neuron model, the synapse model comprises a low-pass filter followed by a nonlinear voltage-to-current function.
+The synapse takes the voltage of a neuron as input and produces a current that can be fed as input to another neuron.
+It is similar to the feedback system inside the neuron model with the difference that the current generated is not drained from the membrane potential of the presynaptic neuron but fed to the postsynaptic neuron.
+The difference thus lies in the receiver and the sign of the current.
 
 \begin{figure}[!htb]
     \centering
     \inserttikzfig{diagrams/synapse_model.tikz}
-    \caption{Diagram of the synapse Model. The output of the synapse is $I_\text{out}$ and the input is $V_\text{in}$.}
+    \caption{Diagram of the synapses model. The output of the synapse is $I_\text{out}$ and the input is $V_\text{in}$.}
     \label{fig:synapse_mod}
 \end{figure}
 
 
-This model can be written more formally as a simple ODE.
+More formally, this model can be written as a simple ODE.
 \begin{align}
     \tau_\text{syn}\frac{\partial v_\text{syn}}{\partial t} &= V - v_\text{syn}\label{eq:syn_start}\\
     i_\text{out} &= g_\text{syn}\sigma\left(4\left(v_\text{syn} - d_\text{syn}\right)\right)\label{eq:syn_end}   
@@ -305,35 +344,62 @@ This model can be written more formally as a simple ODE.
 \end{align}
 with $g_\text{syn}\,, d_\text{syn} \in \mathbb{R}$ and $\sigma\left(\right)$ the sigmoid function.
 
-The 4 factor inside the increases the slope of the sigmoid to get a faster transition.
+The factor 4 inside the sigmoid increases its slope to obtain a faster transition and makes the slope at $d_\text{syn}$ equal to $1$, similar to the $\tanh$ function inside the neuron.
 
-Basically, when the input neuron is inactive its voltage is negative, thus the sigmoid function is nearly zero and no current is sent to the output neuron. And, when the neuron is active the sigmoid is non zero and might even saturate to 1 and a current is sent the output neuron. The sign of $g_\text{syn}$ will  decide if the synapse is excitatory or inhibitory. A negative conductance makes an inhibitory connection and a positive conductance makes an excitatory one.
+When the input neuron is inactive, its voltage is negative; thus, the sigmoid function is nearly zero and no current is sent to the post-synaptic neuron.
+When the neuron is active, the sigmoid is non-zero and may even saturate to 1 and a current is sent to the post-synaptic neuron.
+The sign of $g_\text{syn}$ will  decide if the synapse is excitatory or inhibitory.
+A negative conductance creates an inhibitory connection that drains current, and a positive conductance creates an excitatory connection that injects current.
 
-\section{Half center oscillator  analysis}
+For this thesis, some parameters of the synapses will be fixed because changing them is not necessary to achieve the various objectives.
+{
 
-Formed by the interconnection of two neuron that are linked by two inhibitory synapse, the half-center oscillator (HCO) is a central component of the controller. A representation was already presented in \cref{sec:neuro_expl} by \cref{fig:halfcenter}. Yet, a more detailed representation using specific parameters can be seen in \cref{fig:cpg_time}.
+\large\centering
+\begin{tabular}{lr|lr}
+    $d_\text{syn}$    & \qty{0.0}{\volt} & $\tau_\text{syn}$ & \qty{0.04}{\second}
+\end{tabular}
+
+}
+
+\section{Half center oscillator analysis}
+
+Formed by the interconnection of two neurons linked by two inhibitory synapses, the half-center oscillator (HCO) is a central component of the controller. 
+A representation of an HCO was already presented in \cref{sec:neuro_expl} by \cref{fig:halfcenter}.
+A more detailed representation using specific parameters can be seen in \cref{fig:cpg_time}.
 
 \begin{figure}[!htb] % Necessary
     \centering
     \inserttikzfig{plots/cpg_output_plot.tikz}
-    \caption{Plot of the neuronal output of a CPG. With $g_{f-}=\qty{-2}{\siemens}$, $g_{s+}=\qty{6}{\siemens}$ ,$g_{s-}=\qty{-4}{\siemens}$, $g_{u+} = \qty{3.7}{\siemens}$, $I_\text{app} = \qty{-1}{\ampere}$, $g_\text{syn} = \qty{-1}{\siemens}$ and $d_\text{syn} = \qty{0}{\volt}$.}
+    \caption{Plot of the neuronal output of a CPG. With $g_{f-}=\qty{-2}{\siemens}$, $g_{s+}=\qty{6}{\siemens}$ ,$g_{s-}=\qty{-4}{\siemens}$, $g_{u+} = \qty{3.7}{\siemens}$, $I_\text{app} = \qty{-1}{\ampere}$, $g_\text{syn} = \qty{-1}{\siemens}$.}
     \label{fig:cpg_time}
 \end{figure}
 
-The most interesting thing to study and control in the HCO is its frequency which can be evaluated by the inter-burst frequency of one of its neuron. \Cref{fig:cpg_act} depicts this frequency in function of $I_\text{app}$ and $g_{u+}$ for certain $g_\text{syn}$. Comparing with \cref{fig:neuron_burst_freq}, low values of $g_\text{syn}$ lead to behaviors very similar to uncoupled neurons while higher values lead to lower frequencies. The strength of the connection is thus very important for the behavior of the system.
+Being the assembly of two bursting neurons, the most interesting thing to study and control in the HCO is its frequency.
+This frequency can be evaluated by the inter-burst frequency of one of its neurons because this frequency is the frequency of one cycle, and an HCO is defined as the alternating activation of two neurons.
+\Cref{fig:cpg_act} depicts this frequency as a function of $I_\text{app}$ and $g_{u+}$ for a selection of $g_\text{syn}$.
+These maps are similar to \cref{fig:neuron_burst_freq} where the inter-burst frequency was studied for a single neuron over the same parameters.
+Low values of $g_\text{syn}$ lead to behaviors very similar to those of uncoupled neurons, whereas higher values lead to lower frequencies.
+Similarity is expected since $g_\text{syn} = 0$ results in two uncoupled neurons.
+The strength of the connection has a large impact on the behavior of the system.
+The frequency is probably lowered by the larger values because a higher current lowers the membrane voltage of the neuron and the neurons take more time to correct this lower voltage.
 
 \begin{figure}[!htb]
     \centering
     \inserttikzfig{plots/cpg_activation.tikz}
-    \caption{Activation of the cpg network in function of the ultra-slow negative feedback and the applied current. With $g_{f-}=\qty{-2}{\siemens}$, $g_{s+}=\qty{6}{\siemens}$, $g_{s-}=\qty{-4}{\siemens}$ and $d_\text{syn} = \qty{0}{\volt}$.}
+    \caption{Activation of the cpg network as a function of ultraslow negative feedback and applied current. With $g_{f-}=\qty{-2}{\siemens}$, $g_{s+}=\qty{6}{\siemens}$, $g_{s-}=\qty{-4}{\siemens}$.}
     \label{fig:cpg_act}
 \end{figure}
 
-To further show this, \cref{fig:cpg_only_act} represents the zones where bursting is caused by the network and not the intrinsic properties of the neurons. The higher the connection between the neurons is the larger the zone of bursting becomes.
+A nice thing to note is that by comparing the HCO with the uncoupled case, it appears that the zone of bursting becomes larger as the strength of the connection increases.
+This leads to the apparition of zones where bursting emerges from the network of neurons as the neurons alone are silent.
+To further demonstrate this, \cref{fig:cpg_only_act} represents only the zones where bursting is caused by the network and not the intrinsic properties of the neurons.
+The higher the connection between the neurons is the larger the zone of bursting is.
 
 \begin{figure}[!htb]
     \centering
     \inserttikzfig{plots/cpg_only_activation.tikz}
-    \caption{Activation of the cpg network in function of the ultra-slow negative feedback and the applied current. Only the region where the bursting only arise from the network is shown. With $g_{f-}=\qty{-2}{\siemens}$, $g_{s+}=\qty{6}{\siemens}$, $g_{s-}=\qty{-4}{\siemens}$ and $d_\text{syn} = \qty{0}{\volt}$.}
+    \caption{Activation of the cpg network as a function of ultraslow negative feedback and applied current. Only the region where the bursting arises from the network is shown. With $g_{f-}=\qty{-2}{\siemens}$, $g_{s+}=\qty{6}{\siemens}$, $g_{s-}=\qty{-4}{\siemens}$.}
     \label{fig:cpg_only_act}
 \end{figure}
+
+%In short the higher the interconnection the more the network is able to burst but it does so with a lower inter-burst frequency. 

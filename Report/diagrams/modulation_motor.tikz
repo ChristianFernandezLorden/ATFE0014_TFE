@@ -73,8 +73,8 @@
     \coordinate (middle) at ($(bn)!0.5!(sat)$);
     \node[box] (cont) at ([yshift=-2.4cm]middle) {Feedback\\Forward};
     \node[box] (cont2) at ([yshift=-2cm]cont) {Feedback\\Backward};
-    \node[box] (cont_mod) at ([shift={(0.8,-6.4)}]sat) {Feedback\\Too low};
-    \node[box] (cont_mod2) at ([yshift=-2cm]cont_mod) {Feedback\\Too high};
+    \node[box] (cont_mod) at ([shift={(0.8,-6.4)}]sat) {Feedback\\Lower amp};
+    \node[box] (cont_mod2) at ([yshift=-2cm]cont_mod) {Feedback\\Higher amp};
     
     \node[neuron] (mod_n) at ([xshift=-3cm]cont_mod) {};
     \begin{axis}[

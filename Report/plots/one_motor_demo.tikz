@@ -1,0 +1,45 @@
+ 
+\begin{tikzpicture}
+    \begin{groupplot}[
+            group style={
+                % set how the plots should be organized
+                group size=1 by 2,
+                % only show ticklabels and axis labels on the bottom
+                x descriptions at=edge bottom,
+                %y descriptions at=edge left,
+                % set the `vertical sep' to zero
+                vertical sep=0.05\textwidth,,
+            },
+            width=.95\textwidth,
+            height=0.4\textwidth,
+            grid=both,
+            grid style={line width=.2pt, draw=gray!30},
+            %ylabel=Spiking Frequency,
+            %y unit=\unit{\hertz},
+            xlabel=Time, 
+            x unit=\unit{\second},
+            xmin=0, xmax=20,
+        ]
+    % start the first plot
+        \nextgroupplot[
+            %xmin=-0.3, xmax=3.9, ymin=-1, 
+            ylabel=Angle,
+            y unit=\unit{\radian},
+            ]
+            \addplot[color=blue] table [col sep=comma, x=time, y=1]{data/Control/test/angle_one_neuron_sim.csv};
+        
+        \nextgroupplot[
+            %name=ax2,
+            %xmin=-0.1, xmax=1, 
+            ymin=-4, ymax=6, 
+            ylabel=Neuron Output,
+            y unit=\unit{\volt},
+            legend cell align={left},
+            ]
+            \addplot[color=blue] table [col sep=comma, x=time, y=1]{data/Control/test/voltage_one_neuron_sim.csv};
+    \end{groupplot}
+\end{tikzpicture} 
+
+
+ 
+ 

@@ -1,0 +1,3 @@
+figures/plots/two_motor_demo.tikz.pdf: data/Control/test/angle_two_neuron_sim.csv
+figures/plots/two_motor_demo.tikz.pdf: data/Control/test/voltage_two_neuron_sim.csv
+figures/plots/two_motor_demo.tikz.pdf: data/Control/test/voltage_two_neuron_sim.csv

@@ -1,0 +1,4 @@
+figures/diagrams/network_neuron.tikz.pdf: data/Neuron/voltage_burst_stable.csv
+figures/diagrams/network_neuron.tikz.pdf: data/Neuron/voltage_burst_stable.csv
+figures/diagrams/network_neuron.tikz.pdf: data/Neuron/voltage_burst_stable.csv
+figures/diagrams/network_neuron.tikz.pdf: data/Neuron/voltage_burst_stable.csv

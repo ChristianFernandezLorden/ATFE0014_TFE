@@ -23,13 +23,13 @@
         every axis y label/.style={at={(0,0.5)}, xshift=-3.2em},
         ]
         \nextgroupplot[
-            title=Voltages,
+            title={Voltages [\unit{\volt}]},
             ylabel=$V$ 
         ]
         \addplot[color=black] table [col sep=comma, x=time, y=1]{data/Neuron/voltage_inside_burst.csv};
 
         \nextgroupplot[
-            title=Currents,
+            title={Currents [\unit{\ampere}]},
             ylabel near ticks, yticklabel pos=right,
             ylabel=$i_{f-}$,
             every axis y label/.style={at={(1,0.5)}, xshift=3.2em},

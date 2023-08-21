@@ -1,0 +1,6 @@
+figures/plots/hco_mod.tikz.pdf: data/MultiLeg/angle1_hco_mod.csv
+figures/plots/hco_mod.tikz.pdf: data/MultiLeg/angle2_hco_mod.csv
+figures/plots/hco_mod.tikz.pdf: data/MultiLeg/voltage1_hco_mod.csv
+figures/plots/hco_mod.tikz.pdf: data/MultiLeg/voltage2_hco_mod.csv
+figures/plots/hco_mod.tikz.pdf: data/MultiLeg/gsm1_hco_mod.csv
+figures/plots/hco_mod.tikz.pdf: data/MultiLeg/gsm2_hco_mod.csv

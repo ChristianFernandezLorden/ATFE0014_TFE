@@ -1,9 +1,23 @@
-\begin{thebibliography}{21}
+\begin{thebibliography}{36}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Akkawutvanich et~al.(2020)Akkawutvanich, Knudsen, Riis, Larsen, and
+  Manoonpong]{related5}
+C.~Akkawutvanich, F.~I. Knudsen, A.~F. Riis, J.~C. Larsen, and P.~Manoonpong.
+\newblock Adaptive parallel reflex- and decoupled cpg-based control for complex
+  bipedal locomotion.
+\newblock \emph{Robotics and Autonomous Systems}, 134:\penalty0 103663, 2020.
+
+\bibitem[Ali et~al.(2020)Ali, Hasan, and Jassim]{Pendulum1}
+H.~I. Ali, A.~F. Hasan, and H.~M. Jassim.
+\newblock Optimal h2pid controller design for human swing leg system using
+  cultural algorithm.
+\newblock \emph{Journal of Engineering Science and Technology}, 15\penalty0
+  (4):\penalty0 2270--2288, 2020.
 
 \bibitem[B{\"a}ssler and B{\"u}schges(1998)]{stickInsect}
 U.~B{\"a}ssler and A.~B{\"u}schges.
@@ -19,6 +33,25 @@ A.~Cangelosi, J.~Bongard, M.~H. Fischer, and S.~Nolfi.
 \newblock In J.~Kacprzyk and W.~Pedrycz, editors, \emph{Springer Handbook of
   Computational Intelligence}, pages 697--714. Springer Berlin Heidelberg,
   Berlin, Heidelberg, 2015.
+
+\bibitem[Cheng et~al.(2016)Cheng, Xiao, Long, and Zhang]{Pendulum2}
+H.~Cheng, J.~Xiao, Y.~Long, and T.~Zhang.
+\newblock Wind pendulum modeling based-on improved pid algorithm.
+\newblock In \emph{2016 IEEE 11th Conference on Industrial Electronics and
+  Applications (ICIEA)}, pages 2288--2293, 2016.
+
+\bibitem[Chung and Hauser(1995)]{Pendulum3}
+C.~C. Chung and J.~Hauser.
+\newblock Nonlinear control of a swinging pendulum.
+\newblock \emph{Automatica}, 31\penalty0 (6):\penalty0 851--862, 1995.
+\newblock ISSN 0005-1098.
+
+\bibitem[De~Couck(2013)]{neurDef}
+M.~De~Couck.
+\newblock Neuron.
+\newblock In M.~D. Gellman and J.~R. Turner, editors, \emph{Encyclopedia of
+  Behavioral Medicine}, pages 1325--1326. Springer New York, New York, NY,
+  2013.
 
 \bibitem[Drion et~al.(2019)Drion, Franci, and Sepulchre]{Franci2}
 G.~Drion, A.~Franci, and R.~Sepulchre.
@@ -56,6 +89,25 @@ A.~L. Hodgkin and A.~F. Huxley.
 \newblock \emph{The Journal of physiology}, 117\penalty0 (4):\penalty0 500,
   1952.
 
+\bibitem[Isidori and Byrnes(1990)]{Pendulum3comp}
+A.~Isidori and C.~Byrnes.
+\newblock Output regulation of nonlinear systems.
+\newblock \emph{IEEE Transactions on Automatic Control}, 35\penalty0
+  (2):\penalty0 131--140, 1990.
+\newblock \doi{10.1109/9.45168}.
+
+\bibitem[Jiayong~Chen(2021)]{related8}
+C.~W. F. X. R. D. Y.~Z. Jiayong~Chen, Bo~Yin.
+\newblock Bioinspired closed-loop cpg-based control of a robot fish for
+  obstacle avoidance and direction tracking.
+\newblock \emph{Journal of Bionic Engineering}, 18\penalty0 (1):\penalty0 171,
+  2021.
+
+\bibitem[Li et~al.(2020)Li, Zhu, Gao, Wang, and Wang]{alphagolessenergy}
+Z.~Li, C.~Zhu, Y.-L. Gao, Z.-K. Wang, and J.~Wang.
+\newblock Alphago policy network: A dcnn accelerator on fpga.
+\newblock \emph{IEEE Access}, 8:\penalty0 203039--203047, 2020.
+
 \bibitem[Lodish et~al.(1999)Lodish, Berk, Matsudaira, Kaiser, Krieger, Scott,
   Zipursky, and Darnell]{channelDiagram}
 H.~Lodish, A.~Berk, P.~Matsudaira, C.~A. Kaiser, M.~Krieger, M.~P. Scott,
@@ -64,18 +116,19 @@ H.~Lodish, A.~Berk, P.~Matsudaira, C.~A. Kaiser, M.~Krieger, M.~P. Scott,
 \newblock WH Freeman and Company and Sumanas, Media Connected, 4th edition,
   1999.
 
-\bibitem[Lu et~al.(2022)Lu, Wang, and Tian]{related5}
+\bibitem[Lu et~al.(2022)Lu, Wang, and Tian]{cpgmotorpattern}
 Q.~Lu, X.~Wang, and J.~Tian.
 \newblock A new biological central pattern generator model and its relationship
   with the motor units.
 \newblock \emph{Cognitive Neurodynamics}, 16\penalty0 (1):\penalty0 135--147,
   2022.
 
-\bibitem[Luo et~al.(2017)Luo, Zhou, Jia, Gao, and Liu]{related1}
-Q.~Luo, C.~Zhou, Y.~Jia, J.~Gao, and F.~Liu.
+\bibitem[Luo et~al.(2015)Luo, Zhou, Jia, Gao, and Liu]{related1}
+Q.-S. Luo, C.~Zhou, Y.~Jia, J.~Gao, and F.-Z. Liu.
 \newblock Cpg-based control scheme for quadruped robot to withstand the lateral
   impact.
-\newblock \emph{arXiv preprint arXiv:1711.07044}, 2017.
+\newblock \emph{Beijing Ligong Daxue Xuebao/Transaction of Beijing Institute of
+  Technology}, 35:\penalty0 384--390, 04 2015.
 
 \bibitem[Marder(2012)]{MARDER}
 E.~Marder.
@@ -86,6 +139,18 @@ E.~Marder.
 E.~Marder and D.~Bucher.
 \newblock Central pattern generators and the control of rhythmic movements.
 \newblock \emph{Current Biology}, 11\penalty0 (23):\penalty0 R986--R996, 2001.
+
+\bibitem[Miranda and Suñé(2020)]{alphagoenergy}
+E.~Miranda and J.~Suñé.
+\newblock Memristors for neuromorphic circuits and artificial intelligence
+  applications.
+\newblock \emph{Materials}, 13\penalty0 (4), 2020.
+
+\bibitem[Santos et~al.(2017)Santos, Alves, and Moreno]{neuromorph1}
+C.~P. Santos, N.~Alves, and J.~C. Moreno.
+\newblock Biped locomotion control through a biomimetic cpg-based controller.
+\newblock \emph{Journal of Intelligent \& Robotic Systems}, 85:\penalty0
+  47--70, 2017.
 
 \bibitem[Saputra et~al.(2022)Saputra, Botzheim, Ijspeert, and Kubota]{related3}
 A.~A. Saputra, J.~Botzheim, A.~J. Ijspeert, and N.~Kubota.
@@ -115,6 +180,31 @@ A.~A. Sharp, F.~K. Skinner, and E.~Marder.
 \newblock \emph{Journal of Neurophysiology}, 76\penalty0 (2):\penalty0
   867--883, 1996.
 
+\bibitem[Silver et~al.(2016)Silver, Huang, Maddison, Guez, Sifre, Van
+  Den~Driessche, Schrittwieser, Antonoglou, Panneershelvam, Lanctot,
+  et~al.]{alphago1}
+D.~Silver, A.~Huang, C.~J. Maddison, A.~Guez, L.~Sifre, G.~Van Den~Driessche,
+  J.~Schrittwieser, I.~Antonoglou, V.~Panneershelvam, M.~Lanctot, et~al.
+\newblock Mastering the game of go with deep neural networks and tree search.
+\newblock \emph{nature}, 529\penalty0 (7587):\penalty0 484--489, 2016.
+
+\bibitem[Silver et~al.(2017)Silver, Schrittwieser, Simonyan, Antonoglou, Huang,
+  Guez, Hubert, Baker, Lai, Bolton, et~al.]{alphago2}
+D.~Silver, J.~Schrittwieser, K.~Simonyan, I.~Antonoglou, A.~Huang, A.~Guez,
+  T.~Hubert, L.~Baker, M.~Lai, A.~Bolton, et~al.
+\newblock Mastering the game of go without human knowledge.
+\newblock \emph{nature}, 550\penalty0 (7676):\penalty0 354--359, 2017.
+
+\bibitem[Silver et~al.(2018)Silver, Hubert, Schrittwieser, Antonoglou, Lai,
+  Guez, Lanctot, Sifre, Kumaran, Graepel, Lillicrap, Simonyan, and
+  Hassabis]{alphago3}
+D.~Silver, T.~Hubert, J.~Schrittwieser, I.~Antonoglou, M.~Lai, A.~Guez,
+  M.~Lanctot, L.~Sifre, D.~Kumaran, T.~Graepel, T.~Lillicrap, K.~Simonyan, and
+  D.~Hassabis.
+\newblock A general reinforcement learning algorithm that masters chess, shogi,
+  and go through self-play.
+\newblock \emph{Science}, 362\penalty0 (6419):\penalty0 1140--1144, 2018.
+
 \bibitem[Straub(2009)]{cpgDef}
 V.~A. Straub.
 \newblock Central pattern generator.
@@ -135,6 +225,18 @@ B.~Vazifehkhah~Ghaffari, M.~Kouhnavard, and S.~Elbasiouny.
 \newblock Mixed-mode oscillations in pyramidal neurons under antiepileptic drug
   conditions.
 \newblock \emph{PLoS One}, 12\penalty0 (6):\penalty0 e0178244, 2017.
+
+\bibitem[Wu and Ma(2010)]{related6}
+X.~Wu and S.~Ma.
+\newblock Cpg-based control of serpentine locomotion of a snake-like robot.
+\newblock \emph{Mechatronics}, 20\penalty0 (2):\penalty0 326--334, 2010.
+\newblock ISSN 0957-4158.
+
+\bibitem[Xie et~al.(2019)Xie, Zhong, Du, and Li]{related7}
+F.~Xie, Y.~Zhong, R.~Du, and Z.~Li.
+\newblock Central pattern generator (cpg) control of a biomimetic robot fish
+  for multimodal swimming.
+\newblock \emph{Journal of Bionic Engineering}, 16:\penalty0 222--234, 03 2019.
 
 \bibitem[Yu et~al.(2020)Yu, Gao, and Deng]{CPGRobot}
 H.~Yu, H.~Gao, and Z.~Deng.

@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.16.0 (MiKTeX 23.1) (format=lualatex 2023.2.21)  9 JUN 2023 16:43
+This is LuaHBTeX, Version 1.16.0 (MiKTeX 23.1) (format=lualatex 2023.2.21)  20 AUG 2023 23:35
  system commands enabled.
 **main.tex
 (./main.tex
@@ -233,6 +233,46 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@count@id=\count282
 \enitdp@description=\count283
 )
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/algorithms/algorithm.st
+y
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+ (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count284
+\float@exts=\toks23
+\float@box=\box62
+\@float@everytoks=\toks24
+\@floatcapt=\box63
+)
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks25
+\c@algorithm=\count285
+)
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/algorithmicx/algpseudoc
+ode.sty
+Package: algpseudocode 
+
+(C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/algorithmicx/algorithmi
+cx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count286
+\c@ALG@rem=\count287
+\c@ALG@nested=\count288
+\ALG@tlm=\skip64
+\ALG@thistlm=\skip65
+\c@ALG@Lnr=\count289
+\c@ALG@blocknr=\count290
+\c@ALG@storecount=\count291
+\c@ALG@tmpcounter=\count292
+\ALG@tmplength=\skip66
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/pgf/frontendlayer/tikz.
 sty
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/pgf/basiclayer/pgf.sty
@@ -240,13 +280,13 @@ sty
 y
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfutil
 -common.tex
-\pgfutil@everybye=\toks23
+\pgfutil@everybye=\toks26
 \pgfutil@tempdima=\dimen159
 \pgfutil@tempdimb=\dimen160
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfutil
 -latex.def
-\pgfutil@abb=\box62
+\pgfutil@abb=\box64
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfrcs.
 code.tex
@@ -265,12 +305,12 @@ Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfkeys
 .code.tex
-\pgfkeys@pathtoks=\toks24
-\pgfkeys@temptoks=\toks25
+\pgfkeys@pathtoks=\toks27
+\pgfkeys@temptoks=\toks28
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/utilities/pgfkeys
 libraryfiltered.code.tex
-\pgfkeys@tmptoks=\toks26
+\pgfkeys@tmptoks=\toks29
 ))
 \pgf@x=\dimen161
 \pgf@y=\dimen162
@@ -284,14 +324,14 @@ libraryfiltered.code.tex
 \pgf@yd=\dimen170
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count284
-\c@pgf@countb=\count285
-\c@pgf@countc=\count286
-\c@pgf@countd=\count287
-\t@pgf@toka=\toks27
-\t@pgf@tokb=\toks28
-\t@pgf@tokc=\toks29
-\pgf@sys@id@count=\count288
+\c@pgf@counta=\count293
+\c@pgf@countb=\count294
+\c@pgf@countc=\count295
+\c@pgf@countd=\count296
+\t@pgf@toka=\toks30
+\t@pgf@tokb=\toks31
+\t@pgf@tokc=\toks32
+\pgf@sys@id@count=\count297
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgf.c
 fg
@@ -310,8 +350,8 @@ File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgfsy
 ssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count289
-\pgfsyssoftpath@bigbuffer@items=\count290
+\pgfsyssoftpath@smallbuffer@items=\count298
+\pgfsyssoftpath@bigbuffer@items=\count299
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgfsy
 sprotocol.code.tex
@@ -346,11 +386,11 @@ code.tex)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathparse
 r.code.tex
 \pgfmath@dimen=\dimen171
-\pgfmath@count=\count291
-\pgfmath@box=\box63
-\pgfmath@toks=\toks30
-\pgfmath@stack@operand=\toks31
-\pgfmath@stack@operation=\toks32
+\pgfmath@count=\count300
+\pgfmath@box=\box65
+\pgfmath@toks=\toks33
+\pgfmath@stack@operand=\toks34
+\pgfmath@stack@operation=\toks35
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfunct
 ions.code.tex)
@@ -374,7 +414,7 @@ ions.integerarithmetics.code.tex)
 code.tex)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfloat
 .code.tex
-\c@pgfmathroundto@lastzeros=\count292
+\c@pgfmathroundto@lastzeros=\count301
 ))
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfint.code.
 tex)
@@ -411,10 +451,10 @@ File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 escopes.code.tex
 File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfpic=\box64
-\pgf@hbox=\box65
-\pgf@layerbox@main=\box66
-\pgf@picture@serial@count=\count293
+\pgfpic=\box66
+\pgf@hbox=\box67
+\pgf@layerbox@main=\box68
+\pgf@picture@serial@count=\count302
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 egraphicstate.code.tex
@@ -449,8 +489,8 @@ File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 eshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@max=\dimen195
-\pgf@sys@shading@range@num=\count294
-\pgf@shadingcount=\count295
+\pgf@sys@shading@range@num=\count303
+\pgf@shadingcount=\count304
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 eimage.code.tex
@@ -459,7 +499,7 @@ File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 eexternal.code.tex
 File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfexternal@startupbox=\box67
+\pgfexternal@startupbox=\box69
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfcor
 elayers.code.tex
@@ -480,7 +520,7 @@ File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/modules/pgfmodule
 shapes.code.tex
 File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodeparttextbox=\box68
+\pgfnodeparttextbox=\box70
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/modules/pgfmodule
 plot.code.tex
@@ -510,8 +550,8 @@ code.tex
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
 \pgffor@iter=\dimen198
 \pgffor@skip=\dimen199
-\pgffor@stack=\toks33
-\pgffor@toks=\toks34
+\pgffor@stack=\toks36
+\pgffor@toks=\toks37
 ))
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
 z/tikz.code.tex
@@ -520,7 +560,7 @@ Package: tikz 2023-01-15 v3.1.10 (3.1.10)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgflibr
 aryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count296
+\pgf@plot@mark@count=\count305
 \pgfplotmarksize=\dimen256
 )
 \tikz@lastx=\dimen257
@@ -531,23 +571,23 @@ File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \tikz@lastmovetoy=\dimen262
 \tikzleveldistance=\dimen263
 \tikzsiblingdistance=\dimen264
-\tikz@figbox=\box69
-\tikz@figbox@bg=\box70
-\tikz@tempbox=\box71
-\tikz@tempbox@bg=\box72
-\tikztreelevel=\count297
-\tikznumberofchildren=\count298
-\tikznumberofcurrentchild=\count299
-\tikz@fig@count=\count300
+\tikz@figbox=\box71
+\tikz@figbox@bg=\box72
+\tikz@tempbox=\box73
+\tikz@tempbox@bg=\box74
+\tikztreelevel=\count306
+\tikznumberofchildren=\count307
+\tikznumberofcurrentchild=\count308
+\tikz@fig@count=\count309
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/modules/pgfmodule
 matrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count301
-\pgfmatrixcurrentcolumn=\count302
-\pgf@matrix@numberofcolumns=\count303
+\pgfmatrixcurrentrow=\count310
+\pgfmatrixcurrentcolumn=\count311
+\pgf@matrix@numberofcolumns=\count312
 )
-\tikz@expandcount=\count304
+\tikz@expandcount=\count313
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
 z/libraries/tikzlibrarytopaths.code.tex
@@ -564,12 +604,12 @@ e.tex
 .code.tex
 Package pgfplots info on input line 124: Initializing with LUA version Lua 5.3
 \pgfplots@luabackend@table=\catcodetable12
-\t@pgfplots@toka=\toks35
-\t@pgfplots@tokb=\toks36
-\t@pgfplots@tokc=\toks37
+\t@pgfplots@toka=\toks38
+\t@pgfplots@tokb=\toks39
+\t@pgfplots@tokc=\toks40
 \pgfplots@tmpa=\dimen265
-\c@pgfplots@coordindex=\count305
-\c@pgfplots@scanlineindex=\count306
+\c@pgfplots@coordindex=\count314
+\c@pgfplots@scanlineindex=\count315
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/sys/pgfplots
 sysgeneric.code.tex))
@@ -580,9 +620,9 @@ ib/pgfplotsoldpgfsupp_loader.code.tex
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgflibr
 aryfpu.code.tex)
 Package pgfplots: loading complementary utilities for your pgf version...
-\t@pgf@toka=\toks38
-\t@pgf@tokb=\toks39
-\t@pgf@tokc=\toks40
+\t@pgf@toka=\toks41
+\t@pgf@tokb=\toks42
+\t@pgf@tokc=\toks43
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/oldpgfcompat
 ib/pgfplotsoldpgfsupp_pgfutil-common-lists.tex)
@@ -602,14 +642,14 @@ e/pgfplotsliststructure.code.tex)
 e/pgfplotsliststructureext.code.tex)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/liststructur
 e/pgfplotsarray.code.tex
-\c@pgfplotsarray@tmp=\count307
+\c@pgfplotsarray@tmp=\count316
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/liststructur
 e/pgfplotsmatrix.code.tex)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/numtable/pgf
 plotstableshared.code.tex
-\c@pgfplotstable@counta=\count308
-\t@pgfplotstable@a=\toks41
+\c@pgfplotstable@counta=\count317
+\t@pgfplotstable@a=\toks44
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/liststructur
 e/pgfplotsdeque.code.tex)
@@ -621,7 +661,7 @@ sbinary.data.code.tex))
 sutil.verb.code.tex)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/libs/pgflibr
 arypgfplots.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count309
+\c@pgfplotslibrarysurf@no=\count318
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/sys/pgflibra
 rypgfplots.surfshading.pgfsys-luatex.def)))
@@ -658,11 +698,11 @@ decorations.code.tex
 \pgfdecoratedinputsegmentcompleteddistance=\dimen268
 \pgfdecoratedinputsegmentremainingdistance=\dimen269
 \pgf@decorate@distancetomove=\dimen270
-\pgf@decorate@repeatstate=\count310
+\pgf@decorate@repeatstate=\count319
 \pgfdecorationsegmentamplitude=\dimen271
 \pgfdecorationsegmentlength=\dimen272
 )
-\tikz@lib@dec@box=\box73
+\tikz@lib@dec@box=\box75
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
 z/libraries/tikzlibrarydecorations.pathmorphing.code.tex
@@ -674,7 +714,7 @@ z/libraries/tikzlibrarydecorations.pathreplacing.code.tex
 ions/pgflibrarydecorations.pathreplacing.code.tex))
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/libs/tikzlib
 rarypgfplots.contourlua.code.tex)
-\pgfplots@numplots=\count311
+\pgfplots@numplots=\count320
 \pgfplots@xmin@reg=\dimen273
 \pgfplots@xmax@reg=\dimen274
 \pgfplots@ymin@reg=\dimen275
@@ -710,7 +750,7 @@ File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
 z/libraries/tikzlibraryintersections.code.tex
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgflibr
 aryintersections.code.tex
-\pgf@intersect@solutions=\count312
+\pgf@intersect@solutions=\count321
 ))
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/pgf/frontendlayer/libra
 ries/tikzlibraryexternal.code.tex
@@ -768,26 +808,26 @@ File: tikzlibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/shapes/
 pgflibraryshapes.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodepartlowerbox=\box74
-\pgfnodeparttwobox=\box75
-\pgfnodepartthreebox=\box76
-\pgfnodepartfourbox=\box77
-\pgfnodeparttwentybox=\box78
-\pgfnodepartnineteenbox=\box79
-\pgfnodeparteighteenbox=\box80
-\pgfnodepartseventeenbox=\box81
-\pgfnodepartsixteenbox=\box82
-\pgfnodepartfifteenbox=\box83
-\pgfnodepartfourteenbox=\box84
-\pgfnodepartthirteenbox=\box85
-\pgfnodeparttwelvebox=\box86
-\pgfnodepartelevenbox=\box87
-\pgfnodeparttenbox=\box88
-\pgfnodepartninebox=\box89
-\pgfnodeparteightbox=\box90
-\pgfnodepartsevenbox=\box91
-\pgfnodepartsixbox=\box92
-\pgfnodepartfivebox=\box93
+\pgfnodepartlowerbox=\box76
+\pgfnodeparttwobox=\box77
+\pgfnodepartthreebox=\box78
+\pgfnodepartfourbox=\box79
+\pgfnodeparttwentybox=\box80
+\pgfnodepartnineteenbox=\box81
+\pgfnodeparteighteenbox=\box82
+\pgfnodepartseventeenbox=\box83
+\pgfnodepartsixteenbox=\box84
+\pgfnodepartfifteenbox=\box85
+\pgfnodepartfourteenbox=\box86
+\pgfnodepartthirteenbox=\box87
+\pgfnodeparttwelvebox=\box88
+\pgfnodepartelevenbox=\box89
+\pgfnodeparttenbox=\box90
+\pgfnodepartninebox=\box91
+\pgfnodeparteightbox=\box92
+\pgfnodepartsevenbox=\box93
+\pgfnodepartsixbox=\box94
+\pgfnodepartfivebox=\box95
 )))
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/tik
 z/libraries/tikzlibraryangles.code.tex
@@ -809,9 +849,9 @@ File: tikzlibraryquotes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 rarypgfplots.units.code.tex)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/libs/tikzlib
 rarypgfplots.groupplots.code.tex
-\pgfplots@group@current@plot=\count313
-\pgfplots@group@current@row=\count314
-\pgfplots@group@current@column=\count315
+\pgfplots@group@current@plot=\count322
+\pgfplots@group@current@row=\count323
+\pgfplots@group@current@column=\count324
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/pgfplots/libs/tikzlib
 rarypgfplots.statistics.code.tex)
@@ -823,7 +863,7 @@ rarypgfplots.external.code.tex)
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2022/04/08 v2.17n AMS math features
-\@mathmargin=\skip64
+\@mathmargin=\skip67
 
 For additional information on amsmath, use the `?' option.
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsbsy.sty
@@ -833,19 +873,19 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count316
+\inf@bad=\count325
 LaTeX Info: Redefining \frac on input line 236.
-\uproot@=\count317
-\leftroot@=\count318
+\uproot@=\count326
+\leftroot@=\count327
 LaTeX Info: Redefining \overline on input line 399.
 LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count319
-\DOTSCASE@=\count320
+\classnum@=\count328
+\DOTSCASE@=\count329
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box94
-\strutbox@=\box95
+\Mathstrutbox@=\box96
+\strutbox@=\box97
 LaTeX Info: Redefining \big on input line 722.
 LaTeX Info: Redefining \Big on input line 723.
 LaTeX Info: Redefining \bigg on input line 724.
@@ -853,31 +893,31 @@ LaTeX Info: Redefining \Bigg on input line 725.
 \big@size=\dimen284
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count321
+\macc@depth=\count330
 LaTeX Info: Redefining \bmod on input line 905.
 LaTeX Info: Redefining \pmod on input line 910.
 LaTeX Info: Redefining \smash on input line 940.
 LaTeX Info: Redefining \relbar on input line 970.
 LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count322
+\c@MaxMatrixCols=\count331
 \dotsspace@=\muskip16
-\c@parentequation=\count323
-\dspbrk@lvl=\count324
-\tag@help=\toks42
-\row@=\count325
-\column@=\count326
-\maxfields@=\count327
-\andhelp@=\toks43
+\c@parentequation=\count332
+\dspbrk@lvl=\count333
+\tag@help=\toks45
+\row@=\count334
+\column@=\count335
+\maxfields@=\count336
+\andhelp@=\toks46
 \eqnshift@=\dimen285
 \alignsep@=\dimen286
 \tagshift@=\dimen287
 \tagwidth@=\dimen288
 \totwidth@=\dimen289
 \lineht@=\dimen290
-\@envbody=\toks44
-\multlinegap=\skip65
-\multlinetaggap=\skip66
-\mathdisplay@stack=\toks45
+\@envbody=\toks47
+\multlinegap=\skip68
+\multlinetaggap=\skip69
+\mathdisplay@stack=\toks48
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 )
@@ -907,15 +947,16 @@ Package: caption3 2023/03/12 v2.4 caption3 kernel (AR)
 \caption@hangindent=\dimen298
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count328
-\c@continuedfloat=\count329
+\c@caption@flags=\count337
+\c@continuedfloat=\count338
+Package caption Info: float package is loaded.
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/caption/subcaption.sty
 Package: subcaption 2023/02/19 v1.6 Sub-captions (AR)
 Package caption Info: New subtype `subfigure' on input line 239.
-\c@subfigure=\count330
+\c@subfigure=\count339
 Package caption Info: New subtype `subtable' on input line 239.
-\c@subtable=\count331
+\c@subtable=\count340
 ) (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2022-11-13 v7.00u Hypertext links for LaTeX
 
@@ -952,11 +993,11 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count332
+\c@section@level=\count341
 )
 \@linkdim=\dimen299
-\Hy@linkcounter=\count333
-\Hy@pagecounter=\count334
+\Hy@linkcounter=\count342
+\Hy@pagecounter=\count343
  (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2022-11-13 v7.00u Hyperref: PDFDocEncoding definition (HO)
 ) (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/intcalc/intcalc.sty
@@ -965,7 +1006,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count335
+\Hy@SavedSpaceFactor=\count344
  (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/puenc.def
 File: puenc.def 2022-11-13 v7.00u Hyperref: PDF Unicode definition (HO)
 )
@@ -976,7 +1017,7 @@ Package hyperref Info: Plain pages OFF on input line 4177.
 Package hyperref Info: Backreferencing OFF on input line 4182.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4410.
-\c@Hy@tempcnt=\count336
+\c@Hy@tempcnt=\count345
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
@@ -993,7 +1034,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count337
+\Fld@menulength=\count346
 \Field@Width=\dimen301
 \Fld@charsize=\dimen302
 Package hyperref Info: Hyper figures OFF on input line 6027.
@@ -1008,9 +1049,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6057.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count338
-\c@Item=\count339
-\c@Hfootnote=\count340
+\Hy@abspage=\count347
+\c@Item=\count348
+\c@Hfootnote=\count349
 )
 Package hyperref Info: Driver (autodetected): hluatex.
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/hluatex.def
@@ -1021,8 +1062,8 @@ ty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\Fld@listcount=\count341
-\c@bookmark@seq@number=\count342
+\Fld@listcount=\count350
+\c@bookmark@seq@number=\count351
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/rerunfilecheck/rerunfil
 echeck.sty
@@ -1035,7 +1076,7 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 85.
 )
-\Hy@SectionHShift=\skip67
+\Hy@SectionHShift=\skip70
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/cleveref/cleveref.sty
 Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
@@ -1050,46 +1091,47 @@ LaTeX Info: Redefining \cpagerefrange on input line 2370.
 LaTeX Info: Redefining \Cpagerefrange on input line 2370.
 LaTeX Info: Redefining \labelcref on input line 2370.
 LaTeX Info: Redefining \labelcpageref on input line 2370.
+Package cleveref Info: `algorithmicx' support loaded on input line 3120.
 )
 Package translations Info: No language package found. I am going to use `englis
-h' as default language. on input line 86.
+h' as default language. on input line 103.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-lua
 tex.def
 File: l3backend-luatex.def 2023-01-16 L3 backend support: PDF output (LuaTeX)
-\l__color_backend_stack_int=\count343
-\l__pdf_internal_box=\box96
+\l__color_backend_stack_int=\count352
+\l__pdf_internal_box=\box98
 ) (./main.aux)
 \openout1 = main.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 86.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 8
-6.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 103.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 1
+03.
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: luatex
@@ -1130,17 +1172,17 @@ LaTeX Font Info:    ... okay on input line 86.
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count344
+\scratchcounter=\count353
 \scratchdimen=\dimen303
-\scratchbox=\box97
-\nofMPsegments=\count345
-\nofMParguments=\count346
-\everyMPshowfont=\toks46
-\MPscratchCnt=\count347
+\scratchbox=\box99
+\nofMPsegments=\count354
+\nofMParguments=\count355
+\everyMPshowfont=\toks49
+\MPscratchCnt=\count356
 \MPscratchDim=\dimen304
-\MPnumerator=\count348
-\makeMPintoPDFobject=\count349
-\everyMPtoPDFconversion=\toks47
+\MPnumerator=\count357
+\makeMPintoPDFobject=\count358
+\everyMPtoPDFconversion=\toks50
 )
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/epstopdf-pkg/epstopdf-b
 ase.sty
@@ -1158,7 +1200,7 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 86.
+or `english'. on input line 103.
 
 Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
@@ -1166,7 +1208,7 @@ s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 86.
+Package hyperref Info: Link coloring OFF on input line 103.
 (./main.out) (./main.out)
 \@outlinefile=\write4
 
@@ -1204,7 +1246,7 @@ Package hyperref Info: Link coloring OFF on input line 86.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<./images//uliege_logo_rvb_pos.pdf, id=150, 728.00783pt x 353.319pt>
+<./images//uliege_logo_rvb_pos.pdf, id=198, 728.00783pt x 353.319pt>
 File: ./images//uliege_logo_rvb_pos.pdf Graphic file (type pdf)
 <use ./images//uliege_logo_rvb_pos.pdf>
 Package luatex.def Info: ./images//uliege_logo_rvb_pos.pdf  used on input line 
@@ -1214,16 +1256,18 @@ Package luatex.def Info: ./images//uliege_logo_rvb_pos.pdf  used on input line
 
 
 {C:/Users/chris/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}<./images//ulie
-ge_logo_rvb_pos.pdf>])
-(./abstract.tex) [2
+ge_logo_rvb_pos.pdf>]) [2
+
+]
+(./abstract.tex) [1] (./acknowledgement.tex) [2
 
 ] (./main.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1236,63 +1280,80 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout5 = main.toc
  [4]
 Chapter 1.
-(./chapters/introduction.tex [5
+(./chapters/introduction.tex
+Underfull \vbox (badness 1371) has occurred while \output is active []
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
+[1
 
 ]
-Overfull \hbox (9.32864pt too wide) in paragraph at lines 24--25
+warning  (pdf backend): ignoring duplicate destination with the name 'page.2'
+[2]
+Overfull \hbox (9.32864pt too wide) in paragraph at lines 64--65
 []\TU/lmr/m/n/12 In this
  []
 
 
-Overfull \hbox (8.34865pt too wide) in paragraph at lines 25--26
-[]\TU/lmr/m/n/12 The last chap-
+Overfull \hbox (0.52065pt too wide) in paragraph at lines 65--66
+[]\TU/lmr/m/n/12 This chap-ter
  []
 
-) [6]
+
+Overfull \hbox (15.38869pt too wide) in paragraph at lines 66--67
+[]\TU/lmr/m/n/12 The last
+ []
+
+) [3]
 Chapter 2.
 (./chapters/neuronandcpg.tex (./plots/excitability.tikz
 ===== Image 'figures/plots/excitability.tikz' is up-to-date. ======
-) [7
+) [4
 
-]
-<./images//channels.png, id=257, 190.311pt x 63.8385pt>
+] [5<./figures/plots/excitability.tikz.pdf>]
+<./images//channels.png, id=393, 190.311pt x 63.8385pt>
 File: ./images//channels.png Graphic file (type png)
 <use ./images//channels.png>
-Package luatex.def Info: ./images//channels.png  used on input line 52.
+Package luatex.def Info: ./images//channels.png  used on input line 54.
 (luatex.def)             Requested size: 384.10959pt x 128.86603pt.
-<./images//conductanceNet.png, id=260, 853.1875pt x 390.45876pt>
+<./images//conductanceNet.png, id=396, 853.1875pt x 390.45876pt>
 File: ./images//conductanceNet.png Graphic file (type png)
 <use ./images//conductanceNet.png>
-Package luatex.def Info: ./images//conductanceNet.png  used on input line 59.
+Package luatex.def Info: ./images//conductanceNet.png  used on input line 61.
 (luatex.def)             Requested size: 384.10959pt x 175.78822pt.
- [8<./figures/plots/excitability.tikz.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [9<./images//channels.png><./images//conductanceNet.png>] (./plots/neuron_beha
-viour.tikz
+ [6<./images//channels.png><./images//conductanceNet.png>] [7] (./plots/neuron_
+behaviour.tikz
 ===== Image 'figures/plots/neuron_behaviour.tikz' is up-to-date. ======
-) (./diagrams/burst_metrics.tikz
+) [8<./figures/plots/neuron_behaviour.tikz.pdf>] (./diagrams/burst_metrics.tikz
 ===== Image 'figures/diagrams/burst_metrics.tikz' is up-to-date. ======
-) [10] [11<./figures/plots/neuron_behaviour.tikz.pdf>]
-(./diagrams/halfcenter.tikz
+) [9<./figures/diagrams/burst_metrics.tikz.pdf>] (./diagrams/halfcenter.tikz
 ===== Image 'figures/diagrams/halfcenter.tikz' is up-to-date. ======
-) [12<./figures/diagrams/burst_metrics.tikz.pdf>]) [13<./figures/diagrams/halfce
-nter.tikz.pdf>]
+) [10<./figures/diagrams/halfcenter.tikz.pdf>]) [11]
 Chapter 3.
-(./chapters/neuroncircuits.tex (./diagrams/neuron_model.tikz
-===== Image 'figures/diagrams/neuron_model.tikz' is up-to-date. ======
-) [14
+(./chapters/neuroncircuits.tex
+Overfull \hbox (11.38567pt too wide) in paragraph at lines 4--7
+\TU/lmr/m/n/12 Build-ing upon the con-cepts de-fined pre-vi-ously, this chap-ter
+ aims to show and study the
+ []
 
-] [15<./figures/diagrams/neuron_model.tikz.pdf>]
+(./diagrams/neuron_model.tikz
+===== Image 'figures/diagrams/neuron_model.tikz' is up-to-date. ======
+) [12
+
+] [13<./figures/diagrams/neuron_model.tikz.pdf>]
 (./plots/neuron_inside.tikz
 ===== Image 'figures/plots/neuron_inside.tikz' is up-to-date. ======
-) [16] (./plots/neuron_type.tikz
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14]
+[15<./figures/plots/neuron_inside.tikz.pdf>] (./plots/neuron_type.tikz
 ===== Image 'figures/plots/neuron_type.tikz' is up-to-date. ======
 ) (./plots/neuron_type_ex.tikz
 ===== Image 'figures/plots/neuron_type_ex.tikz' is up-to-date. ======
 )
 
-LaTeX Warning: Float too large for page by 7.32259pt on input line 120.
+LaTeX Warning: Float too large for page by 9.01976pt on input line 129.
 
 (./plots/neuron_burst.tikz
 ===== Image 'figures/plots/neuron_burst.tikz' is up-to-date. ======
@@ -1304,86 +1365,82 @@ Overfull \hbox (38.97275pt too wide) in paragraph at lines 1--61
 ) (./plots/neuron_burst_close.tikz
 ===== Image 'figures/plots/neuron_burst_close.tikz' is up-to-date. ======
 )
-Overfull \hbox (10.8236pt too wide) in paragraph at lines 1--149
+Overfull \hbox (10.8236pt too wide) in paragraph at lines 1--160
  [][] 
  []
 
 
-Underfull \vbox (badness 3291) has occurred while \output is active []
+Underfull \vbox (badness 4132) has occurred while \output is active []
 
- [17<./figures/plots/neuron_inside.tikz.pdf>] [18<./figures/plots/neuron_type.ti
-kz.pdf><./figures/plots/neuron_type_ex.tikz.pdf>] (./plots/burst_stable_fragile
-.tikz
+ [16]
+[17<./figures/plots/neuron_type.tikz.pdf><./figures/plots/neuron_type_ex.tikz.pd
+f>] (./plots/burst_stable_fragile.tikz
 ===== Image 'figures/plots/burst_stable_fragile.tikz' is up-to-date. ======
 )
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 192.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 192.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 192.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [19<./figures/plots/neuron_burst.tikz.pdf>]
+ [18<./figures/plots/neuron_burst.tikz.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20<./figures/plots/neuron_burst_close.tikz.pdf><./figures/plots/burst_stable_f
-ragile.tikz.pdf>]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 177.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 177.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 177.
-
-(./plots/spike_burst_curve.tikz
+ [19<./figures/plots/neuron_burst_close.tikz.pdf><./figures/plots/burst_stable_f
+ragile.tikz.pdf>] (./plots/spike_burst_curve.tikz
 ===== Image 'figures/plots/spike_burst_curve.tikz' is up-to-date. ======
-) [21<./figures/plots/spike_burst_curve.tikz.pdf>]
+) [20<./figures/plots/spike_burst_curve.tikz.pdf>]
 (./plots/power_burst_curve.tikz
 ===== Image 'figures/plots/power_burst_curve.tikz' is up-to-date. ======
-) (./plots/intra_burst_curve.tikz
+) [21<./figures/plots/power_burst_curve.tikz.pdf>]
+(./plots/intra_burst_curve.tikz
 ===== Image 'figures/plots/intra_burst_curve.tikz' is up-to-date. ======
 )
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 237.
+(hyperref)                removing `math shift' on input line 261.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 237.
+(hyperref)                removing `subscript' on input line 261.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 237.
+(hyperref)                removing `math shift' on input line 261.
 
-[22<./figures/plots/power_burst_curve.tikz.pdf>] (./plots/freq_burst_map.tikz
+[22<./figures/plots/intra_burst_curve.tikz.pdf>] (./plots/freq_burst_map.tikz
 ===== Image 'figures/plots/freq_burst_map.tikz' is up-to-date. ======
-) (./plots/fi_curve.tikz
+) [23<./figures/plots/freq_burst_map.tikz.pdf>] (./plots/fi_curve.tikz
 ===== Image 'figures/plots/fi_curve.tikz' is up-to-date. ======
-) [23<./figures/plots/intra_burst_curve.tikz.pdf>]
-
-LaTeX Warning: Text page 24 contains only floats.
-
-[24<./figures/plots/freq_burst_map.tikz.pdf><./figures/plots/fi_curve.tikz.pdf>] (./diagrams/synapse_model.tikz
+) [24<./figures/plots/fi_curve.tikz.pdf>] (./diagrams/synapse_model.tikz
 ===== Image 'figures/diagrams/synapse_model.tikz' is up-to-date. ======
 ) (./plots/cpg_output_plot.tikz
 ===== Image 'figures/plots/cpg_output_plot.tikz' is up-to-date. ======
-) (./plots/cpg_activation.tikz
+) [25<./figures/diagrams/synapse_model.tikz.pdf>] (./plots/cpg_activation.tikz
 ===== Image 'figures/plots/cpg_activation.tikz' is up-to-date. ======
 )
-Overfull \hbox (14.4411pt too wide) in paragraph at lines 1--308
+Overfull \hbox (14.4411pt too wide) in paragraph at lines 1--389
  [][] 
  []
 
 (./plots/cpg_only_activation.tikz
 ===== Image 'figures/plots/cpg_only_activation.tikz' is up-to-date. ======
 )
-Overfull \hbox (14.4411pt too wide) in paragraph at lines 1--317
+Overfull \hbox (14.4411pt too wide) in paragraph at lines 1--401
  [][] 
  []
 
-) [25<./figures/diagrams/synapse_model.tikz.pdf>] [26<./figures/plots/cpg_output
-_plot.tikz.pdf>] [27<./figures/plots/cpg_activation.tikz.pdf>] [28<./figures/plo
-ts/cpg_only_activation.tikz.pdf>]
+) [26<./figures/plots/cpg_output_plot.tikz.pdf>] [27<./figures/plots/cpg_activat
+ion.tikz.pdf>] [28<./figures/plots/cpg_only_activation.tikz.pdf>]
 Chapter 4.
 (./chapters/pendulum.tex (./diagrams/pendulum_system.tikz
 ===== Image 'figures/diagrams/pendulum_system.tikz' is up-to-date. ======
@@ -1399,12 +1456,15 @@ le_feed.tikz.pdf>] (./diagrams/speed_angle_feed.tikz
 ===== Image 'figures/diagrams/spike_feed.tikz' is up-to-date. ======
 ) [32<./figures/diagrams/spike_feed.tikz.pdf>] (./diagrams/one_motor.tikz
 ===== Image 'figures/diagrams/one_motor.tikz' is up-to-date. ======
-) [33<./figures/diagrams/one_motor.tikz.pdf>] (./plots/single_freq_t1.tikz
+) (./plots/one_motor_demo.tikz
+===== Image 'figures/plots/one_motor_demo.tikz' is up-to-date. ======
+) [33<./figures/diagrams/one_motor.tikz.pdf>] [34<./figures/plots/one_motor_demo
+.tikz.pdf>] (./plots/single_freq_t1.tikz
 ===== Image 'figures/plots/single_freq_t1.tikz' is up-to-date. ======
 ) (./plots/single_range_t1.tikz
 ===== Image 'figures/plots/single_range_t1.tikz' is up-to-date. ======
 )
-Overfull \hbox (5.51978pt too wide) in paragraph at lines 1--224
+Overfull \hbox (5.51978pt too wide) in paragraph at lines 1--228
  [][] 
  []
 
@@ -1413,7 +1473,7 @@ Overfull \hbox (5.51978pt too wide) in paragraph at lines 1--224
 ) (./plots/single_range_t1_high.tikz
 ===== Image 'figures/plots/single_range_t1_high.tikz' is up-to-date. ======
 )
-Overfull \hbox (5.51978pt too wide) in paragraph at lines 1--243
+Overfull \hbox (5.51978pt too wide) in paragraph at lines 1--247
  [][] 
  []
 
@@ -1425,35 +1485,40 @@ Overfull \hbox (5.51978pt too wide) in paragraph at lines 1--243
 ===== Image 'figures/plots/single_freq_t10_high.tikz' is up-to-date. ======
 ) (./plots/single_range_t10_high.tikz
 ===== Image 'figures/plots/single_range_t10_high.tikz' is up-to-date. ======
-) [34] [35<./figures/plots/single_freq_t1.tikz.pdf><./figures/plots/single_range
-_t1.tikz.pdf>] [36<./figures/plots/single_freq_t1_high.tikz.pdf><./figures/plots
-/single_range_t1_high.tikz.pdf>] [37<./figures/plots/single_freq_t10.tikz.pdf><.
-/figures/plots/single_range_t10.tikz.pdf>] [38<./figures/plots/single_freq_t10_h
+) [35] [36<./figures/plots/single_freq_t1.tikz.pdf><./figures/plots/single_range
+_t1.tikz.pdf>] [37<./figures/plots/single_freq_t1_high.tikz.pdf><./figures/plots
+/single_range_t1_high.tikz.pdf>] [38<./figures/plots/single_freq_t10.tikz.pdf><.
+/figures/plots/single_range_t10.tikz.pdf>] [39<./figures/plots/single_freq_t10_h
 igh.tikz.pdf><./figures/plots/single_range_t10_high.tikz.pdf>]
 (./plots/single_traces.tikz
 ===== Image 'figures/plots/single_traces.tikz' is up-to-date. ======
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [39]
-[40<./figures/plots/single_traces.tikz.pdf>] (./plots/control_monte.tikz
+) [40] [41<./figures/plots/single_traces.tikz.pdf>] (./plots/control_monte.tikz
 ===== Image 'figures/plots/control_monte.tikz' is up-to-date. ======
 ) (./plots/control_monte_range.tikz
 ===== Image 'figures/plots/control_monte_range.tikz' is up-to-date. ======
 )
 
-LaTeX Warning: Float too large for page by 7.56764pt on input line 381.
+LaTeX Warning: Float too large for page by 7.56764pt on input line 383.
 
-[41] [42<./figures/plots/control_monte.tikz.pdf><./figures/plots/control_monte_r
-ange.tikz.pdf>] (./plots/control_monte_robust.tikz
+(./plots/control_monte_robust.tikz
 ===== Image 'figures/plots/control_monte_robust.tikz' is up-to-date. ======
 ) (./plots/control_monte_range_robust.tikz
 ===== Image 'figures/plots/control_monte_range_robust.tikz' is up-to-date. ====
 ==
-) [43<./figures/plots/control_monte_robust.tikz.pdf><./figures/plots/control_mon
-te_range_robust.tikz.pdf>] (./diagrams/two_motor.tikz
+) [42] [43<./figures/plots/control_monte.tikz.pdf><./figures/plots/control_monte
+_range.tikz.pdf>] [44<./figures/plots/control_monte_robust.tikz.pdf><./figures/p
+lots/control_monte_range_robust.tikz.pdf>] (./diagrams/two_motor.tikz
 ===== Image 'figures/diagrams/two_motor.tikz' is up-to-date. ======
-) [44<./figures/diagrams/two_motor.tikz.pdf>] (./plots/double_freq_t1.tikz
+) (./plots/two_motor_demo.tikz
+===== Image 'figures/plots/two_motor_demo.tikz' is up-to-date. ======
+)
+Underfull \hbox (badness 1062) in paragraph at lines 438--438
+[]\TU/lmr/m/n/12 Fig-ure 4.15: |Sim-u-la-tion of a well-parameterized two-neuron
+s push-pull con-
+ []
+
+[45<./figures/diagrams/two_motor.tikz.pdf>] [46<./figures/plots/two_motor_demo.t
+ikz.pdf>] (./plots/double_freq_t1.tikz
 ===== Image 'figures/plots/double_freq_t1.tikz' is up-to-date. ======
 ) (./plots/double_range_t1.tikz
 ===== Image 'figures/plots/double_range_t1.tikz' is up-to-date. ======
@@ -1469,18 +1534,18 @@ te_range_robust.tikz.pdf>] (./diagrams/two_motor.tikz
 ===== Image 'figures/plots/double_freq_t10_high.tikz' is up-to-date. ======
 ) (./plots/double_range_t10_high.tikz
 ===== Image 'figures/plots/double_range_t10_high.tikz' is up-to-date. ======
-) [45] [46<./figures/plots/double_freq_t1.tikz.pdf><./figures/plots/double_range
-_t1.tikz.pdf>] [47<./figures/plots/double_freq_t1_high.tikz.pdf><./figures/plots
-/double_range_t1_high.tikz.pdf>] [48<./figures/plots/double_freq_t10.tikz.pdf><.
-/figures/plots/double_range_t10.tikz.pdf>] [49<./figures/plots/double_freq_t10_h
+) [47] [48<./figures/plots/double_freq_t1.tikz.pdf><./figures/plots/double_range
+_t1.tikz.pdf>] [49<./figures/plots/double_freq_t1_high.tikz.pdf><./figures/plots
+/double_range_t1_high.tikz.pdf>] [50<./figures/plots/double_freq_t10.tikz.pdf><.
+/figures/plots/double_range_t10.tikz.pdf>] [51<./figures/plots/double_freq_t10_h
 igh.tikz.pdf><./figures/plots/double_range_t10_high.tikz.pdf>]
 (./plots/double_traces.tikz
 ===== Image 'figures/plots/double_traces.tikz' is up-to-date. ======
 )
 
-LaTeX Warning: Float too large for page by 8.34471pt on input line 575.
+LaTeX Warning: Float too large for page by 8.34471pt on input line 585.
 
-[50] [51<./figures/plots/double_traces.tikz.pdf>]
+[52] [53<./figures/plots/double_traces.tikz.pdf>]
 (./plots/double_control_monte.tikz
 ===== Image 'figures/plots/double_control_monte.tikz' is up-to-date. ======
 ) (./plots/double_control_monte_range.tikz
@@ -1488,80 +1553,220 @@ LaTeX Warning: Float too large for page by 8.34471pt on input line 575.
 ==
 )
 
-LaTeX Warning: Float too large for page by 7.71416pt on input line 624.
+LaTeX Warning: Float too large for page by 7.71416pt on input line 631.
 
-[52] [53<./figures/plots/double_control_monte.tikz.pdf><./figures/plots/double_c
-ontrol_monte_range.tikz.pdf>] (./plots/double_control_monte_robust.tikz
+(./plots/double_control_monte_robust.tikz
 ===== Image 'figures/plots/double_control_monte_robust.tikz' is up-to-date. ===
 ===
 ) (./plots/double_control_monte_range_robust.tikz
 ===== Image 'figures/plots/double_control_monte_range_robust.tikz' is up-to-dat
 e. ======
-)) [54<./figures/plots/double_control_monte_robust.tikz.pdf><./figures/plots/dou
-ble_control_monte_range_robust.tikz.pdf>]
+)) [54] [55<./figures/plots/double_control_monte.tikz.pdf><./figures/plots/doubl
+e_control_monte_range.tikz.pdf>] [56<./figures/plots/double_control_monte_robust
+.tikz.pdf><./figures/plots/double_control_monte_range_robust.tikz.pdf>]
 Chapter 5.
 (./chapters/neuromod.tex (./diagrams/modulation_motor.tikz
 ===== Image 'figures/diagrams/modulation_motor.tikz' is up-to-date. ======
-) [55
+)
+Underfull \vbox (badness 3942) has occurred while \output is active []
 
-] [56<./figures/diagrams/modulation_motor.tikz.pdf>]
+ [57
+
+]
+[58<./figures/diagrams/modulation_motor.tikz.pdf>]
 (./diagrams/neuromod_cont.tikz
 ===== Image 'figures/diagrams/neuromod_cont.tikz' is up-to-date. ======
-) [57<./figures/diagrams/neuromod_cont.tikz.pdf>] (./plots/neuromod_up.tikz
+) [59<./figures/diagrams/neuromod_cont.tikz.pdf>] (./plots/neuromod_up.tikz
 ===== Image 'figures/plots/neuromod_up.tikz' is up-to-date. ======
 )
-Overfull \hbox (2.14919pt too wide) in paragraph at lines 1--89
+Overfull \hbox (2.14919pt too wide) in paragraph at lines 1--91
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 11.83174pt on input line 91.
+LaTeX Warning: Float too large for page by 11.83174pt on input line 93.
 
 (./plots/neuromod_down.tikz
 ===== Image 'figures/plots/neuromod_down.tikz' is up-to-date. ======
 )
 
-LaTeX Warning: Float too large for page by 0.23961pt on input line 98.
+LaTeX Warning: Float too large for page by 0.23961pt on input line 100.
 
 (./plots/tgt_modulation.tikz
 ===== Image 'figures/plots/tgt_modulation.tikz' is up-to-date. ======
 ) (./plots/gain_modulation.tikz
 ===== Image 'figures/plots/gain_modulation.tikz' is up-to-date. ======
-) [58] [59<./figures/plots/neuromod_up.tikz.pdf>] [60<./figures/plots/neuromod_d
-own.tikz.pdf>] [61<./figures/plots/tgt_modulation.tikz.pdf>] [62<./figures/plots
-/gain_modulation.tikz.pdf>] [63] (./plots/neuromod_change.tikz
-===== Image 'figures/plots/neuromod_change.tikz' is up-to-date. ======
-)) [64] [65<./figures/plots/neuromod_change.tikz.pdf>]
-Chapter 6.
-(./chapters/conclusion.tex [66
+) (./plots/buff_modulation.tikz
+===== Image 'figures/plots/buff_modulation.tikz' is up-to-date. ======
 
-]) [67] (./main.bbl
-Underfull \hbox (badness 1264) in paragraph at lines 75--79
-\TU/lmr/m/n/12 for quadruped robot to with-stand the lat-eral im-pact.  \TU/lmr
-/m/it/12 arXiv preprint
+Overfull \hbox (11.58041pt too wide) in paragraph at lines 1--140
+ [][] 
  []
 
-[68
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-]) [69]
+ [60]
+[61<./figures/plots/neuromod_up.tikz.pdf>] [62<./figures/plots/neuromod_down.tik
+z.pdf>] [63<./figures/plots/tgt_modulation.tikz.pdf>] [64<./figures/plots/gain_m
+odulation.tikz.pdf>] [65<./figures/plots/buff_modulation.tikz.pdf>] [66]
+[67] (./plots/neuromod_change.tikz
+===== Image 'figures/plots/neuromod_change.tikz' is up-to-date. ======
+) (./plots/neuromod_monte.tikz
+===== Image 'figures/plots/neuromod_monte.tikz' is up-to-date. ======
+) [68] [69<./figures/plots/neuromod_change.tikz.pdf>]) [70] [71<./figures/plots/
+neuromod_monte.tikz.pdf>]
+Chapter 6.
+(./chapters/network.tex (./diagrams/network_neuron.tikz
+===== Image 'figures/diagrams/network_neuron.tikz' is up-to-date. ======
+) [72
+
+] (./plots/hco_simple.tikz
+===== Image 'figures/plots/hco_simple.tikz' is up-to-date. ======
+) (./plots/hco_simple_zoom.tikz
+===== Image 'figures/plots/hco_simple_zoom.tikz' is up-to-date. ======
+)
+Underfull \vbox (badness 4927) has occurred while \output is active []
+
+ [73<./figures/diagrams/network_neuron.tikz.pdf>] [74<./figures/plots/hco_simple
+.tikz.pdf><./figures/plots/hco_simple_zoom.tikz.pdf>] (./plots/hco_mod.tikz
+===== Image 'figures/plots/hco_mod.tikz' is up-to-date. ======
+) (./plots/hco_mod_zoom.tikz
+===== Image 'figures/plots/hco_mod_zoom.tikz' is up-to-date. ======
+)
+Overfull \hbox (5.08817pt too wide) in paragraph at lines 1--110
+ [][] 
+ []
+
+(./plots/hco_mod_global.tikz
+===== Image 'figures/plots/hco_mod_global.tikz' is up-to-date. ======
+) [75] (./plots/hco_mod_global_zoom.tikz
+===== Image 'figures/plots/hco_mod_global_zoom.tikz' is up-to-date. ======
+
+Overfull \hbox (5.08817pt too wide) in paragraph at lines 1--57
+ [][] 
+ []
+
+)) [76<./figures/plots/hco_mod.tikz.pdf>] [77<./figures/plots/hco_mod_zoom.tikz.
+pdf>] [78<./figures/plots/hco_mod_global.tikz.pdf>] [79<./figures/plots/hco_mod_
+global_zoom.tikz.pdf>]
+Chapter 7.
+(./chapters/conclusion.tex
+Underfull \vbox (badness 1371) has occurred while \output is active []
+
+ [80
+
+])
+[81] (./main.bbl [82
+
+] [83]) [84]
 Appendix A.
-[70
+(./chapters/algos.tex
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 22.
 
-] (./main.aux)
+
+LaTeX Warning: Float too large for page by 11.71835pt on input line 81.
+
+[85
+
+] [86]
+warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.1
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.2
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.3
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.4
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.5
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.6
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.7
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.8
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.9
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.1
+0'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.1
+1'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.1
+2'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.1
+3'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.1
+4'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.1
+5'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.1
+6'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.1
+7'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.1
+8'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.1
+9'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.2
+0'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.2
+1'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.2
+2'
+) [87
+warning  (pdf backend): ignoring duplicate destination with the name 'algorithm.
+1'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.1
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.2
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.3
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.4
+'
+] [88] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 5FCF6E5EBE08E41E956274C4C80A3155;7556.
+(rerunfilecheck)             Checksum: 957705FA1F26E28DFD9A8ECD460F026E;9821.
 )
 
 Here is how much of LuaTeX's memory you used:
- 45806 strings out of 478326
- 125007,1977958 words of node,token memory allocated
- 529 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 8 attribute, 57 glue_spec,
+ 47045 strings out of 478326
+ 125009,1977958 words of node,token memory allocated
+ 534 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 8 attribute, 58 glue_spec,
  8 attribute_list, 2 write nodes
-   avail lists: 2:1115,3:355,4:116,5:451,6:110,7:11035,8:49,9:799,10:27,11:833
- 63022 multiletter control sequences out of 65536+600000
+   avail lists: 1:1,2:2678,3:686,4:248,5:478,6:135,7:9868,8:49,9:1176,10:27,11:7
+66
+ 63835 multiletter control sequences out of 65536+600000
  78 fonts using 5676519 bytes
- 84i,14n,91p,1062b,1054s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,14n,91p,1071b,1054s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <//?/c:/users/chris/appdata/local/programs/miktex/fonts/opentype/public/lm/lmrom
 an12-italic.otf><//?/c:/users/chris/appdata/local/programs/miktex/fonts/opentype
 /public/lm/lmroman6-regular.otf><//?/c:/users/chris/appdata/local/programs/mikte
@@ -1585,9 +1790,9 @@ lic/amsfonts/cm/cmr8.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/typ
 e1/public/amsfonts/cm/cmsy10.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/f
 onts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/chris/AppData/Local/Programs/M
 iKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (70 pages, 29232278 bytes).
+Output written on main.pdf (94 pages, 55913473 bytes).
 
-PDF statistics: 2838 PDF objects out of 2984 (max. 8388607)
- 206 named destinations out of 1000 (max. 131072)
- 304 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 3453 PDF objects out of 3580 (max. 8388607)
+ 331 named destinations out of 1000 (max. 131072)
+ 400 words of extra memory for PDF output out of 10000 (max. 100000000)
 

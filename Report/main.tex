@@ -22,6 +22,9 @@
 
 \usepackage{enumitem}
 
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
 %%% Tikz 
 \usepackage{tikz}
 \usepackage{pgfplots}\pgfplotsset{compat=1.18}
@@ -83,35 +86,55 @@
     \renewcommand{\footrulewidth}{0.4pt}
 }
 
+\hypersetup{% PDF METADATA
+    pdfinfo={%
+    Title={\mytitle},%
+    Author={\myname},%
+    Subject={Neuromorphic Engineering},%
+    Producer={LuaLaTeX with hyperref and pgfplots},%
+    Creator={\myname},%
+    Keywords={Neuron, Control, Pendulum, Neuromodulation, Engineering, Bursting, Spiking, CPG},%
+    },%
+    %keeppdfinfo 
+}%
+
+\allowdisplaybreaks % Allow equation to page break
+
 \begin{document}
     \input{titlepage.tex}
+    \newpage 
+    \thispagestyle{empty}
+    \mbox{}
+    \newpage
     
-    \input{abstract.tex}
-    \renewcommand{\mychaptername}{Abstract}
-
     %\chapter*{Dedication}
     %To mum and dad
 
     %\chapter*{Declaration}
     %I declare that..
-
-    %\chapter*{Acknowledgements}
-    %I want to thank...
     
+    \input{abstract.tex}
+    \pagenumbering{roman}
+    \renewcommand{\mychaptername}{Abstract} % DONE
     
-    \tableofcontents
+    \chapter*{Acknowledgements} % DONE 
+    \input{acknowledgement.tex}
+    \renewcommand{\mychaptername}{Acknowledgements}
+    
+    \newpage
     \renewcommand{\mychaptername}{Contents}
+    \tableofcontents
     
-
     \mychapter{Introduction}
-    \input{chapters/introduction.tex}
+    \pagenumbering{arabic}
+    \input{chapters/introduction.tex} % Can be fluffed
     
     \mychapter{Neurons and CPGs}
     % Principle of models 
     % CPG and feedback => embodied
     % Rhytms , excitablility
     % Connection of CPG and motor rythms
-    \input{chapters/neuronandcpg.tex}
+    \input{chapters/neuronandcpg.tex} % Can be fluffed
     
     \mychapter{Modeling and analysis of neuronal circuits.}
     \input{chapters/neuroncircuits.tex}
@@ -122,8 +145,8 @@
     \mychapter{Neuromodulation for adaptive amplitude control}
     \input{chapters/neuromod.tex}
 
-    %\mychapter{Network of pendulums and gait patterns}
-    %\input{chapters/network.tex}
+    \mychapter{Simple interconnection of controller-pendulum systems}
+    \input{chapters/network.tex}
 
     \mychapter{Conclusion}
     \input{chapters/conclusion.tex}
@@ -136,7 +159,7 @@
     \appendix
     \renewcommand{\mychapterdesignation}{Appendix}
     \mychapter{Signal Analysis Algorithms}
-    %\input{chapters/appendix.tex}
+    \input{chapters/algos.tex}
 \end{document}
 
 

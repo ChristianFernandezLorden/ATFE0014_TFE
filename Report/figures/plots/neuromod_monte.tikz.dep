@@ -1,0 +1,12 @@
+figures/plots/neuromod_monte.tikz.pdf: data/Neuromod/monte/modulation_time_low_slow_monte.csv
+figures/plots/neuromod_monte.tikz.pdf: data/Neuromod/monte/modulation_amp_low_slow_monte.csv
+figures/plots/neuromod_monte.tikz.pdf: data/Neuromod/monte/modulation_range_low_slow_monte.csv
+figures/plots/neuromod_monte.tikz.pdf: data/Neuromod/monte/modulation_time_low_fast_monte.csv
+figures/plots/neuromod_monte.tikz.pdf: data/Neuromod/monte/modulation_amp_low_fast_monte.csv
+figures/plots/neuromod_monte.tikz.pdf: data/Neuromod/monte/modulation_range_low_fast_monte.csv
+figures/plots/neuromod_monte.tikz.pdf: data/Neuromod/monte/modulation_time_high_slow_monte.csv
+figures/plots/neuromod_monte.tikz.pdf: data/Neuromod/monte/modulation_amp_high_slow_monte.csv
+figures/plots/neuromod_monte.tikz.pdf: data/Neuromod/monte/modulation_range_high_slow_monte.csv
+figures/plots/neuromod_monte.tikz.pdf: data/Neuromod/monte/modulation_time_high_fast_monte.csv
+figures/plots/neuromod_monte.tikz.pdf: data/Neuromod/monte/modulation_amp_high_fast_monte.csv
+figures/plots/neuromod_monte.tikz.pdf: data/Neuromod/monte/modulation_range_high_fast_monte.csv

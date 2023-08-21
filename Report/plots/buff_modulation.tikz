@@ -1,0 +1,140 @@
+\begin{tikzpicture} 
+    \begin{groupplot}[
+        group style={
+            %group name=g,
+            % set how the plots should be organized
+            group size=2 by 4,
+            % only show ticklabels and axis labels on the bottom
+            x descriptions at=edge bottom,
+            %y descriptions at=edge left,
+            % set the `vertical sep' to zero
+            vertical sep=0.02\textwidth,
+            horizontal sep=0.03\textwidth,
+        },
+        xlabel=$d_\text{buff}$, 
+        grid=both,
+        grid style={line width=.2pt, draw=gray!30},
+        width = 0.52\textwidth,
+        height = 0.35\textwidth,
+        x unit=\unit{\radian},
+        change x base,
+        x SI prefix=milli,
+        xmin=-0.04,xmax=0.11,
+        ]
+
+        \nextgroupplot[
+            ymin=0.0,ymax=2.2,
+            title={Mean Amplitude [\unit{\radian}]},
+            ylabel={$\mathrm{d}g_{s-} = \qty{0.2}{\siemens\per\volt}$}
+        ]
+        \addplot[only marks,blue,mark size=0.3pt] table [col sep=comma, x=dbuff, y=value]{data/Neuromod/map/mod_buff_amplitude_amppi6_dgsm02.csv};
+        \addplot[blue, dashed, domain=-0.04:0.11] {0.524};
+            
+        \addplot[only marks,cyan,mark size=0.3pt] table [col sep=comma, x=dbuff, y=value]{data/Neuromod/map/mod_buff_amplitude_amppi3_dgsm02.csv};
+        \addplot[cyan, dashed, domain=-0.04:0.11] {1.047};
+        
+        \addplot[only marks,purple,mark size=0.3pt] table [col sep=comma, x=dbuff, y=value]{data/Neuromod/map/mod_buff_amplitude_amppi2_dgsm02.csv};
+        \addplot[purple, dashed, domain=-0.04:0.11] {1.571};
+        
+        \nextgroupplot[
+            title={Amplitude SD [\unit{\milli\radian}]},
+            yticklabel pos=right,
+            change y base,
+            y SI prefix=milli,
+        ]
+        \addplot[only marks,blue,mark size=0.3pt] table [col sep=comma, x=dbuff, y=value]{data/Neuromod/map/mod_buff_range_amppi6_dgsm02.csv};
+            
+        \addplot[only marks,cyan,mark size=0.3pt] table [col sep=comma, x=dbuff, y=value]{data/Neuromod/map/mod_buff_range_amppi3_dgsm02.csv};
+        
+        \addplot[only marks,purple,mark size=0.3pt] table [col sep=comma, x=dbuff, y=value]{data/Neuromod/map/mod_buff_range_amppi2_dgsm02.csv};
+        
+        % ==== %
+        
+        \nextgroupplot[
+            ymin=0.0,ymax=2.2,
+            ylabel={$\mathrm{d}g_{s-} = \qty{0.5}{\siemens\per\volt}$}
+        ]
+        \addplot[only marks,blue,mark size=0.3pt] table [col sep=comma, x=dbuff, y=value]{data/Neuromod/map/mod_buff_amplitude_amppi6_dgsm05.csv};
+        \addplot[blue, dashed, domain=-0.04:0.11] {0.524};
+            
+        \addplot[only marks,cyan,mark size=0.3pt] table [col sep=comma, x=dbuff, y=value]{data/Neuromod/map/mod_buff_amplitude_amppi3_dgsm05.csv};
+        \addplot[cyan, dashed, domain=-0.04:0.11] {1.047};
+        
+        \addplot[only marks,purple,mark size=0.3pt] table [col sep=comma, x=dbuff, y=value]{data/Neuromod/map/mod_buff_amplitude_amppi2_dgsm05.csv};
+        \addplot[purple, dashed, domain=-0.04:0.11] {1.571};
+        
+        \nextgroupplot[
+            yticklabel pos=right,
+            change y base,
+            y SI prefix=milli,
+        ]
+        \addplot[only marks,blue,mark size=0.3pt] table [col sep=comma, x=dbuff, y=value]{data/Neuromod/map/mod_buff_range_amppi6_dgsm05.csv};
+            
+        \addplot[only marks,cyan,mark size=0.3pt] table [col sep=comma, x=dbuff, y=value]{data/Neuromod/map/mod_buff_range_amppi3_dgsm05.csv};
+        
+        \addplot[only marks,purple,mark size=0.3pt] table [col sep=comma, x=dbuff, y=value]{data/Neuromod/map/mod_buff_range_amppi2_dgsm05.csv};
+        
+        % ==== %
+        
+        \nextgroupplot[
+            ymin=0.0,ymax=2.2,
+            ylabel={$\mathrm{d}g_{s-} = \qty{1}{\siemens\per\volt}$}
+        ]
+        \addplot[only marks,blue,mark size=0.3pt] table [col sep=comma, x=dbuff, y=value]{data/Neuromod/map/mod_buff_amplitude_amppi6_dgsm1.csv};
+        \addplot[blue, dashed, domain=-0.04:0.11] {0.524};
+            
+        \addplot[only marks,cyan,mark size=0.3pt] table [col sep=comma, x=dbuff, y=value]{data/Neuromod/map/mod_buff_amplitude_amppi3_dgsm1.csv};
+        \addplot[cyan, dashed, domain=-0.04:0.11] {1.047};
+        
+        \addplot[only marks,purple,mark size=0.3pt] table [col sep=comma, x=dbuff, y=value]{data/Neuromod/map/mod_buff_amplitude_amppi2_dgsm1.csv};
+        \addplot[purple, dashed, domain=-0.04:0.11] {1.571};
+        
+        \nextgroupplot[
+            legend style={at={(-0.04, 1.01)},anchor=center},
+            legend cell align={left},
+            yticklabel pos=right,
+            change y base,
+            y SI prefix=milli,
+        ]
+        \addlegendimage{only marks,blue};
+        \addlegendimage{only marks,cyan};
+        \addlegendimage{only marks,purple};
+        \addlegendentry{$\theta_\text{ref} = \frac{\pi}{6}\unit{\radian}$};
+        \addlegendentry{$\theta_\text{ref} = \frac{\pi}{3}\unit{\radian}$};
+        \addlegendentry{$\theta_\text{ref} = \frac{\pi}{2}\unit{\radian}$};
+        \addplot[only marks,blue,mark size=0.3pt] table [col sep=comma, x=dbuff, y=value]{data/Neuromod/map/mod_buff_range_amppi6_dgsm1.csv};
+            
+        \addplot[only marks,cyan,mark size=0.3pt] table [col sep=comma, x=dbuff, y=value]{data/Neuromod/map/mod_buff_range_amppi3_dgsm1.csv};
+        
+        \addplot[only marks,purple,mark size=0.3pt] table [col sep=comma, x=dbuff, y=value]{data/Neuromod/map/mod_buff_range_amppi2_dgsm1.csv};
+        
+        % ==== %
+        
+        \nextgroupplot[
+            ymin=0.0,ymax=2.2,
+            ylabel={$\mathrm{d}g_{s-} = \qty{2}{\siemens\per\volt}$}
+        ]
+        \addplot[only marks,blue,mark size=0.3pt] table [col sep=comma, x=dbuff, y=value]{data/Neuromod/map/mod_buff_amplitude_amppi6_dgsm2.csv};
+        \addplot[blue, dashed, domain=-0.04:0.11] {0.524};
+            
+        \addplot[only marks,cyan,mark size=0.3pt] table [col sep=comma, x=dbuff, y=value]{data/Neuromod/map/mod_buff_amplitude_amppi3_dgsm2.csv};
+        \addplot[cyan, dashed, domain=-0.04:0.11] {1.047};
+        
+        \addplot[only marks,purple,mark size=0.3pt] table [col sep=comma, x=dbuff, y=value]{data/Neuromod/map/mod_buff_amplitude_amppi2_dgsm2.csv};
+        \addplot[purple, dashed, domain=-0.04:0.11] {1.571};
+        
+        \nextgroupplot[
+            yticklabel pos=right,
+            change y base,
+            y SI prefix=milli,
+        ]
+        \addplot[only marks,blue,mark size=0.3pt] table [col sep=comma, x=dbuff, y=value]{data/Neuromod/map/mod_buff_range_amppi6_dgsm2.csv};
+            
+        \addplot[only marks,cyan,mark size=0.3pt] table [col sep=comma, x=dbuff, y=value]{data/Neuromod/map/mod_buff_range_amppi3_dgsm2.csv};
+        
+        \addplot[only marks,purple,mark size=0.3pt] table [col sep=comma, x=dbuff, y=value]{data/Neuromod/map/mod_buff_range_amppi2_dgsm2.csv};
+    \end{groupplot}
+    
+    %\path (g c1r1.north east) -- node{\ref{BuffLegend}} (g c1r1.north west);
+\end{tikzpicture}  
+ 

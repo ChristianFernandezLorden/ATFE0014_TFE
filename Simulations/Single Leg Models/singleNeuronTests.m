@@ -13,6 +13,7 @@ x = [u(1), u(end)];
 image(x, y, data, 'CDataMapping','scaled');
 colorbar
 
+
 %% No sensory link strength test
 
 params.gfm = -2.0;
@@ -129,6 +130,31 @@ u_params.Iapp = -2;
 u_params.rflx_g = 1;
 
 SelectValAndPlot(model, params, u_params);
+
+
+%% Test 
+
+model = "test_stability_link_auto_speed";
+
+params = struct();
+
+params.noisePwr = 3*10^-7;
+params.sampleTime = 0.001;
+
+params.gfm = -2.0;
+params.gsp = 6.0;
+params.gsm = -4;
+params.gup = 5;
+params.dfm = 0.0;
+params.dsp = 0.5;
+params.dsm = -0.5;
+params.dup = -0.5;
+params.Iapp = -2.0;
+
+params.rflx_g = 1;
+params.max_torque = 10;
+
+simToCsv("one_neuron_sim.csv", model, params, 50);
 
 
 %% Generate Parameters Map

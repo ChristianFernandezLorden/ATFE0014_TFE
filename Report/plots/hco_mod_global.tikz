@@ -1,0 +1,59 @@
+ \begin{tikzpicture}
+    \begin{groupplot}[
+            group style={
+                % set how the plots should be organized
+                group size=1 by 3,
+                % only show ticklabels and axis labels on the bottom
+                x descriptions at=edge bottom,
+                %y descriptions at=edge left,
+                % set the `vertical sep' to zero
+                vertical sep=0.02\textwidth,,
+            },
+            width=.95\textwidth,
+            height=0.38\textwidth,
+            grid=both,
+            grid style={line width=.2pt, draw=gray!30},
+            %ylabel=Spiking Frequency,
+            %y unit=\unit{\hertz},
+            xmin=-2, xmax=122,
+            xlabel=Time, 
+            x unit=\unit{\second},
+        ]
+    % start the first plot
+        \nextgroupplot[
+            %xmin=-0.3, xmax=3.9, ymin=-1, 
+            legend pos=south east,
+            ylabel=Angle,
+            y unit=\unit{\radian},
+            legend cell align={left},
+            ]
+            \addplot[color=blue] table [col sep=comma, x=time, y=1]{data/MultiLeg/angle1_hco_mod_mixed.csv};
+            \addplot[color=red] table [col sep=comma, x=time, y=1]{data/MultiLeg/angle2_hco_mod_mixed.csv};
+            \legend{Pendulum 1, Pendulum 2};
+            
+        \nextgroupplot[
+            %name=ax2,
+            %xmin=-0.1, xmax=1, 
+            legend pos=south east,
+            ymin=-5, ymax=7, 
+            ylabel=Motor Neuron 1,
+            y unit=\unit{\volt},
+            legend cell align={left},
+            ]
+            \addplot[color=blue] table [col sep=comma, x=time, y=1]{data/MultiLeg/voltage1_hco_mod_mixed.csv};
+            \addplot[color=red] table [col sep=comma, x=time, y=1]{data/MultiLeg/voltage2_hco_mod_mixed.csv};
+            \legend{Pendulum 1, Pendulum 2};
+            
+        \nextgroupplot[
+            %xmin=-0.3, xmax=3.9, ymin=-1, 
+            legend pos=south east,
+            ylabel=$g_{s-}$,
+            y unit=\unit{\siemens},
+            %legend cell align={left},
+            ]
+            \addplot[color=blue] table [col sep=comma, x=time, y=1]{data/MultiLeg/gsm_hco_mod_mixed.csv};
+            %\legend{Pendulum 1, Pendulum 2};
+    \end{groupplot}
+\end{tikzpicture} 
+ 
+ 

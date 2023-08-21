@@ -1,31 +1,31 @@
-The previous chapter explored the design of controller to create a strongly connected sensorimotor system.
-But, the chapter never addressed or proposed any control strategy to allow a control of the oscillation to reach a desired amplitude. 
-This chapter introduces neuromodulation into the controller to automatically modify the neuron parameters to reach a target amplitude.
+The previous chapter explored the design of the controller to create a strongly connected sensorimotor system.
+However, the chapter never addressed or proposed any control strategy to allow the oscillation to reach a desired amplitude.
+This chapter introduces neuromodulation into the controller to automatically modify neuron parameters to reach a target amplitude.
 
 \section{Design of the controller}
 
 The goal is to generate a symmetric motion of the pendulum.
-Since \cref{sec:two_neuron} defines a controller that is symmetric it is natural to add neuromodulation to it.
+Since \cref{sec:two_neuron} defines a symmetric controller, it is natural to add neuromodulation to it.
 \Cref{sec:pendulum} established that $\tau_\text{max} = \qty{10}{\newton\meter\per\volt}$ was capable of reaching any amplitude.
-In order to control the bursting neurons the mixed feedback was chosen since it offered very good performances in the useful situation and was less complex and computationally intensive than the spiking neuron feedback.
-Since it proved to have better performances, the output gain $K_\text{feed} = 5$ is also used.
+To control the bursting neurons the mixed feedback was chosen because it offered excellent performance in most situations and was less complex and computationally intensive than spiking neuron feedback.
+Because it proved to have better performance, the output gain $K_\text{feed} = 5$ is also used.
 
-To control the amplitude of oscillation, the parameter $g_{s-}$ was chosen since \cref{sec:spike_mod} established that this was a parameter linked to the power transmitted by a burst and \cref{fig:double_t10_high} confirms that it correlates well with the oscillation frequency using the mixed feedback. 
+To control the amplitude of oscillation, the parameter $g_{s-}$ was chosen since \cref{sec:spike_mod} established that this parameter is linked to the power transmitted by a burst and \cref{fig:double_t10_high} confirms that it correlates well with the oscillation frequency using mixed feedback.
 
-\Cref{fig:neuromod_motor} displays the diagram of the model. 
+\Cref{fig:neuromod_motor} displays the diagram of the model.
 This diagram shows the addition of two spiking neurons to \cref{fig:two_motor}.
-Their outputs are passed through a saturation to only produce a non-zero output when spiking. 
-The output of these neurons are then merged and fed through an integrator which is followed by a low-pass filter. 
+Their outputs are passed through saturation to produce a non-zero output only when spiking.
+The outputs of these neurons are then merged and fed through an integrator which is followed by a low-pass filter.
 Finally, the output of this filter provides the parameter $g_{s-}$.
  
 \begin{figure}[!htbp]
     \centering
     \inserttikzfig{diagrams/modulation_motor.tikz}
-    \caption{Diagram of the control loop of the controller with neuromodulation. The adding blocks also contain internal output gains $\theta_\text{max}$ and $\mathrm{d}g_{s-}$. The bursting neurons are connected by inhibitory synapses. Blue lines represent parameters and not input/output values.}
+    \caption{Diagram of the control loop of the controller with neuromodulation. The adder blocks also contain internal output gains $\theta_\text{max}$ and $\mathrm{d}g_{s-}$. Inhibitory synapses link the bursting neurons. Blue lines represent parameters and not input/output values.}
     \label{fig:neuromod_motor}
 \end{figure}
 
-The spiking neuron in this controller use the following parameters.
+The low-pass filter has a time constant of $\tau_m = \qty{0.1}{\second}$ and the spiking neuron uses the following parameters.
 {
 
 \large\centering
@@ -37,13 +37,13 @@ The spiking neuron in this controller use the following parameters.
 
 }
 
-The idea of this architecture is to have the spiking increase or decrease the value of $g_{s-}$ by steps and the low-pass filter is only there to smooth the value of the parameter and avoid weird neuronal behaviors due to steps in the parameters.
+The idea of this architecture is to have the spiking increase or decrease the value of $g_{s-}$ by steps through the integrator, and the low-pass filter is only there to smooth the value of the parameter and avoid weird neuronal behaviors due to steps in the parameters.
 
-The feedback fed to those spiking neuron is different from the feedback to the bursting neurons. 
-\Cref{fig:neuro_feed} displays this new feedback architecture. 
-It can be understood as a check of the amplitude at the peak of the oscillation.
-The goal is that one neuron will spike if the amplitude is too low and the other will spike if it is too high leading to change in the value of $g_{s-}$ according to the expected result of this change looking at \cref{fig:neuron_burst_spikes,fig:neuron_burst_power}.
-% Feedback explaination
+The feedback fed to the spiking neurons differs from the feedback fed to the bursting neurons.
+\Cref{fig:neuro_feed} displays this new feedback architecture.
+This can be understood as a check of the amplitude at the peak of the oscillation.
+The goal is that one neuron will spike if the amplitude is too low and the other will spike if it is too high, leading to a change in the value of $g_{s-}$ according to the expected result of this change looking at \cref{fig:neuron_burst_spikes,fig:neuron_burst_power}.
+
 \begin{figure}[!htbp]
     \centering
     \inserttikzfig{diagrams/neuromod_cont.tikz}
@@ -59,152 +59,213 @@ The goal is that one neuron will spike if the amplitude is too low and the other
 with $\alpha_\text{side} \in \left\{-1,\,1\right\}$, $\theta \in \left[-\pi;\;\pi\right]$, $\theta_\text{ref} \in \left[0;\;\pi\right]$, $g_\theta$ and $d_\text{buff} \in \mathbb{R}$ and $g_{\dot{\theta}}$ and $d_\text{bump} > 0$.
 
 $\alpha_\text{side}$ is a parameter relative to where the spiking neuron should be active.
-$1$ signifies an activation when the oscillation goes above the desired angle and $-1$ an activation when below the desired angle.
+$1$ signifies activation when the oscillation is above the desired angle and $-1$ indicates activation when it is below the desired angle.
 $g_\theta$ and $g_{\dot{\theta}}$ are parameter that define the sharpness of the transition of their respective $\tanh$.
-$d_\text{buff}$ is a term that offsets $I_\theta$ to create a buffer zone around the desired angle where the neuron does not spike.
-$d_\text{bump}$ defines the width of the bump around $\dot{\theta} = 0$. 
+$d_\text{buff}$ is a term that offsets $I_\theta$ to create a buffer zone around the desired angle in which the neuron does not spike.
+$d_\text{bump}$ defines the width of the bump around $\dot{\theta} = 0$.
 $K_\text{feed}$ is the output gain of the feedback.
 
-The exact value of those parameters as they will be used is given below.
+The exact value of those parameters as they are used is given below.
 {
 
 \large\centering
 \begin{tabular}{lr|lr}
     $g_\theta$      & \qty{40}{\ampere\per\radian}   & $g_{\dot{\theta}}$    & \qty{20}{\ampere\second\per\radian}\\
-    $d_\text{buff}$ & $\frac{pi}{60}\unit{\radian}$  & $d_\text{bump}$       & \qty{0.1}{\radian\per\second}\\
-    $K_\text{feed}$ & \num{2}                        &                       & 
+    $K_\text{feed}$ & \num{2}                        & $d_\text{bump}$       & \qty{0.1}{\radian\per\second}
 \end{tabular}
 
 }
 
-This feedback is similar to the mixed feedback defined in \cref{sec:speed_feed} except that the sinus is replaced by the absolute value and the term $\theta_\text{ref}$ is added. 
+This feedback is similar to the mixed feedback defined in \cref{sec:speed_feed} except that the sinus is replaced by the absolute value and the term $\theta_\text{ref}$ is added.
 This feedback creates a spike-like event when $\dot{\theta}$ is small and $\theta < \theta_\text{ref}$ or $\theta > \theta_\text{ref}$ depending on $\alpha_\text{side}$.
 
 To better understand the behavior of the system \cref{fig:neuromod_up,fig:neuromod_down} represent the behavior of the system when the target requires a $g_{s-}$ above or below the starting $g_{s-}$.
-The CPG with the sensory feedback is controlling the oscillation to keep it going at a rather set amplitude and the value of $g_{s-}$ is slowly tuned to reduce or increase the energy contained in a burst and shape the oscillation to the desired amplitude.
+The CPG with the sensory feedback controls the oscillation to keep it going at a rather set amplitude, and the value of $g_{s-}$ is slowly tuned to reduce or increase the energy contained in a burst and shape the oscillation to the desired amplitude.
+These graphs also perfectly illustrate the behavior exhibited in \cref{sec:spike_mod}.
+The amplitude of the oscillation decreases in a step-like manner.
+These steps are caused by the disappearance of a spike in the burst, leading to less power being transmitted from the motor neuron.
 
 \begin{figure}[!htbp]
     \centering
     \inserttikzfig{plots/neuromod_up.tikz}
-    \caption{Oscillation of the pendulum in a neuromodulated case where the initial oscillation is smaller than desired.}
+    \caption{Oscillation of the neuromodulated controller–pendulum system when the initial steady-state oscillation amplitude is smaller than desired.}
     \label{fig:neuromod_up}
 \end{figure}
 
 \begin{figure}[!htbp]
     \centering
     \inserttikzfig{plots/neuromod_down.tikz}
-    \caption{Oscillation of the pendulum in a neuromodulated case where the initial oscillation is higher than desired.}
+    \caption{Oscillation of the neuromodulated controller–pendulum system when the initial steady-state oscillation amplitude is higher than desired.}
     \label{fig:neuromod_down}
 \end{figure}
 
 \section{Controller performance}
 
-This controller is supposed to change the $g_{s-}$ parameter in order to reach a certain desired amplitude $\theta_\text{ref}$. 
-A perfect controller would be able to make the oscillation amplitude reach a value very close to the target quickly and with no oscillation.
-This naturally leads to two very different criteria when looking to measure the performance of a specific set of parameter.
+This controller is designed to change the $g_{s-}$ parameter in order to reach a certain desired amplitude $\theta_\text{ref}$.
+A perfect controller would be able to make the oscillation amplitude reach a value very close to the target quickly and without oscillation around the target
+This naturally leads to two very different criteria when measuring the performance of a specific set of parameters.
 
-The first criterion, which can be called the static criterion, would be the error between the desired amplitude and the amplitude reached at the steady state. 
-If the steady state consist of an oscillation of multiple amplitude, the mean at that steady state would be the ideal measure.
+The first criterion, which can be called the static criterion, is the error between the desired amplitude and the amplitude reached at the steady state. 
+If the steady state consists of an oscillation of multiple amplitudes, the mean at that steady state would be the ideal measure.
 
-The second criterion, which can called the dynamic criterion, concern itself with the speed at which the controller is able to reach the desired amplitude. 
-It can be measured in two ways. 
-The easy way is to measure the time at which the amplitude crosses the desired amplitude. 
-But, since the controller can undershoot the target as seen in \cref{fig:neuromod_up}, another way to define it is as the time of the last change in the value of $g_{s-}$.
+The second criterion, which can be called the dynamic criterion, concerns itself with the speed at which the controller can reach the desired amplitude.
+It can be measured in two ways.
+An easy way is to measure the time at which the amplitude crosses the desired amplitude.
+However, because the controller can undershoot the target, as seen in \cref{fig:neuromod_up}, another way to define it is as the time of the last change in the value of $g_{s-}$.
+As a good compromise, the relevant value will be the minimum between these two times.
 
-To realize all analysis in a consistent manner all test were realized after a stabilization period of \qty{30}{\second} with a target angle of $\theta_\text{ref} = \frac{\pi}{4}\unit{\radian}$.
+To realize all analyses consistently, all tests include a stabilization period of \qty{30}{\second} where the target angle was $\theta_\text{ref} = \frac{\pi}{4}\unit{\radian}$.
 
-\Cref{fig:neuromod_tgt,fig:neuromod_gain} contain the data that will be useful to understand the behavior of the neuromodulated controller.
-\Cref{fig:neuromod_tgt} displays the evolution of metrics as a function of the desired angle $\theta_\text{ref}$ while \cref{fig:neuromod_gain} displays the evolution of those metrics in function of the neuromodulation gain $\mathrm{d}g_{s-}$.
+\Cref{fig:neuromod_tgt,fig:neuromod_gain,fig:neuromod_buff} contain the data that will be useful for understanding the behavior of the neuromodulated controller.
+\Cref{fig:neuromod_tgt} displays the evolution of metrics as a function of the desired angle $\theta_\text{ref}$.
+\Cref{fig:neuromod_gain} displays the evolution of these metrics as a function of the neuromodulation gain $\mathrm{d}g_{s-}$.
+\Cref{fig:neuromod_buff} contains the evolution of the amplitude mean and standard deviation as functions of the buffer zone $d_\text{buff}$.
 
 \begin{figure}[!htbp]
     \centering
     \inserttikzfig{plots/tgt_modulation.tikz}
-    \caption{Evolution of performance metrics of the neuromodulated controller in function of $\theta_\text{ref}$ at multiple neuromorphic gains $\mathrm{d}g_{s-}$.}
+    \caption{Evolution of performance metrics of the neuromodulated controller–pendulum system as a function of $\theta_\text{ref}$ at multiple neuromorphic gains $\mathrm{d}g_{s-}$. With $d_\text{buff} = \frac{pi}{60}\unit{\radian}$.}
     \label{fig:neuromod_tgt}
 \end{figure}
 
 \begin{figure}[!htbp]
     \centering
     \inserttikzfig{plots/gain_modulation.tikz}
-    \caption{Evolution of performance metrics of the neuromodulated controller in function of $\mathrm{d}g_{s-}$ at multiple desired amplitude $\theta_\text{ref}$}
+    \caption{Evolution of performance metrics of the neuromodulated controller–pendulum system as a function of $\mathrm{d}g_{s-}$ at multiple desired amplitude $\theta_\text{ref}$. With $d_\text{buff} = \frac{pi}{60}\unit{\radian}$.}
     \label{fig:neuromod_gain}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \inserttikzfig{plots/buff_modulation.tikz}
+    \caption{Evolution of performance metrics of the neuromodulated controller–pendulum system as a function of $d_\text{buff}$ at multiple neuromorphic gains $\mathrm{d}g_{s-}$ and desired amplitude $\theta_\text{ref}$. The rise time is not included.}
+    \label{fig:neuromod_buff}
 \end{figure}
 
 \subsection{Static}
 
-As defined before the static performance of the controller is linked to the ability to get close to the desired amplitude.
+As defined above, the static performance of the controller is linked to its ability to get close to the desired amplitude.
 
-\Cref{fig:neuromod_tgt} contains the evolution of two useful metrics in function  of the desired angle $\theta_\text{ref}$. The mean amplitude and the standard deviation of this amplitude.
+\Cref{fig:neuromod_tgt} contains the evolution of two useful metrics as a function of the desired angle $\theta_\text{ref}$. The mean amplitude and standard deviation of the amplitude.
 
-The first graph of this figure is the most important one. 
-For the most part of the graph the effective amplitude in function of the desired amplitude follows a step-like pattern. This is due to the effect seen in \cref{fig:neuron_burst_spikes,fig:neuron_burst_power} which creates steps in the amount of energy a single burst can transmit.
+The first graph of this figure is the most important.
+For most of the graph, the effective amplitude as a function of the desired amplitude follows a step-like pattern. This is due to the effect seen in \cref{fig:neuron_burst_spikes,fig:neuron_burst_power} which creates steps in the amount of energy a single burst can transmit.
 
-But this raises the question of how slopes can exist between these step and at the end of the graph where it seems to be able to follow the target very well.
-The second graphs which displays the standard deviation of the amplitude of the oscillations after reaching steady states answers this question.
-It shows that those behaviors only occur when there is a variation of the amplitude.
-Thus they are created by the fluctuations of the oscillation amplitude around the desired amplitude $\theta_\text{ref}$.
+However, this graph raises the question of how slopes can exist between these steps and at the end of the graph where the system is able to follow the target very well.
+The second graph, which displays the standard deviation of the amplitude of the oscillations after reaching steady states, answers this question.
+This shows that these behaviors only occur when there is a variation in the amplitude.
+Thus, they are created by fluctuations in the oscillation amplitude around the desired amplitude $\theta_\text{ref}$.
 The behavior when high $\theta_\text{ref}$ particularly is quite impressive.
-A simple modulation control that was design to reach a steady state when denied this possible state is able to precise follow the target amplitude in mean.
+A simple modulation control that was designed to reach a steady state when denied this possible state can precisely follow the target amplitude in the mean.
 This shows the adaptability of such a control scheme to operate in non-ideal circumstances.
 
-\Cref{fig:neuromod_gain} also gives us other useful information. 
-In particular, the graph of the mean amplitude display an interesting behavior. 
-As the neuromodulation gain $\mathrm{d}g_{s-}$ increases the mean amplitude becomes less stable. 
-This is particularly visible for $\theta_\text{ref}=\frac{\pi}{2}\unit{\radian}$ where at higher $\theta_\text{ref}$ the amplitude oscillate around the reference.
-The graph of the standard deviation of the amplitude show that the deviation increases with $\mathrm{d}g_{s-}$.
-This means that as $\mathrm{d}g_{s-}$ increases the range of the fluctuations of amplitude increases.
-This leads to oscillation in the mean since the simulation time is limited to \qty{120}{second} and a greater range of fluctuation means a longer cycle of amplitudes.
+\Cref{fig:neuromod_buff} gives another view of the reach of the desired amplitude.
+This shows that the value that determines whether the system stabilizes or not is the value of $d_\text{buff}$.
+This is logical because the value defines the buffer zone around the desired amplitude.
+The graphs of the amplitude standard deviation clearly show that for low $d_\text{buff}$ the system never reaches equilibrium, but the graph of the amplitude means shows that it manages to follow the desired amplitude in the mean.
+An interesting behavior is observed when looking at the trace of $\theta_\text{ref} = \frac{\pi}{2}\unit{\radian}$ for $\mathrm{d}g_{s-} = \qty{0.2}{\siemens\per\volt}$.
+For this trace, the amplitude first stabilizes at some values; however, as $d_\text{buff}$ increases, it jumps to a new value.
+The new value is worse than the first value because it is farther away from the desired amplitude.
+The explanation for this behavior is simple.
+When $d_\text{buff}$ is large enough, multiple levels of amplitude do not trigger neuromodulation. Thus, the system will stabilize at the amplitude closest to its starting position.
+Since the simulation was made starting from an amplitude of $\theta = \frac{\pi}{4}\unit{\radian}$ the lowest level admissible for $\theta_\text{ref} = \frac{\pi}{2}\unit{\radian}$ is reached and not the higher one that exhibits better performance.
+This is because being below $\frac{\pi}{2}\unit{\radian}$ is closer to $\frac{\pi}{4}\unit{\radian}$.
 
+\Cref{fig:neuromod_gain} also gives us other useful information.
+In particular, the graph of the mean amplitude displays an interesting behavior.
+As the neuromodulation gain $\mathrm{d}g_{s-}$ increases the mean amplitude becomes less stable.
+This is particularly visible for $\theta_\text{ref}=\frac{\pi}{2}\unit{\radian}$ where at higher $\theta_\text{ref}$ the amplitude oscillates around the reference.
+The graph of the standard deviation of the amplitude shows that the deviation increases with $\mathrm{d}g_{s-}$.
+This means that as $\mathrm{d}g_{s-}$ increases the range of fluctuations in amplitude increases.
+This leads to oscillation in the mean, possibly because the simulation time is limited to \qty{120}{second} and a greater range of fluctuation means a longer cycle of amplitudes.
 
-Thinking about it in terms of periodic signals, the mean of the amplitudes could be seen as the integral of a sinus whose amplitude and period increase with $\mathrm{d}g_{s-}$.
-This explain very well why the standard deviation increases and why the mean fluctuate around $\theta_\text{ref}$.
-The standard deviation is directly linked to the amplitude of the "sinus". 
-And since the "integration time" is constant as the period of the "sinus" increases it passes being a multiple of the "integration time" which results in an "integral" that evaluates to zero.
+%In terms of periodic signals, the mean of the amplitudes can be seen as the integral of a sinus whose amplitude and period increase with $\mathrm{d}g_{s-}$.
+%This clearly explains why the standard deviation increases and why the mean fluctuates around $\theta_\text{ref}$.
+%The standard deviation is directly linked to the amplitude of the sine.
+%Since the "integration time" is constant as the period of the sine increases, it passes being a multiple of the "integration time" which results in an "integral" that does not evaluates to zero.
 
 \subsection{Dynamic}
 
-As defined before the dynamic performance of the controller is linked to the speed at which the controller gets close to the desired amplitude.
+As defined previously, the dynamic performance of the controller is defined by the speed at which the controller approaches the desired amplitude.
 
-\Cref{fig:neuromod_gain} first graph is very interesting to discuss the dynamic performances. 
-It displays the evolution of the the rise time in function of the neuromodulation gain $\mathrm{d}g_{s-}$.
-Since $\mathrm{d}g_{s-}$ controls hows much a spike changes the value of $g_{s-}$, it is natural that it will be linked to the rise time.
-The graph clearly shows that relationship as the higher $\mathrm{d}g_{s-}$ leads to lower rise times.
-But the gains are diminishing since they should follow a decreasing exponential law.
-Indeed, theoretically doubling $\mathrm{d}g_{s-}$ should result in halving the rise time since the speed at which $g_{s-}$ is moved doubles and thus the ideal $g_{s-}$ should be reached twice as fast.
+\Cref{fig:neuromod_gain} first graph is very interesting for discussing dynamic performances.
+It displays the evolution of the rise time as a function of the neuromodulation gain $\mathrm{d}g_{s-}$.
+Since $\mathrm{d}g_{s-}$ controls the amount to which a spike changes the value of $g_{s-}$, it is natural that it will be linked to the rise time.
+The graph clearly shows that higher $\mathrm{d}g_{s-}$ lead to lower rise times.
+However, the gains diminish because they follow a decreasing exponential law.
+Indeed, theoretically doubling $\mathrm{d}g_{s-}$ should result in halving the rise time because the speed at which $g_{s-}$ is moved doubles; thus, the ideal $g_{s-}$ should be reached twice as fast.
 This is verified nicely on the graph for $\theta_\text{ref}=\frac{\pi}{2}\unit{radian}$ since at the start when $\mathrm{d}g_{s-} = \qty{0.2}{\siemens\per\volt}$ the rise time is around \qty{80}{\second} and doubling $\mathrm{d}g_{s-}$ to \qty{0.4}{\siemens\per\volt} decreases the rise time to around \qty{40}{\second}.
-This is observed also for $\mathrm{d}g_{s-}$ to \qty{0.8}{\siemens\per\volt} with a rise time of around \qty{20}{\second} and \qty{1.6}{\siemens\per\volt} with a rise time of around \qty{10}{\second}.
-But this law as a limit as the graphs for $\theta_\text{ref}=\frac{\pi}{3}\unit{radian}$ and $\theta_\text{ref}=\frac{\pi}{6}\unit{radian}$ since they both converge to a similar value.
+This is also observed for $\mathrm{d}g_{s-}$ set to \qty{0.8}{\siemens\per\volt} with a rise time of around \qty{20}{\second} and \qty{1.6}{\siemens\per\volt} with a rise time of around \qty{10}{\second}.
+However, this law has a limit, as shown in the graphs for $\theta_\text{ref}=\frac{\pi}{3}\unit{radian}$ and $\theta_\text{ref}=\frac{\pi}{6}\unit{radian}$ since they both converge to a similar value.
+This implies a certain minimum rise time.
 
-\Cref{fig:neuromod_tgt} graph of the rise time in function of $\theta_\text{ref}$ is quite interesting.
-Similar to what was observed in the static performance analysis, the rise time seems to progress in steps that progress at the same rate as the steps of mean amplitude.
-This is logical since the rise time can be understood as the time it takes to find a $g_{s-}$ that generates acceptable oscillations. 
-But since the change in the power of a burst in function of $g_{s-}$ moves in step. The desired $g_{s-}$ also moves in steps. 
-This means that two $\theta_\text{ref}$ that need a similar $g_{s-}$ will have the same rise time since they have the same underlying $g_{s-}$.
+\Cref{fig:neuromod_tgt} graph of the rise time as a function of $\theta_\text{ref}$ is quite interesting.
+Similar to what was observed in the static performance analysis, the rise time seems to progress in steps that progress at the same rate as the steps of the mean amplitude.
+This is logical because the rise time can be understood as the time taken to find a $g_{s-}$ that generates acceptable oscillations.
+However, because the change in the power of a burst as a function of $g_{s-}$ moves in a stepwise manner. The desired $g_{s-}$ also moves in steps.
+This means that two $\theta_\text{ref}$ that need a similar $g_{s-}$ will have the same rise time because they require the same underlying $g_{s-}$.
+
+Finally, although not explicitly shown, computing \cref{fig:neuromod_gain} proved that the value  $d_\text{buff}$ has little effect on the rise time.
+Only when very high can it allow the system to stabilize at an amplitude closer to the starting amplitude, leading to a lower rise time.
+However, it is not reliable nor a desirable way of accelerating convergence.
 
 \subsection{Static-Dynamic performance Trade-off}
 
-What the analysis of the static performance and the dynamic performance have revealed is a large trade-off between those two.
+The analysis of the static and dynamic performance revealed a large trade-off between the two.
 
-This can be seen in \cref{fig:neuromod_gain,fig:neuromod_tgt} where higher rises time lead to better static performances while lower rise time lead to poor static performances. 
-This is visible especially in \cref{fig:neuromod_gain} where the decrease in rise time in the first graph leads to fluctuations in the mean value in the second graph and higher standard deviation.
+This can be seen in \cref{fig:neuromod_gain,fig:neuromod_tgt} where higher rise times lead to better static performances, whereas lower rise times lead to poor static performances. 
+This is visible especially in \cref{fig:neuromod_gain} where the decrease in rise time in the first graph leads to fluctuations in the mean value in the second graph and a higher standard deviation.
 
-This trad-off mostly incarnated by the value of $\mathrm{d}g_{s-}$. 
-As it was said before increasing this value leads to better dynamic performances since a single spike will change the value of $g_{s-}$ more. 
-But, it comes at the cost of the static performance since increasing increasing the step a spike makes in $g_{s-}$ can lead to fluctuation around the desired state it skips over the good value of $g_{s-}$.
+This trade-off is primarily embodied by the value of $\mathrm{d}g_{s-}$.
+As stated before, increasing this value leads to better dynamic performance because a single spike will change the value of $g_{s-}$ more.
+However, it comes at the cost of static performance because increasing the number of steps a spike makes in $g_{s-}$ can lead to fluctuation around the desired state, which skips over the good value of $g_{s-}$.
+It also takes some time for the system to settle to the new steady state when $g_{s-}$ changes.
 
-On the other hand a smaller $\mathrm{d}g_{s-}$ leads to a much slower change of $g_{s-}$ thus avoiding skipping the good value but it increases the time it takes to reach this good value.
+On the other hand, a smaller $\mathrm{d}g_{s-}$ leads to a much slower change of $g_{s-}$ thus avoiding skipping the good value, but it increases the time it takes to reach this good value.
 
-From \cref{fig:neuromod_gain}, a good range of values is $\mathrm{d}g_{s-} \in \left[0.5;\;1\right]$.
-Below this range the slower movement is not justified by any static performance gain while higher than that is being too subject to fluctuations.
+From \cref{fig:neuromod_gain}, a good range of values is $\mathrm{d}g_{s-} \in \left[0.5;\;1\right]\unit{\siemens\per\volt}$.
+Below this range, the slower movement is not justified by any static performance gain, whereas higher than that is subject to fluctuations and does not have large gains in rise time.
 
-\Cref{fig:neuromod_change} displays a system using the $\mathrm{d}g_{s-} = \qty{0.5}{\siemens\per\volt}$ as a good compromise. 
-It shows that it is able to mostly follow the desired shape of oscillation but with a big time shift.
-Another nice thing is that this oscillations asked and generated go from $\frac{\pi}{6}\unit{\radian}$ to  $\frac{2\pi}{3}\unit{\radian}$. Which proves that the neuromodulation is very effective at controlling the amplitude of oscillation of the pendulum.
+Also, \cref{fig:neuromod_buff} shows that the value of $d_\text{buff}$ create another trade-off.
+A large value facilitates system convergence because it allows more leeway in the error between the current and desired amplitudes.
+However, a value that is too large will result in the system not stabilizing at the amplitude level closest to the desired amplitude.
+This means that the performance of the controller is negatively affected by a large $d_\text{buff}$.
+Conversely, lower values of $d_\text{buff}$ make it impossible for the system to stabilize because no amplitude level is close enough to not activate the sensory neurons.
+\Cref{fig:neuromod_buff} indicates that $d_\text{buff} \in \left[50, 70\right]\unit{\milli\radian}$ is a good range to ensure convergence and not stabilize too far from the desired amplitude. Therefore, the value $\frac{\pi}{60}\unit{\radian} = \qty{52.36}{\milli\radian}$ that was used until now is a good trade-off. 
+
+\Cref{fig:neuromod_change} displays a system using the $\mathrm{d}g_{s-} = \qty{0.5}{\siemens\per\volt}$ as a good compromise.
+This shows that it can mostly follow the desired shape of oscillation with a certain time shift.
+Another nice thing is that the desired oscillation goes from $\frac{\pi}{6}\unit{\radian}$ to  $\frac{2\pi}{3}\unit{\radian}$.
+This proves that neuromodulation is very effective in controlling the amplitude of the oscillation of the pendulum because it can span a large range of amplitudes.
 
 \begin{figure}[!htbp]
     \centering
     \inserttikzfig{plots/neuromod_change.tikz}
-    \caption{Behavior of the neuromodulated controller with $\mathrm{d}g_{s-} = \qty{0.5}{\siemens\per\volt}$ when subject to a time dependent desired amplitude $\theta_\text{ref}$.}
+    \caption{Behavior of the neuromodulated controller–pendulum system with $\mathrm{d}g_{s-} = \qty{0.5}{\siemens\per\volt}$ and $d_\text{buff} = \frac{pi}{60}\unit{\radian}$ when subject to a varying desired amplitude $\theta_\text{ref}$.}
     \label{fig:neuromod_change}
 \end{figure}
-%\section{Robustness analysis}
+
+\section{Robustness analysis}
+
+Having shown the capabilities of the controller, the next step is to determine how sensitive it is to changes in the parameters.
+\Cref{fig:neuromod_monte} presents the distribution of the different metrics when the parameters of the motor and sensory neurons are drawn from Gaussian distributions.
+
+The most important value is the tracking of the mean oscillation amplitude because controlling this value is the goal of neuromodulation.
+Fortunately, the figure shows that the average amplitude always stays close to the desired amplitude. In addition, the spread of amplitude does not seem to correlate with either the neuromorphic gains $\mathrm{d}g_{s-}$ nor the desired amplitude $\theta_\text{ref}$.
+Furthermore looking at the standard deviation of the amplitude shows that the amplitude of oscillation converges for at least \qty{75}{\percent} of the simulations.
+This shows that the value of amplitude are not means that do not represent the behavior fully but sustained amplitudes.
+
+On another note, looking at the rise time again shows the very clear relationship it has with $\mathrm{d}g_{s-}$. 
+This is seen very well with $\theta_\text{ref} = \frac{\pi}{2}\unit{\radian}$ where doubling $\mathrm{d}g_{s-}$ divides the convergence time by two.
+
+Overall, this analysis shows that the controller design described in this chapter is quite resilient to variations.
+This proves that its structure is sound and that the performances discussed earlier are not flukes.
+
+\begin{figure}[!htbp]
+    \centering
+    \inserttikzfig{plots/neuromod_monte.tikz}
+    \caption{Monte Carlo analysis of the robustness of the neuromodulated controller–pendulum system to changes in the parameters of neurons. The parameters of the motor and sensing neurons as well as the parameters of the neuromodulated feedback were drawn from $\mathcal{N}\left(\mu,\, 0.03^2\right) \unit{\ampere}$ with $\mu$ the normal value of the parameter. All simulations started from a stable equilibrium around $\theta = \frac{\pi}{4}\unit{\radian}$ and used $d_\text{buff} = \frac{\pi}{60}\unit{\radian}$.}
+    \label{fig:neuromod_monte}
+\end{figure}
+
+%\section{Discussion}
