@@ -28,7 +28,7 @@ SelectValAndPlot(model, params, u_params);
 
 %% Plot
 
-model = "test_stability_link_auto_speed_two_motor_neurons";
+model = "test_stability_link_speed_two_motor_neurons_all";
 
 params = struct();
 

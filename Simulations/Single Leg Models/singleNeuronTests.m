@@ -134,7 +134,7 @@ SelectValAndPlot(model, params, u_params);
 
 %% Test 
 
-model = "test_stability_link_auto_speed";
+model = "test_stability_link_speed_all";
 
 params = struct();
 
@@ -154,7 +154,71 @@ params.Iapp = -2.0;
 params.rflx_g = 1;
 params.max_torque = 10;
 
-simToCsv("one_neuron_sim.csv", model, params, 50);
+simToCsv("one_neuron_sim.csv", model, params, 25);
+
+
+%% Test poor
+
+model = "test_stability_link_speed_all";
+
+params = struct();
+
+params.Iapp = 0;
+params.gfm = -2.0;
+params.gsp = 6.0;
+params.gsm = -5;
+params.gup = 5.0;
+params.dfm = 0.0;
+params.dsp = 0.5;
+params.dsm = -0.5;
+params.dup = -0.5;
+
+params.max_torque = 1;
+params.noisePwr = 3*10^-7;
+params.sampleTime = 0.001;
+
+params.rflx_g = 1;
+
+simToCsv("one_neuron_poor_sim.csv", model, params, 25);
+
+
+%% Test poor neuron
+
+model = "test_stability_link_neuron_sense_all";
+
+params = struct();
+
+params.Iapp = -2;
+params.gfm = -2.0;
+params.gsp = 6.0;
+params.gsm = -5;
+params.gup = 5.0;
+params.dfm = 0.0;
+params.dsp = 0.5;
+params.dsm = -0.5;
+params.dup = -0.5;
+
+
+params.gfm_s = -2; % Balance between Gsp and Gsm (at the equilibrium point)
+params.gsp_s = 4;
+params.gsm_s = -1;
+params.gup_s = 1;
+params.dfm_s = 0.0;
+params.dsp_s = 0.5;
+params.dsm_s = -0.5;
+params.dup_s = -0.5;
+
+params.max_torque = 1;
+params.noisePwr = 3*10^-7;
+params.sampleTime = 0.001;
+
+params.dsyn_s = -0.5;
+params.gsyn_s = 1;
+
+params.Iapp_s = 0.1;
+params.rflx_g = 1;
+
+simToCsv("one_neuron_neurfeed_poor_sim.csv", model, params, 25);
 
 
 %% Generate Parameters Map
@@ -584,7 +648,7 @@ model = "test_stability_link_auto_neuron_sense";
 
 params = struct();
 
-params.Iapp = -2;
+params.Iapp = -2.0;
 params.gfm = -2.0;
 params.gsp = 6.0;
 params.gsm = -5;

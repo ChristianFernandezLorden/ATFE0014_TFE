@@ -29,45 +29,45 @@ Too many commas in name 1 of "Jiayong Chen, Bo Yin, Chengcai Wang, Fengran Xie, 
 while executing---line 1429 of file abbrvnat.bst
 Too many commas in name 1 of "Jiayong Chen, Bo Yin, Chengcai Wang, Fengran Xie, Ruxu Du, Yong Zhong" for entry related8
 while executing---line 1429 of file abbrvnat.bst
-You've used 36 entries,
+You've used 39 entries,
             2773 wiz_defined-function locations,
-            854 strings with 11785 characters,
-and the built_in function-call counts, 19676 in all, are:
-= -- 1716
-> -- 1313
-< -- 19
-+ -- 439
-- -- 403
-* -- 1723
-:= -- 3039
-add.period$ -- 116
-call.type$ -- 36
-change.case$ -- 237
-chr.to.int$ -- 36
-cite$ -- 72
-duplicate$ -- 818
-empty$ -- 1496
-format.name$ -- 455
-if$ -- 4127
+            871 strings with 12175 characters,
+and the built_in function-call counts, 20722 in all, are:
+= -- 1811
+> -- 1343
+< -- 22
++ -- 451
+- -- 412
+* -- 1793
+:= -- 3203
+add.period$ -- 125
+call.type$ -- 39
+change.case$ -- 249
+chr.to.int$ -- 39
+cite$ -- 78
+duplicate$ -- 877
+empty$ -- 1604
+format.name$ -- 467
+if$ -- 4350
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 37
-newline$ -- 191
-num.names$ -- 152
-pop$ -- 436
+missing$ -- 40
+newline$ -- 206
+num.names$ -- 164
+pop$ -- 457
 preamble$ -- 1
-purify$ -- 201
+purify$ -- 210
 quote$ -- 0
-skip$ -- 651
+skip$ -- 691
 stack$ -- 0
-substring$ -- 817
-swap$ -- 97
+substring$ -- 859
+swap$ -- 100
 text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 391
+type$ -- 424
 warning$ -- 0
-while$ -- 160
+while$ -- 171
 width$ -- 0
-write$ -- 489
+write$ -- 528
 (There were 12 error messages)

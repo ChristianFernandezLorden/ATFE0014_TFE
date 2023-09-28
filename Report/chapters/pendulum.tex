@@ -46,7 +46,7 @@ It is thus dependent on the angular velocity of the pendulum $\dot{\theta}$.
 
 \section{Sensory feedback types}
 
-The feedback sent to the bursting neuron is the heart of the stability of the neuronal system.
+The feedback sent to the bursting neuron is at the heart of the stability of the neuronal system.
 Bad feedback can only lead to bad performances.
 Thus, three different feedback mechanisms are proposed.
 This ranges from the most simplistic feedback that relies only on the angle of the pendulum to complex spiking neuron-based feedback.
@@ -171,7 +171,7 @@ This controller architecture is naturally imbalanced since the actuation is not 
     \label{fig:one_motor}
 \end{figure}
 
-\Cref{fig:one_motor} displays a realization of this controller. This clearly shows the imbalanced nature of the controller when the angle oscillates from \qtyrange{-0.5}{1}{\radian}. It is interesting to observe the regularity of the oscillation, which indicates that the controller is well attuned to the mechanical system.
+\Cref{fig:one_motor_demo} displays a realization of this controller. This clearly shows the imbalanced nature of the controller when the angle oscillates from \qtyrange{-0.5}{1}{\radian}. It is interesting to observe the regularity of the oscillation, which indicates that the controller is well attuned to the mechanical system.
 
 \begin{figure}[!htb]
     \centering
@@ -318,12 +318,12 @@ Indeed, the traces confirm that they are.
 The mixed feedback seems to be stuck in a behavior similar to that of the first row but with far smaller oscillation due to the lower gain on the torque.
 This appears clearly with the variation in the amplitude of each oscillation and the seemingly constant bursting of the neuron.
 Conversely, neuron feedback can generate far larger and more regular oscillations despite being subjected to the same parameters.
-This difference can be explained easily when considering the equalization that forms the feedback.
+This difference can be explained easily when considering the equations that forms the feedback.
 This boils down to the fact that mixed feedback is continuous, whereas neuron feedback is event-based.
 This may seem a  bit strange because the mixed feedback, when declared in \cref{sec:speed_feed} was described as generating pulses.
 However, looking back at the equations governing the feedback reveals that it only holds true if the angular velocity is high and then \cref{eq:speed_bump} is zero, except at the peak of the oscillation where the speed is close to zero.
 In the case where the torque is low, the system may become stuck in a pattern of tiny oscillations that, due to the limited torque and range, do not have the velocity to get out of the bump.
-Thus, mixed feedback can be abstracted as \cref{eq:speed_bump} plus one, which is feedback based only on position.\label{par:mixed_problem}
+Thus, mixed feedback can be abstracted as \cref{eq:speed_theta} plus one, which is feedback based only on position.\label{par:mixed_problem}
 In the neuronal case, the behavior is different.
 Even if the input to the spiking neuron is similar to the mixed feedback, passing this input into a spiking neuron transforms this continuous feedback into events.
 If the neuronal feedback is placed in the same position as the mixed feedback, it spikes at a relatively low frequency, leading to a more stable activation, allowing it to exit the position and generate larger oscillations.

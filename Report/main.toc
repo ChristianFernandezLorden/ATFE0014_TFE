@@ -42,7 +42,7 @@
 \contentsline {section}{\numberline {6.3}Independently neuromodulated system}{75}{section.6.3}%
 \contentsline {section}{\numberline {6.4}Globally neuromodulated system}{75}{section.6.4}%
 \contentsline {chapter}{\numberline {7}Conclusion}{80}{chapter.7}%
-\contentsline {chapter}{\numberline {A}Signal Analysis Algorithms}{85}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Neuronal signal analysis}{85}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Oscillation analysis}{85}{section.A.2}%
-\contentsline {section}{\numberline {A.3}Modulation analysis}{87}{section.A.3}%
+\contentsline {chapter}{\numberline {A}Signal Analysis Algorithms}{86}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Neuronal signal analysis}{86}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Oscillation analysis}{86}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Modulation analysis}{88}{section.A.3}%

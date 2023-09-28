@@ -231,6 +231,22 @@ matrixToCsv("neuron_Iapp0_b_freq.csv", squeeze(copy(6, :, :, id_0)), {var_params
 matrixToCsv("neuron_Iappp1_b_freq.csv", squeeze(copy(6, :, :, id_p1)), {var_params.gsm, var_params.gup}, ["gsm", "gup"])
 matrixToCsv("neuron_Iappp2_b_freq.csv", squeeze(copy(6, :, :, id_p2)), {var_params.gsm, var_params.gup}, ["gsm", "gup"])
 
+matrixToCsv("neuron_Iappm18_b_freq.csv", squeeze(copy(6, :, :, 2)), {var_params.gsm, var_params.gup}, ["gsm", "gup"])
+matrixToCsv("neuron_Iappm16_b_freq.csv", squeeze(copy(6, :, :, 3)), {var_params.gsm, var_params.gup}, ["gsm", "gup"])
+matrixToCsv("neuron_Iappm14_b_freq.csv", squeeze(copy(6, :, :, 4)), {var_params.gsm, var_params.gup}, ["gsm", "gup"])
+matrixToCsv("neuron_Iappm12_b_freq.csv", squeeze(copy(6, :, :, 5)), {var_params.gsm, var_params.gup}, ["gsm", "gup"])
+matrixToCsv("neuron_Iappm08_b_freq.csv", squeeze(copy(6, :, :, 7)), {var_params.gsm, var_params.gup}, ["gsm", "gup"])
+matrixToCsv("neuron_Iappm06_b_freq.csv", squeeze(copy(6, :, :, 8)), {var_params.gsm, var_params.gup}, ["gsm", "gup"])
+matrixToCsv("neuron_Iappm04_b_freq.csv", squeeze(copy(6, :, :, 9)), {var_params.gsm, var_params.gup}, ["gsm", "gup"])
+matrixToCsv("neuron_Iappm02_b_freq.csv", squeeze(copy(6, :, :, 10)), {var_params.gsm, var_params.gup}, ["gsm", "gup"])
+
+matrixToCsv("neuron_Iappp06_b_freq.csv", squeeze(copy(6, :, :, 14)), {var_params.gsm, var_params.gup}, ["gsm", "gup"])
+matrixToCsv("neuron_Iappp08_b_freq.csv", squeeze(copy(6, :, :, 15)), {var_params.gsm, var_params.gup}, ["gsm", "gup"])
+matrixToCsv("neuron_Iappp12_b_freq.csv", squeeze(copy(6, :, :, 17)), {var_params.gsm, var_params.gup}, ["gsm", "gup"])
+matrixToCsv("neuron_Iappp14_b_freq.csv", squeeze(copy(6, :, :, 18)), {var_params.gsm, var_params.gup}, ["gsm", "gup"])
+matrixToCsv("neuron_Iappp16_b_freq.csv", squeeze(copy(6, :, :, 19)), {var_params.gsm, var_params.gup}, ["gsm", "gup"])
+matrixToCsv("neuron_Iappp18_b_freq.csv", squeeze(copy(6, :, :, 20)), {var_params.gsm, var_params.gup}, ["gsm", "gup"])
+
 Disp3DMap(squeeze(copy(6,:,:,:)), var_params.gsm, var_params.gup, var_params.Iapp, ["gsm", "gup", "Iapp"], 3)
 
 %%
@@ -274,7 +290,7 @@ disp(sorted(1:10));
 
 copy = out_values;
 tmp = copy(7,:,:,:);
-tmp(tmp > 2.1) = NaN;
+tmp(tmp > 1) = NaN;
 copy(7,:,:,:) = tmp;
 
 Disp3DMap(squeeze(copy(7,:,:,:)), var_params.gsm, var_params.gup, var_params.Iapp, ["gsm", "gup", "Iapp"], 3)

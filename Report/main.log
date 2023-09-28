@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.16.0 (MiKTeX 23.1) (format=lualatex 2023.2.21)  20 AUG 2023 23:35
+This is LuaHBTeX, Version 1.16.0 (MiKTeX 23.1) (format=lualatex 2023.2.21)  3 SEP 2023 15:52
  system commands enabled.
 **main.tex
 (./main.tex
@@ -1094,7 +1094,7 @@ LaTeX Info: Redefining \labelcpageref on input line 2370.
 Package cleveref Info: `algorithmicx' support loaded on input line 3120.
 )
 Package translations Info: No language package found. I am going to use `englis
-h' as default language. on input line 103.
+h' as default language. on input line 104.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
 
@@ -1106,32 +1106,32 @@ File: l3backend-luatex.def 2023-01-16 L3 backend support: PDF output (LuaTeX)
 ) (./main.aux)
 \openout1 = main.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 103.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 104.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 1
-03.
+04.
 
 (C:/Users/chris/AppData/Local/Programs/MiKTeX/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: luatex
@@ -1200,7 +1200,7 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 103.
+or `english'. on input line 104.
 
 Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
@@ -1208,7 +1208,7 @@ s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 103.
+Package hyperref Info: Link coloring OFF on input line 104.
 (./main.out) (./main.out)
 \@outlinefile=\write4
 
@@ -1659,7 +1659,7 @@ Underfull \vbox (badness 1371) has occurred while \output is active []
 ])
 [81] (./main.bbl [82
 
-] [83]) [84]
+] [83] [84]) [85]
 Appendix A.
 (./chapters/algos.tex
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
@@ -1668,9 +1668,9 @@ put line 22.
 
 LaTeX Warning: Float too large for page by 11.71835pt on input line 81.
 
-[85
+[86
 
-] [86]
+] [87]
 warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.1
 '
 
@@ -1736,7 +1736,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.2
 
 warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.2
 2'
-) [87
+) [88
 warning  (pdf backend): ignoring duplicate destination with the name 'algorithm.
 1'
 
@@ -1751,20 +1751,19 @@ warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.3
 
 warning  (pdf backend): ignoring duplicate destination with the name 'ALG@line.4
 '
-] [88] (./main.aux)
+] [89] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 957705FA1F26E28DFD9A8ECD460F026E;9821.
 )
 
 Here is how much of LuaTeX's memory you used:
- 47045 strings out of 478326
+ 47058 strings out of 478326
  125009,1977958 words of node,token memory allocated
  534 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 8 attribute, 58 glue_spec,
  8 attribute_list, 2 write nodes
-   avail lists: 1:1,2:2678,3:686,4:248,5:478,6:135,7:9868,8:49,9:1176,10:27,11:7
-66
- 63835 multiletter control sequences out of 65536+600000
+   avail lists: 2:2674,3:686,4:248,5:478,6:135,7:9869,8:50,9:1176,10:27,11:766
+ 63844 multiletter control sequences out of 65536+600000
  78 fonts using 5676519 bytes
  84i,14n,91p,1071b,1054s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <//?/c:/users/chris/appdata/local/programs/miktex/fonts/opentype/public/lm/lmrom
@@ -1790,9 +1789,9 @@ lic/amsfonts/cm/cmr8.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/fonts/typ
 e1/public/amsfonts/cm/cmsy10.pfb><C:/Users/chris/AppData/Local/Programs/MiKTeX/f
 onts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/chris/AppData/Local/Programs/M
 iKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (94 pages, 55913473 bytes).
+Output written on main.pdf (95 pages, 55915642 bytes).
 
-PDF statistics: 3453 PDF objects out of 3580 (max. 8388607)
- 331 named destinations out of 1000 (max. 131072)
+PDF statistics: 3463 PDF objects out of 3580 (max. 8388607)
+ 335 named destinations out of 1000 (max. 131072)
  400 words of extra memory for PDF output out of 10000 (max. 100000000)
 

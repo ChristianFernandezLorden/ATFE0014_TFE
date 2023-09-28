@@ -1,0 +1,143 @@
+\documentclass[12pt]{article}
+
+\usepackage{shellesc}
+
+\usepackage[a4paper,width=160mm,top=30mm,bottom=20mm,headheight=10mm]{geometry}
+
+\usepackage{fancyhdr}
+
+%\usepackage{biblatex}
+\usepackage[square,numbers]{natbib}
+%\addbibresource{references.bib}
+\bibliographystyle{abbrvnat}
+
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+\usepackage{siunitx}
+
+\usepackage{placeins}
+
+\usepackage{csquotes}
+
+\usepackage{enumitem}
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+%%% Tikz 
+\usepackage{tikz}
+\usepackage{pgfplots}\pgfplotsset{compat=1.18}
+%\usepackage{pgfplotstable}
+\usepackage{pgfmath}
+\usetikzlibrary{arrows.meta,positioning,calc,intersections,external,shapes,angles,patterns,quotes}
+\usepgfplotslibrary{units, groupplots, statistics, colormaps}
+
+\usepgfplotslibrary{external}
+\tikzexternalize
+\tikzsetexternalprefix{figures/}
+%\tikzset{external/force remake}
+%\tikzset{external/remake next}
+
+\newcommand{\inserttikzfig}[1]{
+\tikzsetnextfilename{#1}%image name
+\input{#1}}
+
+\usepackage{amsmath} % for the equation* environment
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{hyperref}
+
+\usepackage{cleveref}
+
+\crefname{figure}{figure}{figures}
+\Crefname{figure}{Figure}{Figures}
+\crefname{equation}{equation}{equations}
+\Crefname{equation}{Equation}{Equations}
+
+\newcommand{\mytitle}{Neuromorphic control of embodied central pattern generators : Errata}
+\newcommand{\mysubtitle}{A bio-inspired approach to motion}
+\newcommand{\myname}{Christian Fernandez Lorden}
+\newcommand{\mychaptername}{Undefined}
+\newcommand{\mychapterdesignation}{Chapter}
+\newcommand{\mychapter}[1]{\chapter{#1}\renewcommand{\mychaptername}{\mychapterdesignation~\thechapter : #1}}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{}
+\fancyfoot{}
+\fancyfoot[C]{}
+%\fancyfoot[CO,CE]{\myname}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\fancypagestyle{plain}{%
+    \fancyhead{}
+    \fancyfoot{}
+    \fancyfoot[C]{}
+    %\fancyfoot[CO,CE]{\myname}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+
+\hypersetup{% PDF METADATA
+    pdfinfo={%
+    Title={\mytitle},%
+    Author={\myname},%
+    Subject={Neuromorphic Engineering},%
+    Producer={LuaLaTeX with hyperref and pgfplots},%
+    Creator={\myname},%
+    Keywords={Neuron, Control, Pendulum, Neuromodulation, Engineering, Bursting, Spiking, CPG},%
+    },%
+    %keeppdfinfo 
+}%
+
+\usepackage[normalem]{ulem}
+
+\allowdisplaybreaks % Allow equation to page break
+
+\usepackage{titling}
+\setlength{\droptitle}{-3cm}
+
+\title{\mytitle}
+\author{\myname}
+
+
+
+\begin{document}
+    \maketitle
+    
+    \begin{description}
+        \item[1: p. 1] End of the first paragraph of the page. Change \enquote{\textelp{} and autonomy \sout{and} increasing \textelp{}} to \enquote{\textelp{} and autonomy, increasing \textelp{}}.
+        
+        \item[2: p. 11] End of the penultimate paragraph of section 2.5. Missing references. Change \enquote{\textelp{} (citation needed).} to \enquote{\textelp{} \citep{errata1,errata2,errata3}.}. Reference numbers are not adjusted to the thesis bibliography.
+        
+        \item[3: p. 12] First paragraph of section 3.1. Change \enquote{\textelp{} the model \sout{I} used \textelp{}} to \enquote{\textelp{} the model used \textelp{}}.
+        
+        \item[4: p. 16] Third paragraph of the page. Change \enquote{Yet,Franci et al. \textelp{}} to \enquote{Yet, Franci et al. \textelp{}}.
+        
+        \item[5: p. 30] First paragraph of section 4.2. Change \enquote{\textelp{} the bursting neuron is the heart \textelp{}} to \enquote{\textelp{} the bursting neuron is at the heart \textelp{}}.
+        
+        \item[6: p.33] Second paragraph of section 4.3. Change \enquote{Figure 4.5 displays \textelp{}} to \enquote{Figure 4.6 displays \textelp{}}.
+        
+        \item[7: p.40] Middle of the second paragraph of the page. Change \enquote{The difference can be explained easily when considering the \sout{equalization} that \textelp{}} to \enquote{The difference can be explained easily when considering the equations that \textelp{}}.
+        
+        \item[8: p.40] End of the second paragraph of the page. Change \enquote{Thus, mixed feedback can be abstracted as equation (4.3) plus one, \textelp{}} to \enquote{Thus, mixed feedback can be abstracted as equation (4.4) plus one, \textelp{}}.
+        
+        \item[9: p.67] Start of the third paragraph of the page. Change \enquote{Figure 5.5 graph of the \textelp{}} to \enquote{In figure 5.5, the graph of the \textelp{}}.
+        
+        \item[10: p.73] End of the second paragraph of section 6.2 change \enquote{\textelp{} control of the pendulum primed the realization \textelp{}} to \enquote{\textelp{} control of the pendulum outweighed the realization \textelp{}}.
+        
+        \item[11: p.80] First paragraph of the page. Change \enquote{The model was modified to a second motor \textelp{}} to \enquote{The model was modified to add a second motor \textelp{}}.
+    \end{description} 
+
+    
+    \bibliography{references}
+\end{document}
+
+
+ 

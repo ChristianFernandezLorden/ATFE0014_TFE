@@ -116,7 +116,7 @@ As a good compromise, the relevant value will be the minimum between these two t
 
 To realize all analyses consistently, all tests include a stabilization period of \qty{30}{\second} where the target angle was $\theta_\text{ref} = \frac{\pi}{4}\unit{\radian}$.
 
-\Cref{fig:neuromod_tgt,fig:neuromod_gain,fig:neuromod_buff} contain the data that will be useful for understanding the behavior of the neuromodulated controller.
+\Cref{fig:neuromod_tgt,fig:neuromod_gain,fig:neuromod_buff} contain the data that will be useful for understanding the behavior of the neuromodulated controller.
 \Cref{fig:neuromod_tgt} displays the evolution of metrics as a function of the desired angle $\theta_\text{ref}$.
 \Cref{fig:neuromod_gain} displays the evolution of these metrics as a function of the neuromodulation gain $\mathrm{d}g_{s-}$.
 \Cref{fig:neuromod_buff} contains the evolution of the amplitude mean and standard deviation as functions of the buffer zone $d_\text{buff}$.
@@ -199,7 +199,7 @@ This is also observed for $\mathrm{d}g_{s-}$ set to \qty{0.8}{\siemens\per\volt
 However, this law has a limit, as shown in the graphs for $\theta_\text{ref}=\frac{\pi}{3}\unit{radian}$ and $\theta_\text{ref}=\frac{\pi}{6}\unit{radian}$ since they both converge to a similar value.
 This implies a certain minimum rise time.
 
-\Cref{fig:neuromod_tgt} graph of the rise time as a function of $\theta_\text{ref}$ is quite interesting.
+In \Cref{fig:neuromod_tgt}, the graph of the rise time as a function of $\theta_\text{ref}$ is quite interesting.
 Similar to what was observed in the static performance analysis, the rise time seems to progress in steps that progress at the same rate as the steps of the mean amplitude.
 This is logical because the rise time can be understood as the time taken to find a $g_{s-}$ that generates acceptable oscillations.
 However, because the change in the power of a burst as a function of $g_{s-}$ moves in a stepwise manner. The desired $g_{s-}$ also moves in steps.
